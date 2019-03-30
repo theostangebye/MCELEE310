@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F25Q10 ]
 [d frameptr 4065 ]
-"88 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/tmr2.c
+"88 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
 [e E9315 . `uc
 TMR2_ROP_STARTS_TMRON 0
 TMR2_ROP_STARTS_TMRON_ERSHIGH 1
@@ -53,6 +53,8 @@ TMR2_RESERVED_3 24
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
+"43 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "86 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/ftdiv.c
@@ -73,21 +75,23 @@ TMR2_RESERVED_3 24
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"49 /Users/theostangebye/MPLABXProjects/lab8v2.X/main.c
+"10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"50 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/mcc.c
+"50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "59
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "73
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"55 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/pin_manager.c
+"55 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"58 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/pwm3.c
+"58 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
 "74
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
-"62 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/tmr2.c
+"62 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "100
 [v _TMR2_Start TMR2_Start `(v  1 e 1 0 ]
@@ -99,7 +103,9 @@ TMR2_RESERVED_3 24
 [v _TMR2_Counter8BitSet TMR2_Counter8BitSet `(v  1 e 1 0 ]
 "147
 [v _TMR2_Period8BitSet TMR2_Period8BitSet `(v  1 e 1 0 ]
-[s S148 . 1 `uc 1 TMR1IF 1 0 :1:0 
+"8 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
+[v _set_motor_duty set_motor_duty `(v  1 e 1 0 ]
+[s S127 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
@@ -107,8 +113,8 @@ TMR2_RESERVED_3 24
 `uc 1 TMR6IF 1 0 :1:5 
 ]
 "3905 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
-[u S155 . 1 `S148 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES155  1 e 1 @3785 ]
+[u S134 . 1 `S127 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES134  1 e 1 @3785 ]
 "4623
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @3795 ]
 "4763
@@ -177,13 +183,13 @@ TMR2_RESERVED_3 24
 [v _PWM3DCH PWM3DCH `VEuc  1 e 1 @4003 ]
 "18890
 [v _PWM3CON PWM3CON `VEuc  1 e 1 @4004 ]
-[s S104 . 1 `uc 1 C1TSEL 1 0 :2:0 
+[s S83 . 1 `uc 1 C1TSEL 1 0 :2:0 
 `uc 1 C2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
 "19429
-[s S109 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+[s S88 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 C2TSEL0 1 0 :1:2 
 `uc 1 C2TSEL1 1 0 :1:3 
@@ -192,8 +198,8 @@ TMR2_RESERVED_3 24
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S118 . 1 `S104 1 . 1 0 `S109 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES118  1 e 1 @4013 ]
+[u S97 . 1 `S83 1 . 1 0 `S88 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES97  1 e 1 @4013 ]
 "20670
 [v _T2TMR T2TMR `VEuc  1 e 1 @4026 ]
 "20675
@@ -204,16 +210,16 @@ TMR2_RESERVED_3 24
 [v _PR2 PR2 `VEuc  1 e 1 @4027 ]
 "20746
 [v _T2CON T2CON `VEuc  1 e 1 @4028 ]
-[s S292 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S271 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "20782
-[s S296 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S275 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S300 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S279 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -221,7 +227,7 @@ TMR2_RESERVED_3 24
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S308 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S287 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -230,94 +236,194 @@ TMR2_RESERVED_3 24
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S317 . 1 `S292 1 . 1 0 `S296 1 . 1 0 `S300 1 . 1 0 `S308 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES317  1 e 1 @4028 ]
+[u S296 . 1 `S271 1 . 1 0 `S275 1 . 1 0 `S279 1 . 1 0 `S287 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES296  1 e 1 @4028 ]
 "20892
 [v _T2HLT T2HLT `VEuc  1 e 1 @4029 ]
-[s S182 . 1 `uc 1 MODE 1 0 :5:0 
+[s S161 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "20925
-[s S187 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S166 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S193 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S172 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S198 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S177 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S204 . 1 `S182 1 . 1 0 `S187 1 . 1 0 `S193 1 . 1 0 `S198 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES204  1 e 1 @4029 ]
+[u S183 . 1 `S161 1 . 1 0 `S166 1 . 1 0 `S172 1 . 1 0 `S177 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES183  1 e 1 @4029 ]
 "21020
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @4030 ]
 "21178
 [v _T2RST T2RST `VEuc  1 e 1 @4031 ]
-[s S258 . 1 `uc 1 RSEL 1 0 :5:0 
+[s S237 . 1 `uc 1 RSEL 1 0 :5:0 
 ]
 "21203
-[s S260 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S239 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S265 . 1 `uc 1 T2RSEL 1 0 :5:0 
+[s S244 . 1 `uc 1 T2RSEL 1 0 :5:0 
 ]
-[s S267 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S246 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 ]
-[u S272 . 1 `S258 1 . 1 0 `S260 1 . 1 0 `S265 1 . 1 0 `S267 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES272  1 e 1 @4031 ]
-"49 /Users/theostangebye/MPLABXProjects/lab8v2.X/main.c
+[u S251 . 1 `S237 1 . 1 0 `S239 1 . 1 0 `S244 1 . 1 0 `S246 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES251  1 e 1 @4031 ]
+"50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"85
-} 0
-"50 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-{
-"57
-} 0
-"62 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/tmr2.c
-[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
-{
+"71
+[v main@run run `i  1 a 2 0 ]
 "86
 } 0
-"58 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/pwm3.c
-[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+"8 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
+[v _set_motor_duty set_motor_duty `(v  1 e 1 0 ]
 {
-"72
+[v set_motor_duty@duty duty `uc  1 a 1 wreg ]
+"10
+[v set_motor_duty@duty_val duty_val `i  1 a 2 90 ]
+"8
+[v set_motor_duty@duty duty `uc  1 a 1 wreg ]
+"10
+[v set_motor_duty@duty duty `uc  1 a 1 92 ]
+"13
 } 0
-"73 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/mcc.c
-[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
-"87
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
 } 0
-"55 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"43 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 {
-"108
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 89 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 88 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 80 ]
+"70
 } 0
-"59 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/mcc.c
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
 {
-"71
+[s S701 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S706 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S709 . 4 `l 1 i 4 0 `d 1 f 4 0 `S701 1 fAsBytes 4 0 `S706 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S709  1 a 4 58 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 52 ]
+[s S777 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S780 . 2 `s 1 i 2 0 `us 1 n 2 0 `S777 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S780  1 a 2 62 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 57 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 56 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 51 ]
+"8
+[v ___flmul@b b `d  1 p 4 39 ]
+[v ___flmul@a a `d  1 p 4 43 ]
+"205
 } 0
-"74 /Users/theostangebye/MPLABXProjects/lab8v2.X/mcc_generated_files/pwm3.c
+"11 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 33 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 26 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 31 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 38 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 37 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 30 ]
+"11
+[v ___fldiv@b b `d  1 p 4 14 ]
+[v ___fldiv@a a `d  1 p 4 18 ]
+"185
+} 0
+"10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 79 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 78 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 77 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 76 ]
+"10
+[v ___fladd@b b `d  1 p 4 64 ]
+[v ___fladd@a a `d  1 p 4 68 ]
+"237
+} 0
+"74 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
 "81
+} 0
+"50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"62 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"86
+} 0
+"58 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+{
+"72
+} 0
+"73 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"55 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"108
+} 0
+"59 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"71
 } 0

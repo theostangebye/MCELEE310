@@ -3,9 +3,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"129 ./mcc_generated_files/pwm3.h
-[; ;./mcc_generated_files/pwm3.h: 129:  void PWM3_LoadDutyValue(uint16_t dutyValue);
-[v _PWM3_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
+"15 ./motor.h
+[; ;./motor.h: 15:     void set_motor_duty(unsigned char duty);
+[v _set_motor_duty `(v ~T0 @X0 0 ef1`uc ]
 [v F9277 `(v ~T0 @X0 1 tf1`ul ]
 "183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
 [v __delay `JF9277 ~T0 @X0 0 e ]
@@ -1262,58 +1262,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25839: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void)
+"50 main.c
+[; ;main.c: 50: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"50
-[; ;main.c: 50: {
+"51
+[; ;main.c: 51: {
 {
 [e :U _main ]
 [f ]
-"52
-[; ;main.c: 52:     SYSTEM_Initialize();
+"53
+[; ;main.c: 53:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"70
-[; ;main.c: 70:     int run = 1;
+"71
+[; ;main.c: 71:     int run = 1;
 [v _run `i ~T0 @X0 1 a ]
 [e = _run -> 1 `i ]
-"71
-[; ;main.c: 71:     while (run)
-[e $U 1382  ]
-[e :U 1383 ]
 "72
-[; ;main.c: 72:     {
-{
+[; ;main.c: 72:     while (1)
+[e :U 1383 ]
 "73
-[; ;main.c: 73:         PWM3_LoadDutyValue(30);
-[e ( _PWM3_LoadDutyValue (1 -> -> 30 `i `us ]
+[; ;main.c: 73:     {
+{
 "74
-[; ;main.c: 74:         _delay((unsigned long)((5000)*(4000000/4000.0)));
+[; ;main.c: 74:         set_motor_duty(0);
+[e ( _set_motor_duty (1 -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:         _delay((unsigned long)((5000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "77
-[; ;main.c: 77:         PWM3_LoadDutyValue(60);
-[e ( _PWM3_LoadDutyValue (1 -> -> 60 `i `us ]
+[; ;main.c: 77:         if (run)
+[e $ ! != _run -> 0 `i 1385  ]
 "78
-[; ;main.c: 78:         _delay((unsigned long)((1000)*(4000000/4000.0)));
+[; ;main.c: 78:             set_motor_duty(50);
+[e ( _set_motor_duty (1 -> -> 50 `i `uc ]
+[e :U 1385 ]
+"79
+[; ;main.c: 79:         _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"80
-[; ;main.c: 80:         PWM3_LoadDutyValue(30);
-[e ( _PWM3_LoadDutyValue (1 -> -> 30 `i `us ]
 "81
-[; ;main.c: 81:         _delay((unsigned long)((5000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 81:         set_motor_duty(0);
+[e ( _set_motor_duty (1 -> -> 0 `i `uc ]
 "82
-[; ;main.c: 82:         run = 1;
-[e = _run -> 1 `i ]
-"84
-[; ;main.c: 84:     }
+[; ;main.c: 82:         _delay((unsigned long)((5000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"83
+[; ;main.c: 83:         run = 0;
+[e = _run -> 0 `i ]
+"85
+[; ;main.c: 85:     }
 }
 [e :U 1382 ]
-"71
-[; ;main.c: 71:     while (run)
-[e $ != _run -> 0 `i 1383  ]
+[e $U 1383  ]
 [e :U 1384 ]
-"85
-[; ;main.c: 85: }
+"86
+[; ;main.c: 86: }
 [e :UE 1381 ]
 }

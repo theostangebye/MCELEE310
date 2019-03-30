@@ -42,6 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "motor.h"
 
 /*
                          Main application
@@ -68,18 +69,18 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
 
     int run = 1;
-    while (run)
+    while (1)
     {
-        PWM3_LoadDutyValue(30); // zero
+        set_motor_duty(0);
         __delay_ms(5000);
         
-        // ?
-        PWM3_LoadDutyValue(60);
+        if (run)
+            set_motor_duty(50);
         __delay_ms(1000);
         
-        PWM3_LoadDutyValue(30);
+        set_motor_duty(0);
         __delay_ms(5000);
-        run = 1;
+        run = 0;
         
     }
 }

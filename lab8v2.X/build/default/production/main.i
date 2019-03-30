@@ -15969,6 +15969,11 @@ void OSCILLATOR_Initialize(void);
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
+# 1 "./motor.h" 1
+# 15 "./motor.h"
+    void set_motor_duty(unsigned char duty);
+# 45 "main.c" 2
+
 
 
 
@@ -15977,20 +15982,20 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 70 "main.c"
+# 71 "main.c"
     int run = 1;
-    while (run)
+    while (1)
     {
-        PWM3_LoadDutyValue(30);
+        set_motor_duty(0);
         _delay((unsigned long)((5000)*(4000000/4000.0)));
 
-
-        PWM3_LoadDutyValue(60);
+        if (run)
+            set_motor_duty(50);
         _delay((unsigned long)((1000)*(4000000/4000.0)));
 
-        PWM3_LoadDutyValue(30);
+        set_motor_duty(0);
         _delay((unsigned long)((5000)*(4000000/4000.0)));
-        run = 1;
+        run = 0;
 
     }
 }
