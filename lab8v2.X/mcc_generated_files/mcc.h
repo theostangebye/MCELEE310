@@ -51,8 +51,8 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "tmr2.h"
 #include "pwm3.h"
+#include "tmr2.h"
 #include "pwm4.h"
 
 

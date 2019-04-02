@@ -77,6 +77,43 @@ void main(void)
     
     while (1)
     {
+        if (run) {
+            int i = 0;
+            for (i = 0; i < 100; i++) {
+                motor_set(i);
+                __delay_ms(15);
+            }
+            
+            for (i = 0; i < 100; i++) {
+                motor_set(100-i);
+                __delay_ms(15);
+            }
+            
+            
+            for (i = 0; i < 100; i++) {
+                servo_set((double)i/100);
+                __delay_ms(15);
+            }
+            
+            for (i = 0; i < 100; i++) {
+                servo_set((double)(100-i)/100);
+                __delay_ms(15);
+            }
+            
+            for (i = 0; i < 100; i++) {
+                servo_set((double)(-i)/100);
+                __delay_ms(15);
+            }
+            
+            for (i = 0; i < 100; i++) {
+                servo_set((double)(-100+i)/100);
+                __delay_ms(15);
+            }
+            
+            run = 0;
+        }
+        
+        motor_set(0);
         servo_set(0);
     }
 }

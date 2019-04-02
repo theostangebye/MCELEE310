@@ -15743,6 +15743,13 @@ typedef uint32_t uint_fast32_t;
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/pwm3.h" 1
+# 102 "./mcc_generated_files/pwm3.h"
+ void PWM3_Initialize(void);
+# 129 "./mcc_generated_files/pwm3.h"
+ void PWM3_LoadDutyValue(uint16_t dutyValue);
+# 54 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 79 "./mcc_generated_files/tmr2.h"
 typedef enum
@@ -15953,13 +15960,6 @@ void TMR2_Period8BitSet(uint8_t periodVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 812 "./mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pwm3.h" 1
-# 102 "./mcc_generated_files/pwm3.h"
- void PWM3_Initialize(void);
-# 129 "./mcc_generated_files/pwm3.h"
- void PWM3_LoadDutyValue(uint16_t dutyValue);
 # 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pwm4.h" 1
@@ -15977,9 +15977,16 @@ void PMD_Initialize(void);
 # 44 "main.c" 2
 
 # 1 "./motor.h" 1
-# 15 "./motor.h"
-    void set_motor_duty(unsigned char duty);
+# 16 "./motor.h"
+    void motor_init();
+    void motor_set(uint8_t duty);
 # 45 "main.c" 2
+
+# 1 "./servo.h" 1
+# 16 "./servo.h"
+    void servo_init(uint8_t center, uint8_t range);
+    void servo_set(double pos);
+# 46 "main.c" 2
 
 
 
@@ -15989,34 +15996,53 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 70 "main.c"
+# 71 "main.c"
     int run = 1;
     int i = 0;
-    PWM4_LoadDutyValue(40);
-    set_motor_duty(0);
+    motor_init();
+    servo_init(40,10);
     _delay((unsigned long)((1000)*(4000000/4000.0)));
-    set_motor_duty(24);
-    int angle = 40;
-    int ascend = 1;
+
 
     while (1)
     {
         if (run) {
-            if (ascend) {
-                angle++;
-                if (angle > 49) ascend = 0;
-            } else {
-            angle--;
-                if (angle < 32) ascend = 1;
+            int i = 0;
+            for (i = 0; i < 100; i++) {
+                motor_set(i);
+                _delay((unsigned long)((15)*(4000000/4000.0)));
             }
-            PWM4_LoadDutyValue(angle);
-            _delay((unsigned long)((20)*(4000000/4000.0)));
-            i++;
-        }
-        if (i > 100) {
+
+            for (i = 0; i < 100; i++) {
+                motor_set(100-i);
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+            }
+
+
+            for (i = 0; i < 100; i++) {
+                servo_set((double)i/100);
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+            }
+
+            for (i = 0; i < 100; i++) {
+                servo_set((double)(100-i)/100);
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+            }
+
+            for (i = 0; i < 100; i++) {
+                servo_set((double)(-i)/100);
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+            }
+
+            for (i = 0; i < 100; i++) {
+                servo_set((double)(-100+i)/100);
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+            }
+
             run = 0;
-            set_motor_duty(0);
         }
 
+        motor_set(0);
+        servo_set(0);
     }
 }

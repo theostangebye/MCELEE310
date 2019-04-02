@@ -15743,6 +15743,13 @@ typedef uint32_t uint_fast32_t;
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
 # 53 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/pwm3.h" 1
+# 102 "mcc_generated_files/pwm3.h"
+ void PWM3_Initialize(void);
+# 129 "mcc_generated_files/pwm3.h"
+ void PWM3_LoadDutyValue(uint16_t dutyValue);
+# 54 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/tmr2.h" 1
 # 79 "mcc_generated_files/tmr2.h"
 typedef enum
@@ -15953,13 +15960,6 @@ void TMR2_Period8BitSet(uint8_t periodVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 812 "mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/pwm3.h" 1
-# 102 "mcc_generated_files/pwm3.h"
- void PWM3_Initialize(void);
-# 129 "mcc_generated_files/pwm3.h"
- void PWM3_LoadDutyValue(uint16_t dutyValue);
 # 55 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pwm4.h" 1
@@ -15977,6 +15977,7 @@ void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
 
+typedef unsigned char uint8_t;
 
 void SYSTEM_Initialize(void)
 {

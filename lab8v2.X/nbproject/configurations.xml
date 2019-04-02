@@ -35,6 +35,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>motor.h</itemPath>
       <itemPath>motor.c</itemPath>
+      <itemPath>servo.c</itemPath>
+      <itemPath>servo.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

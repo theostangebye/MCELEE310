@@ -13,24 +13,24 @@
          <string>class com.microchip.mcc.mcu8.systemManager.pmd.PMD</string>
       </entry>
       <entry>
-         <string>WWDT</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.wwdt.WWDT</string>
-      </entry>
-      <entry>
          <string>PWM3</string>
          <string>class com.microchip.mcc.mcu8.modules.pwm.PWM</string>
+      </entry>
+      <entry>
+         <string>WWDT</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.wwdt.WWDT</string>
       </entry>
       <entry>
          <string>Pin Module</string>
          <string>class com.microchip.mcc.mcu8.pinManager.PinManager</string>
       </entry>
       <entry>
-         <string>PWM4</string>
-         <string>class com.microchip.mcc.mcu8.modules.pwm.PWM</string>
-      </entry>
-      <entry>
          <string>RESET</string>
          <string>class com.microchip.mcc.mcu8.systemManager.reset.RESET</string>
+      </entry>
+      <entry>
+         <string>PWM4</string>
+         <string>class com.microchip.mcc.mcu8.modules.pwm.PWM</string>
       </entry>
       <entry>
          <string>Interrupt Module</string>
@@ -6353,7 +6353,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>88fa8a519d0732e8b733f9dfb547c957bbc6f7f955511e73f54e8b727ec3510d</hash>
+         <hash>d7ba0a513f7f947180fcb9d379dcd2f8de62924c4063ba2b2de5104a555acc15</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/device_config.c</file>
@@ -6364,12 +6364,12 @@
          <hash>44814ec796ec57bc9a8e79899c0ec404b497f4549aea8094b8c14b291913c08a</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/pwm4.h</file>
-         <hash>3e2d3a27073360f9b0ee430b312ae7d5cb730c6c6454fd5ca02e08a256da04d5</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/mcc.c</file>
          <hash>d9d0b32a0d5e3054e9e3449824576871991432ef0f3ea101b5d1f68b877ea39f</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/pwm4.h</file>
+         <hash>3e2d3a27073360f9b0ee430b312ae7d5cb730c6c6454fd5ca02e08a256da04d5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>
