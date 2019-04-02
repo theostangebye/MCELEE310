@@ -46,6 +46,7 @@
 
 #include "mcc.h"
 
+typedef unsigned char uint8_t;
 
 void SYSTEM_Initialize(void)
 {

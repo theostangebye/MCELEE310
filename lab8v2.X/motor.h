@@ -4,6 +4,7 @@
  *
  * Created on March 29, 2019, 10:59 PM
  */
+#include "mcc_generated_files/mcc.h"
 
 #ifndef MOTOR_H
 #define	MOTOR_H
@@ -12,8 +13,8 @@
 extern "C" {
 #endif
 
-    void set_motor_duty(unsigned char duty);
-
+    void motor_init();
+    void motor_set(uint8_t duty);
 
 #ifdef	__cplusplus
 }
