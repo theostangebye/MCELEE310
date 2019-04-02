@@ -64,7 +64,7 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0xFE;
+    TRISA = 0xFC;
     TRISB = 0xFF;
     TRISC = 0xFF;
 
@@ -104,6 +104,7 @@ void PIN_MANAGER_Initialize(void)
    
     
 	
+    RA1PPS = 0x08;   //RA1->PWM4:PWM4;    
     RA0PPS = 0x07;   //RA0->PWM3:PWM3;    
 }
   

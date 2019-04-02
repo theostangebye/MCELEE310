@@ -1,8 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"70 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+"71 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"129 ./mcc_generated_files/pwm4.h
+[; ;./mcc_generated_files/pwm4.h: 129:  void PWM4_LoadDutyValue(uint16_t dutyValue);
+[v _PWM4_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 "15 ./motor.h
 [; ;./motor.h: 15:     void set_motor_duty(unsigned char duty);
 [v _set_motor_duty `(v ~T0 @X0 0 ef1`uc ]
@@ -1273,48 +1276,108 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;main.c: 53:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"71
-[; ;main.c: 71:     int run = 1;
+"70
+[; ;main.c: 70:     int run = 1;
 [v _run `i ~T0 @X0 1 a ]
 [e = _run -> 1 `i ]
+"71
+[; ;main.c: 71:     int i = 0;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
 "72
-[; ;main.c: 72:     while (1)
-[e :U 1383 ]
+[; ;main.c: 72:     PWM4_LoadDutyValue(40);
+[e ( _PWM4_LoadDutyValue (1 -> -> 40 `i `us ]
 "73
-[; ;main.c: 73:     {
-{
+[; ;main.c: 73:     set_motor_duty(0);
+[e ( _set_motor_duty (1 -> -> 0 `i `uc ]
 "74
-[; ;main.c: 74:         set_motor_duty(0);
-[e ( _set_motor_duty (1 -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:         _delay((unsigned long)((5000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"77
-[; ;main.c: 77:         if (run)
-[e $ ! != _run -> 0 `i 1385  ]
-"78
-[; ;main.c: 78:             set_motor_duty(50);
-[e ( _set_motor_duty (1 -> -> 50 `i `uc ]
-[e :U 1385 ]
-"79
-[; ;main.c: 79:         _delay((unsigned long)((1000)*(4000000/4000.0)));
+[; ;main.c: 74:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"75
+[; ;main.c: 75:     set_motor_duty(24);
+[e ( _set_motor_duty (1 -> -> 24 `i `uc ]
+"76
+[; ;main.c: 76:     int angle = 40;
+[v _angle `i ~T0 @X0 1 a ]
+[e = _angle -> 40 `i ]
+"77
+[; ;main.c: 77:     int ascend = 1;
+[v _ascend `i ~T0 @X0 1 a ]
+[e = _ascend -> 1 `i ]
+"79
+[; ;main.c: 79:     while (1)
+[e :U 1383 ]
+"80
+[; ;main.c: 80:     {
+{
 "81
-[; ;main.c: 81:         set_motor_duty(0);
-[e ( _set_motor_duty (1 -> -> 0 `i `uc ]
+[; ;main.c: 81:         if (run) {
+[e $ ! != _run -> 0 `i 1385  ]
+{
 "82
-[; ;main.c: 82:         _delay((unsigned long)((5000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 82:             if (ascend) {
+[e $ ! != _ascend -> 0 `i 1386  ]
+{
 "83
-[; ;main.c: 83:         run = 0;
-[e = _run -> 0 `i ]
+[; ;main.c: 83:                 angle++;
+[e ++ _angle -> 1 `i ]
+"84
+[; ;main.c: 84:                 if (angle > 49) ascend = 0;
+[e $ ! > _angle -> 49 `i 1387  ]
+[e = _ascend -> 0 `i ]
+[e :U 1387 ]
 "85
-[; ;main.c: 85:     }
+[; ;main.c: 85:             } else {
+}
+[e $U 1388  ]
+[e :U 1386 ]
+{
+"86
+[; ;main.c: 86:             angle--;
+[e -- _angle -> 1 `i ]
+"87
+[; ;main.c: 87:                 if (angle < 32) ascend = 1;
+[e $ ! < _angle -> 32 `i 1389  ]
+[e = _ascend -> 1 `i ]
+[e :U 1389 ]
+"88
+[; ;main.c: 88:             }
+}
+[e :U 1388 ]
+"89
+[; ;main.c: 89:             PWM4_LoadDutyValue(angle);
+[e ( _PWM4_LoadDutyValue (1 -> _angle `us ]
+"90
+[; ;main.c: 90:             _delay((unsigned long)((20)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"91
+[; ;main.c: 91:             i++;
+[e ++ _i -> 1 `i ]
+"92
+[; ;main.c: 92:         }
+}
+[e :U 1385 ]
+"93
+[; ;main.c: 93:         if (i > 100) {
+[e $ ! > _i -> 100 `i 1390  ]
+{
+"94
+[; ;main.c: 94:             run = 0;
+[e = _run -> 0 `i ]
+"95
+[; ;main.c: 95:             set_motor_duty(0);
+[e ( _set_motor_duty (1 -> -> 0 `i `uc ]
+"96
+[; ;main.c: 96:         }
+}
+[e :U 1390 ]
+"98
+[; ;main.c: 98:     }
 }
 [e :U 1382 ]
 [e $U 1383  ]
 [e :U 1384 ]
-"86
-[; ;main.c: 86: }
+"99
+[; ;main.c: 99: }
 [e :UE 1381 ]
 }

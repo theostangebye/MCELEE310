@@ -15650,9 +15650,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 90 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 102 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 114 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -15961,11 +15961,18 @@ _Bool TMR2_HasOverflowOccured(void);
 # 129 "./mcc_generated_files/pwm3.h"
  void PWM3_LoadDutyValue(uint16_t dutyValue);
 # 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/pwm4.h" 1
+# 102 "./mcc_generated_files/pwm4.h"
+ void PWM4_Initialize(void);
+# 129 "./mcc_generated_files/pwm4.h"
+ void PWM4_LoadDutyValue(uint16_t dutyValue);
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "./mcc_generated_files/mcc.h"
+# 97 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
@@ -15982,20 +15989,34 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 71 "main.c"
+# 70 "main.c"
     int run = 1;
+    int i = 0;
+    PWM4_LoadDutyValue(40);
+    set_motor_duty(0);
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    set_motor_duty(24);
+    int angle = 40;
+    int ascend = 1;
+
     while (1)
     {
-        set_motor_duty(0);
-        _delay((unsigned long)((5000)*(4000000/4000.0)));
-
-        if (run)
-            set_motor_duty(50);
-        _delay((unsigned long)((1000)*(4000000/4000.0)));
-
-        set_motor_duty(0);
-        _delay((unsigned long)((5000)*(4000000/4000.0)));
-        run = 0;
+        if (run) {
+            if (ascend) {
+                angle++;
+                if (angle > 49) ascend = 0;
+            } else {
+            angle--;
+                if (angle < 32) ascend = 1;
+            }
+            PWM4_LoadDutyValue(angle);
+            _delay((unsigned long)((20)*(4000000/4000.0)));
+            i++;
+        }
+        if (i > 100) {
+            run = 0;
+            set_motor_duty(0);
+        }
 
     }
 }

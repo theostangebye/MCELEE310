@@ -56,6 +56,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7777
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 7777: extern volatile unsigned char SLRCONC __attribute__((address(0xF19)));
 [v _SLRCONC `Vuc ~T0 @X0 0 e@3865 ]
+"5525
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 5525: extern volatile unsigned char RA1PPS __attribute__((address(0xEE3)));
+[v _RA1PPS `Vuc ~T0 @X0 0 e@3811 ]
 "5481
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 5481: extern volatile unsigned char RA0PPS __attribute__((address(0xEE2)));
 [v _RA0PPS `Vuc ~T0 @X0 0 e@3810 ]
@@ -1328,8 +1331,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 62:     LATC = 0x00;
 [e = _LATC -> -> 0 `i `uc ]
 "67
-[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFE;
-[e = _TRISA -> -> 254 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFC;
+[e = _TRISA -> -> 252 `i `uc ]
 "68
 [; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0xFF;
 [e = _TRISB -> -> 255 `i `uc ]
@@ -1376,21 +1379,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 98:     SLRCONC = 0xFF;
 [e = _SLRCONC -> -> 255 `i `uc ]
 "107
-[; ;mcc_generated_files/pin_manager.c: 107:     RA0PPS = 0x07;
-[e = _RA0PPS -> -> 7 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 107:     RA1PPS = 0x08;
+[e = _RA1PPS -> -> 8 `i `uc ]
 "108
-[; ;mcc_generated_files/pin_manager.c: 108: }
+[; ;mcc_generated_files/pin_manager.c: 108:     RA0PPS = 0x07;
+[e = _RA0PPS -> -> 7 `i `uc ]
+"109
+[; ;mcc_generated_files/pin_manager.c: 109: }
 [e :UE 1381 ]
 }
-"110
-[; ;mcc_generated_files/pin_manager.c: 110: void PIN_MANAGER_IOC(void)
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
 "111
-[; ;mcc_generated_files/pin_manager.c: 111: {
+[; ;mcc_generated_files/pin_manager.c: 111: void PIN_MANAGER_IOC(void)
+[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
+"112
+[; ;mcc_generated_files/pin_manager.c: 112: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"112
-[; ;mcc_generated_files/pin_manager.c: 112: }
+"113
+[; ;mcc_generated_files/pin_manager.c: 113: }
 [e :UE 1382 ]
 }

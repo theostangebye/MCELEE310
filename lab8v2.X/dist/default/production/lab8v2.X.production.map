@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=/Applications/microchip/xc8/v2.05/pic/dat/en_msgs.txt -cs \
   -h+dist/default/production/lab8v2.X.production.sym \
   --cmf=dist/default/production/lab8v2.X.production.cmf -z -Q18F25Q10 \
-  -o/tmp/xcy7fZIgo --defsym=__MPLAB_BUILD=1 \
+  -o/tmp/xcBGKlRPV --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/lab8v2.X.production.map -E1 -ver=XC8 \
-  --acfsm=1493 -ASTACK=062h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
+  --acfsm=1493 -ASTACK=068h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
   -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh -AABS1=00h-07FFh \
   -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 -ABANK0=060h-0FFh \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcKXNvshO.o dist/default/production/lab8v2.X.production.o 
+  /tmp/xczPowKL1.o dist/default/production/lab8v2.X.production.o 
 
 Object code version is 3.11
 
@@ -35,49 +35,53 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcKXNvshO.o
+/tmp/xczPowKL1.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000      100   200000       0
                 config                           300000   300000        C   300000       0
 dist/default/production/lab8v2.X.production.o
-                text13                             7334     7334       18     399A       0
-                text12                             73B8     73B8       46     39DC       0
-                text11                             734C     734C       1C     39A6       0
-                text10                             7308     7308       16     3984       0
-                text9                              7368     7368       1E     39B4       0
-                text8                              731E     731E       16     398F       0
-                text7                              7386     7386       32     39C3       0
+                text15                             72E6     72E6       32     3973       0
+                text14                             727A     727A       18     393D       0
+                text13                             734A     734A       4A     39A5       0
+                text12                             72AC     72AC       1C     3956       0
+                text11                             724E     724E       16     3927       0
+                text10                             7264     7264       16     3932       0
+                text9                              72C8     72C8       1E     3964       0
+                text8                              7292     7292       1A     3949       0
+                text7                              7318     7318       32     398C       0
                 text6                              79A2     79A2      30C     3CD1       0
                 text5                              771A     771A      288     3B8D       0
                 text4                              7CAE     7CAE      352     3E57       0
-                text3                              7520     7520       BA     3A90       0
+                text3                              743C     743C       BA     3A1E       0
                 text2                              75DA     75DA      140     3AED       0
-                text1                              7478     7478       A8     3A3C       0
-                text0                              73FE     73FE       7A     39FF       0
+                text1                              7394     7394       A8     39CA       0
+                text0                              74F6     74F6       E4     3A7B       0
                 cstackCOMRAM                          1        1       5F        1       1
-                cstackBANK0                          60       60        2       60       1
-                cinit                              7302     7302        6     3981       0
+                cstackBANK0                          60       60        8       60       1
+                cinit                              7248     7248        6     3924       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text13                             7334     7334       18         0
-                text12                             73B8     73B8       46         0
-                text11                             734C     734C       1C         0
-                text10                             7308     7308       16         0
-                text9                              7368     7368       1E         0
-                text8                              731E     731E       16         0
-                text7                              7386     7386       32         0
+                text15                             72E6     72E6       32         0
+                text14                             727A     727A       18         0
+                text13                             734A     734A       4A         0
+                text12                             72AC     72AC       1C         0
+                text11                             724E     724E       16         0
+                text10                             7264     7264       16         0
+                text9                              72C8     72C8       1E         0
+                text8                              7292     7292       1A         0
+                text7                              7318     7318       32         0
                 text6                              79A2     79A2      30C         0
                 text5                              771A     771A      288         0
                 text4                              7CAE     7CAE      352         0
-                text3                              7520     7520       BA         0
+                text3                              743C     743C       BA         0
                 text2                              75DA     75DA      140         0
-                text1                              7478     7478       A8         0
-                text0                              73FE     73FE       7A         0
-                cinit                              7302     7302        6         0
+                text1                              7394     7394       A8         0
+                text0                              74F6     74F6       E4         0
+                cinit                              7248     7248        6         0
 
         CLASS   CONST          
 
@@ -95,7 +99,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          60       60        2         1
+                cstackBANK0                          60       60        8         1
 
         CLASS   BANK1          
 
@@ -127,32 +131,34 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
-                text0                          0073FE  00007A  007478      39FF       0  CODE    
-                text12                         0073B8  000046  0073FE      39DC       0  CODE    
+                text12                         0072AC  00001C  0072C8      3956       0  CODE    
+                text8                          007292  00001A  0072AC      3949       0  CODE    
+                text1                          007394  0000A8  00743C      39CA       0  CODE    
+                text3                          00743C  0000BA  0074F6      3A1E       0  CODE    
+                text0                          0074F6  0000E4  0075DA      3A7B       0  CODE    
+                text13                         00734A  00004A  007394      39A5       0  CODE    
+                text9                          0072C8  00001E  0072E6      3964       0  CODE    
+                text15                         0072E6  000032  007318      3973       0  CODE    
+                text7                          007318  000032  00734A      398C       0  CODE    
+                text14                         00727A  000018  007292      393D       0  CODE    
+                text11                         00724E  000016  007264      3927       0  CODE    
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                text1                          007478  0000A8  007520      3A3C       0  CODE    
-                text7                          007386  000032  0073B8      39C3       0  CODE    
-                text9                          007368  00001E  007386      39B4       0  CODE    
-                text3                          007520  0000BA  0075DA      3A90       0  CODE    
-                text5                          00771A  000288  0079A2      3B8D       0  CODE    
+                cinit                          007248  000006  00724E      3924       0  CODE    
+                text10                         007264  000016  00727A      3932       0  CODE    
                 text2                          0075DA  000140  00771A      3AED       0  CODE    
-                text13                         007334  000018  00734C      399A       0  CODE    
-                text8                          00731E  000016  007334      398F       0  CODE    
-                cinit                          007302  000006  007308      3981       0  CODE    
-                text10                         007308  000016  00731E      3984       0  CODE    
-                text11                         00734C  00001C  007368      39A6       0  CODE    
                 cstackCOMRAM                   000001  00005F  000060         1       1  COMRAM  
-                cstackBANK0                    000060  000002  000062        60       1  BANK0   
+                cstackBANK0                    000060  000008  000068        60       1  BANK0   
                 config                         300000  00000C  30000C    300000       0  CONFIG  
                 idloc                          200000  000100  200100    200000       0  IDLOC   
-                text4                          007CAE  000352  008000      3E57       0  CODE    
                 text6                          0079A2  00030C  007CAE      3CD1       0  CODE    
+                text5                          00771A  000288  0079A2      3B8D       0  CODE    
+                text4                          007CAE  000352  008000      3E57       0  CODE    
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            000062-0000FF               9E
+        BANK0            000068-0000FF               98
         BANK1            000100-0001FF              100
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
@@ -160,15 +166,15 @@ UNUSED ADDRESS RANGES
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           000062-0007FF              79E
-        CODE             000004-007301             72FE
-        CONST            000004-007301             72FE
+        BIGRAM           000068-0007FF              798
+        CODE             000004-007247             7244
+        CONST            000004-007247             7244
         EEDATA           310000-3100FF              100
-        MEDIUMCONST      000800-007301             6B02
-        RAM              000062-0007FF              100
+        MEDIUMCONST      000800-007247             6A48
+        RAM              000068-0007FF              100
         SFR              000E88-000FFF               78
-        SMALLCONST       000800-007301              100
-        STACK            000062-0007FF              79E
+        SMALLCONST       000800-007247              100
+        STACK            000068-0007FF              798
 
                                   Symbol Table
 
@@ -178,6 +184,7 @@ UNUSED ADDRESS RANGES
 ?___fltol                        cstackCOMRAM 000051
 ?___xxtofl                       cstackCOMRAM 000001
 PWM3_LoadDutyValue@dutyValue     cstackCOMRAM 000001
+PWM4_LoadDutyValue@dutyValue     cstackCOMRAM 000001
 _ANSELA                          (abs)        000F0C
 _ANSELB                          (abs)        000F14
 _ANSELC                          (abs)        000F1C
@@ -192,9 +199,9 @@ _OSCCON1                         (abs)        000ED3
 _OSCCON3                         (abs)        000ED5
 _OSCEN                           (abs)        000ED7
 _OSCFRQ                          (abs)        000ED9
-_OSCILLATOR_Initialize           text13       007334
+_OSCILLATOR_Initialize           text14       00727A
 _OSCTUNE                         (abs)        000ED8
-_PIN_MANAGER_Initialize          text12       0073B8
+_PIN_MANAGER_Initialize          text13       00734A
 _PIR4bits                        (abs)        000EC9
 _PMD0                            (abs)        000EDC
 _PMD1                            (abs)        000EDD
@@ -202,18 +209,24 @@ _PMD2                            (abs)        000EDE
 _PMD3                            (abs)        000EDF
 _PMD4                            (abs)        000EE0
 _PMD5                            (abs)        000EE1
-_PMD_Initialize                  text11       00734C
+_PMD_Initialize                  text12       0072AC
 _PR2                             (abs)        000FBB
 _PWM3CON                         (abs)        000FA4
 _PWM3DCH                         (abs)        000FA3
 _PWM3DCL                         (abs)        000FA2
-_PWM3_Initialize                 text10       007308
-_PWM3_LoadDutyValue              text7        007386
+_PWM3_Initialize                 text11       00724E
+_PWM3_LoadDutyValue              text7        007318
+_PWM4CON                         (abs)        000FA1
+_PWM4DCH                         (abs)        000FA0
+_PWM4DCL                         (abs)        000F9F
+_PWM4_Initialize                 text10       007264
+_PWM4_LoadDutyValue              text15       0072E6
 _RA0PPS                          (abs)        000EE2
+_RA1PPS                          (abs)        000EE3
 _SLRCONA                         (abs)        000F09
 _SLRCONB                         (abs)        000F11
 _SLRCONC                         (abs)        000F19
-_SYSTEM_Initialize               text8        00731E
+_SYSTEM_Initialize               text8        007292
 _T2CLKCON                        (abs)        000FBE
 _T2CON                           (abs)        000FBC
 _T2CONbits                       (abs)        000FBC
@@ -224,7 +237,7 @@ _T2RST                           (abs)        000FBF
 _T2RSTbits                       (abs)        000FBF
 _T2TMR                           (abs)        000FBA
 _TMR2                            (abs)        000FBA
-_TMR2_Initialize                 text9        007368
+_TMR2_Initialize                 text9        0072C8
 _TRISA                           (abs)        000F87
 _TRISB                           (abs)        000F88
 _TRISC                           (abs)        000F89
@@ -320,7 +333,7 @@ __Hrparam                        rparam       000000
 __Hsfr                           sfr          000000
 __Hsmallconst                    smallconst   000000
 __Hspace_0                       (abs)        30000C
-__Hspace_1                       (abs)        000062
+__Hspace_1                       (abs)        000068
 __Hspace_2                       (abs)        000000
 __Hstack                         stack        000000
 __Hstruct                        struct       000000
@@ -332,6 +345,8 @@ __Htext10                        text10       000000
 __Htext11                        text11       000000
 __Htext12                        text12       000000
 __Htext13                        text13       000000
+__Htext14                        text14       000000
+__Htext15                        text15       000000
 __Htext2                         text2        000000
 __Htext3                         text3        000000
 __Htext4                         text4        000000
@@ -405,6 +420,8 @@ __Ltext10                        text10       000000
 __Ltext11                        text11       000000
 __Ltext12                        text12       000000
 __Ltext13                        text13       000000
+__Ltext14                        text14       000000
+__Ltext15                        text15       000000
 __Ltext2                         text2        000000
 __Ltext3                         text3        000000
 __Ltext4                         text4        000000
@@ -414,7 +431,7 @@ __Ltext7                         text7        000000
 __Ltext8                         text8        000000
 __Ltext9                         text9        000000
 __S0                             (abs)        30000C
-__S1                             (abs)        000062
+__S1                             (abs)        000068
 __S2                             (abs)        000000
 ___fladd                         text6        0079A2
 ___fladd@a                       cstackCOMRAM 000045
@@ -441,7 +458,7 @@ ___flmul@grs                     cstackCOMRAM 000035
 ___flmul@prod                    cstackCOMRAM 00003B
 ___flmul@sign                    cstackCOMRAM 000034
 ___flmul@temp                    cstackCOMRAM 00003F
-___fltol                         text3        007520
+___fltol                         text3        00743C
 ___fltol@exp1                    cstackCOMRAM 00005A
 ___fltol@f1                      cstackCOMRAM 000051
 ___fltol@sign1                   cstackCOMRAM 000059
@@ -457,46 +474,52 @@ ___xxtofl@sign                   cstackCOMRAM 000009
 ___xxtofl@val                    cstackCOMRAM 000001
 __accesstop                      (abs)        000060
 __activetblptr                   (abs)        000000
-__end_of_OSCILLATOR_Initialize   text13       00734C
-__end_of_PIN_MANAGER_Initialize  text12       0073FE
-__end_of_PMD_Initialize          text11       007368
-__end_of_PWM3_Initialize         text10       00731E
-__end_of_PWM3_LoadDutyValue      text7        0073B8
-__end_of_SYSTEM_Initialize       text8        007334
-__end_of_TMR2_Initialize         text9        007386
+__end_of_OSCILLATOR_Initialize   text14       007292
+__end_of_PIN_MANAGER_Initialize  text13       007394
+__end_of_PMD_Initialize          text12       0072C8
+__end_of_PWM3_Initialize         text11       007264
+__end_of_PWM3_LoadDutyValue      text7        00734A
+__end_of_PWM4_Initialize         text10       00727A
+__end_of_PWM4_LoadDutyValue      text15       007318
+__end_of_SYSTEM_Initialize       text8        0072AC
+__end_of_TMR2_Initialize         text9        0072E6
 __end_of___fladd                 text6        007CAE
 __end_of___fldiv                 text5        0079A2
 __end_of___flmul                 text4        008000
-__end_of___fltol                 text3        0075DA
+__end_of___fltol                 text3        0074F6
 __end_of___xxtofl                text2        00771A
-__end_of__initialization         cinit        007302
-__end_of_main                    text0        007478
-__end_of_set_motor_duty          text1        007520
-__initialization                 cinit        007302
+__end_of__initialization         cinit        007248
+__end_of_main                    text0        0075DA
+__end_of_set_motor_duty          text1        00743C
+__initialization                 cinit        007248
 __mediumconst                    mediumconst  000000
-__pcinit                         cinit        007302
+__pcinit                         cinit        007248
 __pcstackBANK0                   cstackBANK0  000060
 __pcstackCOMRAM                  cstackCOMRAM 000001
-__ptext0                         text0        0073FE
-__ptext1                         text1        007478
-__ptext10                        text10       007308
-__ptext11                        text11       00734C
-__ptext12                        text12       0073B8
-__ptext13                        text13       007334
+__ptext0                         text0        0074F6
+__ptext1                         text1        007394
+__ptext10                        text10       007264
+__ptext11                        text11       00724E
+__ptext12                        text12       0072AC
+__ptext13                        text13       00734A
+__ptext14                        text14       00727A
+__ptext15                        text15       0072E6
 __ptext2                         text2        0075DA
-__ptext3                         text3        007520
+__ptext3                         text3        00743C
 __ptext4                         text4        007CAE
 __ptext5                         text5        00771A
 __ptext6                         text6        0079A2
-__ptext7                         text7        007386
-__ptext8                         text8        00731E
-__ptext9                         text9        007368
+__ptext7                         text7        007318
+__ptext8                         text8        007292
+__ptext9                         text9        0072C8
 __ramtop                         ramtop       000800
 __size_of_OSCILLATOR_Initialize  (abs)        000000
 __size_of_PIN_MANAGER_Initialize (abs)        000000
 __size_of_PMD_Initialize         (abs)        000000
 __size_of_PWM3_Initialize        (abs)        000000
 __size_of_PWM3_LoadDutyValue     (abs)        000000
+__size_of_PWM4_Initialize        (abs)        000000
+__size_of_PWM4_LoadDutyValue     (abs)        000000
 __size_of_SYSTEM_Initialize      (abs)        000000
 __size_of_TMR2_Initialize        (abs)        000000
 __size_of___fladd                (abs)        000000
@@ -507,20 +530,23 @@ __size_of___xxtofl               (abs)        000000
 __size_of_main                   (abs)        000000
 __size_of_set_motor_duty         (abs)        000000
 __smallconst                     smallconst   000000
-_main                            text0        0073FE
-_set_motor_duty                  text1        007478
-end_of_initialization            cinit        007302
+_main                            text0        0074F6
+_set_motor_duty                  text1        007394
+end_of_initialization            cinit        007248
 intlevel0                        text         000000
 intlevel1                        text         000000
 intlevel2                        text         000000
 intlevel3                        text         000000
+main@angle                       cstackBANK0  000066
+main@ascend                      cstackBANK0  000064
+main@i                           cstackBANK0  000062
 main@run                         cstackBANK0  000060
 set_motor_duty@duty              cstackCOMRAM 00005D
 set_motor_duty@duty_val          cstackCOMRAM 00005B
 stackhi                          (abs)        0007FF
-stacklo                          (abs)        000062
+stacklo                          (abs)        000068
 start                            init         000000
-start_initialization             cinit        007302
+start_initialization             cinit        007248
 
 
 FUNCTION INFORMATION:
@@ -531,6 +557,9 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
+  angle           2    6[BANK0 ] int 
+  ascend          2    4[BANK0 ] int 
+  i               2    2[BANK0 ] int 
   run             2    0[BANK0 ] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
@@ -542,12 +571,13 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
       Params:         0       0       0       0       0       0       0       0       0
-      Locals:         0       2       0       0       0       0       0       0       0
+      Locals:         0       8       0       0       0       0       0       0       0
       Temps:          2       0       0       0       0       0       0       0       0
-      Totals:         2       2       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
+      Totals:         2       8       0       0       0       0       0       0       0
+Total ram usage:       10 bytes
  Hardware stack levels required when called:    2
  This function calls:
+		_PWM4_LoadDutyValue
 		_SYSTEM_Initialize
 		_set_motor_duty
  This function is called by:
@@ -813,6 +843,7 @@ Total ram usage:        0 bytes
 		_PIN_MANAGER_Initialize
 		_PMD_Initialize
 		_PWM3_Initialize
+		_PWM4_Initialize
 		_TMR2_Initialize
  This function is called by:
 		_main
@@ -822,6 +853,35 @@ Total ram usage:        0 bytes
  *************** function _TMR2_Initialize *****************
  Defined at:
 		line 62 in file "mcc_generated_files/tmr2.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_SYSTEM_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _PWM4_Initialize *****************
+ Defined at:
+		line 58 in file "mcc_generated_files/pwm4.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -879,7 +939,7 @@ Total ram usage:        0 bytes
 
  *************** function _PMD_Initialize *****************
  Defined at:
-		line 73 in file "mcc_generated_files/mcc.c"
+		line 74 in file "mcc_generated_files/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -937,7 +997,7 @@ Total ram usage:        0 bytes
 
  *************** function _OSCILLATOR_Initialize *****************
  Defined at:
-		line 59 in file "mcc_generated_files/mcc.c"
+		line 60 in file "mcc_generated_files/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -964,6 +1024,35 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _PWM4_LoadDutyValue *****************
+ Defined at:
+		line 74 in file "mcc_generated_files/pwm4.c"
+ Parameters:    Size  Location     Type
+  dutyValue       2    0[COMRAM] unsigned short 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         2       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
 
 MODULE INFORMATION
 
@@ -973,18 +1062,24 @@ Module		Function		Class		Link	Load	Size
 
 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c estimated size: 321
 
+mcc_generated_files/pwm4.c
+		_PWM4_Initialize		CODE           	7264	0000	23
+		_PWM4_LoadDutyValue		CODE           	72E6	0000	51
+
+mcc_generated_files/pwm4.c estimated size: 74
+
 mcc_generated_files/tmr2.c
-		_TMR2_Initialize		CODE           	7368	0000	31
+		_TMR2_Initialize		CODE           	72C8	0000	31
 
 mcc_generated_files/tmr2.c estimated size: 31
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	73B8	0000	71
+		_PIN_MANAGER_Initialize		CODE           	734A	0000	75
 
-mcc_generated_files/pin_manager.c estimated size: 71
+mcc_generated_files/pin_manager.c estimated size: 75
 
 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-		___fltol       		CODE           	7520	0000	187
+		___fltol       		CODE           	743C	0000	187
 
 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c estimated size: 187
 
@@ -999,25 +1094,25 @@ mcc_generated_files/pin_manager.c estimated size: 71
 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c estimated size: 649
 
 motor.c
-		_set_motor_duty		CODE           	7478	0000	169
+		_set_motor_duty		CODE           	7394	0000	169
 
 motor.c estimated size: 169
 
 shared
-		__initialization		CODE           	7302	0000	1
+		__initialization		CODE           	7248	0000	1
 
 shared estimated size: 1
 
 mcc_generated_files/mcc.c
-		_PMD_Initialize		CODE           	734C	0000	29
-		_OSCILLATOR_Initialize		CODE           	7334	0000	25
-		_SYSTEM_Initialize		CODE           	731E	0000	23
+		_PMD_Initialize		CODE           	72AC	0000	29
+		_OSCILLATOR_Initialize		CODE           	727A	0000	25
+		_SYSTEM_Initialize		CODE           	7292	0000	27
 
-mcc_generated_files/mcc.c estimated size: 77
+mcc_generated_files/mcc.c estimated size: 81
 
 mcc_generated_files/pwm3.c
-		_PWM3_Initialize		CODE           	7308	0000	23
-		_PWM3_LoadDutyValue		CODE           	7386	0000	51
+		_PWM3_Initialize		CODE           	724E	0000	23
+		_PWM3_LoadDutyValue		CODE           	7318	0000	51
 
 mcc_generated_files/pwm3.c estimated size: 74
 
@@ -1027,7 +1122,7 @@ mcc_generated_files/pwm3.c estimated size: 74
 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c estimated size: 781
 
 main.c
-		_main          		CODE           	73FE	0000	123
+		_main          		CODE           	74F6	0000	229
 
-main.c estimated size: 123
+main.c estimated size: 229
 

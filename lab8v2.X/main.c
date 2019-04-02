@@ -67,20 +67,33 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
     int run = 1;
+    int i = 0;
+    PWM4_LoadDutyValue(40); // min is 31, max is 51, but 40 looks middle
+    set_motor_duty(0);
+    __delay_ms(1000);
+    set_motor_duty(24);
+    int angle = 40;
+    int ascend = 1;
+    
     while (1)
     {
-        set_motor_duty(0);
-        __delay_ms(5000);
-        
-        if (run)
-            set_motor_duty(50);
-        __delay_ms(1000);
-        
-        set_motor_duty(0);
-        __delay_ms(5000);
-        run = 0;
+        if (run) {
+            if (ascend) {
+                angle++;
+                if (angle > 49) ascend = 0;
+            } else {
+            angle--;
+                if (angle < 32) ascend = 1;
+            }
+            PWM4_LoadDutyValue(angle);
+            __delay_ms(20);
+            i++;
+        }
+        if (i > 100) {
+            run = 0;
+            set_motor_duty(0);
+        }
         
     }
 }

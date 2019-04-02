@@ -15650,9 +15650,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 90 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 102 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 114 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -15961,11 +15961,18 @@ _Bool TMR2_HasOverflowOccured(void);
 # 129 "mcc_generated_files/pwm3.h"
  void PWM3_LoadDutyValue(uint16_t dutyValue);
 # 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+
+# 1 "mcc_generated_files/pwm4.h" 1
+# 102 "mcc_generated_files/pwm4.h"
+ void PWM4_Initialize(void);
+# 129 "mcc_generated_files/pwm4.h"
+ void PWM4_LoadDutyValue(uint16_t dutyValue);
+# 56 "mcc_generated_files/mcc.h" 2
+# 71 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 84 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "mcc_generated_files/mcc.h"
+# 97 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -15976,6 +15983,7 @@ void SYSTEM_Initialize(void)
     PMD_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    PWM4_Initialize();
     PWM3_Initialize();
     TMR2_Initialize();
 }
