@@ -51,9 +51,12 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "interrupt_manager.h"
+#include "i2c1_driver.h"
 #include "pwm3.h"
 #include "tmr2.h"
 #include "pwm4.h"
+#include "drivers/i2c_master.h"
 
 
 

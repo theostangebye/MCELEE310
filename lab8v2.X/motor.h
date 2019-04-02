@@ -13,7 +13,7 @@
 extern "C" {
 #endif
 
-    void motor_init();
+    void motor_init(uint8_t max_duty);
     void motor_set(uint8_t duty);
 
 #ifdef	__cplusplus

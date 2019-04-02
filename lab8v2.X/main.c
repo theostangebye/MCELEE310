@@ -70,13 +70,14 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     int run = 1;
     int i = 0;
-    motor_init();
-    servo_init(40,10);
+    motor_init(30);
+    servo_init(41,10);
     __delay_ms(1000);
 
     
     while (1)
     {
+        
         if (run) {
             int i = 0;
             for (i = 0; i < 100; i++) {
@@ -92,28 +93,30 @@ void main(void)
             
             for (i = 0; i < 100; i++) {
                 servo_set((double)i/100);
-                __delay_ms(15);
+                __delay_ms(2);
             }
             
             for (i = 0; i < 100; i++) {
                 servo_set((double)(100-i)/100);
-                __delay_ms(15);
+                __delay_ms(2);
             }
             
             for (i = 0; i < 100; i++) {
                 servo_set((double)(-i)/100);
-                __delay_ms(15);
+                __delay_ms(2);
             }
             
             for (i = 0; i < 100; i++) {
                 servo_set((double)(-100+i)/100);
-                __delay_ms(15);
+                __delay_ms(2);
             }
             
             run = 0;
         }
         
         motor_set(0);
+        servo_set(0);
+        __delay_ms(10);
         servo_set(0);
     }
 }

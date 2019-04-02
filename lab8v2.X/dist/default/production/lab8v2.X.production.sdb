@@ -49,6 +49,54 @@ TMR2_CLC7_OUT 22
 TMR2_CLC8_OUT 23
 TMR2_RESERVED_3 24
 ]
+"80 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[e E9792 . `uc
+I2C_IDLE 0
+I2C_SEND_ADR_READ 1
+I2C_SEND_ADR_WRITE 2
+I2C_TX 3
+I2C_RX 4
+I2C_RCEN 5
+I2C_TX_EMPTY 6
+I2C_SEND_RESTART_READ 7
+I2C_SEND_RESTART_WRITE 8
+I2C_SEND_RESTART 9
+I2C_SEND_STOP 10
+I2C_RX_DO_ACK 11
+I2C_RX_DO_NACK_STOP 12
+I2C_RX_DO_NACK_RESTART 13
+I2C_RESET 14
+I2C_ADDRESS_NACK 15
+]
+[e E9633 . `uc
+I2C_NOERR 0
+I2C_BUSY 1
+I2C_FAIL 2
+]
+[e E9638 . `uc
+i2c_stop 1
+i2c_restart_read 2
+i2c_restart_write 3
+i2c_continue 4
+i2c_reset_link 5
+]
+"91
+[e E9810 . `uc
+i2c_dataComplete 0
+i2c_writeCollision 1
+i2c_addressNACK 2
+i2c_dataNACK 3
+i2c_timeOut 4
+i2c_NULL 5
+]
+"25 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_types.c
+[e E358 . `uc
+i2c_stop 1
+i2c_restart_read 2
+i2c_restart_write 3
+i2c_continue 4
+i2c_reset_link 5
+]
 "4 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/float.c
@@ -79,7 +127,97 @@ TMR2_RESERVED_3 24
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "51 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"51 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+"193 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[v _i2c_masterOperation i2c_masterOperation `(E9633  1 e 1 0 ]
+"230
+[v _i2c_poller i2c_poller `T(v  1 e 1 0 ]
+"239
+[v _do_I2C_RESET do_I2C_RESET `(E9792  1 s 1 do_I2C_RESET ]
+"247
+[v _do_I2C_IDLE do_I2C_IDLE `(E9792  1 s 1 do_I2C_IDLE ]
+"254
+[v _do_I2C_SEND_RESTART_READ do_I2C_SEND_RESTART_READ `(E9792  1 s 1 do_I2C_SEND_RESTART_READ ]
+"260
+[v _do_I2C_SEND_RESTART_WRITE do_I2C_SEND_RESTART_WRITE `(E9792  1 s 1 do_I2C_SEND_RESTART_WRITE ]
+"266
+[v _do_I2C_SEND_RESTART do_I2C_SEND_RESTART `(E9792  1 s 1 do_I2C_SEND_RESTART ]
+"272
+[v _do_I2C_SEND_STOP do_I2C_SEND_STOP `(E9792  1 s 1 do_I2C_SEND_STOP ]
+"278
+[v _do_I2C_SEND_ADR_READ do_I2C_SEND_ADR_READ `(E9792  1 s 1 do_I2C_SEND_ADR_READ ]
+"285
+[v _do_I2C_SEND_ADR_WRITE do_I2C_SEND_ADR_WRITE `(E9792  1 s 1 do_I2C_SEND_ADR_WRITE ]
+"292
+[v _do_I2C_RCEN do_I2C_RCEN `(E9792  1 s 1 do_I2C_RCEN ]
+"299
+[v _do_I2C_DO_ACK do_I2C_DO_ACK `(E9792  1 s 1 do_I2C_DO_ACK ]
+"305
+[v _do_I2C_DO_NACK_STOP do_I2C_DO_NACK_STOP `(E9792  1 s 1 do_I2C_DO_NACK_STOP ]
+"311
+[v _do_I2C_DO_NACK_RESTART do_I2C_DO_NACK_RESTART `(E9792  1 s 1 do_I2C_DO_NACK_RESTART ]
+"319
+[v _do_I2C_DO_ADDRESS_NACK do_I2C_DO_ADDRESS_NACK `(E9792  1 s 1 do_I2C_DO_ADDRESS_NACK ]
+"333
+[v _do_I2C_TX do_I2C_TX `(E9792  1 s 1 do_I2C_TX ]
+"357
+[v _do_I2C_RX do_I2C_RX `(E9792  1 s 1 do_I2C_RX ]
+"382
+[v _do_I2C_TX_EMPTY do_I2C_TX_EMPTY `(E9792  1 s 1 do_I2C_TX_EMPTY ]
+"419
+[v _i2c_ISR i2c_ISR `(v  1 e 1 0 ]
+"435
+[v _i2c_busCollisionISR i2c_busCollisionISR `(v  1 e 1 0 ]
+"443
+[v _returnStop returnStop `(E9638  1 s 1 returnStop ]
+"448
+[v _returnReset returnReset `(E9638  1 s 1 returnReset ]
+"453
+[v _setCallBack setCallBack `(v  1 s 1 setCallBack ]
+"38 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/i2c1_driver.c
+[v _mssp1_enableIRQ mssp1_enableIRQ `T(v  1 e 1 0 ]
+"43
+[v _mssp1_IRQisEnabled mssp1_IRQisEnabled `T(b  1 e 0 0 ]
+"48
+[v _mssp1_disableIRQ mssp1_disableIRQ `T(v  1 e 1 0 ]
+"53
+[v _mssp1_clearIRQ mssp1_clearIRQ `T(v  1 e 1 0 ]
+"58
+[v _mssp1_setIRQ mssp1_setIRQ `T(v  1 e 1 0 ]
+"68
+[v _mssp1_waitForEvent mssp1_waitForEvent `T(v  1 e 1 0 ]
+"83
+[v _i2c1_driver_open i2c1_driver_open `(b  1 e 0 0 ]
+"141
+[v _i2c1_driver_resetBus i2c1_driver_resetBus `T(v  1 e 1 0 ]
+"146
+[v _i2c1_driver_start i2c1_driver_start `T(v  1 e 1 0 ]
+"151
+[v _i2c1_driver_restart i2c1_driver_restart `T(v  1 e 1 0 ]
+"156
+[v _i2c1_driver_stop i2c1_driver_stop `T(v  1 e 1 0 ]
+"161
+[v _i2c1_driver_isNACK i2c1_driver_isNACK `T(b  1 e 0 0 ]
+"166
+[v _i2c1_driver_startRX i2c1_driver_startRX `T(v  1 e 1 0 ]
+"171
+[v _i2c1_driver_getRXData i2c1_driver_getRXData `T(uc  1 e 1 0 ]
+"186
+[v _i2c1_driver_TXData i2c1_driver_TXData `T(v  1 e 1 0 ]
+"196
+[v _i2c1_driver_sendACK i2c1_driver_sendACK `T(v  1 e 1 0 ]
+"202
+[v _i2c1_driver_sendNACK i2c1_driver_sendNACK `T(v  1 e 1 0 ]
+"253
+[v _i2c1_driver_clearBusCollision i2c1_driver_clearBusCollision `T(v  1 e 1 0 ]
+"258
+[v _i2c1_driver_setBusCollisionISR i2c1_driver_setBusCollisionISR `T(v  1 e 1 0 ]
+"262
+[v _i2c1_driver_setI2cISR i2c1_driver_setI2cISR `T(v  1 e 1 0 ]
+"52 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
@@ -107,24 +245,78 @@ TMR2_RESERVED_3 24
 [v _TMR2_Counter8BitSet TMR2_Counter8BitSet `(v  1 e 1 0 ]
 "147
 [v _TMR2_Period8BitSet TMR2_Period8BitSet `(v  1 e 1 0 ]
-"7 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
+"9 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
 [v _motor_init motor_init `(v  1 e 1 0 ]
-"15
+"18
 [v _motor_set motor_set `(v  1 e 1 0 ]
 "13 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/servo.c
 [v _servo_init servo_init `(v  1 e 1 0 ]
 "24
 [v _servo_set servo_set `(v  1 e 1 0 ]
-[s S132 . 1 `uc 1 TMR1IF 1 0 :1:0 
+"2229 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
+[v _SSPCLKPPS SSPCLKPPS `VEuc  1 e 1 @3762 ]
+"2439
+[v _SSPDATPPS SSPDATPPS `VEuc  1 e 1 @3763 ]
+[s S861 . 1 `uc 1 SSPIE 1 0 :1:0 
+`uc 1 BCLIE 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+"3440
+[s S867 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[s S873 . 1 `uc 1 RXB0IE 1 0 :1:0 
+]
+[s S875 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXB1IE 1 0 :1:1 
+]
+[s S878 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIE 1 0 :1:1 
+]
+[s S881 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXB2IE 1 0 :1:4 
+]
+[s S884 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXBNIE 1 0 :1:4 
+]
+[u S887 . 1 `S861 1 . 1 0 `S867 1 . 1 0 `S873 1 . 1 0 `S875 1 . 1 0 `S878 1 . 1 0 `S881 1 . 1 0 `S884 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES887  1 e 1 @3776 ]
+[s S922 . 1 `uc 1 SSPIF 1 0 :1:0 
+`uc 1 BCLIF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+"3835
+[s S928 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[s S934 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIF 1 0 :1:1 
+]
+[s S937 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXBNIF 1 0 :1:4 
+]
+[u S940 . 1 `S922 1 . 1 0 `S928 1 . 1 0 `S934 1 . 1 0 `S937 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES940  1 e 1 @3784 ]
+[s S144 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
 `uc 1 TMR5IF 1 0 :1:4 
 `uc 1 TMR6IF 1 0 :1:5 
 ]
-"3905 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
-[u S139 . 1 `S132 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES139  1 e 1 @3785 ]
+"3905
+[u S151 . 1 `S144 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES151  1 e 1 @3785 ]
 "4623
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @3795 ]
 "4763
@@ -151,6 +343,10 @@ TMR2_RESERVED_3 24
 [v _RA0PPS RA0PPS `VEuc  1 e 1 @3810 ]
 "5525
 [v _RA1PPS RA1PPS `VEuc  1 e 1 @3811 ]
+"6317
+[v _RC3PPS RC3PPS `VEuc  1 e 1 @3829 ]
+"6361
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @3830 ]
 "6785
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @3849 ]
 "6847
@@ -189,6 +385,199 @@ TMR2_RESERVED_3 24
 [v _TRISB TRISB `VEuc  1 e 1 @3976 ]
 "15157
 [v _TRISC TRISC `VEuc  1 e 1 @3977 ]
+"15566
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @3985 ]
+"15586
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @3986 ]
+"15706
+[v _SSP1MSK SSP1MSK `VEuc  1 e 1 @3987 ]
+"15776
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @3988 ]
+[s S1185 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"15925
+[s S1188 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S1191 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S1200 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S1205 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S1210 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S1213 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S1216 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S1221 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S1226 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S1232 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 R 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 D 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S1241 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S1247 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 I2C_START1 1 0 :1:3 
+`uc 1 I2C_STOP2 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S1253 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ1 1 0 :1:2 
+`uc 1 S2 1 0 :1:3 
+`uc 1 P2 1 0 :1:4 
+`uc 1 DATA_ADDRESS1 1 0 :1:5 
+]
+[s S1259 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A1 1 0 :1:5 
+]
+[s S1264 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A1 1 0 :1:5 
+]
+[s S1267 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_nA1 1 0 :1:5 
+]
+[s S1272 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W1 1 0 :1:2 
+]
+[s S1275 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_nW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT1 1 0 :1:5 
+]
+[s S1280 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W2 1 0 :1:2 
+]
+[s S1283 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A2 1 0 :1:5 
+]
+[s S1286 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA2 1 0 :1:5 
+]
+[s S1291 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE1 1 0 :1:2 
+]
+[s S1294 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS1 1 0 :1:5 
+]
+[s S1297 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS1 1 0 :1:5 
+]
+[u S1302 . 1 `S1185 1 . 1 0 `S1188 1 . 1 0 `S1191 1 . 1 0 `S1200 1 . 1 0 `S1205 1 . 1 0 `S1210 1 . 1 0 `S1213 1 . 1 0 `S1216 1 . 1 0 `S1221 1 . 1 0 `S1226 1 . 1 0 `S1232 1 . 1 0 `S1241 1 . 1 0 `S1247 1 . 1 0 `S1253 1 . 1 0 `S1259 1 . 1 0 `S1264 1 . 1 0 `S1267 1 . 1 0 `S1272 1 . 1 0 `S1275 1 . 1 0 `S1280 1 . 1 0 `S1283 1 . 1 0 `S1286 1 . 1 0 `S1291 1 . 1 0 `S1294 1 . 1 0 `S1297 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES1302  1 e 1 @3988 ]
+"16230
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @3989 ]
+[s S996 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"16260
+[s S1002 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S1007 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S1016 . 1 `S996 1 . 1 0 `S1002 1 . 1 0 `S1007 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1016  1 e 1 @3989 ]
+"16350
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @3990 ]
+[s S1106 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"16397
+[s S1115 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK 1 0 :5:1 
+]
+[s S1118 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S1125 . 1 `uc 1 SEN1 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+`uc 1 ADMSK21 1 0 :1:2 
+`uc 1 ADMSK31 1 0 :1:3 
+`uc 1 ACKEN1 1 0 :1:4 
+`uc 1 ACKDT1 1 0 :1:5 
+`uc 1 ACKSTAT1 1 0 :1:6 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S1134 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+`uc 1 PEN1 1 0 :1:2 
+`uc 1 RCEN1 1 0 :1:3 
+`uc 1 ADMSK41 1 0 :1:4 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[u S1141 . 1 `S1106 1 . 1 0 `S1115 1 . 1 0 `S1118 1 . 1 0 `S1125 1 . 1 0 `S1134 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES1141  1 e 1 @3990 ]
 "18355
 [v _PWM4DCL PWM4DCL `VEuc  1 e 1 @3999 ]
 "18421
@@ -201,13 +590,13 @@ TMR2_RESERVED_3 24
 [v _PWM3DCH PWM3DCH `VEuc  1 e 1 @4003 ]
 "18890
 [v _PWM3CON PWM3CON `VEuc  1 e 1 @4004 ]
-[s S88 . 1 `uc 1 C1TSEL 1 0 :2:0 
+[s S100 . 1 `uc 1 C1TSEL 1 0 :2:0 
 `uc 1 C2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
 "19429
-[s S93 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+[s S105 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 C2TSEL0 1 0 :1:2 
 `uc 1 C2TSEL1 1 0 :1:3 
@@ -216,8 +605,8 @@ TMR2_RESERVED_3 24
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S102 . 1 `S88 1 . 1 0 `S93 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES102  1 e 1 @4013 ]
+[u S114 . 1 `S100 1 . 1 0 `S105 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES114  1 e 1 @4013 ]
 "20670
 [v _T2TMR T2TMR `VEuc  1 e 1 @4026 ]
 "20675
@@ -228,16 +617,16 @@ TMR2_RESERVED_3 24
 [v _PR2 PR2 `VEuc  1 e 1 @4027 ]
 "20746
 [v _T2CON T2CON `VEuc  1 e 1 @4028 ]
-[s S276 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S288 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "20782
-[s S280 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S292 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S284 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S296 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -245,7 +634,7 @@ TMR2_RESERVED_3 24
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S292 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S304 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -254,56 +643,90 @@ TMR2_RESERVED_3 24
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S301 . 1 `S276 1 . 1 0 `S280 1 . 1 0 `S284 1 . 1 0 `S292 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES301  1 e 1 @4028 ]
+[u S313 . 1 `S288 1 . 1 0 `S292 1 . 1 0 `S296 1 . 1 0 `S304 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES313  1 e 1 @4028 ]
 "20892
 [v _T2HLT T2HLT `VEuc  1 e 1 @4029 ]
-[s S166 . 1 `uc 1 MODE 1 0 :5:0 
+[s S178 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "20925
-[s S171 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S183 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S177 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S189 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S182 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S194 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S188 . 1 `S166 1 . 1 0 `S171 1 . 1 0 `S177 1 . 1 0 `S182 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES188  1 e 1 @4029 ]
+[u S200 . 1 `S178 1 . 1 0 `S183 1 . 1 0 `S189 1 . 1 0 `S194 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES200  1 e 1 @4029 ]
 "21020
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @4030 ]
 "21178
 [v _T2RST T2RST `VEuc  1 e 1 @4031 ]
-[s S242 . 1 `uc 1 RSEL 1 0 :5:0 
+[s S254 . 1 `uc 1 RSEL 1 0 :5:0 
 ]
 "21203
-[s S244 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S256 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S249 . 1 `uc 1 T2RSEL 1 0 :5:0 
+[s S261 . 1 `uc 1 T2RSEL 1 0 :5:0 
 ]
-[s S251 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S263 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 ]
-[u S256 . 1 `S242 1 . 1 0 `S244 1 . 1 0 `S249 1 . 1 0 `S251 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES256  1 e 1 @4031 ]
+[u S268 . 1 `S254 1 . 1 0 `S256 1 . 1 0 `S261 1 . 1 0 `S263 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES268  1 e 1 @4031 ]
+[s S824 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"25416
+[s S832 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S836 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S840 . 1 `S824 1 . 1 0 `S832 1 . 1 0 `S836 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES840  1 e 1 @4082 ]
+[s S514 . 36 `uc 1 busy 1 0 :1:0 
+`uc 1 inUse 1 0 :1:1 
+`uc 1 bufferFree 1 0 :1:2 
+`uc 1 addressNACKCheck 1 0 :1:3 
+`uc 1 address 1 1 `*.2uc 1 data_ptr 2 2 `ui 1 data_length 2 4 `us 1 time_out 2 6 `us 1 time_out_value 2 8 `E9792 1 state 1 10 `E9633 1 error 1 11 `[6]*.37(E9638 1 callbackTable 12 12 `[6]*.2v 1 callbackPayload 12 24 ]
+"80 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[v _i2c_status i2c_status `S514  1 e 36 0 ]
+"400
+[v _fsmStateTable fsmStateTable `C[16]*.37(E9792  1 e 32 0 ]
+"77 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/i2c1_driver.h
+[v _i2c1_driver_busCollisionISR i2c1_driver_busCollisionISR `*.37(v  1 e 2 0 ]
+"78
+[v _i2c1_driver_i2cISR i2c1_driver_i2cISR `*.37(v  1 e 2 0 ]
+"4 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
+[v _max max `uc  1 e 1 0 ]
 "3 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/servo.c
 [v _center_val center_val `uc  1 e 1 0 ]
 "4
@@ -311,19 +734,19 @@ TMR2_RESERVED_3 24
 "51 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"81
-[v main@i_439 i `i  1 a 2 12 ]
+"82
+[v main@i_456 i `i  1 a 2 44 ]
 "71
-[v main@run run `i  1 a 2 6 ]
-"119
+[v main@run run `i  1 a 2 38 ]
+"122
 } 0
 "24 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/servo.c
 [v _servo_set servo_set `(v  1 e 1 0 ]
 {
 "25
-[v servo_set@new_val new_val `uc  1 a 1 94 ]
+[v servo_set@new_val new_val `uc  1 a 1 31 ]
 "24
-[v servo_set@pos pos `d  1 p 4 90 ]
+[v servo_set@pos pos `d  1 p 4 27 ]
 "27
 } 0
 "13
@@ -331,126 +754,128 @@ TMR2_RESERVED_3 24
 {
 [v servo_init@center center `uc  1 a 1 wreg ]
 [v servo_init@center center `uc  1 a 1 wreg ]
-[v servo_init@range range `uc  1 p 1 4 ]
-[v servo_init@center center `uc  1 a 1 5 ]
+[v servo_init@range range `uc  1 p 1 17 ]
+[v servo_init@center center `uc  1 a 1 18 ]
 "18
 } 0
 "74 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pwm4.c
 [v _PWM4_LoadDutyValue PWM4_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v PWM4_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+[v PWM4_LoadDutyValue@dutyValue dutyValue `us  1 p 2 13 ]
 "81
 } 0
-"7 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
+"9 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/motor.c
 [v _motor_init motor_init `(v  1 e 1 0 ]
 {
-"9
+[v motor_init@max_duty max_duty `uc  1 a 1 wreg ]
+[v motor_init@max_duty max_duty `uc  1 a 1 wreg ]
+[v motor_init@max_duty max_duty `uc  1 a 1 30 ]
+"12
 } 0
-"15
+"18
 [v _motor_set motor_set `(v  1 e 1 0 ]
 {
 [v motor_set@duty duty `uc  1 a 1 wreg ]
-"17
-[v motor_set@duty_val duty_val `i  1 a 2 90 ]
-"15
+"21
+[v motor_set@duty_val duty_val `i  1 a 2 27 ]
+"18
 [v motor_set@duty duty `uc  1 a 1 wreg ]
-"17
-[v motor_set@duty duty `uc  1 a 1 92 ]
-"19
+[v motor_set@duty duty `uc  1 a 1 29 ]
+"23
 } 0
 "10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+[v ___xxtofl@arg arg `ul  1 a 4 23 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+[v ___xxtofl@exp exp `uc  1 a 1 22 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
+[v ___xxtofl@val val `l  1 p 4 13 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+[v ___xxtofl@sign sign `uc  1 a 1 21 ]
 "44
 } 0
 "43 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 89 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 88 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 26 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 25 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 80 ]
+[v ___fltol@f1 f1 `d  1 p 4 21 ]
 "70
 } 0
 "8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S759 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1849 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S764 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S767 . 4 `l 1 i 4 0 `d 1 f 4 0 `S759 1 fAsBytes 4 0 `S764 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S767  1 a 4 58 ]
+[s S1854 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1857 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1849 1 fAsBytes 4 0 `S1854 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1857  1 a 4 7 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 52 ]
-[s S835 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 2 ]
+[s S1925 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S838 . 2 `s 1 i 2 0 `us 1 n 2 0 `S835 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S838  1 a 2 62 ]
+[u S1928 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1925 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1928  1 a 2 11 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 57 ]
+[v ___flmul@bexp bexp `uc  1 a 1 6 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 56 ]
+[v ___flmul@aexp aexp `uc  1 a 1 1 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 51 ]
+[v ___flmul@sign sign `uc  1 a 1 0 ]
 "8
-[v ___flmul@b b `d  1 p 4 39 ]
-[v ___flmul@a a `d  1 p 4 43 ]
+[v ___flmul@b b `d  1 p 4 52 ]
+[v ___flmul@a a `d  1 p 4 56 ]
 "205
 } 0
 "11 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 33 ]
+[v ___fldiv@grs grs `ul  1 a 4 46 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 26 ]
+[v ___fldiv@rem rem `ul  1 a 4 39 ]
 "20
-[v ___fldiv@new_exp new_exp `s  1 a 2 31 ]
+[v ___fldiv@new_exp new_exp `s  1 a 2 44 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 38 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 51 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 37 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 50 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 30 ]
+[v ___fldiv@sign sign `uc  1 a 1 43 ]
 "11
-[v ___fldiv@b b `d  1 p 4 14 ]
-[v ___fldiv@a a `d  1 p 4 18 ]
+[v ___fldiv@b b `d  1 p 4 27 ]
+[v ___fldiv@a a `d  1 p 4 31 ]
 "185
 } 0
 "10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 79 ]
+[v ___fladd@grs grs `uc  1 a 1 71 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 78 ]
+[v ___fladd@bexp bexp `uc  1 a 1 70 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 77 ]
+[v ___fladd@aexp aexp `uc  1 a 1 69 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 76 ]
+[v ___fladd@signs signs `uc  1 a 1 68 ]
 "10
-[v ___fladd@b b `d  1 p 4 64 ]
-[v ___fladd@a a `d  1 p 4 68 ]
+[v ___fladd@b b `d  1 p 4 13 ]
+[v ___fladd@a a `d  1 p 4 17 ]
 "237
 } 0
 "74 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pwm3.c
 [v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+[v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 13 ]
 "81
 } 0
-"51 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+"50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "59
@@ -478,10 +903,185 @@ TMR2_RESERVED_3 24
 "55 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"109
+"113
 } 0
 "61 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "73
+} 0
+"52 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"80
+} 0
+"435 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[v _i2c_busCollisionISR i2c_busCollisionISR `(v  1 e 1 0 ]
+{
+"438
+} 0
+"253 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/i2c1_driver.c
+[v _i2c1_driver_clearBusCollision i2c1_driver_clearBusCollision `T(v  1 e 1 0 ]
+{
+"256
+} 0
+"419 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[v _i2c_ISR i2c_ISR `(v  1 e 1 0 ]
+{
+"433
+} 0
+"53 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/i2c1_driver.c
+[v _mssp1_clearIRQ mssp1_clearIRQ `T(v  1 e 1 0 ]
+{
+"56
+} 0
+"357 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[v _do_I2C_RX do_I2C_RX `(E9792  1 s 1 do_I2C_RX ]
+{
+"380
+} 0
+"333
+[v _do_I2C_TX do_I2C_TX `(E9792  1 s 1 do_I2C_TX ]
+{
+"355
+} 0
+"319
+[v _do_I2C_DO_ADDRESS_NACK do_I2C_DO_ADDRESS_NACK `(E9792  1 s 1 do_I2C_DO_ADDRESS_NACK ]
+{
+"331
+} 0
+"311
+[v _do_I2C_DO_NACK_RESTART do_I2C_DO_NACK_RESTART `(E9792  1 s 1 do_I2C_DO_NACK_RESTART ]
+{
+"315
+} 0
+"305
+[v _do_I2C_DO_NACK_STOP do_I2C_DO_NACK_STOP `(E9792  1 s 1 do_I2C_DO_NACK_STOP ]
+{
+"309
+} 0
+"299
+[v _do_I2C_DO_ACK do_I2C_DO_ACK `(E9792  1 s 1 do_I2C_DO_ACK ]
+{
+"303
+} 0
+"292
+[v _do_I2C_RCEN do_I2C_RCEN `(E9792  1 s 1 do_I2C_RCEN ]
+{
+"297
+} 0
+"285
+[v _do_I2C_SEND_ADR_WRITE do_I2C_SEND_ADR_WRITE `(E9792  1 s 1 do_I2C_SEND_ADR_WRITE ]
+{
+"290
+} 0
+"278
+[v _do_I2C_SEND_ADR_READ do_I2C_SEND_ADR_READ `(E9792  1 s 1 do_I2C_SEND_ADR_READ ]
+{
+"283
+} 0
+"272
+[v _do_I2C_SEND_STOP do_I2C_SEND_STOP `(E9792  1 s 1 do_I2C_SEND_STOP ]
+{
+"276
+} 0
+"266
+[v _do_I2C_SEND_RESTART do_I2C_SEND_RESTART `(E9792  1 s 1 do_I2C_SEND_RESTART ]
+{
+"270
+} 0
+"260
+[v _do_I2C_SEND_RESTART_WRITE do_I2C_SEND_RESTART_WRITE `(E9792  1 s 1 do_I2C_SEND_RESTART_WRITE ]
+{
+"264
+} 0
+"254
+[v _do_I2C_SEND_RESTART_READ do_I2C_SEND_RESTART_READ `(E9792  1 s 1 do_I2C_SEND_RESTART_READ ]
+{
+"258
+} 0
+"247
+[v _do_I2C_IDLE do_I2C_IDLE `(E9792  1 s 1 do_I2C_IDLE ]
+{
+"252
+} 0
+"239
+[v _do_I2C_RESET do_I2C_RESET `(E9792  1 s 1 do_I2C_RESET ]
+{
+"245
+} 0
+"382
+[v _do_I2C_TX_EMPTY do_I2C_TX_EMPTY `(E9792  1 s 1 do_I2C_TX_EMPTY ]
+{
+"397
+} 0
+"58 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/i2c1_driver.c
+[v _mssp1_setIRQ mssp1_setIRQ `T(v  1 e 1 0 ]
+{
+"61
+} 0
+"161
+[v _i2c1_driver_isNACK i2c1_driver_isNACK `T(b  1 e 0 0 ]
+{
+"164
+} 0
+"186
+[v _i2c1_driver_TXData i2c1_driver_TXData `T(v  1 e 1 0 ]
+{
+[v i2c1_driver_TXData@d d `uc  1 a 1 wreg ]
+[v i2c1_driver_TXData@d d `uc  1 a 1 wreg ]
+"188
+[v i2c1_driver_TXData@d d `uc  1 a 1 0 ]
+"189
+} 0
+"171
+[v _i2c1_driver_getRXData i2c1_driver_getRXData `T(uc  1 e 1 0 ]
+{
+"174
+} 0
+"202
+[v _i2c1_driver_sendNACK i2c1_driver_sendNACK `T(v  1 e 1 0 ]
+{
+"206
+} 0
+"141
+[v _i2c1_driver_resetBus i2c1_driver_resetBus `T(v  1 e 1 0 ]
+{
+"144
+} 0
+"166
+[v _i2c1_driver_startRX i2c1_driver_startRX `T(v  1 e 1 0 ]
+{
+"169
+} 0
+"448 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/drivers/i2c_master.c
+[v _returnReset returnReset `(E9638  1 s 1 returnReset ]
+{
+[v returnReset@p p `*.2v  1 p 2 0 ]
+"451
+} 0
+"443
+[v _returnStop returnStop `(E9638  1 s 1 returnStop ]
+{
+"446
+} 0
+"156 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/i2c1_driver.c
+[v _i2c1_driver_stop i2c1_driver_stop `T(v  1 e 1 0 ]
+{
+"159
+} 0
+"151
+[v _i2c1_driver_restart i2c1_driver_restart `T(v  1 e 1 0 ]
+{
+"154
+} 0
+"196
+[v _i2c1_driver_sendACK i2c1_driver_sendACK `T(v  1 e 1 0 ]
+{
+"200
 } 0

@@ -1,24 +1,12 @@
 <config configVersion="1.1" device="PIC18F25Q10" coreVersion="4.65">
    <usedClasses class="java.util.HashMap">
       <entry>
-         <string>System Module</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
-      </entry>
-      <entry>
-         <string>INTERNAL OSCILLATOR</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.osc.Osc</string>
-      </entry>
-      <entry>
          <string>PMD</string>
          <string>class com.microchip.mcc.mcu8.systemManager.pmd.PMD</string>
       </entry>
       <entry>
          <string>PWM3</string>
          <string>class com.microchip.mcc.mcu8.modules.pwm.PWM</string>
-      </entry>
-      <entry>
-         <string>WWDT</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.wwdt.WWDT</string>
       </entry>
       <entry>
          <string>Pin Module</string>
@@ -35,6 +23,18 @@
       <entry>
          <string>Interrupt Module</string>
          <string>class com.microchip.mcc.mcu8.interruptManager.InterruptManager</string>
+      </entry>
+      <entry>
+         <string>System Module</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
+      </entry>
+      <entry>
+         <string>INTERNAL OSCILLATOR</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.osc.Osc</string>
+      </entry>
+      <entry>
+         <string>WWDT</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.wwdt.WWDT</string>
       </entry>
       <entry>
          <string>TMR2</string>
@@ -3515,7 +3515,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="moduleLoaded"/>
-         <value>0</value>
+         <value>7</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="T2INPPS"/>
@@ -6324,8 +6324,16 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
+         <file>mcc_generated_files/interrupt_manager.h</file>
+         <hash>b55b67d39491a8175befc1c392e5f25cf4d004558b1f092249885f9647d6fc9b</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/pwm3.c</file>
          <hash>ce3372901396d2a01c0c1792d43d100de2c040e8aee2730bb02ea872ab308cf5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/drivers/i2c_types.h</file>
+         <hash>7c0bd530c28ac856b2bef62e1ae3f71f1d2482d6b85163e28873a2bbc71fbdeb</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pwm4.c</file>
@@ -6333,11 +6341,19 @@
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.h</file>
-         <hash>dd60c55bab7d993c7272cac4fbba57be27a9c6d6866f01a8c94dc5800487eff3</hash>
+         <hash>99dd5beaa4254bd0e98a619c9ca000503a93ff153c585d4819a3acb35447b5a7</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/i2c1_driver.h</file>
+         <hash>25e23f5d0e60971734c925af5c373bfd21a03da1be310e4738f17cb9c15d68cf</hash>
       </entry>
       <entry>
          <file>main.c</file>
          <hash>d7b2ef85c51b7eb924bce14ab7c05ecadda38f7453e742f271950cd3f5f2f7ae</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/drivers/i2c_master.c</file>
+         <hash>87b34586913deb166449253a34dede75e496813439c70907ddbe2603e4b4c8b9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr2.h</file>
@@ -6348,16 +6364,28 @@
          <hash>d55aa70c522ec4a09830c5ffded69b4b477c003754c7b66cd82383799b1ef9cc</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/drivers/i2c_master.h</file>
+         <hash>36bb84ccc499f248a7106908086742739d3326d5e3ce09542993bafe4de7a79d</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/device_config.h</file>
          <hash>e60b5731e4e160b2f927d58d8cd2af8582e9dc0d9ead288128b16bfbd2bf9198</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>d7ba0a513f7f947180fcb9d379dcd2f8de62924c4063ba2b2de5104a555acc15</hash>
+         <hash>f845ca578dba503087f82ce0f7d35a531fe851153554390eb9f6a46d6b0689f9</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/drivers/i2c_types.c</file>
+         <hash>0787240e0cc4a5f38bae5d1241d4e122c7f28570a7e37a9273bf1643557d6611</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/device_config.c</file>
          <hash>326861405c8db2e338b46585c86d403f1fec267946ae33825df564fbf6dc3e4f</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/interrupt_manager.c</file>
+         <hash>ecfd68cb1a688cd8119cd06b463e925c60bb3cc6daae943523a2d974f6359d23</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pwm3.h</file>
@@ -6365,15 +6393,19 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.c</file>
-         <hash>d9d0b32a0d5e3054e9e3449824576871991432ef0f3ea101b5d1f68b877ea39f</hash>
+         <hash>1ef41f2a7f20a9e47dff679e0687b0c7348def98abfc98ecec0b8f3f04ab2926</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pwm4.h</file>
          <hash>3e2d3a27073360f9b0ee430b312ae7d5cb730c6c6454fd5ca02e08a256da04d5</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/i2c1_driver.c</file>
+         <hash>a642d743b5620ac8cac9a7e488254402877317342b9a0571a9cd0b32c01973c3</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/pin_manager.c</file>
-         <hash>cb6b6a7ccc6c3502b5f54b127206fcd7832200ef00a7d558bc111ceba58c3c98</hash>
+         <hash>54429d25ed03c2e5ecf38bbb88ab40c88711e3b6fcc526b95da5d12f197f3104</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
