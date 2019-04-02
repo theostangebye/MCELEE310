@@ -7,18 +7,9 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
-          <itemPath>mcc_generated_files/drivers/i2c_types.h</itemPath>
-          <itemPath>mcc_generated_files/drivers/i2c_master.h</itemPath>
-        </logicalFolder>
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
-        <itemPath>mcc_generated_files/tmr2.h</itemPath>
-        <itemPath>mcc_generated_files/pwm3.h</itemPath>
-        <itemPath>mcc_generated_files/pwm4.h</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
-        <itemPath>mcc_generated_files/i2c1_driver.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -31,25 +22,18 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
-          <itemPath>mcc_generated_files/drivers/i2c_master.c</itemPath>
-          <itemPath>mcc_generated_files/drivers/i2c_types.c</itemPath>
-        </logicalFolder>
         <itemPath>mcc_generated_files/device_config.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
-        <itemPath>mcc_generated_files/pwm3.c</itemPath>
-        <itemPath>mcc_generated_files/tmr2.c</itemPath>
-        <itemPath>mcc_generated_files/pwm4.c</itemPath>
         <itemPath>mcc_generated_files/custom_type_defs.h</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
-        <itemPath>mcc_generated_files/i2c1_driver.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>motor.h</itemPath>
       <itemPath>motor.c</itemPath>
       <itemPath>servo.c</itemPath>
       <itemPath>servo.h</itemPath>
+      <itemPath>car_ctrl.c</itemPath>
+      <itemPath>car_ctrl.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -190,6 +174,10 @@
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
       </XC8-config-global>
+      <item path="motor.c" ex="true" overriding="false">
+      </item>
+      <item path="motor.h" ex="true" overriding="false">
+      </item>
       <pk4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
@@ -236,6 +224,10 @@
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="voltagevalue" value="5.0"/>
       </pk4hybrid>
+      <item path="servo.c" ex="true" overriding="false">
+      </item>
+      <item path="servo.h" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

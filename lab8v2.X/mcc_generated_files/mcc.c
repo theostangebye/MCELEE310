@@ -49,13 +49,9 @@
 
 void SYSTEM_Initialize(void)
 {
-    INTERRUPT_Initialize();
     PMD_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    PWM4_Initialize();
-    PWM3_Initialize();
-    TMR2_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
@@ -66,8 +62,8 @@ void OSCILLATOR_Initialize(void)
     OSCCON3 = 0x00;
     // MFOEN disabled; LFOEN disabled; ADOEN disabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
     OSCEN = 0x00;
-    // HFFRQ 4_MHz; 
-    OSCFRQ = 0x02;
+    // HFFRQ 64_MHz; 
+    OSCFRQ = 0x08;
     // TUN 0; 
     OSCTUNE = 0x00;
 }

@@ -1,26 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F9717 `(v ~T0 @X0 0 tf ]
-[v F9719 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"74 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
+"68 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 68: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"16 ./motor.h
-[; ;./motor.h: 16:     void motor_init(uint8_t max_duty);
-[v _motor_init `(v ~T0 @X0 0 ef1`uc ]
-"16 ./servo.h
-[; ;./servo.h: 16:     void servo_init(uint8_t center, uint8_t range);
-[v _servo_init `(v ~T0 @X0 0 ef2`uc`uc ]
-[v F9277 `(v ~T0 @X0 1 tf1`ul ]
-"183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
-[v __delay `JF9277 ~T0 @X0 0 e ]
-[p i __delay ]
-"17 ./motor.h
-[; ;./motor.h: 17:     void motor_set(uint8_t duty);
-[v _motor_set `(v ~T0 @X0 0 ef1`uc ]
-"17 ./servo.h
-[; ;./servo.h: 17:     void servo_set(double pos);
-[v _servo_set `(v ~T0 @X0 0 ef1`d ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1272,12 +1254,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25839
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25839: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"77 ./mcc_generated_files/i2c1_driver.h
-[; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
-[v _i2c1_driver_busCollisionISR `*F9717 ~T0 @X0 1 e ]
-"78
-[; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
-[v _i2c1_driver_i2cISR `*F9719 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "51 main.c
 [; ;main.c: 51: void main(void)
@@ -1290,189 +1266,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;main.c: 54:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"71
-[; ;main.c: 71:     int run = 1;
-[v _run `i ~T0 @X0 1 a ]
-[e = _run -> 1 `i ]
 "72
-[; ;main.c: 72:     int i = 0;
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
+[; ;main.c: 72:     while (1)
+[e :U 1383 ]
 "73
-[; ;main.c: 73:     motor_init(50);
-[e ( _motor_init (1 -> -> 50 `i `uc ]
-"74
-[; ;main.c: 74:     servo_init(41,10);
-[e ( _servo_init (2 , -> -> 41 `i `uc -> -> 10 `i `uc ]
+[; ;main.c: 73:     {
+{
 "75
-[; ;main.c: 75:     _delay((unsigned long)((1000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"78
-[; ;main.c: 78:     while (1)
-[e :U 1385 ]
-"79
-[; ;main.c: 79:     {
-{
-"81
-[; ;main.c: 81:         if (run) {
-[e $ ! != _run -> 0 `i 1387  ]
-{
-"82
-[; ;main.c: 82:             int i = 0;
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-"83
-[; ;main.c: 83:             for (i = 0; i < 100; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1388  ]
-[e $U 1389  ]
-[e :U 1388 ]
-{
-"84
-[; ;main.c: 84:                 motor_set(i);
-[e ( _motor_set (1 -> _i `uc ]
-"85
-[; ;main.c: 85:                 _delay((unsigned long)((15)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"86
-[; ;main.c: 86:             }
+[; ;main.c: 75:     }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1388  ]
-[e :U 1389 ]
-}
-"88
-[; ;main.c: 88:             for (i = 0; i < 100; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1391  ]
-[e $U 1392  ]
-[e :U 1391 ]
-{
-"89
-[; ;main.c: 89:                 motor_set(100-i);
-[e ( _motor_set (1 -> - -> 100 `i _i `uc ]
-"90
-[; ;main.c: 90:                 _delay((unsigned long)((15)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"91
-[; ;main.c: 91:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1391  ]
-[e :U 1392 ]
-}
-"94
-[; ;main.c: 94:             for (i = 0; i < 100; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1394  ]
-[e $U 1395  ]
-[e :U 1394 ]
-{
-"95
-[; ;main.c: 95:                 servo_set((double)i/100);
-[e ( _servo_set (1 / -> _i `d -> -> 100 `i `d ]
-"96
-[; ;main.c: 96:                 _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"97
-[; ;main.c: 97:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1394  ]
-[e :U 1395 ]
-}
-"99
-[; ;main.c: 99:             for (i = 0; i < 100; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1397  ]
-[e $U 1398  ]
-[e :U 1397 ]
-{
-"100
-[; ;main.c: 100:                 servo_set((double)(100-i)/100);
-[e ( _servo_set (1 / -> - -> 100 `i _i `d -> -> 100 `i `d ]
-"101
-[; ;main.c: 101:                 _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"102
-[; ;main.c: 102:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1397  ]
-[e :U 1398 ]
-}
-"104
-[; ;main.c: 104:             for (i = 0; i < 100; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1400  ]
-[e $U 1401  ]
-[e :U 1400 ]
-{
-"105
-[; ;main.c: 105:                 servo_set((double)(-i)/100);
-[e ( _servo_set (1 / -> -U _i `d -> -> 100 `i `d ]
-"106
-[; ;main.c: 106:                 _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"107
-[; ;main.c: 107:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1400  ]
-[e :U 1401 ]
-}
-"109
-[; ;main.c: 109:             for (i = 0; i < 100; i++) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 1403  ]
-[e $U 1404  ]
-[e :U 1403 ]
-{
-"110
-[; ;main.c: 110:                 servo_set((double)(-100+i)/100);
-[e ( _servo_set (1 / -> + -U -> 100 `i _i `d -> -> 100 `i `d ]
-"111
-[; ;main.c: 111:                 _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"112
-[; ;main.c: 112:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 1403  ]
-[e :U 1404 ]
-}
-"114
-[; ;main.c: 114:             run = 0;
-[e = _run -> 0 `i ]
-"115
-[; ;main.c: 115:         }
-}
-[e :U 1387 ]
-"117
-[; ;main.c: 117:         motor_set(0);
-[e ( _motor_set (1 -> -> 0 `i `uc ]
-"118
-[; ;main.c: 118:         servo_set(0);
-[e ( _servo_set (1 -> -> 0 `i `d ]
-"119
-[; ;main.c: 119:         _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"120
-[; ;main.c: 120:         servo_set(0);
-[e ( _servo_set (1 -> -> 0 `i `d ]
-"121
-[; ;main.c: 121:     }
-}
+[e :U 1382 ]
+[e $U 1383  ]
 [e :U 1384 ]
-[e $U 1385  ]
-[e :U 1386 ]
-"122
-[; ;main.c: 122: }
-[e :UE 1383 ]
+"76
+[; ;main.c: 76: }
+[e :UE 1381 ]
 }
