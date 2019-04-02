@@ -1,8 +1,45 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"26 ./car_ctrl.h
+[; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
+[c E9392 0 1 2 3 .. ]
+[n E9392 ctl_state_t state_unset state_high state_vary state_low  ]
+"18
+[; ;./car_ctrl.h: 18: struct carctl_t {
+[s S1381 `a 1 `E9392 1 `uc 1 `uc 1 `uc 1 ]
+[n S1381 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
-"68 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 68: void SYSTEM_Initialize(void);
+"70 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"25396 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25396:     struct {
+[s S1351 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1351 . INT0EDG INT1EDG INT2EDG . IPEN PEIE_GIEL GIE_GIEH ]
+"25405
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25405:     struct {
+[s S1352 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1352 . . PEIE GIE ]
+"25410
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25410:     struct {
+[s S1353 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1353 . . GIEL GIEH ]
+"25395
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25395: typedef union {
+[u S1350 `S1351 1 `S1352 1 `S1353 1 ]
+[n S1350 . . . . ]
+"25416
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25416: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS1350 ~T0 @X0 0 e@4082 ]
+"28 ./car_ctrl.h
+[; ;./car_ctrl.h: 28: void carcontrol_init();
+[v _carcontrol_init `(v ~T0 @X0 0 e? ]
+[v F9277 `(v ~T0 @X0 1 tf1`ul ]
+"183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
+[v __delay `JF9277 ~T0 @X0 0 e ]
+[p i __delay ]
+"34 ./car_ctrl.h
+[; ;./car_ctrl.h: 34: void carcontrol_throttle(uint8_t throttle);
+[v _carcontrol_throttle `(v ~T0 @X0 0 ef1`uc ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1254,31 +1291,91 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25839
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25839: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"26 ./car_ctrl.h
+[; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
+[v _carctl `VS1381 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51 main.c
-[; ;main.c: 51: void main(void)
+"50 main.c
+[; ;main.c: 50: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"52
-[; ;main.c: 52: {
+"51
+[; ;main.c: 51: {
 {
 [e :U _main ]
 [f ]
-"54
-[; ;main.c: 54:     SYSTEM_Initialize();
+"53
+[; ;main.c: 53:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
+"60
+[; ;main.c: 60:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 2 -> -> 1 `i `uc ]
+"66
+[; ;main.c: 66:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
+"71
+[; ;main.c: 71:     carcontrol_init();
+[e ( _carcontrol_init ..  ]
 "72
-[; ;main.c: 72:     while (1)
-[e :U 1383 ]
-"73
-[; ;main.c: 73:     {
-{
+[; ;main.c: 72:     _delay((unsigned long)((1000)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"74
+[; ;main.c: 74:     int i;
+[v _i `i ~T0 @X0 1 a ]
 "75
-[; ;main.c: 75:     }
-}
-[e :U 1382 ]
-[e $U 1383  ]
-[e :U 1384 ]
+[; ;main.c: 75:     for (i=0; i<100; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 100 `i 1383  ]
+[e $U 1384  ]
+[e :U 1383 ]
+{
 "76
-[; ;main.c: 76: }
-[e :UE 1381 ]
+[; ;main.c: 76:         carcontrol_throttle(i);
+[e ( _carcontrol_throttle (1 -> _i `uc ]
+"77
+[; ;main.c: 77:         _delay((unsigned long)((33)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 33 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"78
+[; ;main.c: 78:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 100 `i 1383  ]
+[e :U 1384 ]
+}
+"79
+[; ;main.c: 79:     for (i=0; i<100; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 100 `i 1386  ]
+[e $U 1387  ]
+[e :U 1386 ]
+{
+"80
+[; ;main.c: 80:         carcontrol_throttle(100-i);
+[e ( _carcontrol_throttle (1 -> - -> 100 `i _i `uc ]
+"81
+[; ;main.c: 81:         _delay((unsigned long)((33)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 33 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"82
+[; ;main.c: 82:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 100 `i 1386  ]
+[e :U 1387 ]
+}
+"85
+[; ;main.c: 85:     while (1)
+[e :U 1390 ]
+"86
+[; ;main.c: 86:     {
+{
+"88
+[; ;main.c: 88:     }
+}
+[e :U 1389 ]
+[e $U 1390  ]
+[e :U 1391 ]
+"89
+[; ;main.c: 89: }
+[e :UE 1382 ]
 }

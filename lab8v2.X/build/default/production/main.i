@@ -15650,9 +15650,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 78 "./mcc_generated_files/pin_manager.h"
+# 98 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 90 "./mcc_generated_files/pin_manager.h"
+# 110 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -15742,25 +15742,259 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
-# 68 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 110 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr2.h" 1
+# 79 "./mcc_generated_files/tmr2.h"
+typedef enum
+{
+# 89 "./mcc_generated_files/tmr2.h"
+   TMR2_ROP_STARTS_TMRON,
+
+
+
+
+   TMR2_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR2_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR2_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR2_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR2_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR2_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR2_ROP_RESETS_ERSHIGH,
+# 135 "./mcc_generated_files/tmr2.h"
+   TMR2_OS_STARTS_TMRON,
+
+
+
+
+   TMR2_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR2_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR2_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR2_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR2_OS_STARTS_ERSRISINGEDGEDETECT,
+
+} TMR2_HLT_MODE;
+# 185 "./mcc_generated_files/tmr2.h"
+typedef enum
+{
+
+
+    TMR2_T2INPPS,
+
+
+
+    TMR2_RESERVED,
+
+
+
+    TMR2_T4POSTSCALED,
+
+
+
+    TMR2_T6POSTSCALED,
+
+
+
+    TMR2_CCP1_OUT,
+
+
+
+    TMR2_CCP2_OUT,
+
+
+
+    TMR2_PWM3_OUT,
+
+
+
+    TMR2_PWM4_OUT,
+
+
+
+    TMR2_CMP1_OUT,
+
+
+
+    TMR2_CMP2_OUT,
+
+
+
+    TMR2_ZCD_OUTPUT,
+
+
+
+    TMR2_RESERVED_2,
+
+
+
+    TMR2_UART1_RX_EDGE,
+
+
+
+    TMR2_UART1_TX_EDGE,
+
+
+
+    TMR2_UART2_RX_EDGE,
+
+
+
+    TMR2_UART2_TX_EDGE,
+
+
+
+    TMR2_CLC1_OUT,
+
+
+
+    TMR2_CLC2_OUT,
+
+
+
+    TMR2_CLC3_OUT,
+
+
+
+    TMR2_CLC4_OUT,
+
+
+
+    TMR2_CLC5_OUT,
+
+
+
+    TMR2_CLC6_OUT,
+
+
+
+    TMR2_CLC7_OUT,
+
+
+
+    TMR2_CLC8_OUT,
+
+
+
+    TMR2_RESERVED_3,
+
+} TMR2_HLT_EXT_RESET_SOURCE;
+# 329 "./mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+# 365 "./mcc_generated_files/tmr2.h"
+void TMR2_ModeSet(TMR2_HLT_MODE mode);
+# 400 "./mcc_generated_files/tmr2.h"
+void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
+# 429 "./mcc_generated_files/tmr2.h"
+void TMR2_Start(void);
+# 458 "./mcc_generated_files/tmr2.h"
+void TMR2_StartTimer(void);
+# 490 "./mcc_generated_files/tmr2.h"
+void TMR2_Stop(void);
+# 522 "./mcc_generated_files/tmr2.h"
+void TMR2_StopTimer(void);
+# 557 "./mcc_generated_files/tmr2.h"
+uint8_t TMR2_Counter8BitGet(void);
+# 592 "./mcc_generated_files/tmr2.h"
+uint8_t TMR2_ReadTimer(void);
+# 631 "./mcc_generated_files/tmr2.h"
+void TMR2_Counter8BitSet(uint8_t timerVal);
+# 670 "./mcc_generated_files/tmr2.h"
+void TMR2_WriteTimer(uint8_t timerVal);
+# 722 "./mcc_generated_files/tmr2.h"
+void TMR2_Period8BitSet(uint8_t periodVal);
+# 774 "./mcc_generated_files/tmr2.h"
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+# 792 "./mcc_generated_files/tmr2.h"
+void TMR2_ISR(void);
+# 810 "./mcc_generated_files/tmr2.h"
+ void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 828 "./mcc_generated_files/tmr2.h"
+extern void (*TMR2_InterruptHandler)(void);
+# 846 "./mcc_generated_files/tmr2.h"
+void TMR2_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+# 70 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 81 "./mcc_generated_files/mcc.h"
+# 83 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 94 "./mcc_generated_files/mcc.h"
+# 96 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
-# 1 "./motor.h" 1
-# 16 "./motor.h"
-    void motor_init(uint8_t max_duty);
-    void motor_set(uint8_t duty);
-# 45 "main.c" 2
+# 1 "./car_ctrl.h" 1
+# 16 "./car_ctrl.h"
+enum ctl_state_t {state_unset, state_high, state_vary, state_low};
 
-# 1 "./servo.h" 1
-# 16 "./servo.h"
-    void servo_init(uint8_t center, uint8_t range);
-    void servo_set(double pos);
-# 46 "main.c" 2
+struct carctl_t {
+ _Bool initialized;
+ enum ctl_state_t state;
+ uint8_t stateDuration;
+ uint8_t throttleHighTime;
+ uint8_t servoHighTime;
+};
+
+volatile struct carctl_t carctl;
+
+void carcontrol_init();
+
+void carcontrol_ISR();
+
+void carcontrol_steering(int8_t steering);
+
+void carcontrol_throttle(uint8_t throttle);
+# 45 "main.c" 2
 
 
 
@@ -15770,7 +16004,37 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 72 "main.c"
+
+
+
+
+
+
+    (INTCONbits.GIE = 1);
+
+
+
+
+
+    (INTCONbits.PEIE = 1);
+
+
+
+
+    carcontrol_init();
+    _delay((unsigned long)((1000)*(64000000/4000.0)));
+
+    int i;
+    for (i=0; i<100; i++) {
+        carcontrol_throttle(i);
+        _delay((unsigned long)((33)*(64000000/4000.0)));
+    }
+    for (i=0; i<100; i++) {
+        carcontrol_throttle(100-i);
+        _delay((unsigned long)((33)*(64000000/4000.0)));
+    }
+
+
     while (1)
     {
 

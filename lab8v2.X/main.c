@@ -42,8 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "motor.h"
-#include "servo.h"
+#include "car_ctrl.h"
 
 /*
                          Main application
@@ -58,20 +57,34 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
+    carcontrol_init();
+    __delay_ms(1000);
+    
+    int i;
+    for (i=0; i<100; i++) {
+        carcontrol_throttle(i);
+        __delay_ms(33);
+    }
+    for (i=0; i<100; i++) {
+        carcontrol_throttle(100-i);
+        __delay_ms(33);
+    }
+    
+    
     while (1)
-    {
-        
+    {   
+//        carcontrol_throttle(30);
     }
 }
 /**
