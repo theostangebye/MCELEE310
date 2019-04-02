@@ -16255,7 +16255,7 @@ void main(void)
 # 71 "main.c"
     int run = 1;
     int i = 0;
-    motor_init(30);
+    motor_init(50);
     servo_init(41,10);
     _delay((unsigned long)((1000)*(4000000/4000.0)));
 

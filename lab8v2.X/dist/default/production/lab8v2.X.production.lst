@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Tue Apr  2 14:27:41 2019
+                                                                                               Tue Apr  2 15:47:17 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	18F25Q10
@@ -607,10 +607,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    593  00082E  6F86               	movwf	main@run& (0+255),b
    594                           
    595                           ; BSR set to: 0
-   596                           ;main.c: 73:     motor_init(30);
+   596                           ;main.c: 73:     motor_init(50);
    597                           
    598                           ; BSR set to: 0
-   599  000830  0E1E               	movlw	30
+   599  000830  0E32               	movlw	50
    600  000832  ECBF  F00D         	call	_motor_init
    601                           
    602                           ;main.c: 74:     servo_init(41,10);
@@ -6877,7 +6877,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Tue Apr  2 14:27:41 2019
+Symbol Table                                                                                   Tue Apr  2 15:47:17 2019
 
                           returnReset@p 0001                            ___fldiv@aexp 0034  
                           ___fldiv@bexp 0033                            ___fldiv@sign 002C  

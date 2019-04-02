@@ -70,7 +70,7 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     int run = 1;
     int i = 0;
-    motor_init(30);
+    motor_init(50);
     servo_init(41,10);
     __delay_ms(1000);
 

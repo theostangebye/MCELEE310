@@ -1299,8 +1299,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 "73
-[; ;main.c: 73:     motor_init(30);
-[e ( _motor_init (1 -> -> 30 `i `uc ]
+[; ;main.c: 73:     motor_init(50);
+[e ( _motor_init (1 -> -> 50 `i `uc ]
 "74
 [; ;main.c: 74:     servo_init(41,10);
 [e ( _servo_init (2 , -> -> 41 `i `uc -> -> 10 `i `uc ]

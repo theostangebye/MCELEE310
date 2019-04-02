@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xchjbhNCn.o
+$/tmp/xcMOd9Gpz.o
 idloc IDLOC 0 200000 200000 100 1
 init CODE 0 98 98 4 1
 reset_vec CODE 0 0 0 4 1
@@ -738,27 +738,27 @@ B5A text0 CODE >117:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.
 B60 text0 CODE >118:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 B76 text0 CODE >119:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 B88 text0 CODE >120:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-1AA8 cinit CODE >9641:/tmp/xcpW7kujy
-1AA8 cinit CODE >9643:/tmp/xcpW7kujy
-1AA8 cinit CODE >9646:/tmp/xcpW7kujy
-1AA8 cinit CODE >9676:/tmp/xcpW7kujy
-1AAC cinit CODE >9677:/tmp/xcpW7kujy
-1AAE cinit CODE >9678:/tmp/xcpW7kujy
-1AAE cinit CODE >9679:/tmp/xcpW7kujy
-1AB0 cinit CODE >9680:/tmp/xcpW7kujy
-1AB2 cinit CODE >9681:/tmp/xcpW7kujy
-1AB4 cinit CODE >9684:/tmp/xcpW7kujy
-1AB6 cinit CODE >9685:/tmp/xcpW7kujy
-1AB8 cinit CODE >9686:/tmp/xcpW7kujy
-1ABA cinit CODE >9687:/tmp/xcpW7kujy
-1ABC cinit CODE >9688:/tmp/xcpW7kujy
-1ABE cinit CODE >9694:/tmp/xcpW7kujy
-1ABE cinit CODE >9696:/tmp/xcpW7kujy
-1AC0 cinit CODE >9697:/tmp/xcpW7kujy
-1AC2 cinit CODE >9699:/tmp/xcpW7kujy
-1AC4 cinit CODE >9700:/tmp/xcpW7kujy
-1AC6 cinit CODE >9701:/tmp/xcpW7kujy
-1AC8 cinit CODE >9702:/tmp/xcpW7kujy
+1AA8 cinit CODE >9641:/tmp/xcb0gFRWn
+1AA8 cinit CODE >9643:/tmp/xcb0gFRWn
+1AA8 cinit CODE >9646:/tmp/xcb0gFRWn
+1AA8 cinit CODE >9676:/tmp/xcb0gFRWn
+1AAC cinit CODE >9677:/tmp/xcb0gFRWn
+1AAE cinit CODE >9678:/tmp/xcb0gFRWn
+1AAE cinit CODE >9679:/tmp/xcb0gFRWn
+1AB0 cinit CODE >9680:/tmp/xcb0gFRWn
+1AB2 cinit CODE >9681:/tmp/xcb0gFRWn
+1AB4 cinit CODE >9684:/tmp/xcb0gFRWn
+1AB6 cinit CODE >9685:/tmp/xcb0gFRWn
+1AB8 cinit CODE >9686:/tmp/xcb0gFRWn
+1ABA cinit CODE >9687:/tmp/xcb0gFRWn
+1ABC cinit CODE >9688:/tmp/xcb0gFRWn
+1ABE cinit CODE >9694:/tmp/xcb0gFRWn
+1ABE cinit CODE >9696:/tmp/xcb0gFRWn
+1AC0 cinit CODE >9697:/tmp/xcb0gFRWn
+1AC2 cinit CODE >9699:/tmp/xcb0gFRWn
+1AC4 cinit CODE >9700:/tmp/xcb0gFRWn
+1AC6 cinit CODE >9701:/tmp/xcb0gFRWn
+1AC8 cinit CODE >9702:/tmp/xcb0gFRWn
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -788,7 +788,7 @@ _PWM4DCH FA0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _PWM4DCL F9F 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __end_of_do_I2C_RCEN 1BDA 0 CODE 0 text31 dist/default/production/lab8v2.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/lab8v2.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xchjbhNCn.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcMOd9Gpz.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/lab8v2.X.production.o
 __end_of_INTERRUPT_Initialize 1C4E 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
 _PMD_Initialize 1B08 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
@@ -810,10 +810,10 @@ _WPUA F0B 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUB F13 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUC F1B 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUE F28 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xchjbhNCn.o
+___sp 0 0 STACK 2 stack /tmp/xcMOd9Gpz.o
 _main 822 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
 btemp 52 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
-start 98 0 CODE 0 init /tmp/xchjbhNCn.o
+start 98 0 CODE 0 init /tmp/xcMOd9Gpz.o
 ___flmul@aexp 61 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 ___flmul@bexp 66 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 ___flmul@prod 67 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
@@ -837,11 +837,11 @@ ttemp6 56 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 ttemp7 5A 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __end_of_i2c1_driver_isNACK 1BCE 0 CODE 0 text42 dist/default/production/lab8v2.X.production.o
-__accesstop 60 0 ABS 0 - /tmp/xchjbhNCn.o
-intlevel0 0 0 CODE 0 text /tmp/xchjbhNCn.o
-intlevel1 0 0 CODE 0 text /tmp/xchjbhNCn.o
-intlevel2 0 0 CODE 0 text /tmp/xchjbhNCn.o
-intlevel3 0 0 CODE 0 text /tmp/xchjbhNCn.o
+__accesstop 60 0 ABS 0 - /tmp/xcMOd9Gpz.o
+intlevel0 0 0 CODE 0 text /tmp/xcMOd9Gpz.o
+intlevel1 0 0 CODE 0 text /tmp/xcMOd9Gpz.o
+intlevel2 0 0 CODE 0 text /tmp/xcMOd9Gpz.o
+intlevel3 0 0 CODE 0 text /tmp/xcMOd9Gpz.o
 _motor_init 1B7E 0 CODE 0 text4 dist/default/production/lab8v2.X.production.o
 _do_I2C_DO_NACK_RESTART 1BE6 0 CODE 0 text28 dist/default/production/lab8v2.X.production.o
 _i2c1_driver_stop 1C5E 0 CODE 0 text50 dist/default/production/lab8v2.X.production.o
@@ -870,8 +870,8 @@ _ANSELA F0C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ANSELB F14 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ANSELC F1C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _mssp1_clearIRQ 1C32 0 CODE 0 text24 dist/default/production/lab8v2.X.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xchjbhNCn.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xchjbhNCn.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcMOd9Gpz.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcMOd9Gpz.o
 __end_of_i2c1_driver_startRX 1C56 0 CODE 0 text47 dist/default/production/lab8v2.X.production.o
 __CFG_BORV$VBOR_190 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __end_of_INTERRUPT_InterruptManager 98 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
@@ -974,7 +974,7 @@ __size_of___xxtofl 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_do_I2C_SEND_RESTART 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/lab8v2.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production/lab8v2.X.production.o
-__smallconst 800 0 SMALLCONST 0 smallconst /tmp/xchjbhNCn.o
+__smallconst 800 0 SMALLCONST 0 smallconst /tmp/xcMOd9Gpz.o
 ___xxtofl@arg 18 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 ___xxtofl@exp 17 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 ___xxtofl@val E 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
@@ -1196,8 +1196,8 @@ __Lfardata 0 0 FARRAM 0 fardata dist/default/production/lab8v2.X.production.o
 __size_of_i2c_ISR 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 ___fldiv@new_exp 2D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 _motor_set 1686 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
-stackhi 7FF 0 ABS 0 - /tmp/xchjbhNCn.o
-stacklo B4 0 ABS 0 - /tmp/xchjbhNCn.o
+stackhi 7FF 0 ABS 0 - /tmp/xcMOd9Gpz.o
+stacklo B4 0 ABS 0 - /tmp/xcMOd9Gpz.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
 __end_of_i2c1_driver_getRXData 1C52 0 CODE 0 text44 dist/default/production/lab8v2.X.production.o
 _OSCCON1 ED3 0 ABS 0 - dist/default/production/lab8v2.X.production.o
@@ -1305,7 +1305,7 @@ __Ltext51 0 0 ABS 0 text51 dist/default/production/lab8v2.X.production.o
 __Ltext52 0 0 ABS 0 text52 dist/default/production/lab8v2.X.production.o
 __Ltext53 0 0 ABS 0 text53 dist/default/production/lab8v2.X.production.o
 _PWM4_LoadDutyValue 1A44 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
-__ramtop 800 0 RAM 0 ramtop /tmp/xchjbhNCn.o
+__ramtop 800 0 RAM 0 ramtop /tmp/xcMOd9Gpz.o
 __Lpowerup 98 0 CODE 0 powerup dist/default/production/lab8v2.X.production.o
 ?___xxtofl E 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/lab8v2.X.production.o
