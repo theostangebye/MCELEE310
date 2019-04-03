@@ -15650,9 +15650,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 98 "mcc_generated_files/pin_manager.h"
+# 118 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 110 "mcc_generated_files/pin_manager.h"
+# 130 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 

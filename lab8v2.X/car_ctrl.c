@@ -13,6 +13,12 @@
 
 volatile struct carctl_t carctl;
 
+// Servo Restraints
+int8_t  servo_trim = -17;
+int8_t servo_min  = -30;
+int8_t servo_max  =  28;
+
+
 /**
 stateTime will be used to keep track of the time spent in the current state
  */
@@ -21,8 +27,9 @@ int stateTime; // [10 uS]
 void carcontrol_init() {
     carctl.initialized = true;
     carctl.state = state_unset;
-    carctl.throttleHighTime = 0;
-    carctl.servoHighTime = 0;
+    carcontrol_throttle(0);
+    carcontrol_steering(0);
+    carctl.servoHighTime = 50;
     // Set new ISR handler function
     TMR2_SetInterruptHandler(carcontrol_ISR);   
     stateTime = 0;
@@ -38,11 +45,13 @@ void carcontrol_ISR(){
             // set state to high
             carctl.state = state_high;
             IO_RA0_SetHigh();
+            IO_RA1_SetHigh();
             stateTime = 0;
         break; /* optional */
         case state_high:
             stateTime++;
             IO_RA0_SetHigh();
+            IO_RA1_SetHigh();
             if (stateTime >= 100) {
                 // time for next state
                 carctl.state = state_vary;
@@ -54,6 +63,9 @@ void carcontrol_ISR(){
             if (stateTime > carctl.throttleHighTime) {
                 IO_RA0_SetLow();
             }
+            if (stateTime > carctl.servoHighTime) {
+                IO_RA1_SetLow();
+            }
             if (stateTime >= 100) {
                 carctl.state = state_low;
                 stateTime = 0;
@@ -62,10 +74,12 @@ void carcontrol_ISR(){
         case state_low:
             stateTime++;
             IO_RA0_SetLow();
+            IO_RA1_SetLow();
             if (stateTime >= 1800) {
                 carctl.state = state_high;
                 stateTime = 0;
                 IO_RA0_SetHigh();
+                IO_RA1_SetLow();
             }
         break;
     }
@@ -87,10 +101,13 @@ void carcontrol_steering(int8_t steering) {
      *      steering = -50 -> hightime =   0
      */
     
-    // coerce values before translation.
-    if (steering < -50) steering = -50;
-    if (steering >  50) steering =  50;
     
+    // coerce values before translation.
+    if (steering < servo_min) steering = servo_min;
+    if (steering > servo_max) steering = servo_max;
+    
+    steering = steering + servo_trim;
+
     carctl.servoHighTime = steering + 50;
 }
 

@@ -1325,8 +1325,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 62:     LATC = 0x00;
 [e = _LATC -> -> 0 `i `uc ]
 "67
-[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFE;
-[e = _TRISA -> -> 254 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFC;
+[e = _TRISA -> -> 252 `i `uc ]
 "68
 [; ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0xFF;
 [e = _TRISB -> -> 255 `i `uc ]

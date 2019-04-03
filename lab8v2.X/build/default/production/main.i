@@ -15650,9 +15650,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 98 "./mcc_generated_files/pin_manager.h"
+# 118 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 110 "./mcc_generated_files/pin_manager.h"
+# 130 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -16024,19 +16024,58 @@ void main(void)
     carcontrol_init();
     _delay((unsigned long)((1000)*(64000000/4000.0)));
 
+    carcontrol_steering(0);
+
     int i;
-    for (i=0; i<100; i++) {
+    for (i=0; i<80; i++) {
         carcontrol_throttle(i);
         _delay((unsigned long)((33)*(64000000/4000.0)));
     }
-    for (i=0; i<100; i++) {
-        carcontrol_throttle(100-i);
+    for (i=0; i<80; i++) {
+        carcontrol_throttle(80-i);
         _delay((unsigned long)((33)*(64000000/4000.0)));
     }
 
 
+
+
+    for (i=0; i<28; i++) {
+        carcontrol_steering(i);
+        _delay((unsigned long)((25)*(64000000/4000.0)));
+    }
+    for (i=0; i<28; i++) {
+        carcontrol_steering(28-i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-30+i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+        for (i=0; i<28; i++) {
+        carcontrol_steering(i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+    for (i=0; i<28; i++) {
+        carcontrol_steering(28-i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-30+i);
+        _delay((unsigned long)((30)*(64000000/4000.0)));
+    }
+
+    carcontrol_throttle(0);
+
     while (1)
     {
-
+        carcontrol_steering(0);
     }
 }

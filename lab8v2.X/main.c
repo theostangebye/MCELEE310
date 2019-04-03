@@ -71,20 +71,59 @@ void main(void)
     carcontrol_init();
     __delay_ms(1000);
     
+    carcontrol_steering(0);
+    
     int i;
-    for (i=0; i<100; i++) {
+    for (i=0; i<80; i++) {
         carcontrol_throttle(i);
         __delay_ms(33);
     }
-    for (i=0; i<100; i++) {
-        carcontrol_throttle(100-i);
+    for (i=0; i<80; i++) {
+        carcontrol_throttle(80-i);
         __delay_ms(33);
     }
+
+//    carcontrol_throttle(22);
+
     
+    for (i=0; i<28; i++) {
+        carcontrol_steering(i);
+        __delay_ms(25);
+    }
+    for (i=0; i<28; i++) {
+        carcontrol_steering(28-i);
+        __delay_ms(30);
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-i);
+        __delay_ms(30);
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-30+i);
+        __delay_ms(30);
+    }
+        for (i=0; i<28; i++) {
+        carcontrol_steering(i);
+        __delay_ms(30);
+    }
+    for (i=0; i<28; i++) {
+        carcontrol_steering(28-i);
+        __delay_ms(30);
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-i);
+        __delay_ms(30);
+    }
+    for (i=0; i<30; i++) {
+        carcontrol_steering(-30+i);
+        __delay_ms(30);
+    }
+    
+    carcontrol_throttle(0);
     
     while (1)
     {   
-//        carcontrol_throttle(30);
+        carcontrol_steering(0);
     }
 }
 /**
