@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "car_ctrl.h"
+#include "ping.h"
 
 /*
                          Main application
@@ -69,61 +70,22 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     carcontrol_init();
+    ping_init();
     __delay_ms(1000);
     
-    carcontrol_steering(0);
+    carcontrol_steering(0);    
     
-    int i;
-    for (i=0; i<80; i++) {
-        carcontrol_throttle(i);
-        __delay_ms(33);
-    }
-    for (i=0; i<80; i++) {
-        carcontrol_throttle(80-i);
-        __delay_ms(33);
-    }
-
-//    carcontrol_throttle(22);
-
-    
-    for (i=0; i<28; i++) {
-        carcontrol_steering(i);
-        __delay_ms(25);
-    }
-    for (i=0; i<28; i++) {
-        carcontrol_steering(28-i);
-        __delay_ms(30);
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-i);
-        __delay_ms(30);
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-30+i);
-        __delay_ms(30);
-    }
-        for (i=0; i<28; i++) {
-        carcontrol_steering(i);
-        __delay_ms(30);
-    }
-    for (i=0; i<28; i++) {
-        carcontrol_steering(28-i);
-        __delay_ms(30);
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-i);
-        __delay_ms(30);
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-30+i);
-        __delay_ms(30);
-    }
-    
-    carcontrol_throttle(0);
+    __delay_us(10);
     
     while (1)
     {   
-        carcontrol_steering(0);
+        float cm_to_targ = ping();
+        float dist = cm_to_targ/150;
+        
+        int angle = (dist*60)-30;
+        carcontrol_steering(angle);
+        
+        __delay_ms(100);
     }
 }
 /**

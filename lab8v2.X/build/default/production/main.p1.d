@@ -5,4 +5,6 @@ mcc_generated_files/device_config.h  \
 mcc_generated_files/pin_manager.h  \
 mcc_generated_files/interrupt_manager.h  \
 mcc_generated_files/tmr2.h  \
-car_ctrl.h 
+mcc_generated_files/tmr3.h  \
+car_ctrl.h  \
+ping.h 

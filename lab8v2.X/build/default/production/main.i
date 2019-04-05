@@ -15650,10 +15650,18 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 118 "./mcc_generated_files/pin_manager.h"
+# 138 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 130 "./mcc_generated_files/pin_manager.h"
+# 150 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 163 "./mcc_generated_files/pin_manager.h"
+void IOCAF2_ISR(void);
+# 186 "./mcc_generated_files/pin_manager.h"
+void IOCAF2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 210 "./mcc_generated_files/pin_manager.h"
+extern void (*IOCAF2_InterruptHandler)(void);
+# 234 "./mcc_generated_files/pin_manager.h"
+void IOCAF2_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdint.h" 1 3
@@ -15965,11 +15973,32 @@ extern void (*TMR2_InterruptHandler)(void);
 # 846 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
 # 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/tmr3.h" 1
+# 100 "./mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 129 "./mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 161 "./mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 196 "./mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 310 "./mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 387 "./mcc_generated_files/tmr3.h"
+_Bool TMR3_HasOverflowOccured(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "./mcc_generated_files/mcc.h"
+# 97 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
@@ -15995,6 +16024,17 @@ void carcontrol_steering(int8_t steering);
 
 void carcontrol_throttle(uint8_t throttle);
 # 45 "main.c" 2
+
+# 1 "./ping.h" 1
+# 18 "./ping.h"
+    void ping_init();
+
+
+
+
+
+    float ping();
+# 46 "main.c" 2
 
 
 
@@ -16022,60 +16062,21 @@ void main(void)
 
 
     carcontrol_init();
+    ping_init();
     _delay((unsigned long)((1000)*(64000000/4000.0)));
 
     carcontrol_steering(0);
 
-    int i;
-    for (i=0; i<80; i++) {
-        carcontrol_throttle(i);
-        _delay((unsigned long)((33)*(64000000/4000.0)));
-    }
-    for (i=0; i<80; i++) {
-        carcontrol_throttle(80-i);
-        _delay((unsigned long)((33)*(64000000/4000.0)));
-    }
-
-
-
-
-    for (i=0; i<28; i++) {
-        carcontrol_steering(i);
-        _delay((unsigned long)((25)*(64000000/4000.0)));
-    }
-    for (i=0; i<28; i++) {
-        carcontrol_steering(28-i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-30+i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-        for (i=0; i<28; i++) {
-        carcontrol_steering(i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-    for (i=0; i<28; i++) {
-        carcontrol_steering(28-i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-    for (i=0; i<30; i++) {
-        carcontrol_steering(-30+i);
-        _delay((unsigned long)((30)*(64000000/4000.0)));
-    }
-
-    carcontrol_throttle(0);
+    _delay((unsigned long)((10)*(64000000/4000000.0)));
 
     while (1)
     {
-        carcontrol_steering(0);
+        float cm_to_targ = ping();
+        float dist = cm_to_targ/150;
+
+        int angle = (dist*60)-30;
+        carcontrol_steering(angle);
+
+        _delay((unsigned long)((100)*(64000000/4000.0)));
     }
 }
