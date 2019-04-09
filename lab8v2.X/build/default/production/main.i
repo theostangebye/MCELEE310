@@ -15650,18 +15650,10 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 138 "./mcc_generated_files/pin_manager.h"
+# 118 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 150 "./mcc_generated_files/pin_manager.h"
+# 130 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 163 "./mcc_generated_files/pin_manager.h"
-void IOCAF2_ISR(void);
-# 186 "./mcc_generated_files/pin_manager.h"
-void IOCAF2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 210 "./mcc_generated_files/pin_manager.h"
-extern void (*IOCAF2_InterruptHandler)(void);
-# 234 "./mcc_generated_files/pin_manager.h"
-void IOCAF2_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdint.h" 1 3
@@ -16009,7 +16001,7 @@ enum ctl_state_t {state_unset, state_high, state_vary, state_low};
 struct carctl_t {
  _Bool initialized;
  enum ctl_state_t state;
- uint8_t stateDuration;
+ uint16_t stateDuration;
  uint8_t throttleHighTime;
  uint8_t servoHighTime;
 };
@@ -16072,11 +16064,12 @@ void main(void)
     while (1)
     {
         float cm_to_targ = ping();
-        float dist = cm_to_targ/150;
 
-        int angle = (dist*60)-30;
+        int angle = (cm_to_targ*60)-30;
         carcontrol_steering(angle);
 
         _delay((unsigned long)((100)*(64000000/4000.0)));
+
+
     }
 }

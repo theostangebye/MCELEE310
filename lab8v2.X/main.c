@@ -76,16 +76,17 @@ void main(void)
     carcontrol_steering(0);    
     
     __delay_us(10);
-    
+        
     while (1)
     {   
         float cm_to_targ = ping();
-        float dist = cm_to_targ/150;
-        
-        int angle = (dist*60)-30;
+                
+        int angle = (cm_to_targ*60)-30;
         carcontrol_steering(angle);
         
         __delay_ms(100);
+        
+       
     }
 }
 /**

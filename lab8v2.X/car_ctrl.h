@@ -18,7 +18,7 @@ enum ctl_state_t {state_unset, state_high, state_vary, state_low}; // in h make 
 struct carctl_t {
 	bool initialized;
 	enum ctl_state_t state;
-	uint8_t stateDuration;
+	uint16_t stateDuration;
 	uint8_t throttleHighTime;
 	uint8_t servoHighTime;
 };

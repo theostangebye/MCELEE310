@@ -25,7 +25,6 @@ stateTime will be used to keep track of the time spent in the current state
 int stateTime; // [10 uS]
 
 void carcontrol_init() {
-    carctl.initialized = true;
     carctl.state = state_unset;
     carcontrol_throttle(0);
     carcontrol_steering(0);
@@ -33,6 +32,7 @@ void carcontrol_init() {
     // Set new ISR handler function
     TMR2_SetInterruptHandler(carcontrol_ISR);   
     stateTime = 0;
+    carctl.initialized = true;
 }
 
 /**
@@ -44,14 +44,14 @@ void carcontrol_ISR(){
         case state_unset:
             // set state to high
             carctl.state = state_high;
-            IO_RA0_SetHigh();
-            IO_RA1_SetHigh();
+            THROTTLE_SetHigh();
+            STEERING_SetHigh();
             stateTime = 0;
         break; /* optional */
         case state_high:
             stateTime++;
-            IO_RA0_SetHigh();
-            IO_RA1_SetHigh();
+            THROTTLE_SetHigh();
+            STEERING_SetHigh();
             if (stateTime >= 100) {
                 // time for next state
                 carctl.state = state_vary;
@@ -61,10 +61,10 @@ void carcontrol_ISR(){
         case state_vary:
             stateTime++;
             if (stateTime > carctl.throttleHighTime) {
-                IO_RA0_SetLow();
+                THROTTLE_SetLow();
             }
             if (stateTime > carctl.servoHighTime) {
-                IO_RA1_SetLow();
+                STEERING_SetLow();
             }
             if (stateTime >= 100) {
                 carctl.state = state_low;
@@ -73,13 +73,13 @@ void carcontrol_ISR(){
         break;
         case state_low:
             stateTime++;
-            IO_RA0_SetLow();
-            IO_RA1_SetLow();
+            THROTTLE_SetLow();
+            STEERING_SetLow();
             if (stateTime >= 1800) {
                 carctl.state = state_high;
                 stateTime = 0;
-                IO_RA0_SetHigh();
-                IO_RA1_SetLow();
+                THROTTLE_SetHigh();
+                STEERING_SetLow();
             }
         break;
     }

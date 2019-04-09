@@ -18,11 +18,16 @@ extern "C" {
     void ping_init();
     
     /**
-     * Measures distance to object
-     * @return distance to object in inches.
+     * Begins a Ping measurement
      */
-    float ping();
+    void ping_send();
 
+    /**
+     * Will return the latest ping measurement.
+     * If a reading is not ready - it will return 0.
+     * @return distance in CM to nearest object.
+     */
+    float ping_get();
 
 #ifdef	__cplusplus
 }

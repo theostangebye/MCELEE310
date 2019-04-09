@@ -85,8 +85,8 @@ void TMR3_Initialize(void)
     // Clearing IF flag.
     PIR4bits.TMR3IF = 0;
 
-    // CKPS 1:4; nT3SYNC synchronize; TMR3ON disabled; T3RD16 enabled; 
-    T3CON = 0x22;
+    // CKPS 1:4; nT3SYNC synchronize; TMR3ON enabled; T3RD16 enabled; 
+    T3CON = 0x23;
 }
 
 void TMR3_StartTimer(void)

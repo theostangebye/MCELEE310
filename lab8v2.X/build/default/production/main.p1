@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[c E9410 0 1 2 3 .. ]
-[n E9410 ctl_state_t state_unset state_high state_vary state_low  ]
+[c E9402 0 1 2 3 .. ]
+[n E9402 ctl_state_t state_unset state_high state_vary state_low  ]
 "18
 [; ;./car_ctrl.h: 18: struct carctl_t {
-[s S1381 `a 1 `E9410 1 `uc 1 `uc 1 `uc 1 ]
+[s S1381 `a 1 `E9402 1 `us 1 `uc 1 `uc 1 ]
 [n S1381 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
 "71 ./mcc_generated_files/mcc.h
@@ -1343,27 +1343,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 82:         float cm_to_targ = ping();
 [v _cm_to_targ `f ~T0 @X0 1 a ]
 [e = _cm_to_targ ( _ping ..  ]
-"83
-[; ;main.c: 83:         float dist = cm_to_targ/150;
-[v _dist `f ~T0 @X0 1 a ]
-[e = _dist / _cm_to_targ -> -> 150 `i `f ]
-"85
-[; ;main.c: 85:         int angle = (dist*60)-30;
+"84
+[; ;main.c: 84:         int angle = (cm_to_targ*60)-30;
 [v _angle `i ~T0 @X0 1 a ]
-[e = _angle -> - * _dist -> -> 60 `i `f -> -> 30 `i `f `i ]
-"86
-[; ;main.c: 86:         carcontrol_steering(angle);
+[e = _angle -> - * _cm_to_targ -> -> 60 `i `f -> -> 30 `i `f `i ]
+"85
+[; ;main.c: 85:         carcontrol_steering(angle);
 [e ( _carcontrol_steering (1 -> _angle `c ]
-"88
-[; ;main.c: 88:         _delay((unsigned long)((100)*(64000000/4000.0)));
+"87
+[; ;main.c: 87:         _delay((unsigned long)((100)*(64000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"89
-[; ;main.c: 89:     }
+"90
+[; ;main.c: 90:     }
 }
 [e :U 1383 ]
 [e $U 1384  ]
 [e :U 1385 ]
-"90
-[; ;main.c: 90: }
+"91
+[; ;main.c: 91: }
 [e :UE 1382 ]
 }

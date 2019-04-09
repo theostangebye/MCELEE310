@@ -15645,25 +15645,15 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "/Applications/microchip/xc8/v2.05/pic/include/xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 138 "mcc_generated_files/pin_manager.h"
+# 118 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 150 "mcc_generated_files/pin_manager.h"
+# 130 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 163 "mcc_generated_files/pin_manager.h"
-void IOCAF2_ISR(void);
-# 186 "mcc_generated_files/pin_manager.h"
-void IOCAF2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 210 "mcc_generated_files/pin_manager.h"
-extern void (*IOCAF2_InterruptHandler)(void);
-# 234 "mcc_generated_files/pin_manager.h"
-void IOCAF2_DefaultInterruptHandler(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
 
 
 
-
-void (*IOCAF2_InterruptHandler)(void);
 
 
 void PIN_MANAGER_Initialize(void)
@@ -15687,7 +15677,7 @@ void PIN_MANAGER_Initialize(void)
 
     ANSELC = 0xFF;
     ANSELB = 0xFF;
-    ANSELA = 0xFA;
+    ANSELA = 0xFE;
 
 
 
@@ -15716,17 +15706,6 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    IOCAFbits.IOCAF2 = 0;
-
-    IOCANbits.IOCAN2 = 1;
-
-    IOCAPbits.IOCAP2 = 1;
-
-
-
-
-    IOCAF2_SetInterruptHandler(IOCAF2_DefaultInterruptHandler);
-
 
     PIE0bits.IOCIE = 1;
 
@@ -15734,39 +15713,4 @@ void PIN_MANAGER_Initialize(void)
 
 void PIN_MANAGER_IOC(void)
 {
-
-    if(IOCAFbits.IOCAF2 == 1)
-    {
-        IOCAF2_ISR();
-    }
-}
-
-
-
-
-void IOCAF2_ISR(void) {
-
-
-
-
-    if(IOCAF2_InterruptHandler)
-    {
-        IOCAF2_InterruptHandler();
-    }
-    IOCAFbits.IOCAF2 = 0;
-}
-
-
-
-
-void IOCAF2_SetInterruptHandler(void (* InterruptHandler)(void)){
-    IOCAF2_InterruptHandler = InterruptHandler;
-}
-
-
-
-
-void IOCAF2_DefaultInterruptHandler(void){
-
-
 }

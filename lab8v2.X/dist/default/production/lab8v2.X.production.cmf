@@ -11,62 +11,53 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcQJcA7hB.o
+$/tmp/xcIgTPqBY.o
 idloc IDLOC 0 200000 200000 100 1
 init CODE 0 38 38 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 C 1
 $dist/default/production/lab8v2.X.production.o
-cinit CODE 0 DDC DDC 38 1
-text0 CODE 0 A62 A62 106 1
-text1 CODE 0 F66 F66 1E 1
-text2 CODE 0 D08 D08 7C 1
-text3 CODE 0 922 922 140 1
+cinit CODE 0 AF0 AF0 38 1
+text0 CODE 0 8BE 8BE D0 1
+text1 CODE 0 C56 C56 12 1
+text2 CODE 0 A48 A48 62 1
+text3 CODE 0 69A 69A 140 1
 text4 CODE 0 3C 3C 352 1
-text5 CODE 0 E4A E4A 2E 1
-text6 CODE 0 FEE FEE 12 1
-text7 CODE 0 E78 E78 2C 1
-text8 CODE 0 C4C C4C BC 1
-text9 CODE 0 69A 69A 288 1
-nvCOMRAM COMRAM 1 4E 4E 4 1
-text10 CODE 0 38E 38E 30C 1
-text11 CODE 0 FBC FBC 1A 1
-text12 CODE 0 E14 E14 36 1
-text13 CODE 0 EA4 EA4 2C 1
-text14 CODE 0 100C 100C A 1
-text15 CODE 0 F84 F84 1C 1
-text16 CODE 0 D84 D84 58 1
-text17 CODE 0 1016 1016 A 1
-text18 CODE 0 FD6 FD6 18 1
-text19 CODE 0 1020 1020 4 1
-text21 CODE 0 F22 F22 24 1
-text22 CODE 0 1030 1030 2 1
-text23 CODE 0 B68 B68 E4 1
-text24 CODE 0 1000 1000 C 1
-text25 CODE 0 EFC EFC 26 1
-text26 CODE 0 1032 1032 2 1
-text27 CODE 0 ED0 ED0 2C 1
-text28 CODE 0 FA0 FA0 1C 1
-text29 CODE 0 1024 1024 4 1
-text30 CODE 0 1028 1028 4 1
-text31 CODE 0 F46 F46 20 1
-nvBANK0 BANK0 1 74 74 2 1
-idataCOMRAM CODE 0 102C 102C 3 1
-cstackCOMRAM COMRAM 1 1 1 43 1
-cstackBANK0 BANK0 1 60 60 14 1
-temp COMRAM 1 55 55 1 1
+text5 CODE 0 B5E B5E 2E 1
+text6 CODE 0 C68 C68 12 1
+text7 CODE 0 B8C B8C 2C 1
+text8 CODE 0 98E 98E BA 1
+text9 CODE 0 38E 38E 30C 1
+nvCOMRAM COMRAM 1 57 57 2 1
+text10 CODE 0 C24 C24 1A 1
+text11 CODE 0 B28 B28 36 1
+text12 CODE 0 BB8 BB8 2C 1
+text13 CODE 0 C7A C7A A 1
+text14 CODE 0 C08 C08 1C 1
+text15 CODE 0 AAA AAA 46 1
+text16 CODE 0 C3E C3E 18 1
+text17 CODE 0 C84 C84 4 1
+text19 CODE 0 BE4 BE4 24 1
+text20 CODE 0 C8C C8C 2 1
+text21 CODE 0 7DA 7DA E4 1
+text22 CODE 0 C8E C8E 2 1
+nvBANK0 BANK0 1 66 66 2 1
+idataCOMRAM CODE 0 C88 C88 3 1
+cstackCOMRAM COMRAM 1 1 1 48 1
+cstackBANK0 BANK0 1 60 60 6 1
+temp COMRAM 1 59 59 1 1
 intcode CODE 0 8 8 30 1
-dataCOMRAM COMRAM 1 52 52 3 1
-bssCOMRAM COMRAM 1 44 44 A 1
+dataCOMRAM COMRAM 1 54 54 3 1
+bssCOMRAM COMRAM 1 49 49 B 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 76-7FF 1
+RAM 68-7FF 1
 SFR E88-FFF 1
-BANK0 76-FF 1
+BANK0 68-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
@@ -75,20 +66,20 @@ BANK5 500-5FF 1
 BANK6 600-6FF 1
 BANK7 700-7FF 1
 CONST 4-7 1
-CONST 102F-102F 1
-CONST 1034-7FFF 1
-STACK 76-7FF 1
-SMALLCONST 102F-102F 1
-SMALLCONST 1034-7FFF 1
+CONST C8B-C8B 1
+CONST C90-7FFF 1
+STACK 68-7FF 1
+SMALLCONST C8B-C8B 1
+SMALLCONST C90-7FFF 1
 CODE 4-7 1
-CODE 102F-102F 1
-CODE 1034-7FFF 1
-BIGRAM 56-5F 1
-BIGRAM 76-7FF 1
-COMRAM 56-5F 1
+CODE C8B-C8B 1
+CODE C90-7FFF 1
+BIGRAM 5A-5F 1
+BIGRAM 68-7FF 1
+COMRAM 5A-5F 1
 EEDATA 310000-3100FF 1
-MEDIUMCONST 102F-102F 1
-MEDIUMCONST 1034-7FFF 1
+MEDIUMCONST C8B-C8B 1
+MEDIUMCONST C90-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -112,398 +103,270 @@ $dist/default/production/lab8v2.X.production.o
 22 intcode CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
 28 intcode CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
 2C intcode CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
-F46 text31 CODE >104:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-F46 text31 CODE >110:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-F48 text31 CODE >112:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-F4C text31 CODE >113:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-F50 text31 CODE >115:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-F5C text31 CODE >117:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-F64 text31 CODE >118:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-1028 text30 CODE >92:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-1028 text30 CODE >95:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-102A text30 CODE >96:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-1024 text29 CODE >98:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-1024 text29 CODE >101:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-1026 text29 CODE >102:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FA0 text28 CODE >120:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FA0 text28 CODE >122:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FA4 text28 CODE >125:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FA6 text28 CODE >128:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FAA text28 CODE >129:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FAE text28 CODE >132:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FB0 text28 CODE >133:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FB2 text28 CODE >137:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FB6 text28 CODE >138:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FBA text28 CODE >140:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-ED0 text27 CODE >6:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-ED0 text27 CODE >8:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-ED4 text27 CODE >10:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-EE0 text27 CODE >11:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-EE4 text27 CODE >12:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-EE6 text27 CODE >14:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-EEA text27 CODE >15:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-EF6 text27 CODE >16:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-EFA text27 CODE >19:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-1032 text26 CODE >157:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-1032 text26 CODE >160:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-EFC text25 CODE >135:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-EFC text25 CODE >140:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-F04 text25 CODE >142:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-F1C text25 CODE >144:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-F20 text25 CODE >145:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-1000 text24 CODE >123:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-1000 text24 CODE >126:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-1006 text24 CODE >128:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-100A text24 CODE >130:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-B68 text23 CODE >41:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B68 text23 CODE >43:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B6A text23 CODE >46:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B6E text23 CODE >47:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B70 text23 CODE >48:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B72 text23 CODE >49:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B7A text23 CODE >50:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B7C text23 CODE >52:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B80 text23 CODE >53:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B82 text23 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B84 text23 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B94 text23 CODE >57:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-B98 text23 CODE >58:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BA2 text23 CODE >62:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BA6 text23 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BBE text23 CODE >64:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BC0 text23 CODE >66:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BD8 text23 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BDA text23 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BEA text23 CODE >70:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BEE text23 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BF8 text23 CODE >75:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BFC text23 CODE >76:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-BFE text23 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-C00 text23 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-C10 text23 CODE >79:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-C14 text23 CODE >80:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-C1C text23 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-C1E text23 CODE >82:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-C22 text23 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-1030 text22 CODE >182:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-1030 text22 CODE >185:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-F22 text21 CODE >165:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-F22 text21 CODE >169:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-F26 text21 CODE >171:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-F2E text21 CODE >173:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-1020 text19 CODE >52:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
-1020 text19 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
-1022 text19 CODE >56:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
-FD6 text18 CODE >60:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FD6 text18 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FDC text18 CODE >65:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FE0 text18 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FE4 text18 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FE8 text18 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FEC text18 CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-1016 text17 CODE >150:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-1016 text17 CODE >151:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-101E text17 CODE >152:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D84 text16 CODE >57:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D84 text16 CODE >62:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D88 text16 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D8C text16 CODE >64:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D90 text16 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D94 text16 CODE >70:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D96 text16 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D98 text16 CODE >76:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D9C text16 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-D9E text16 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DA2 text16 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DA6 text16 CODE >84:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DAA text16 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DAE text16 CODE >86:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DB2 text16 CODE >91:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DB6 text16 CODE >92:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DBA text16 CODE >93:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DBE text16 CODE >98:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DC0 text16 CODE >99:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DC2 text16 CODE >100:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DC4 text16 CODE >107:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DC6 text16 CODE >109:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DC8 text16 CODE >111:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DCA text16 CODE >116:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DD6 text16 CODE >119:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-DDA text16 CODE >121:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
-F84 text15 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F84 text15 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F8A text15 CODE >79:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F8E text15 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F92 text15 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F96 text15 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F9A text15 CODE >87:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-F9E text15 CODE >88:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-100C text14 CODE >178:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-100C text14 CODE >179:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-1014 text14 CODE >180:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EA4 text13 CODE >64:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EA4 text13 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EA8 text13 CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EAC text13 CODE >75:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EB0 text13 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EB4 text13 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EB8 text13 CODE >84:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EBC text13 CODE >87:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-EBE text13 CODE >90:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-ECA text13 CODE >93:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-ECE text13 CODE >94:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
-E14 text12 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E14 text12 CODE >68:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E18 text12 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E1C text12 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E20 text12 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E24 text12 CODE >80:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E28 text12 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E40 text12 CODE >86:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E44 text12 CODE >89:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-E48 text12 CODE >90:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
-FBC text11 CODE >50:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FBC text11 CODE >52:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FC0 text11 CODE >53:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FC4 text11 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FC8 text11 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FCC text11 CODE >56:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FD0 text11 CODE >57:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-FD4 text11 CODE >58:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
-38E text10 CODE >10:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-38E text10 CODE >21:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-394 text10 CODE >22:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-39A text10 CODE >23:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-39C text10 CODE >24:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-39E text10 CODE >28:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3A4 text10 CODE >30:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3AA text10 CODE >32:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3BA text10 CODE >35:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3BC text10 CODE >37:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3BE text10 CODE >41:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3CE text10 CODE >44:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3D4 text10 CODE >46:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3DA text10 CODE >47:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3DC text10 CODE >49:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3E2 text10 CODE >50:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3E4 text10 CODE >51:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3E6 text10 CODE >55:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3EC text10 CODE >57:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-3F2 text10 CODE >59:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-402 text10 CODE >62:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-404 text10 CODE >64:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-406 text10 CODE >68:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-416 text10 CODE >75:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-41E text10 CODE >77:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-422 text10 CODE >78:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-426 text10 CODE >81:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-42A text10 CODE >82:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-42E text10 CODE >83:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-432 text10 CODE >84:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-436 text10 CODE >85:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-43A text10 CODE >86:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-43E text10 CODE >87:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-442 text10 CODE >88:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-446 text10 CODE >89:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-44A text10 CODE >90:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-44E text10 CODE >91:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-452 text10 CODE >92:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-456 text10 CODE >93:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-45A text10 CODE >94:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-45E text10 CODE >95:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-462 text10 CODE >98:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-466 text10 CODE >100:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-484 text10 CODE >101:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-498 text10 CODE >102:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4A8 text10 CODE >103:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4AC text10 CODE >104:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4AE text10 CODE >106:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4AE text10 CODE >109:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4B2 text10 CODE >110:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4BA text10 CODE >111:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4BC text10 CODE >113:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4C0 text10 CODE >115:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4C2 text10 CODE >116:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4C4 text10 CODE >118:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4CE text10 CODE >119:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4D0 text10 CODE >106:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4D0 text10 CODE >120:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4D8 text10 CODE >124:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4DC text10 CODE >127:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4E2 text10 CODE >128:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-4F4 text10 CODE >132:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-504 text10 CODE >134:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-508 text10 CODE >135:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-50C text10 CODE >136:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-514 text10 CODE >137:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-516 text10 CODE >139:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-51A text10 CODE >141:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-51C text10 CODE >142:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-51E text10 CODE >144:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-528 text10 CODE >145:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-52C text10 CODE >153:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-548 text10 CODE >154:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-578 text10 CODE >155:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-57C text10 CODE >156:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-57E text10 CODE >157:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-584 text10 CODE >158:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-592 text10 CODE >162:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5A2 text10 CODE >163:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5A2 text10 CODE >166:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5B4 text10 CODE >167:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5C6 text10 CODE >172:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5D0 text10 CODE >173:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5D2 text10 CODE >174:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5D4 text10 CODE >176:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5D8 text10 CODE >177:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5DC text10 CODE >180:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5E0 text10 CODE >182:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5E4 text10 CODE >183:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5E6 text10 CODE >171:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5EA text10 CODE >192:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5EE text10 CODE >193:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5F2 text10 CODE >194:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-5FE text10 CODE >195:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-602 text10 CODE >196:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-604 text10 CODE >197:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-604 text10 CODE >198:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-608 text10 CODE >202:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-608 text10 CODE >203:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-60E text10 CODE >204:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-61A text10 CODE >205:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-61E text10 CODE >206:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-648 text10 CODE >207:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-64C text10 CODE >208:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-64E text10 CODE >215:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-65A text10 CODE >216:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-66A text10 CODE >218:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-670 text10 CODE >219:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-674 text10 CODE >225:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-678 text10 CODE >226:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-67A text10 CODE >227:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-67C text10 CODE >230:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-67E text10 CODE >232:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-684 text10 CODE >233:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-686 text10 CODE >234:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-688 text10 CODE >236:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-698 text10 CODE >237:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
-69A text9 CODE >11:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-69A text9 CODE >26:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6A0 text9 CODE >27:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6A6 text9 CODE >28:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6A8 text9 CODE >29:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6AA text9 CODE >33:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6B0 text9 CODE >35:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6B6 text9 CODE >37:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6C6 text9 CODE >40:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6C8 text9 CODE >42:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6CA text9 CODE >46:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6DA text9 CODE >49:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6E0 text9 CODE >50:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6E6 text9 CODE >51:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6E8 text9 CODE >52:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6EA text9 CODE >56:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6F0 text9 CODE >58:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-6F6 text9 CODE >60:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-706 text9 CODE >63:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-708 text9 CODE >65:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-70A text9 CODE >69:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-71A text9 CODE >75:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-726 text9 CODE >76:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-736 text9 CODE >77:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-73E text9 CODE >78:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-742 text9 CODE >79:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-754 text9 CODE >83:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-75A text9 CODE >85:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-76C text9 CODE >89:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-786 text9 CODE >92:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-796 text9 CODE >93:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7A6 text9 CODE >94:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7B6 text9 CODE >96:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7BA text9 CODE >97:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7BC text9 CODE >100:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7C2 text9 CODE >101:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7CC text9 CODE >102:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7D6 text9 CODE >103:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7D8 text9 CODE >104:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7DA text9 CODE >106:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7E4 text9 CODE >112:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7F8 text9 CODE >115:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-7FA text9 CODE >116:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-80A text9 CODE >118:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-80C text9 CODE >97:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-80C text9 CODE >119:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-812 text9 CODE >122:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-81E text9 CODE >123:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-822 text9 CODE >128:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-82C text9 CODE >129:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-82E text9 CODE >130:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-830 text9 CODE >132:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-83A text9 CODE >133:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-840 text9 CODE >127:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-844 text9 CODE >139:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-848 text9 CODE >140:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-84C text9 CODE >141:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-870 text9 CODE >142:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-874 text9 CODE >143:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-876 text9 CODE >144:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-876 text9 CODE >145:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-87A text9 CODE >149:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-87A text9 CODE >150:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-880 text9 CODE >151:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-88C text9 CODE >152:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-890 text9 CODE >153:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8BA text9 CODE >154:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8BE text9 CODE >159:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8CC text9 CODE >160:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8D2 text9 CODE >161:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8E2 text9 CODE >165:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8F0 text9 CODE >166:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-8F8 text9 CODE >167:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-908 text9 CODE >169:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-90C text9 CODE >173:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-910 text9 CODE >175:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-914 text9 CODE >176:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-916 text9 CODE >177:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-918 text9 CODE >180:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-91A text9 CODE >182:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcdiv.c
-C4C text8 CODE >43:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-C4C text8 CODE >47:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-C5A text8 CODE >48:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-C6C text8 CODE >49:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-C92 text8 CODE >50:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-C94 text8 CODE >51:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CA4 text8 CODE >52:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CA8 text8 CODE >53:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CAC text8 CODE >54:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CB6 text8 CODE >57:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CC6 text8 CODE >60:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CCE text8 CODE >63:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CD8 text8 CODE >64:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CDA text8 CODE >62:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CE0 text8 CODE >67:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CE6 text8 CODE >68:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-CF6 text8 CODE >69:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-D06 text8 CODE >70:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
-E78 text7 CODE >93:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E7A text7 CODE >106:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E88 text7 CODE >107:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E96 text7 CODE >109:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E9C text7 CODE >111:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-EA2 text7 CODE >112:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-FEE text6 CODE >118:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-FF0 text6 CODE >120:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-FFA text6 CODE >121:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-FFE text6 CODE >122:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E4A text5 CODE >27:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E4A text5 CODE >28:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E4E text5 CODE >29:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E52 text5 CODE >30:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E58 text5 CODE >31:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E5E text5 CODE >32:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E62 text5 CODE >34:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E6E text5 CODE >35:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
-E76 text5 CODE >36:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+C8E text22 CODE >110:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+C8E text22 CODE >112:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+7DA text21 CODE >41:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7DA text21 CODE >43:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7DC text21 CODE >46:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7E0 text21 CODE >47:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7E2 text21 CODE >48:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7E4 text21 CODE >49:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7EC text21 CODE >50:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7EE text21 CODE >52:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7F2 text21 CODE >53:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7F4 text21 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+7F6 text21 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+806 text21 CODE >57:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+80A text21 CODE >58:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+814 text21 CODE >62:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+818 text21 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+830 text21 CODE >64:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+832 text21 CODE >66:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+84A text21 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+84C text21 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+85C text21 CODE >70:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+860 text21 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+86A text21 CODE >75:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+86E text21 CODE >76:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+870 text21 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+872 text21 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+882 text21 CODE >79:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+886 text21 CODE >80:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+88E text21 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+890 text21 CODE >82:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+894 text21 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+C8C text20 CODE >182:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+C8C text20 CODE >185:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BE4 text19 CODE >165:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BE4 text19 CODE >169:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BE8 text19 CODE >171:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BF0 text19 CODE >173:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+C84 text17 CODE >52:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
+C84 text17 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
+C86 text17 CODE >56:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
+C3E text16 CODE >60:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C3E text16 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C44 text16 CODE >65:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C48 text16 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C4C text16 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C50 text16 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C54 text16 CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+AAA text15 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AAA text15 CODE >60:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AAE text15 CODE >61:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AB2 text15 CODE >62:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AB6 text15 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+ABA text15 CODE >68:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+ABC text15 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+ABE text15 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AC2 text15 CODE >75:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AC4 text15 CODE >76:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AC8 text15 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+ACC text15 CODE >82:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AD0 text15 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AD4 text15 CODE >84:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AD8 text15 CODE >89:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+ADC text15 CODE >90:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AE0 text15 CODE >91:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AE4 text15 CODE >96:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AE6 text15 CODE >97:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AE8 text15 CODE >98:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AEA text15 CODE >106:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+AEE text15 CODE >108:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/pin_manager.c
+C08 text14 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C08 text14 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C0E text14 CODE >79:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C12 text14 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C16 text14 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C1A text14 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C1E text14 CODE >87:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C22 text14 CODE >88:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C7A text13 CODE >178:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+C7A text13 CODE >179:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+C82 text13 CODE >180:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BB8 text12 CODE >64:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BB8 text12 CODE >69:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BBC text12 CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BC0 text12 CODE >75:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BC4 text12 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BC8 text12 CODE >81:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BCC text12 CODE >84:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BD0 text12 CODE >87:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BD2 text12 CODE >90:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BDE text12 CODE >93:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+BE2 text12 CODE >94:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
+B28 text11 CODE >63:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B28 text11 CODE >68:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B2C text11 CODE >71:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B30 text11 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B34 text11 CODE >77:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B38 text11 CODE >80:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B3C text11 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B54 text11 CODE >86:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B58 text11 CODE >89:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+B5C text11 CODE >90:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr3.c
+C24 text10 CODE >50:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C24 text10 CODE >52:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C28 text10 CODE >53:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C2C text10 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C30 text10 CODE >55:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C34 text10 CODE >56:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C38 text10 CODE >57:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+C3C text10 CODE >58:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
+38E text9 CODE >10:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+38E text9 CODE >21:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+394 text9 CODE >22:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+39A text9 CODE >23:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+39C text9 CODE >24:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+39E text9 CODE >28:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3A4 text9 CODE >30:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3AA text9 CODE >32:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3BA text9 CODE >35:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3BC text9 CODE >37:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3BE text9 CODE >41:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3CE text9 CODE >44:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3D4 text9 CODE >46:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3DA text9 CODE >47:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3DC text9 CODE >49:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3E2 text9 CODE >50:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3E4 text9 CODE >51:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3E6 text9 CODE >55:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3EC text9 CODE >57:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+3F2 text9 CODE >59:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+402 text9 CODE >62:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+404 text9 CODE >64:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+406 text9 CODE >68:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+416 text9 CODE >75:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+41E text9 CODE >77:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+422 text9 CODE >78:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+426 text9 CODE >81:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+42A text9 CODE >82:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+42E text9 CODE >83:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+432 text9 CODE >84:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+436 text9 CODE >85:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+43A text9 CODE >86:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+43E text9 CODE >87:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+442 text9 CODE >88:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+446 text9 CODE >89:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+44A text9 CODE >90:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+44E text9 CODE >91:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+452 text9 CODE >92:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+456 text9 CODE >93:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+45A text9 CODE >94:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+45E text9 CODE >95:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+462 text9 CODE >98:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+466 text9 CODE >100:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+484 text9 CODE >101:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+498 text9 CODE >102:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4A8 text9 CODE >103:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4AC text9 CODE >104:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4AE text9 CODE >106:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4AE text9 CODE >109:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4B2 text9 CODE >110:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4BA text9 CODE >111:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4BC text9 CODE >113:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4C0 text9 CODE >115:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4C2 text9 CODE >116:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4C4 text9 CODE >118:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4CE text9 CODE >119:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4D0 text9 CODE >106:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4D0 text9 CODE >120:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4D8 text9 CODE >124:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4DC text9 CODE >127:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4E2 text9 CODE >128:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+4F4 text9 CODE >132:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+504 text9 CODE >134:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+508 text9 CODE >135:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+50C text9 CODE >136:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+514 text9 CODE >137:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+516 text9 CODE >139:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+51A text9 CODE >141:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+51C text9 CODE >142:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+51E text9 CODE >144:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+528 text9 CODE >145:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+52C text9 CODE >153:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+548 text9 CODE >154:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+578 text9 CODE >155:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+57C text9 CODE >156:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+57E text9 CODE >157:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+584 text9 CODE >158:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+592 text9 CODE >162:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5A2 text9 CODE >163:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5A2 text9 CODE >166:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5B4 text9 CODE >167:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5C6 text9 CODE >172:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5D0 text9 CODE >173:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5D2 text9 CODE >174:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5D4 text9 CODE >176:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5D8 text9 CODE >177:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5DC text9 CODE >180:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5E0 text9 CODE >182:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5E4 text9 CODE >183:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5E6 text9 CODE >171:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5EA text9 CODE >192:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5EE text9 CODE >193:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5F2 text9 CODE >194:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+5FE text9 CODE >195:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+602 text9 CODE >196:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+604 text9 CODE >197:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+604 text9 CODE >198:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+608 text9 CODE >202:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+608 text9 CODE >203:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+60E text9 CODE >204:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+61A text9 CODE >205:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+61E text9 CODE >206:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+648 text9 CODE >207:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+64C text9 CODE >208:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+64E text9 CODE >215:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+65A text9 CODE >216:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+66A text9 CODE >218:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+670 text9 CODE >219:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+674 text9 CODE >225:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+678 text9 CODE >226:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+67A text9 CODE >227:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+67C text9 CODE >230:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+67E text9 CODE >232:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+684 text9 CODE >233:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+686 text9 CODE >234:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+688 text9 CODE >236:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+698 text9 CODE >237:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+98E text8 CODE >43:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+98E text8 CODE >47:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+99A text8 CODE >48:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9AC text8 CODE >49:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9D2 text8 CODE >50:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9D4 text8 CODE >51:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9E4 text8 CODE >52:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9E8 text8 CODE >53:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9EC text8 CODE >54:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+9F6 text8 CODE >57:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A06 text8 CODE >60:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A0E text8 CODE >63:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A18 text8 CODE >64:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A1A text8 CODE >62:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A20 text8 CODE >67:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A26 text8 CODE >68:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A36 text8 CODE >69:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+A46 text8 CODE >70:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+B8C text7 CODE >93:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B8E text7 CODE >106:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B9C text7 CODE >107:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+BAA text7 CODE >109:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+BB0 text7 CODE >111:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+BB6 text7 CODE >112:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+C68 text6 CODE >118:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+C6A text6 CODE >120:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+C74 text6 CODE >121:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+C78 text6 CODE >122:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B5E text5 CODE >27:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B5E text5 CODE >28:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B62 text5 CODE >29:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B68 text5 CODE >30:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B6E text5 CODE >31:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B72 text5 CODE >33:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B7E text5 CODE >34:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B86 text5 CODE >35:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
+B8A text5 CODE >36:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
 3C text4 CODE >8:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 3C text4 CODE >17:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 42 text4 CODE >18:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
@@ -589,96 +452,87 @@ FA text4 CODE >98:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcm
 378 text4 CODE >201:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 37C text4 CODE >203:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 38C text4 CODE >205:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
-922 text3 CODE >10:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-924 text3 CODE >15:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-92C text3 CODE >16:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-95E text3 CODE >17:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-960 text3 CODE >18:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-960 text3 CODE >19:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-970 text3 CODE >21:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-97C text3 CODE >22:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-98E text3 CODE >23:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-992 text3 CODE >24:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-994 text3 CODE >25:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-996 text3 CODE >26:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-9A0 text3 CODE >24:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-9C6 text3 CODE >29:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-9C8 text3 CODE >30:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-9D4 text3 CODE >31:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-9DE text3 CODE >28:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-9DE text3 CODE >32:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A04 text3 CODE >34:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A06 text3 CODE >35:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A10 text3 CODE >33:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A1A text3 CODE >37:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A1C text3 CODE >38:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A1E text3 CODE >39:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A22 text3 CODE >40:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A46 text3 CODE >41:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A4E text3 CODE >42:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A50 text3 CODE >43:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-A60 text3 CODE >44:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
-D08 text2 CODE >37:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D08 text2 CODE >39:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D0A text2 CODE >40:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D0C text2 CODE >41:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D14 text2 CODE >42:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D16 text2 CODE >43:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D1E text2 CODE >45:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D20 text2 CODE >46:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D22 text2 CODE >48:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D28 text2 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D2C text2 CODE >56:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D72 text2 CODE >58:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-D82 text2 CODE >59:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-F66 text1 CODE >24:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-F66 text1 CODE >25:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-F72 text1 CODE >26:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-F76 text1 CODE >28:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-F7A text1 CODE >29:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-F82 text1 CODE >31:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-A62 text0 CODE >51:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A62 text0 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A66 text0 CODE >61:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A68 text0 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A6A text0 CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A6E text0 CODE >73:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A72 text0 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A8C text0 CODE >76:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A92 text0 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-A9A text0 CODE >82:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-AAE text0 CODE >83:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-AE2 text0 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-B46 text0 CODE >86:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-B4E text0 CODE >88:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-DDC cinit CODE >7052:/tmp/xc6YOiGSj
-DDC cinit CODE >7054:/tmp/xc6YOiGSj
-DDC cinit CODE >7057:/tmp/xc6YOiGSj
-DDC cinit CODE >7099:/tmp/xc6YOiGSj
-DDE cinit CODE >7100:/tmp/xc6YOiGSj
-DE0 cinit CODE >7101:/tmp/xc6YOiGSj
-DE2 cinit CODE >7102:/tmp/xc6YOiGSj
-DE4 cinit CODE >7103:/tmp/xc6YOiGSj
-DE6 cinit CODE >7104:/tmp/xc6YOiGSj
-DE8 cinit CODE >7105:/tmp/xc6YOiGSj
-DEA cinit CODE >7106:/tmp/xc6YOiGSj
-DEE cinit CODE >7107:/tmp/xc6YOiGSj
-DF0 cinit CODE >7108:/tmp/xc6YOiGSj
-DF4 cinit CODE >7109:/tmp/xc6YOiGSj
-DF6 cinit CODE >7110:/tmp/xc6YOiGSj
-DFA cinit CODE >7114:/tmp/xc6YOiGSj
-DFE cinit CODE >7115:/tmp/xc6YOiGSj
-E00 cinit CODE >7116:/tmp/xc6YOiGSj
-E00 cinit CODE >7117:/tmp/xc6YOiGSj
-E02 cinit CODE >7118:/tmp/xc6YOiGSj
-E04 cinit CODE >7119:/tmp/xc6YOiGSj
-E06 cinit CODE >7125:/tmp/xc6YOiGSj
-E06 cinit CODE >7127:/tmp/xc6YOiGSj
-E08 cinit CODE >7128:/tmp/xc6YOiGSj
-E0A cinit CODE >7130:/tmp/xc6YOiGSj
-E0C cinit CODE >7131:/tmp/xc6YOiGSj
-E0E cinit CODE >7132:/tmp/xc6YOiGSj
-E10 cinit CODE >7133:/tmp/xc6YOiGSj
+69A text3 CODE >10:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+69C text3 CODE >15:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+6A4 text3 CODE >16:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+6D6 text3 CODE >17:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+6D8 text3 CODE >18:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+6D8 text3 CODE >19:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+6E8 text3 CODE >21:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+6F4 text3 CODE >22:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+706 text3 CODE >23:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+70A text3 CODE >24:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+70C text3 CODE >25:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+70E text3 CODE >26:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+718 text3 CODE >24:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+73E text3 CODE >29:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+740 text3 CODE >30:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+74C text3 CODE >31:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+756 text3 CODE >28:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+756 text3 CODE >32:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+77C text3 CODE >34:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+77E text3 CODE >35:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+788 text3 CODE >33:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+792 text3 CODE >37:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+794 text3 CODE >38:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+796 text3 CODE >39:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+79A text3 CODE >40:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+7BE text3 CODE >41:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+7C6 text3 CODE >42:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+7C8 text3 CODE >43:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+7D8 text3 CODE >44:/Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+A48 text2 CODE >37:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+A48 text2 CODE >48:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+A4E text2 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+A52 text2 CODE >56:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+A98 text2 CODE >58:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+AA8 text2 CODE >59:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+C56 text1 CODE >24:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+C56 text1 CODE >26:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+C5A text1 CODE >28:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+C5E text1 CODE >29:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+C66 text1 CODE >31:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+8BE text0 CODE >51:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8BE text0 CODE >54:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8C2 text0 CODE >61:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8C4 text0 CODE >67:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8C6 text0 CODE >72:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8CA text0 CODE >73:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8CE text0 CODE >74:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8E6 text0 CODE >76:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8EC text0 CODE >78:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+8F4 text0 CODE >82:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+908 text0 CODE >84:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+96C text0 CODE >85:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+974 text0 CODE >87:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
+AF0 cinit CODE >7028:/tmp/xcW8jr0Hl
+AF0 cinit CODE >7030:/tmp/xcW8jr0Hl
+AF0 cinit CODE >7033:/tmp/xcW8jr0Hl
+AF0 cinit CODE >7075:/tmp/xcW8jr0Hl
+AF2 cinit CODE >7076:/tmp/xcW8jr0Hl
+AF4 cinit CODE >7077:/tmp/xcW8jr0Hl
+AF6 cinit CODE >7078:/tmp/xcW8jr0Hl
+AF8 cinit CODE >7079:/tmp/xcW8jr0Hl
+AFA cinit CODE >7080:/tmp/xcW8jr0Hl
+AFC cinit CODE >7081:/tmp/xcW8jr0Hl
+AFE cinit CODE >7082:/tmp/xcW8jr0Hl
+B02 cinit CODE >7083:/tmp/xcW8jr0Hl
+B04 cinit CODE >7084:/tmp/xcW8jr0Hl
+B08 cinit CODE >7085:/tmp/xcW8jr0Hl
+B0A cinit CODE >7086:/tmp/xcW8jr0Hl
+B0E cinit CODE >7090:/tmp/xcW8jr0Hl
+B12 cinit CODE >7091:/tmp/xcW8jr0Hl
+B14 cinit CODE >7092:/tmp/xcW8jr0Hl
+B14 cinit CODE >7093:/tmp/xcW8jr0Hl
+B16 cinit CODE >7094:/tmp/xcW8jr0Hl
+B18 cinit CODE >7095:/tmp/xcW8jr0Hl
+B1A cinit CODE >7101:/tmp/xcW8jr0Hl
+B1A cinit CODE >7103:/tmp/xcW8jr0Hl
+B1C cinit CODE >7104:/tmp/xcW8jr0Hl
+B1E cinit CODE >7106:/tmp/xcW8jr0Hl
+B20 cinit CODE >7107:/tmp/xcW8jr0Hl
+B22 cinit CODE >7108:/tmp/xcW8jr0Hl
+B24 cinit CODE >7109:/tmp/xcW8jr0Hl
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -693,18 +547,15 @@ E10 cinit CODE >7133:/tmp/xc6YOiGSj
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/lab8v2.X.production.o
 __Hspace_0 30000C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__Hspace_1 76 0 ABS 0 - dist/default/production/lab8v2.X.production.o
+__Hspace_1 68 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__size_of_ping_isr 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-?_TMR3_ReadTimer 1 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/lab8v2.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcQJcA7hB.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcIgTPqBY.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/lab8v2.X.production.o
-__end_of_INTERRUPT_Initialize 1024 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
-_PMD_Initialize F84 0 CODE 0 text15 dist/default/production/lab8v2.X.production.o
-__end_of_PIN_MANAGER_IOC 100C 0 CODE 0 text24 dist/default/production/lab8v2.X.production.o
+__end_of_INTERRUPT_Initialize C88 0 CODE 0 text17 dist/default/production/lab8v2.X.production.o
+_PMD_Initialize C08 0 CODE 0 text14 dist/default/production/lab8v2.X.production.o
+__end_of_PIN_MANAGER_IOC C90 0 CODE 0 text22 dist/default/production/lab8v2.X.production.o
 __CFG_RSTOSC$HFINTOSC_64MHZ 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__size_of_TMR3_StopTimer 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/lab8v2.X.production.o
 _LATA F82 0 ABS 0 - dist/default/production/lab8v2.X.production.o
@@ -722,122 +573,103 @@ _WPUA F0B 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUB F13 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUC F1B 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUE F28 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcQJcA7hB.o
-_main A62 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
-_ping D08 0 CODE 0 text2 dist/default/production/lab8v2.X.production.o
-btemp 55 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
-start 38 0 CODE 0 init /tmp/xcQJcA7hB.o
-__end_of_carcontrol_steering EA4 0 CODE 0 text7 dist/default/production/lab8v2.X.production.o
-___flmul@aexp 2A 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___flmul@bexp 2B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___flmul@prod 2C 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___flmul@sign 25 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___flmul@temp 30 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcIgTPqBY.o
+_main 8BE 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
+_ping A48 0 CODE 0 text2 dist/default/production/lab8v2.X.production.o
+btemp 59 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+start 38 0 CODE 0 init /tmp/xcIgTPqBY.o
+__end_of_carcontrol_steering BB8 0 CODE 0 text7 dist/default/production/lab8v2.X.production.o
+___flmul@aexp 21 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___flmul@bexp 26 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___flmul@prod 27 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___flmul@sign 20 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___flmul@temp 2B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __size_of___fladd 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__size_of___fldiv 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of___flmul 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of___fltol 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_ping 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/lab8v2.X.production.o
-TMR3_ReadTimer@readValLow 8 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_carcontrol_init E4A 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
+_carcontrol_init B5E 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
 __CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_IOCAF2_DefaultInterruptHandler 1034 0 CODE 0 text26 dist/default/production/lab8v2.X.production.o
 __Hpowerup 38 0 CODE 0 powerup dist/default/production/lab8v2.X.production.o
-_TMR2_Initialize EA4 0 CODE 0 text13 dist/default/production/lab8v2.X.production.o
-ttemp5 56 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
-ttemp6 59 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
-ttemp7 5D 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+_TMR2_Initialize BB8 0 CODE 0 text12 dist/default/production/lab8v2.X.production.o
+ttemp5 5A 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+ttemp6 5D 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+ttemp7 61 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production/lab8v2.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/lab8v2.X.production.o
-__accesstop 60 0 ABS 0 - /tmp/xcQJcA7hB.o
-intlevel0 0 0 CODE 0 text /tmp/xcQJcA7hB.o
-intlevel1 0 0 CODE 0 text /tmp/xcQJcA7hB.o
-intlevel2 0 0 CODE 0 text /tmp/xcQJcA7hB.o
-intlevel3 0 0 CODE 0 text /tmp/xcQJcA7hB.o
+__accesstop 60 0 ABS 0 - /tmp/xcIgTPqBY.o
+intlevel0 0 0 CODE 0 text /tmp/xcIgTPqBY.o
+intlevel1 0 0 CODE 0 text /tmp/xcIgTPqBY.o
+intlevel2 0 0 CODE 0 text /tmp/xcIgTPqBY.o
+intlevel3 0 0 CODE 0 text /tmp/xcIgTPqBY.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/lab8v2.X.production.o
-_ping_isr ED0 0 CODE 0 text27 dist/default/production/lab8v2.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/lab8v2.X.production.o
-wtemp8 56 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+wtemp8 5A 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_PIN_MANAGER_IOC 1000 0 CODE 0 text24 dist/default/production/lab8v2.X.production.o
+_PIN_MANAGER_IOC C8E 0 CODE 0 text22 dist/default/production/lab8v2.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production/lab8v2.X.production.o
-__end_of_PMD_Initialize FA0 0 CODE 0 text15 dist/default/production/lab8v2.X.production.o
-__end_of_ping_isr EFC 0 CODE 0 text27 dist/default/production/lab8v2.X.production.o
+__end_of_PMD_Initialize C24 0 CODE 0 text14 dist/default/production/lab8v2.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production/lab8v2.X.production.o
-__pidataCOMRAM 102C 0 CODE 0 idataCOMRAM dist/default/production/lab8v2.X.production.o
-__size_of_IOCAF2_SetInterruptHandler 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_TMR3_Initialize E4A 0 CODE 0 text12 dist/default/production/lab8v2.X.production.o
-__end_of_TMR3_StartTimer 102C 0 CODE 0 text30 dist/default/production/lab8v2.X.production.o
-__end_of_TMR3_WriteTimer FBC 0 CODE 0 text28 dist/default/production/lab8v2.X.production.o
+__pidataCOMRAM C88 0 CODE 0 idataCOMRAM dist/default/production/lab8v2.X.production.o
+__end_of_TMR3_Initialize B5E 0 CODE 0 text11 dist/default/production/lab8v2.X.production.o
 _ANSELA F0C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ANSELB F14 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ANSELC F1C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_carcontrol_throttle 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcQJcA7hB.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcQJcA7hB.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcIgTPqBY.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcIgTPqBY.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_BORV$VBOR_190 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __end_of_INTERRUPT_InterruptManager 38 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/lab8v2.X.production.o
-ping@distance 36 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+ping@distance 31 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/lab8v2.X.production.o
-___fldiv@aexp 23 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fldiv@bexp 22 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fldiv@sign 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/lab8v2.X.production.o
 __LnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production/lab8v2.X.production.o
 __Hintcodelo 38 0 CODE 0 intcodelo dist/default/production/lab8v2.X.production.o
-main@cm_to_targ 6A 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
+main@cm_to_targ 60 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of___fladd 69A 0 CODE 0 text10 dist/default/production/lab8v2.X.production.o
-__end_of___fldiv 922 0 CODE 0 text9 dist/default/production/lab8v2.X.production.o
+__end_of___fladd 69A 0 CODE 0 text9 dist/default/production/lab8v2.X.production.o
 __end_of___flmul 38E 0 CODE 0 text4 dist/default/production/lab8v2.X.production.o
-__end_of___fltol D08 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
+__end_of___fltol A48 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
 __size_of_carcontrol_init 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_carcontrol_ISR 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_IOCAF2_SetInterruptHandler 1016 0 CODE 0 text17 dist/default/production/lab8v2.X.production.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/lab8v2.X.production.o
-___fladd@a 36 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fladd@b 32 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fldiv@a F 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fldiv@b B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_TMR2_SetInterruptHandler 100C 0 CODE 0 text14 dist/default/production/lab8v2.X.production.o
-___flmul@a 1D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___flmul@b 19 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_carcontrol_throttle FEE 0 CODE 0 text6 dist/default/production/lab8v2.X.production.o
+___fladd@a 31 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fladd@b 2D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+_TMR2_SetInterruptHandler C7A 0 CODE 0 text13 dist/default/production/lab8v2.X.production.o
+___flmul@a 18 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___flmul@b 14 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+_carcontrol_throttle C68 0 CODE 0 text6 dist/default/production/lab8v2.X.production.o
 __HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production/lab8v2.X.production.o
 __size_of_TMR2_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_TMR3_Initialize E14 0 CODE 0 text12 dist/default/production/lab8v2.X.production.o
-_TMR3_StartTimer 1028 0 CODE 0 text30 dist/default/production/lab8v2.X.production.o
-_TMR3_WriteTimer FA0 0 CODE 0 text28 dist/default/production/lab8v2.X.production.o
+_TMR3_Initialize B28 0 CODE 0 text11 dist/default/production/lab8v2.X.production.o
 __Lintcodelo 38 0 CODE 0 intcodelo dist/default/production/lab8v2.X.production.o
-_PIN_MANAGER_Initialize D84 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
-start_initialization DDC 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
+_PIN_MANAGER_Initialize AAA 0 CODE 0 text15 dist/default/production/lab8v2.X.production.o
+start_initialization AF0 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
 _ODCONA F0A 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ODCONB F12 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ODCONC F1A 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _OSCFRQ ED9 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/lab8v2.X.production.o
-_IOCAF2_DefaultInterruptHandler 1032 0 CODE 0 text26 dist/default/production/lab8v2.X.production.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_TRISAbits F87 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_stateTime 49 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
+_stateTime 4F 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_PIN_MANAGER_IOC 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_SYSTEM_Initialize FD6 0 CODE 0 text11 dist/default/production/lab8v2.X.production.o
+__end_of_SYSTEM_Initialize C3E 0 CODE 0 text10 dist/default/production/lab8v2.X.production.o
 _T3GCONbits FC9 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 _T3GATE FCA 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _T3GCON FC9 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _T2CLKCON FBE 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-TMR2_SetInterruptHandler@InterruptHandler B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+TMR2_SetInterruptHandler@InterruptHandler 6 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production/lab8v2.X.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production/lab8v2.X.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production/lab8v2.X.production.o
@@ -868,15 +700,12 @@ __Htext9 0 0 ABS 0 text9 dist/default/production/lab8v2.X.production.o
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/lab8v2.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production/lab8v2.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcQJcA7hB.o
-___xxtofl@arg 15 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___xxtofl@exp 14 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___xxtofl@val B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-__size_of_TMR3_ReadTimer 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcIgTPqBY.o
+___xxtofl@arg 10 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___xxtofl@exp F 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___xxtofl@val 6 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production/lab8v2.X.production.o
 __Hconfig 30000C 0 CONFIG 0 config dist/default/production/lab8v2.X.production.o
-TMR3_WriteTimer@timerVal 1 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_IOCAF2_InterruptHandler 50 0 COMRAM 1 nvCOMRAM dist/default/production/lab8v2.X.production.o
 _T2HLTbits FBD 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production/lab8v2.X.production.o
 __Lbank1 0 0 ABS 0 bank1 dist/default/production/lab8v2.X.production.o
@@ -905,66 +734,60 @@ __Ltext7 0 0 ABS 0 text7 dist/default/production/lab8v2.X.production.o
 __Ltext8 0 0 ABS 0 text8 dist/default/production/lab8v2.X.production.o
 __Ltext9 0 0 ABS 0 text9 dist/default/production/lab8v2.X.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production/lab8v2.X.production.o
-___flmul@grs 26 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___flmul@grs 22 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production/lab8v2.X.production.o
-_PORTAbits F8C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _INTCONbits FF2 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_INTERRUPT_Initialize 1020 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
+_INTERRUPT_Initialize C84 0 CODE 0 text17 dist/default/production/lab8v2.X.production.o
 __Habs1 0 0 ABS 0 abs1 dist/default/production/lab8v2.X.production.o
 __Hdata 0 0 ABS 0 data dist/default/production/lab8v2.X.production.o
 __Hinit 3C 0 CODE 0 init dist/default/production/lab8v2.X.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production/lab8v2.X.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production/lab8v2.X.production.o
-__Htemp 56 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+__Htemp 5A 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 __Htext 0 0 ABS 0 text dist/default/production/lab8v2.X.production.o
 __Labs1 0 0 ABS 0 abs1 dist/default/production/lab8v2.X.production.o
 __Ldata 0 0 ABS 0 data dist/default/production/lab8v2.X.production.o
 __Linit 38 0 CODE 0 init dist/default/production/lab8v2.X.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production/lab8v2.X.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production/lab8v2.X.production.o
-__Ltemp 55 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+__Ltemp 59 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production/lab8v2.X.production.o
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__pnvBANK0 74 0 BANK0 1 nvBANK0 dist/default/production/lab8v2.X.production.o
+__pnvBANK0 66 0 BANK0 1 nvBANK0 dist/default/production/lab8v2.X.production.o
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_SCANE$ON 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/lab8v2.X.production.o
-int$flags 55 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
+int$flags 59 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hintret 0 0 ABS 0 intret dist/default/production/lab8v2.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production/lab8v2.X.production.o
 _PR2 FBB 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __S0 30000C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__S1 76 0 ABS 0 - dist/default/production/lab8v2.X.production.o
+__S1 68 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __S2 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_TMR2_ISR 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_TMR3_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__size_of_TMR3_StartTimer 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_TMR3_StopTimer 1024 0 CODE 0 text29 dist/default/production/lab8v2.X.production.o
-__size_of_TMR3_WriteTimer 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_carcontrol_throttle 1000 0 CODE 0 text6 dist/default/production/lab8v2.X.production.o
-__pnvCOMRAM 4E 0 COMRAM 1 nvCOMRAM dist/default/production/lab8v2.X.production.o
-_carctl 44 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
+__end_of_carcontrol_throttle C7A 0 CODE 0 text6 dist/default/production/lab8v2.X.production.o
+__pnvCOMRAM 57 0 COMRAM 1 nvCOMRAM dist/default/production/lab8v2.X.production.o
+_carctl 49 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
 _T2RSTbits FBF 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/lab8v2.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/lab8v2.X.production.o
 __size_of_TMR2_SetInterruptHandler 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/lab8v2.X.production.o
-_SYSTEM_Initialize FBC 0 CODE 0 text11 dist/default/production/lab8v2.X.production.o
-_IOCAF2_ISR EFC 0 CODE 0 text25 dist/default/production/lab8v2.X.production.o
-___xxtofl 922 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
-_TMR2_DefaultInterruptHandler 1030 0 CODE 0 text22 dist/default/production/lab8v2.X.production.o
+_SYSTEM_Initialize C24 0 CODE 0 text10 dist/default/production/lab8v2.X.production.o
+___xxtofl 69A 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
+_TMR2_DefaultInterruptHandler C8C 0 CODE 0 text20 dist/default/production/lab8v2.X.production.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production/lab8v2.X.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production/lab8v2.X.production.o
-__end_of_ping_init F84 0 CODE 0 text1 dist/default/production/lab8v2.X.production.o
+__end_of_ping_init C68 0 CODE 0 text1 dist/default/production/lab8v2.X.production.o
 __Hramtop 800 0 RAM 0 ramtop dist/default/production/lab8v2.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production/lab8v2.X.production.o
-__end_of___xxtofl A62 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
+__end_of___xxtofl 7DA 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
 __size_of_ping_init 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __activetblptr 2 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production/lab8v2.X.production.o
-IOCAF2_SetInterruptHandler@InterruptHandler B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Htext10 0 0 ABS 0 text10 dist/default/production/lab8v2.X.production.o
 __Htext11 0 0 ABS 0 text11 dist/default/production/lab8v2.X.production.o
 __Htext12 0 0 ABS 0 text12 dist/default/production/lab8v2.X.production.o
@@ -973,128 +796,98 @@ __Htext14 0 0 ABS 0 text14 dist/default/production/lab8v2.X.production.o
 __Htext15 0 0 ABS 0 text15 dist/default/production/lab8v2.X.production.o
 __Htext16 0 0 ABS 0 text16 dist/default/production/lab8v2.X.production.o
 __Htext17 0 0 ABS 0 text17 dist/default/production/lab8v2.X.production.o
-__Htext18 0 0 ABS 0 text18 dist/default/production/lab8v2.X.production.o
 __Htext19 0 0 ABS 0 text19 dist/default/production/lab8v2.X.production.o
+__Htext20 0 0 ABS 0 text20 dist/default/production/lab8v2.X.production.o
 __Htext21 0 0 ABS 0 text21 dist/default/production/lab8v2.X.production.o
 __Htext22 0 0 ABS 0 text22 dist/default/production/lab8v2.X.production.o
 __Htext23 0 0 ABS 0 text23 dist/default/production/lab8v2.X.production.o
-__Htext24 0 0 ABS 0 text24 dist/default/production/lab8v2.X.production.o
-__Htext25 0 0 ABS 0 text25 dist/default/production/lab8v2.X.production.o
-__Htext26 0 0 ABS 0 text26 dist/default/production/lab8v2.X.production.o
-__Htext27 0 0 ABS 0 text27 dist/default/production/lab8v2.X.production.o
-__Htext28 0 0 ABS 0 text28 dist/default/production/lab8v2.X.production.o
-__Htext29 0 0 ABS 0 text29 dist/default/production/lab8v2.X.production.o
-__Htext30 0 0 ABS 0 text30 dist/default/production/lab8v2.X.production.o
-__Htext31 0 0 ABS 0 text31 dist/default/production/lab8v2.X.production.o
-__Htext32 0 0 ABS 0 text32 dist/default/production/lab8v2.X.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _INTERRUPT_InterruptManager 8 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
-_IOCAFbits F05 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_IOCANbits F06 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_PMD_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_IOCAPbits F07 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _PIE0bits EBD 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _PIE4bits EC1 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-carcontrol_throttle@throttle B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fladd@signs 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_TMR2_ISR F22 0 CODE 0 text21 dist/default/production/lab8v2.X.production.o
-__ptext10 38E 0 CODE 0 text10 dist/default/production/lab8v2.X.production.o
-__ptext11 FBC 0 CODE 0 text11 dist/default/production/lab8v2.X.production.o
-__ptext12 E14 0 CODE 0 text12 dist/default/production/lab8v2.X.production.o
-__ptext13 EA4 0 CODE 0 text13 dist/default/production/lab8v2.X.production.o
-__ptext14 100C 0 CODE 0 text14 dist/default/production/lab8v2.X.production.o
-__ptext15 F84 0 CODE 0 text15 dist/default/production/lab8v2.X.production.o
-__ptext16 D84 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
-__ptext17 1016 0 CODE 0 text17 dist/default/production/lab8v2.X.production.o
-__ptext18 FD6 0 CODE 0 text18 dist/default/production/lab8v2.X.production.o
-__ptext19 1020 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
-__ptext21 F22 0 CODE 0 text21 dist/default/production/lab8v2.X.production.o
-__ptext22 1030 0 CODE 0 text22 dist/default/production/lab8v2.X.production.o
-__ptext23 B68 0 CODE 0 text23 dist/default/production/lab8v2.X.production.o
-__ptext24 1000 0 CODE 0 text24 dist/default/production/lab8v2.X.production.o
-__ptext25 EFC 0 CODE 0 text25 dist/default/production/lab8v2.X.production.o
-__ptext26 1032 0 CODE 0 text26 dist/default/production/lab8v2.X.production.o
-__ptext27 ED0 0 CODE 0 text27 dist/default/production/lab8v2.X.production.o
-__ptext28 FA0 0 CODE 0 text28 dist/default/production/lab8v2.X.production.o
-__ptext29 1024 0 CODE 0 text29 dist/default/production/lab8v2.X.production.o
-__ptext30 1028 0 CODE 0 text30 dist/default/production/lab8v2.X.production.o
-__ptext31 F46 0 CODE 0 text31 dist/default/production/lab8v2.X.production.o
-__ptext32 0 0 CODE 0 text32 dist/default/production/lab8v2.X.production.o
-__end_of_TMR3_StopTimer 1028 0 CODE 0 text29 dist/default/production/lab8v2.X.production.o
-__end_of_PIN_MANAGER_Initialize DDC 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
-_ping_init F66 0 CODE 0 text1 dist/default/production/lab8v2.X.production.o
-___fladd 38E 0 CODE 0 text10 dist/default/production/lab8v2.X.production.o
-___fldiv 69A 0 CODE 0 text9 dist/default/production/lab8v2.X.production.o
+carcontrol_throttle@throttle 6 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fladd@signs 39 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+_TMR2_ISR BE4 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
+__ptext10 C24 0 CODE 0 text10 dist/default/production/lab8v2.X.production.o
+__ptext11 B28 0 CODE 0 text11 dist/default/production/lab8v2.X.production.o
+__ptext12 BB8 0 CODE 0 text12 dist/default/production/lab8v2.X.production.o
+__ptext13 C7A 0 CODE 0 text13 dist/default/production/lab8v2.X.production.o
+__ptext14 C08 0 CODE 0 text14 dist/default/production/lab8v2.X.production.o
+__ptext15 AAA 0 CODE 0 text15 dist/default/production/lab8v2.X.production.o
+__ptext16 C3E 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
+__ptext17 C84 0 CODE 0 text17 dist/default/production/lab8v2.X.production.o
+__ptext19 BE4 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
+__ptext20 C8C 0 CODE 0 text20 dist/default/production/lab8v2.X.production.o
+__ptext21 7DA 0 CODE 0 text21 dist/default/production/lab8v2.X.production.o
+__ptext22 C8E 0 CODE 0 text22 dist/default/production/lab8v2.X.production.o
+__ptext23 0 0 CODE 0 text23 dist/default/production/lab8v2.X.production.o
+__end_of_PIN_MANAGER_Initialize AF0 0 CODE 0 text15 dist/default/production/lab8v2.X.production.o
+_ping_init C56 0 CODE 0 text1 dist/default/production/lab8v2.X.production.o
+___fladd 38E 0 CODE 0 text9 dist/default/production/lab8v2.X.production.o
 ___flmul 3C 0 CODE 0 text4 dist/default/production/lab8v2.X.production.o
-___fltol C4C 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
+___fltol 98E 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/lab8v2.X.production.o
 __Lbigram 0 0 ABS 0 bigram dist/default/production/lab8v2.X.production.o
-?_ping 32 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+?_ping 2D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production/lab8v2.X.production.o
 __Lconfig 300000 0 CONFIG 0 config dist/default/production/lab8v2.X.production.o
-TMR3_ReadTimer@readValHigh 7 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_servo_max 52 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
-_servo_min 53 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
+_servo_max 54 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
+_servo_min 55 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_TMR2_ISR F46 0 CODE 0 text21 dist/default/production/lab8v2.X.production.o
+__end_of_TMR2_ISR C08 0 CODE 0 text19 dist/default/production/lab8v2.X.production.o
 _LATAbits F82 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___fldiv@grs 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fldiv@rem 17 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_read_ready 4B 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
-main@dist 6E 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
+_read_ready 51 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/lab8v2.X.production.o
-main@angle 72 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
+main@angle 64 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/lab8v2.X.production.o
-___fldiv@new_exp 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-__end_of_IOCAF2_ISR F22 0 CODE 0 text25 dist/default/production/lab8v2.X.production.o
-stackhi 7FF 0 ABS 0 - /tmp/xcQJcA7hB.o
-stacklo 76 0 ABS 0 - /tmp/xcQJcA7hB.o
+stackhi 7FF 0 ABS 0 - /tmp/xcIgTPqBY.o
+stacklo 68 0 ABS 0 - /tmp/xcIgTPqBY.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
 _OSCCON1 ED3 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _OSCCON3 ED5 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _OSCTUNE ED8 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production/lab8v2.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production/lab8v2.X.production.o
-___fladd@grs 41 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fladd@grs 3C 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__pbssCOMRAM 44 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
+__pbssCOMRAM 49 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_TMR2_SetInterruptHandler 1016 0 CODE 0 text14 dist/default/production/lab8v2.X.production.o
+__end_of_TMR2_SetInterruptHandler C84 0 CODE 0 text13 dist/default/production/lab8v2.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/lab8v2.X.production.o
 _PIR0bits EC5 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _PIR4bits EC9 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fltol@exp1 43 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fltol@exp1 46 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-end_of_initialization E06 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
-_carcontrol_ISR B68 0 CODE 0 text23 dist/default/production/lab8v2.X.production.o
+end_of_initialization B1A 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
+_carcontrol_ISR 7DA 0 CODE 0 text21 dist/default/production/lab8v2.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/lab8v2.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production/lab8v2.X.production.o
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-?___fladd 32 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-?___fldiv B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-?___flmul 19 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-?___fltol 60 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
+?___fladd 2D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+?___flmul 14 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+?___fltol 3D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/lab8v2.X.production.o
 __size_of_carcontrol_steering 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lramtop 800 0 RAM 0 ramtop dist/default/production/lab8v2.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production/lab8v2.X.production.o
-__pcinit DDC 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
-__ptext0 A62 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
-__ptext1 F66 0 CODE 0 text1 dist/default/production/lab8v2.X.production.o
-__ptext2 D08 0 CODE 0 text2 dist/default/production/lab8v2.X.production.o
-__ptext3 922 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
+__pcinit AF0 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
+__ptext0 8BE 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
+__ptext1 C56 0 CODE 0 text1 dist/default/production/lab8v2.X.production.o
+__ptext2 A48 0 CODE 0 text2 dist/default/production/lab8v2.X.production.o
+__ptext3 69A 0 CODE 0 text3 dist/default/production/lab8v2.X.production.o
 __ptext4 3C 0 CODE 0 text4 dist/default/production/lab8v2.X.production.o
-__ptext5 E4A 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
-__ptext6 FEE 0 CODE 0 text6 dist/default/production/lab8v2.X.production.o
-__ptext7 E78 0 CODE 0 text7 dist/default/production/lab8v2.X.production.o
-__ptext8 C4C 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
-__ptext9 69A 0 CODE 0 text9 dist/default/production/lab8v2.X.production.o
+__ptext5 B5E 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
+__ptext6 C68 0 CODE 0 text6 dist/default/production/lab8v2.X.production.o
+__ptext7 B8C 0 CODE 0 text7 dist/default/production/lab8v2.X.production.o
+__ptext8 98E 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
+__ptext9 38E 0 CODE 0 text9 dist/default/production/lab8v2.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production/lab8v2.X.production.o
 __Ltext10 0 0 ABS 0 text10 dist/default/production/lab8v2.X.production.o
 __Ltext11 0 0 ABS 0 text11 dist/default/production/lab8v2.X.production.o
@@ -1104,63 +897,50 @@ __Ltext14 0 0 ABS 0 text14 dist/default/production/lab8v2.X.production.o
 __Ltext15 0 0 ABS 0 text15 dist/default/production/lab8v2.X.production.o
 __Ltext16 0 0 ABS 0 text16 dist/default/production/lab8v2.X.production.o
 __Ltext17 0 0 ABS 0 text17 dist/default/production/lab8v2.X.production.o
-__Ltext18 0 0 ABS 0 text18 dist/default/production/lab8v2.X.production.o
 __Ltext19 0 0 ABS 0 text19 dist/default/production/lab8v2.X.production.o
+__Ltext20 0 0 ABS 0 text20 dist/default/production/lab8v2.X.production.o
 __Ltext21 0 0 ABS 0 text21 dist/default/production/lab8v2.X.production.o
 __Ltext22 0 0 ABS 0 text22 dist/default/production/lab8v2.X.production.o
 __Ltext23 0 0 ABS 0 text23 dist/default/production/lab8v2.X.production.o
-__Ltext24 0 0 ABS 0 text24 dist/default/production/lab8v2.X.production.o
-__Ltext25 0 0 ABS 0 text25 dist/default/production/lab8v2.X.production.o
-__Ltext26 0 0 ABS 0 text26 dist/default/production/lab8v2.X.production.o
-__Ltext27 0 0 ABS 0 text27 dist/default/production/lab8v2.X.production.o
-__Ltext28 0 0 ABS 0 text28 dist/default/production/lab8v2.X.production.o
-__Ltext29 0 0 ABS 0 text29 dist/default/production/lab8v2.X.production.o
-__Ltext30 0 0 ABS 0 text30 dist/default/production/lab8v2.X.production.o
-__Ltext31 0 0 ABS 0 text31 dist/default/production/lab8v2.X.production.o
-__Ltext32 0 0 ABS 0 text32 dist/default/production/lab8v2.X.production.o
-__ramtop 800 0 RAM 0 ramtop /tmp/xcQJcA7hB.o
+__ramtop 800 0 RAM 0 ramtop /tmp/xcIgTPqBY.o
 __Lpowerup 38 0 CODE 0 powerup dist/default/production/lab8v2.X.production.o
-?___xxtofl B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+?___xxtofl 6 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/lab8v2.X.production.o
-___fladd@aexp 3F 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fladd@bexp 40 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-___fltol@sign1 42 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fladd@aexp 3A 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fladd@bexp 3B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+___fltol@sign1 45 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/lab8v2.X.production.o
-TMR3_ReadTimer@readVal 5 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_time_val 4C 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
+_time_val 52 0 COMRAM 1 bssCOMRAM dist/default/production/lab8v2.X.production.o
 _SLRCONA F09 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _SLRCONB F11 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _SLRCONC F19 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___fltol@f1 60 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
+___fltol@f1 3D 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_TMR2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/lab8v2.X.production.o
-__end_of__initialization E06 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
+__end_of__initialization B1A 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production/lab8v2.X.production.o
-__end_of_carcontrol_ISR C4C 0 CODE 0 text23 dist/default/production/lab8v2.X.production.o
+__end_of_carcontrol_ISR 8BE 0 CODE 0 text21 dist/default/production/lab8v2.X.production.o
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_TMR2_DefaultInterruptHandler 1032 0 CODE 0 text22 dist/default/production/lab8v2.X.production.o
+__end_of_TMR2_DefaultInterruptHandler C8E 0 CODE 0 text20 dist/default/production/lab8v2.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production/lab8v2.X.production.o
-_carcontrol_steering E78 0 CODE 0 text7 dist/default/production/lab8v2.X.production.o
-_TMR3_ReadTimer F46 0 CODE 0 text31 dist/default/production/lab8v2.X.production.o
-__size_of_IOCAF2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
+_carcontrol_steering B8C 0 CODE 0 text7 dist/default/production/lab8v2.X.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 _T3CONbits FC8 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-_timer3ReloadVal 74 0 BANK0 1 nvBANK0 dist/default/production/lab8v2.X.production.o
+_timer3ReloadVal 66 0 BANK0 1 nvBANK0 dist/default/production/lab8v2.X.production.o
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_main B68 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
-__end_of_ping D84 0 CODE 0 text2 dist/default/production/lab8v2.X.production.o
+__end_of_main 98E 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
+__end_of_ping AAA 0 CODE 0 text2 dist/default/production/lab8v2.X.production.o
 __pintcode 8 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
-__end_of_IOCAF2_SetInterruptHandler 1020 0 CODE 0 text17 dist/default/production/lab8v2.X.production.o
-carcontrol_steering@steering B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-_servo_trim 54 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
+carcontrol_steering@steering 6 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+_servo_trim 56 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
 _OSCEN ED7 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _T2CON FBC 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _T2HLT FBD 0 ABS 0 - dist/default/production/lab8v2.X.production.o
@@ -1181,28 +961,26 @@ __LRAM 1 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production/lab8v2.X.production.o
 __Lram 0 0 ABS 0 ram dist/default/production/lab8v2.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production/lab8v2.X.production.o
-_TMR2_InterruptHandler 4E 0 COMRAM 1 nvCOMRAM dist/default/production/lab8v2.X.production.o
+_TMR2_InterruptHandler 57 0 COMRAM 1 nvCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_OSCILLATOR_Initialize FEE 0 CODE 0 text18 dist/default/production/lab8v2.X.production.o
+__end_of_OSCILLATOR_Initialize C56 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__initialization DDC 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
+__initialization AF0 0 CODE 0 cinit dist/default/production/lab8v2.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___xxtofl@sign 13 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
-__pdataCOMRAM 52 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
+___xxtofl@sign E 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
+__pdataCOMRAM 54 0 COMRAM 1 dataCOMRAM dist/default/production/lab8v2.X.production.o
 _T2CONbits FBC 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_carcontrol_init E78 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
+__end_of_carcontrol_init B8C 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production/lab8v2.X.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/lab8v2.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production/lab8v2.X.production.o
-__size_of_IOCAF2_ISR 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/lab8v2.X.production.o
 __CFG_MCLRE$EXTMCLR 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hintcode 38 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
 __size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-__end_of_TMR3_ReadTimer F66 0 CODE 0 text31 dist/default/production/lab8v2.X.production.o
-_OSCILLATOR_Initialize FD6 0 CODE 0 text18 dist/default/production/lab8v2.X.production.o
-__end_of_TMR2_Initialize ED0 0 CODE 0 text13 dist/default/production/lab8v2.X.production.o
+_OSCILLATOR_Initialize C3E 0 CODE 0 text16 dist/default/production/lab8v2.X.production.o
+__end_of_TMR2_Initialize BE4 0 CODE 0 text12 dist/default/production/lab8v2.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1228,9 +1006,9 @@ __end_of_TMR2_Initialize ED0 0 CODE 0 text13 dist/default/production/lab8v2.X.pr
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 100 1
-text22 0 1030 1030 4 1
-cstackCOMRAM 1 1 1 55 1
-cstackBANK0 1 60 60 16 1
+text20 0 C8C C8C 4 1
+cstackCOMRAM 1 1 1 59 1
+cstackBANK0 1 60 60 8 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 1027 1
+intcode 0 8 8 C83 1
 config 0 300000 300000 C 1
