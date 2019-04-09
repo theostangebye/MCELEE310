@@ -1,15 +1,15 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[c E9402 0 1 2 3 .. ]
-[n E9402 ctl_state_t state_unset state_high state_vary state_low  ]
+[c E9434 0 1 2 3 .. ]
+[n E9434 ctl_state_t state_unset state_high state_vary state_low  ]
 "18
 [; ;./car_ctrl.h: 18: struct carctl_t {
-[s S1381 `a 1 `E9402 1 `us 1 `uc 1 `uc 1 ]
-[n S1381 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
+[s S1384 `a 1 `E9434 1 `us 1 `uc 1 `uc 1 ]
+[n S1384 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+"72 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "25396 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25396:     struct {
@@ -43,9 +43,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 ./car_ctrl.h
 [; ;./car_ctrl.h: 32: void carcontrol_steering(int8_t steering);
 [v _carcontrol_steering `(v ~T0 @X0 0 ef1`c ]
-"24 ./ping.h
-[; ;./ping.h: 24:     float ping();
-[v _ping `(f ~T0 @X0 0 e? ]
+"23 ./ping.h
+[; ;./ping.h: 23:     void ping_send();
+[v _ping_send `(v ~T0 @X0 0 e? ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1299,7 +1299,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[v _carctl `VS1381 ~T0 @X0 1 e ]
+[v _carctl `VS1384 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "51 main.c
 [; ;main.c: 51: void main(void)
@@ -1335,31 +1335,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "80
 [; ;main.c: 80:     while (1)
-[e :U 1384 ]
+[e :U 1387 ]
 "81
 [; ;main.c: 81:     {
 {
 "82
-[; ;main.c: 82:         float cm_to_targ = ping();
-[v _cm_to_targ `f ~T0 @X0 1 a ]
-[e = _cm_to_targ ( _ping ..  ]
-"84
-[; ;main.c: 84:         int angle = (cm_to_targ*60)-30;
-[v _angle `i ~T0 @X0 1 a ]
-[e = _angle -> - * _cm_to_targ -> -> 60 `i `f -> -> 30 `i `f `i ]
-"85
-[; ;main.c: 85:         carcontrol_steering(angle);
-[e ( _carcontrol_steering (1 -> _angle `c ]
+[; ;main.c: 82:         ping_send();
+[e ( _ping_send ..  ]
 "87
-[; ;main.c: 87:         _delay((unsigned long)((100)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 87:         _delay((unsigned long)((250)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "90
 [; ;main.c: 90:     }
 }
-[e :U 1383 ]
-[e $U 1384  ]
-[e :U 1385 ]
+[e :U 1386 ]
+[e $U 1387  ]
+[e :U 1388 ]
 "91
 [; ;main.c: 91: }
-[e :UE 1382 ]
+[e :UE 1385 ]
 }

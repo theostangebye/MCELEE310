@@ -15645,15 +15645,25 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "/Applications/microchip/xc8/v2.05/pic/include/xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 118 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 130 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 142 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 155 "mcc_generated_files/pin_manager.h"
+void IOCCF2_ISR(void);
+# 178 "mcc_generated_files/pin_manager.h"
+void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 202 "mcc_generated_files/pin_manager.h"
+extern void (*IOCCF2_InterruptHandler)(void);
+# 226 "mcc_generated_files/pin_manager.h"
+void IOCCF2_DefaultInterruptHandler(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
 
 
 
+
+void (*IOCCF2_InterruptHandler)(void);
 
 
 void PIN_MANAGER_Initialize(void)
@@ -15675,7 +15685,7 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELC = 0xFF;
+    ANSELC = 0xFB;
     ANSELB = 0xFF;
     ANSELA = 0xFE;
 
@@ -15706,11 +15716,59 @@ void PIN_MANAGER_Initialize(void)
 
 
 
+    IOCCFbits.IOCCF2 = 0;
+
+    IOCCNbits.IOCCN2 = 0;
+
+    IOCCPbits.IOCCP2 = 1;
+
+
+
+
+    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler);
+
 
     PIE0bits.IOCIE = 1;
 
+
+    CCP1PPS = 0x12;
 }
 
 void PIN_MANAGER_IOC(void)
 {
+
+    if(IOCCFbits.IOCCF2 == 1)
+    {
+        IOCCF2_ISR();
+    }
+}
+
+
+
+
+void IOCCF2_ISR(void) {
+
+
+
+
+    if(IOCCF2_InterruptHandler)
+    {
+        IOCCF2_InterruptHandler();
+    }
+    IOCCFbits.IOCCF2 = 0;
+}
+
+
+
+
+void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCCF2_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IOCCF2_DefaultInterruptHandler(void){
+
+
 }

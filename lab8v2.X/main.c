@@ -79,12 +79,12 @@ void main(void)
         
     while (1)
     {   
-        float cm_to_targ = ping();
+        ping_send();
                 
-        int angle = (cm_to_targ*60)-30;
-        carcontrol_steering(angle);
+//        int angle = (cm_to_targ*60)-30;
+//        carcontrol_steering(angle);
         
-        __delay_ms(100);
+        __delay_ms(250);
         
        
     }

@@ -105,6 +105,18 @@
 #define STEERING_SetAnalogMode()      do { ANSELAbits.ANSELA1 = 1; } while(0)
 #define STEERING_SetDigitalMode()     do { ANSELAbits.ANSELA1 = 0; } while(0)
 
+// get/set RC2 procedures
+#define RC2_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define RC2_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define RC2_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define RC2_GetValue()              PORTCbits.RC2
+#define RC2_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define RC2_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define RC2_SetPullup()             do { WPUCbits.WPUC2 = 1; } while(0)
+#define RC2_ResetPullup()           do { WPUCbits.WPUC2 = 0; } while(0)
+#define RC2_SetAnalogMode()         do { ANSELCbits.ANSELC2 = 1; } while(0)
+#define RC2_SetDigitalMode()        do { ANSELCbits.ANSELC2 = 0; } while(0)
+
 /**
    @Param
     none
@@ -128,6 +140,90 @@ void PIN_MANAGER_Initialize (void);
     PIN_MANAGER_IOC();
  */
 void PIN_MANAGER_IOC(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCCF2 pin functionality
+ * @Example
+    IOCCF2_ISR();
+ */
+void IOCCF2_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCCF2 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCCF2 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCCF2_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCCF2 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCCF2_SetInterruptHandler() method.
+    This handler is called every time the IOCCF2 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCCF2_SetInterruptHandler(IOCCF2_InterruptHandler);
+
+*/
+extern void (*IOCCF2_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCCF2 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCCF2_SetInterruptHandler() method.
+    This handler is called every time the IOCCF2 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler);
+
+*/
+void IOCCF2_DefaultInterruptHandler(void);
 
 
 

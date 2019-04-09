@@ -15650,10 +15650,18 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 118 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 130 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 142 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 155 "./mcc_generated_files/pin_manager.h"
+void IOCCF2_ISR(void);
+# 178 "./mcc_generated_files/pin_manager.h"
+void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 202 "./mcc_generated_files/pin_manager.h"
+extern void (*IOCCF2_InterruptHandler)(void);
+# 226 "./mcc_generated_files/pin_manager.h"
+void IOCCF2_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdint.h" 1 3
@@ -15747,6 +15755,55 @@ typedef uint32_t uint_fast32_t;
 # 110 "./mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 # 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 100 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 129 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 310 "./mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 367 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 385 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 403 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 421 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/ccp1.h" 1
+# 80 "./mcc_generated_files/ccp1.h"
+typedef union CCPR1Reg_tag
+{
+   struct
+   {
+      uint8_t ccpr1l;
+      uint8_t ccpr1h;
+   };
+   struct
+   {
+      uint16_t ccpr1_16Bit;
+   };
+} CCP1_PERIOD_REG_T ;
+# 123 "./mcc_generated_files/ccp1.h"
+void CCP1_Initialize(void);
+# 139 "./mcc_generated_files/ccp1.h"
+void CCP1_CaptureISR(void);
+# 180 "./mcc_generated_files/ccp1.h"
+ void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
+# 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 79 "./mcc_generated_files/tmr2.h"
@@ -15964,33 +16021,12 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 846 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr3.h" 1
-# 100 "./mcc_generated_files/tmr3.h"
-void TMR3_Initialize(void);
-# 129 "./mcc_generated_files/tmr3.h"
-void TMR3_StartTimer(void);
-# 161 "./mcc_generated_files/tmr3.h"
-void TMR3_StopTimer(void);
-# 196 "./mcc_generated_files/tmr3.h"
-uint16_t TMR3_ReadTimer(void);
-# 235 "./mcc_generated_files/tmr3.h"
-void TMR3_WriteTimer(uint16_t timerVal);
-# 271 "./mcc_generated_files/tmr3.h"
-void TMR3_Reload(void);
-# 310 "./mcc_generated_files/tmr3.h"
-void TMR3_StartSinglePulseAcquisition(void);
-# 349 "./mcc_generated_files/tmr3.h"
-uint8_t TMR3_CheckGateValueStatus(void);
-# 387 "./mcc_generated_files/tmr3.h"
-_Bool TMR3_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 57 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
+# 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "./mcc_generated_files/mcc.h"
+# 98 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
@@ -16024,8 +16060,14 @@ void carcontrol_throttle(uint8_t throttle);
 
 
 
+    void ping_send();
 
-    float ping();
+
+
+
+
+
+    float ping_get();
 # 46 "main.c" 2
 
 
@@ -16063,12 +16105,12 @@ void main(void)
 
     while (1)
     {
-        float cm_to_targ = ping();
+        ping_send();
 
-        int angle = (cm_to_targ*60)-30;
-        carcontrol_steering(angle);
 
-        _delay((unsigned long)((100)*(64000000/4000.0)));
+
+
+        _delay((unsigned long)((250)*(64000000/4000.0)));
 
 
     }
