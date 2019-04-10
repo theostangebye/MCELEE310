@@ -10,8 +10,9 @@
 struct ping_stat_t {
     bool readReady;    // whether or not a distance calc is ready.
     bool pingInAir;   // true when a ping is sent, false when it is recieved.
-    float measurment;   // distance in [cm]
+    double measurment;   // distance in [cm]
     bool pingStarted;
+    uint16_t tof;
 };
 
 volatile struct ping_stat_t status;
@@ -38,6 +39,13 @@ void ping_TMR1Overflow_isr() {
     if (status.pingInAir) {
         // we've waited on ping too long and need to break/Reset or something
         // TODO -> basically reset for another ping.
+        PIE6bits.CCP1IE = 0;    // disable CCP1
+        TMR1_StopTimer();      // Start timer
+        TMR1_WriteTimer(0); // Reset timer (in case ping doesn't respond)
+
+        status.pingInAir = false;
+        status.pingStarted = false;
+        
     } else {
         // if a ping isn't in the air, set GPIO as input
         RC2_SetLow();          // latch val
@@ -56,8 +64,9 @@ void ping_TMR1Overflow_isr() {
 void ping_CCP1_triggered(uint16_t timeOfFlight) {
     // finish calc -> reset pingStarted and get ready to return!
     TMR1_StopTimer(); // keep timer from overflowing
-    
-    status.measurment = 0.0000214375 * (float) timeOfFlight;
+//    uint16_t timer_val = TMR1_ReadTimer();
+    status.tof = timeOfFlight;
+    status.measurment = 0.0171 * timeOfFlight;
     
     PIE6bits.CCP1IE = 0;    // disable CCP1 until ping is in air
     status.pingInAir = false;
@@ -77,6 +86,7 @@ void ping_init() {
     status.readReady = false;
     status.pingInAir = false;
     status.pingStarted = false;
+    status.tof = 0;
     initialized = true;
 }
     
@@ -108,6 +118,7 @@ void ping_send() {
  */
 float ping_get() {
     if (status.readReady) {
+        status.readReady = false;
         return status.measurment;
     } else {
         return 0;

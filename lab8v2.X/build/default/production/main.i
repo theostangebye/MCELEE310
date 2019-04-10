@@ -15783,28 +15783,6 @@ extern void (*TMR1_InterruptHandler)(void);
 void TMR1_DefaultInterruptHandler(void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/ccp1.h" 1
-# 80 "./mcc_generated_files/ccp1.h"
-typedef union CCPR1Reg_tag
-{
-   struct
-   {
-      uint8_t ccpr1l;
-      uint8_t ccpr1h;
-   };
-   struct
-   {
-      uint16_t ccpr1_16Bit;
-   };
-} CCP1_PERIOD_REG_T ;
-# 123 "./mcc_generated_files/ccp1.h"
-void CCP1_Initialize(void);
-# 139 "./mcc_generated_files/ccp1.h"
-void CCP1_CaptureISR(void);
-# 180 "./mcc_generated_files/ccp1.h"
- void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
-# 56 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 79 "./mcc_generated_files/tmr2.h"
 typedef enum
@@ -16021,6 +15999,28 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 846 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/ccp1.h" 1
+# 80 "./mcc_generated_files/ccp1.h"
+typedef union CCPR1Reg_tag
+{
+   struct
+   {
+      uint8_t ccpr1l;
+      uint8_t ccpr1h;
+   };
+   struct
+   {
+      uint16_t ccpr1_16Bit;
+   };
+} CCP1_PERIOD_REG_T ;
+# 123 "./mcc_generated_files/ccp1.h"
+void CCP1_Initialize(void);
+# 139 "./mcc_generated_files/ccp1.h"
+void CCP1_CaptureISR(void);
+# 180 "./mcc_generated_files/ccp1.h"
+ void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
 # 57 "./mcc_generated_files/mcc.h" 2
 # 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -16107,10 +16107,12 @@ void main(void)
     {
         ping_send();
 
-
-
-
         _delay((unsigned long)((250)*(64000000/4000.0)));
+        double distance = ping_get();
+
+        double angle = (distance)-30;
+        carcontrol_steering(angle);
+
 
 
     }

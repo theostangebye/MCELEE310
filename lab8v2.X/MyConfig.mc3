@@ -29,12 +29,12 @@
          <string>class com.microchip.mcc.mcu8.interruptManager.InterruptManager</string>
       </entry>
       <entry>
-         <string>CCP1</string>
-         <string>class com.microchip.mcc.mcu8.modules.ccp.CCP</string>
-      </entry>
-      <entry>
          <string>TMR2</string>
          <string>class com.microchip.mcc.mcu8.modules.tmr2.TMR2</string>
+      </entry>
+      <entry>
+         <string>CCP1</string>
+         <string>class com.microchip.mcc.mcu8.modules.ccp.CCP</string>
       </entry>
       <entry>
          <string>TMR1</string>
@@ -1223,7 +1223,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TCON"/>
-         <value>49</value>
+         <value>51</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="TCON"/>
@@ -2627,7 +2627,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TRD16"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSELC" settingAlias="ANSELC2" alias="digital"/>
@@ -6741,7 +6741,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/tmr1.c</file>
-         <hash>b65f8b02e55b0497cb71b7f6730c67a81996f2ebe6698dffde87caa69372f945</hash>
+         <hash>1f2aa7616641adaee182904c5b98dce0674ebadb7473e26afb40c34c015c32c1</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/ccp1.c</file>
@@ -6769,7 +6769,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>ce2f56a9cbb675239db1f4890f9cf5aa524a85ecc45e6ea9529c3a0845e4c55a</hash>
+         <hash>6782f7f6a4c44c69c5df4ba1dc3122617c186ff28ab44c7c65f9d2d9ce1089dd</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/device_config.c</file>
