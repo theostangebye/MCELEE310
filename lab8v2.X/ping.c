@@ -1,4 +1,5 @@
 #include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/ccp1.h"
 
 /**
  * 
@@ -9,52 +10,69 @@
  */
 struct ping_stat_t {
     bool readReady;    // whether or not a distance calc is ready.
-    bool pingInAir;   // true when a ping is sent, false when it is recieved.
     double measurment;   // distance in [cm]
     bool pingStarted;
     uint16_t tof;
 };
 
+void ping_RC2_went_HIGH();
+
 volatile struct ping_stat_t status;
 
 /**
- * Interrupt will enable and start off CCP1.
+ * We found out that the MCC generated code for TMR1 actually starts timer 1
+ * after loading it.  To fix this, I've copied the MCC code below and removde 
+ * the portion which starts timer 1.
+ * @param timerVal
  */
-void ping_RC2_went_HIGH() {
-    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler); // disable IOC
-    
-    TMR1_WriteTimer(0); // Reset timer (in case ping doesn't respond)
-    PIE6bits.CCP1IE = 1;// Enable CCP
-    TMR1_StartTimer();  // Start timer
+void TMR1_WriteTimer_NoStart(uint16_t timerVal)
+{
+    if (T1CONbits.nT1SYNC == 1)
+    {
+        // Stop the Timer by writing to TMRxON bit
+        T1CONbits.TMR1ON = 0;
+
+        // Write to the Timer1 register
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
+    }
+    else
+    {
+        // Write to the Timer1 register
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
+    }
 }
 
 /**
- * During a measuremnt, this will be called after 20 ms and can be useful in the
+ * During a measurement, this will be called after 20ms and can be useful in the
  * event that we don't get a signature back from PING
  * 
  * Otherwise, we'll use this as a way to conduct our initial 2us pulse for the 
  * ping module.
  */
 void ping_TMR1Overflow_isr() { 
-    if (status.pingInAir) {
-        // we've waited on ping too long and need to break/Reset or something
-        // TODO -> basically reset for another ping.
-        PIE6bits.CCP1IE = 0;    // disable CCP1
-        TMR1_StopTimer();      // Start timer
-        TMR1_WriteTimer(0); // Reset timer (in case ping doesn't respond)
+    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler); // disable timer interrupt
+    RC2_SetLow();          // latch val
+    RC2_SetDigitalInput(); // set pin as GPIO input
+    
+    // enable interrupt on Pin change (which will wait for Ping to respond)
+    IOCCF2_SetInterruptHandler(ping_RC2_went_HIGH); // enable IOC
+}
 
-        status.pingInAir = false;
-        status.pingStarted = false;
-        
-    } else {
-        // if a ping isn't in the air, set GPIO as input
-        RC2_SetLow();          // latch val
-        RC2_SetDigitalInput(); // set pin as GPIO input
-        
-        // enable interrupt on Pin change (which will wait for Ping to respond)
-        IOCCF2_SetInterruptHandler(ping_RC2_went_HIGH); // enable IOC
-        status.pingInAir = true; // a ping should be in the air soon!
-    }
+/**
+ * Interrupt will enable and start off CCP1.
+ */
+void ping_RC2_went_HIGH() {
+    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler); // disable IOC
+    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler); // disable timer interrupt
+
+    TMR1_WriteTimer(0); // Reset timer (in case ping doesn't respond)
+    TMR1_StartTimer();
+    DEBUG_Scope_SetHigh();
+    PIE6bits.CCP1IE = 1;    // enable CCP1
+    
+
 }
 
 /**
@@ -62,32 +80,26 @@ void ping_TMR1Overflow_isr() {
  * @param number of system clocks ping was in air.
  */
 void ping_CCP1_triggered(uint16_t timeOfFlight) {
-    // finish calc -> reset pingStarted and get ready to return!
-    TMR1_StopTimer(); // keep timer from overflowing
-//    uint16_t timer_val = TMR1_ReadTimer();
     status.tof = timeOfFlight;
-    status.measurment = 0.0171 * timeOfFlight;
-    
-    PIE6bits.CCP1IE = 0;    // disable CCP1 until ping is in air
-    status.pingInAir = false;
     status.pingStarted = false;
     status.readReady = true;
+//    DEBUG_DIG_SetLow();
+    PIE6bits.CCP1IE = 0;    // disable CCP1
+    DEBUG_Scope_SetLow();
 }
 
 /**
  * Initialize Ping sensor.
  */
 void ping_init() {
-    static bool initialized = false;
-    CCP1_SetCallBack(ping_CCP1_triggered);  // set callback function.
-    PIE6bits.CCP1IE = 0;                    // disable CCP1 until ping is in air
-    TMR1_SetInterruptHandler(ping_TMR1Overflow_isr); // set timer ISR
-    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler); // dummy isr.
+    DEBUG_DIG_SetHigh();
     status.readReady = false;
-    status.pingInAir = false;
     status.pingStarted = false;
-    status.tof = 0;
-    initialized = true;
+    PIE6bits.CCP1IE = 0; // disable CCP1 temporarily.
+    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);     // dummy isr
+    IOCCF2_SetInterruptHandler(IOCCF2_DefaultInterruptHandler); // dummy isr.
+    CCP1_SetCallBack(ping_CCP1_triggered);  // set callback function.
+    DEBUG_DIG_SetLow();
 }
     
 /**
@@ -95,20 +107,15 @@ void ping_init() {
  * @return distance to object in inches.
  */
 void ping_send() {
-    
-    ping_init();
-    
-    if (!status.pingStarted){
-
-        PIE6bits.CCP1IE = 0;    // disable CCP1 until ping is in air
-
-        TMR1_WriteTimer(0xFFFC);// load for 2us timer
+    __delay_us(10);
+    if (!status.pingStarted) {
         RC2_SetHigh();          // latch val
         RC2_SetDigitalOutput(); // set pin as GPIO output
+        TMR1_SetInterruptHandler(ping_TMR1Overflow_isr); // enable interrupt
+        TMR1_WriteTimer(0xFFFC);// load for 2us timer
         TMR1_StartTimer();      // Start timer
-        status.pingStarted = true;
+//        status.pingStarted = true;
     }
-
 }
 
 /**

@@ -64,17 +64,25 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE6bits.CCP1IE == 1 && PIR6bits.CCP1IF == 1)
+        if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
         {
-            CCP1_CaptureISR();
+            EUSART1_TxDefaultInterruptHandler();
+        } 
+        else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
+        {
+            EUSART1_RxDefaultInterruptHandler();
+        } 
+        else if(PIE4bits.TMR2IE == 1 && PIR4bits.TMR2IF == 1)
+        {
+            TMR2_ISR();
         } 
         else if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
         {
             TMR1_ISR();
         } 
-        else if(PIE4bits.TMR2IE == 1 && PIR4bits.TMR2IF == 1)
+        else if(PIE6bits.CCP1IE == 1 && PIR6bits.CCP1IF == 1)
         {
-            TMR2_ISR();
+            CCP1_CaptureISR();
         } 
     }      
 }

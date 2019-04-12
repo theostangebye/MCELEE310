@@ -81,12 +81,15 @@ void main(void)
     {   
         ping_send();
         
-        __delay_ms(250);
-        double distance = ping_get();
+        __delay_ms(350);
+//        double distance = ping_get();
 
-        double angle = (distance)-30;
-        carcontrol_steering(angle);
+//        double angle = (distance)-30;
+        carcontrol_steering(0);
         
+//        IO_RC7_SetHigh();
+//        printf("test");
+//        IO_RC7_SetLow();
         
        
     }
