@@ -66,6 +66,8 @@ state_low 3
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
+"43 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "86 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/ftdiv.c
@@ -86,6 +88,8 @@ state_low 3
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+"10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "27 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
 [v _carcontrol_init carcontrol_init `(v  1 e 1 0 ]
 "41
@@ -190,12 +194,14 @@ state_low 3
 [v _ping_TMR1Overflow_isr ping_TMR1Overflow_isr `(v  1 e 1 0 ]
 "66
 [v _ping_RC2_went_HIGH ping_RC2_went_HIGH `(v  1 e 1 0 ]
-"82
+"83
 [v _ping_CCP1_triggered ping_CCP1_triggered `(v  1 e 1 0 ]
-"94
+"97
 [v _ping_init ping_init `(v  1 e 1 0 ]
-"109
+"112
 [v _ping_send ping_send `(v  1 e 1 0 ]
+"129
+[v _ping_get ping_get `(f  1 e 4 0 ]
 "96 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/eusart1.h
 [v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
 "97
@@ -298,6 +304,8 @@ state_low 3
 "3905
 [u S248 . 1 `S241 1 . 1 0 ]
 [v _PIR4bits PIR4bits `VES248  1 e 1 @3785 ]
+"3972
+[v _PIR6 PIR6 `VEuc  1 e 1 @3787 ]
 [s S733 . 1 `uc 1 CCP1IF 1 0 :1:0 
 `uc 1 CCP2IF 1 0 :1:1 
 ]
@@ -392,7 +400,7 @@ state_low 3
 [v _WPUE WPUE `VEuc  1 e 1 @3880 ]
 "14514
 [v _LATA LATA `VEuc  1 e 1 @3970 ]
-[s S1498 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1504 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -402,36 +410,36 @@ state_low 3
 `uc 1 LATA7 1 0 :1:7 
 ]
 "14562
-[s S1507 . 1 `uc 1 LA0 1 0 :1:0 
+[s S1513 . 1 `uc 1 LA0 1 0 :1:0 
 ]
-[s S1509 . 1 `uc 1 . 1 0 :1:0 
+[s S1515 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 ]
-[s S1512 . 1 `uc 1 . 1 0 :2:0 
+[s S1518 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LA2 1 0 :1:2 
 ]
-[s S1515 . 1 `uc 1 . 1 0 :3:0 
+[s S1521 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LA3 1 0 :1:3 
 ]
-[s S1518 . 1 `uc 1 . 1 0 :4:0 
+[s S1524 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LA4 1 0 :1:4 
 ]
-[s S1521 . 1 `uc 1 . 1 0 :5:0 
+[s S1527 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LA5 1 0 :1:5 
 ]
-[s S1524 . 1 `uc 1 . 1 0 :6:0 
+[s S1530 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LA6 1 0 :1:6 
 ]
-[s S1527 . 1 `uc 1 . 1 0 :7:0 
+[s S1533 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S1530 . 1 `S1498 1 . 1 0 `S1507 1 . 1 0 `S1509 1 . 1 0 `S1512 1 . 1 0 `S1515 1 . 1 0 `S1518 1 . 1 0 `S1521 1 . 1 0 `S1524 1 . 1 0 `S1527 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1530  1 e 1 @3970 ]
+[u S1536 . 1 `S1504 1 . 1 0 `S1513 1 . 1 0 `S1515 1 . 1 0 `S1518 1 . 1 0 `S1521 1 . 1 0 `S1524 1 . 1 0 `S1527 1 . 1 0 `S1530 1 . 1 0 `S1533 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1536  1 e 1 @3970 ]
 "14647
 [v _LATB LATB `VEuc  1 e 1 @3971 ]
 "14780
 [v _LATC LATC `VEuc  1 e 1 @3972 ]
-[s S1641 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1647 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -441,38 +449,38 @@ state_low 3
 `uc 1 LATC7 1 0 :1:7 
 ]
 "14828
-[s S1650 . 1 `uc 1 LC0 1 0 :1:0 
+[s S1656 . 1 `uc 1 LC0 1 0 :1:0 
 ]
-[s S1652 . 1 `uc 1 . 1 0 :1:0 
+[s S1658 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 ]
-[s S1655 . 1 `uc 1 . 1 0 :2:0 
+[s S1661 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LC2 1 0 :1:2 
 ]
-[s S1658 . 1 `uc 1 . 1 0 :3:0 
+[s S1664 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LC3 1 0 :1:3 
 ]
-[s S1661 . 1 `uc 1 . 1 0 :4:0 
+[s S1667 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LC4 1 0 :1:4 
 ]
-[s S1664 . 1 `uc 1 . 1 0 :5:0 
+[s S1670 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LC5 1 0 :1:5 
 ]
-[s S1667 . 1 `uc 1 . 1 0 :6:0 
+[s S1673 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LC6 1 0 :1:6 
 ]
-[s S1670 . 1 `uc 1 . 1 0 :7:0 
+[s S1676 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S1673 . 1 `S1641 1 . 1 0 `S1650 1 . 1 0 `S1652 1 . 1 0 `S1655 1 . 1 0 `S1658 1 . 1 0 `S1661 1 . 1 0 `S1664 1 . 1 0 `S1667 1 . 1 0 `S1670 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1673  1 e 1 @3972 ]
+[u S1679 . 1 `S1647 1 . 1 0 `S1656 1 . 1 0 `S1658 1 . 1 0 `S1661 1 . 1 0 `S1664 1 . 1 0 `S1667 1 . 1 0 `S1670 1 . 1 0 `S1673 1 . 1 0 `S1676 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1679  1 e 1 @3972 ]
 "14913
 [v _TRISA TRISA `VEuc  1 e 1 @3975 ]
 "15035
 [v _TRISB TRISB `VEuc  1 e 1 @3976 ]
 "15157
 [v _TRISC TRISC `VEuc  1 e 1 @3977 ]
-[s S1716 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1722 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -482,8 +490,8 @@ state_low 3
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "15179
-[u S1725 . 1 `S1716 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1725  1 e 1 @3977 ]
+[u S1731 . 1 `S1722 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1731  1 e 1 @3977 ]
 "16599
 [v _RC1REG RC1REG `VEuc  1 e 1 @3992 ]
 "16653
@@ -807,23 +815,27 @@ state_low 3
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
 "58 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-[s S1597 ping_stat_t 8 `a 1 readReady 1 0 `d 1 measurment 4 1 `a 1 pingStarted 1 5 `us 1 tof 2 6 ]
+[s S1603 ping_stat_t 8 `a 1 readReady 1 0 `d 1 measurment 4 1 `a 1 pingStarted 1 5 `us 1 tof 2 6 ]
 "20 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-[v _status status `VES1597  1 e 8 0 ]
+[v _status status `VES1603  1 e 8 0 ]
 "51 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"96
+"84
+[v main@dis dis `d  1 a 4 22 ]
+"89
+[v main@angle angle `d  1 a 4 18 ]
+"98
 } 0
-"109 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+"112 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
 [v _ping_send ping_send `(v  1 e 1 0 ]
 {
-"119
+"122
 } 0
 "127 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr1.c
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
 {
-[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 8 ]
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
 "147
 } 0
 "99
@@ -831,10 +843,15 @@ state_low 3
 {
 "103
 } 0
-"94 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+"97 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
 [v _ping_init ping_init `(v  1 e 1 0 ]
 {
-"103
+"106
+} 0
+"129
+[v _ping_get ping_get `(f  1 e 4 0 ]
+{
+"136
 } 0
 "27 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
 [v _carcontrol_init carcontrol_init `(v  1 e 1 0 ]
@@ -847,7 +864,7 @@ state_low 3
 [v carcontrol_throttle@throttle throttle `uc  1 a 1 wreg ]
 [v carcontrol_throttle@throttle throttle `uc  1 a 1 wreg ]
 "120
-[v carcontrol_throttle@throttle throttle `uc  1 a 1 8 ]
+[v carcontrol_throttle@throttle throttle `uc  1 a 1 0 ]
 "122
 } 0
 "93
@@ -856,8 +873,41 @@ state_low 3
 [v carcontrol_steering@steering steering `c  1 a 1 wreg ]
 [v carcontrol_steering@steering steering `c  1 a 1 wreg ]
 "106
-[v carcontrol_steering@steering steering `c  1 a 1 8 ]
+[v carcontrol_steering@steering steering `c  1 a 1 0 ]
 "112
+} 0
+"43 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"4 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
+"12
+} 0
+"10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 15 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 12 ]
+"10
+[v ___fladd@b b `d  1 p 4 0 ]
+[v ___fladd@a a `d  1 p 4 4 ]
+"237
 } 0
 "50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -872,7 +922,7 @@ state_low 3
 "178
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 8 ]
+[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "180
 } 0
 "64 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr1.c
@@ -883,7 +933,7 @@ state_low 3
 "178
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 8 ]
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "180
 } 0
 "76 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
@@ -899,7 +949,7 @@ state_low 3
 "153
 [v _IOCCF2_SetInterruptHandler IOCCF2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v IOCCF2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 8 ]
+[v IOCCF2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "155
 } 0
 "62 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
@@ -920,31 +970,31 @@ state_low 3
 "282
 [v _EUSART1_SetTxInterruptHandler EUSART1_SetTxInterruptHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+[v EUSART1_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "284
 } 0
 "286
 [v _EUSART1_SetRxInterruptHandler EUSART1_SetRxInterruptHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+[v EUSART1_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "288
 } 0
 "274
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "276
 } 0
 "270
 [v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "272
 } 0
 "278
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 8 ]
+[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "280
 } 0
 "65 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/ccp1.c
@@ -955,7 +1005,7 @@ state_low 3
 "109
 [v _CCP1_SetCallBack CCP1_SetCallBack `(v  1 e 1 0 ]
 {
-[v CCP1_SetCallBack@customCallBack customCallBack `*.37(v  1 p 2 8 ]
+[v CCP1_SetCallBack@customCallBack customCallBack `*.37(v  1 p 2 0 ]
 "111
 } 0
 "58 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/interrupt_manager.c
@@ -1011,7 +1061,7 @@ state_low 3
 "66 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
 [v _ping_RC2_went_HIGH ping_RC2_went_HIGH `(v  1 e 1 0 ]
 {
-"76
+"77
 } 0
 "127 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/tmr1.c
 [v i2_TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
@@ -1072,7 +1122,7 @@ state_low 3
 "96
 [s S846 . 2 `us 1 ccpr1_16Bit 2 0 ]
 [u S848 CCPR1Reg_tag 2 `S843 1 . 2 0 `S846 1 . 2 0 ]
-[v CCP1_CaptureISR@module module `S848  1 a 2 2 ]
+[v CCP1_CaptureISR@module module `S848  1 a 2 41 ]
 "107
 } 0
 "60
@@ -1080,9 +1130,49 @@ state_low 3
 {
 "63
 } 0
-"82 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
+"83 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
 [v _ping_CCP1_triggered ping_CCP1_triggered `(v  1 e 1 0 ]
 {
-[v ping_CCP1_triggered@timeOfFlight timeOfFlight `us  1 p 2 0 ]
-"89
+[v ping_CCP1_triggered@timeOfFlight timeOfFlight `us  1 p 2 39 ]
+"92
+} 0
+"10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S2143 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S2148 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2151 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2143 1 fAsBytes 4 0 `S2148 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2151  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S2219 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S2222 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2219 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2222  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
 } 0

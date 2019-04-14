@@ -70,8 +70,9 @@ void ping_RC2_went_HIGH() {
     TMR1_WriteTimer(0); // Reset timer (in case ping doesn't respond)
     TMR1_StartTimer();
     DEBUG_Scope_SetHigh();
-    PIE6bits.CCP1IE = 1;    // enable CCP1
     
+    PIR6 = 0;               // Clear All CCP Interrupt Bits
+    PIE6bits.CCP1IE = 1;    // enable CCP1
 
 }
 
@@ -83,9 +84,11 @@ void ping_CCP1_triggered(uint16_t timeOfFlight) {
     status.tof = timeOfFlight;
     status.pingStarted = false;
     status.readReady = true;
-//    DEBUG_DIG_SetLow();
-    PIE6bits.CCP1IE = 0;    // disable CCP1
+    PIE6bits.CCP1IE = 0;    // disable CCP1 Interrupt
     DEBUG_Scope_SetLow();
+    status.measurment = 0.017 * timeOfFlight;
+    status.readReady = true;
+    status.pingStarted = false;
 }
 
 /**
@@ -114,7 +117,7 @@ void ping_send() {
         TMR1_SetInterruptHandler(ping_TMR1Overflow_isr); // enable interrupt
         TMR1_WriteTimer(0xFFFC);// load for 2us timer
         TMR1_StartTimer();      // Start timer
-//        status.pingStarted = true;
+        status.pingStarted = true;
     }
 }
 

@@ -48,6 +48,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23 ./ping.h
 [; ;./ping.h: 23:     void ping_send();
 [v _ping_send `(v ~T0 @X0 0 e? ]
+"30
+[; ;./ping.h: 30:     float ping_get();
+[v _ping_get `(f ~T0 @X0 0 e? ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1351,18 +1354,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 82:         ping_send();
 [e ( _ping_send ..  ]
 "84
-[; ;main.c: 84:         _delay((unsigned long)((350)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 350 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"88
-[; ;main.c: 88:         carcontrol_steering(0);
-[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
-"95
-[; ;main.c: 95:     }
+[; ;main.c: 84:         double dis = 0;
+[v _dis `d ~T0 @X0 1 a ]
+[e = _dis -> -> 0 `i `d ]
+"85
+[; ;main.c: 85:         do {
+[e :U 1395 ]
+{
+"86
+[; ;main.c: 86:            dis = ping_get();
+[e = _dis -> ( _ping_get ..  `d ]
+"87
+[; ;main.c: 87:         } while (dis == 0);
+}
+[e $ == _dis -> -> 0 `i `d 1395  ]
+[e :U 1394 ]
+"89
+[; ;main.c: 89:         double angle = (dis)-30;
+[v _angle `d ~T0 @X0 1 a ]
+[e = _angle - _dis -> -> 30 `i `d ]
+"90
+[; ;main.c: 90:         carcontrol_steering(angle);
+[e ( _carcontrol_steering (1 -> _angle `c ]
+"97
+[; ;main.c: 97:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"96
-[; ;main.c: 96: }
+"98
+[; ;main.c: 98: }
 [e :UE 1389 ]
 }

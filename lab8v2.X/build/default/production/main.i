@@ -16301,11 +16301,13 @@ void main(void)
     {
         ping_send();
 
-        _delay((unsigned long)((350)*(64000000/4000.0)));
+        double dis = 0;
+        do {
+           dis = ping_get();
+        } while (dis == 0);
 
-
-
-        carcontrol_steering(0);
+        double angle = (dis)-30;
+        carcontrol_steering(angle);
 
 
 

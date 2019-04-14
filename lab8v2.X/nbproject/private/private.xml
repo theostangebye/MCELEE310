@@ -5,7 +5,9 @@
         <group>
             <file>file:/Users/theostangebye/MPLABXProjects/Embedded%20Systems/lab8v2.X/ping.h</file>
             <file>file:/Users/theostangebye/MPLABXProjects/Embedded%20Systems/lab8v2.X/car_ctrl.c</file>
+            <file>file:/Users/theostangebye/MPLABXProjects/Embedded%20Systems/lab8v2.X/mcc_generated_files/pin_manager.h</file>
             <file>file:/Users/theostangebye/MPLABXProjects/Embedded%20Systems/lab8v2.X/main.c</file>
+            <file>file:/Users/theostangebye/MPLABXProjects/Embedded%20Systems/lab8v2.X/mcc_generated_files/ccp1.c</file>
             <file>file:/Users/theostangebye/MPLABXProjects/Embedded%20Systems/lab8v2.X/ping.c</file>
         </group>
     </open-files>
