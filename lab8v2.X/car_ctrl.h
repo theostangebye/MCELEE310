@@ -15,12 +15,6 @@ extern "C" {
 
 enum ctl_state_t {state_unset, state_high, state_vary, state_low}; // in h make these specific because they will be tied as aliases to integer values throughout entire program.
 
-struct cam_t{
-    bool read_ready;
-    uint16_t cam_pixels[128];
-    ctl_state_t status;
-};
-
 struct carctl_t {
 	bool initialized;
 	enum ctl_state_t state;

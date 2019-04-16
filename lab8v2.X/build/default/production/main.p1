@@ -51,6 +51,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [; ;./ping.h: 30:     float ping_get();
 [v _ping_get `(f ~T0 @X0 0 e? ]
+"14786 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14786:     struct {
+[s S738 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S738 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"14796
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14796:     struct {
+[s S739 :1 `uc 1 ]
+[n S739 . LC0 ]
+"14799
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14799:     struct {
+[s S740 :1 `uc 1 :1 `uc 1 ]
+[n S740 . . LC1 ]
+"14803
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14803:     struct {
+[s S741 :2 `uc 1 :1 `uc 1 ]
+[n S741 . . LC2 ]
+"14807
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14807:     struct {
+[s S742 :3 `uc 1 :1 `uc 1 ]
+[n S742 . . LC3 ]
+"14811
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14811:     struct {
+[s S743 :4 `uc 1 :1 `uc 1 ]
+[n S743 . . LC4 ]
+"14815
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14815:     struct {
+[s S744 :5 `uc 1 :1 `uc 1 ]
+[n S744 . . LC5 ]
+"14819
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14819:     struct {
+[s S745 :6 `uc 1 :1 `uc 1 ]
+[n S745 . . LC6 ]
+"14823
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14823:     struct {
+[s S746 :7 `uc 1 :1 `uc 1 ]
+[n S746 . . LC7 ]
+"14785
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14785: typedef union {
+[u S737 `S738 1 `S739 1 `S740 1 `S741 1 `S742 1 `S743 1 `S744 1 `S745 1 `S746 1 ]
+[n S737 . . . . . . . . . . ]
+"14828
+[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14828: extern volatile LATCbits_t LATCbits __attribute__((address(0xF84)));
+[v _LATCbits `VS737 ~T0 @X0 0 e@3972 ]
+"113 /Applications/microchip/xc8/v2.05/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1345,44 +1390,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 78:     _delay((unsigned long)((10)*(64000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "80
-[; ;main.c: 80:     while (1)
-[e :U 1391 ]
-"81
-[; ;main.c: 81:     {
-{
+[; ;main.c: 80:     carcontrol_steering(0);
+[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
 "82
-[; ;main.c: 82:         ping_send();
-[e ( _ping_send ..  ]
-"84
-[; ;main.c: 84:         double dis = 0;
+[; ;main.c: 82:     double dis, last_dis = 0;
 [v _dis `d ~T0 @X0 1 a ]
-[e = _dis -> -> 0 `i `d ]
+[v _last_dis `d ~T0 @X0 1 a ]
+[e = _last_dis -> -> 0 `i `d ]
+"84
+[; ;main.c: 84:     while (1)
+[e :U 1391 ]
 "85
-[; ;main.c: 85:         do {
-[e :U 1395 ]
+[; ;main.c: 85:     {
 {
 "86
-[; ;main.c: 86:            dis = ping_get();
+[; ;main.c: 86:         ping_send();
+[e ( _ping_send ..  ]
+"88
+[; ;main.c: 88:         last_dis = dis;
+[e = _last_dis _dis ]
+"90
+[; ;main.c: 90:         do {
+[e :U 1395 ]
+{
+"91
+[; ;main.c: 91:            dis = ping_get();
 [e = _dis -> ( _ping_get ..  `d ]
-"87
-[; ;main.c: 87:         } while (dis == 0);
+"92
+[; ;main.c: 92:         } while (dis == 0);
 }
 [e $ == _dis -> -> 0 `i `d 1395  ]
 [e :U 1394 ]
-"89
-[; ;main.c: 89:         double angle = (dis)-30;
-[v _angle `d ~T0 @X0 1 a ]
-[e = _angle - _dis -> -> 30 `i `d ]
-"90
-[; ;main.c: 90:         carcontrol_steering(angle);
-[e ( _carcontrol_steering (1 -> _angle `c ]
+"94
+[; ;main.c: 94:         double mean = (last_dis + dis)/2;
+[v _mean `d ~T0 @X0 1 a ]
+[e = _mean / + _last_dis _dis -> -> 2 `i `d ]
 "97
-[; ;main.c: 97:     }
+[; ;main.c: 97:         if (mean > 70) mean = 70;
+[e $ ! > _mean -> -> 70 `i `d 1396  ]
+[e = _mean -> -> 70 `i `d ]
+[e :U 1396 ]
+"98
+[; ;main.c: 98:         if (mean < 10) mean = 10;
+[e $ ! < _mean -> -> 10 `i `d 1397  ]
+[e = _mean -> -> 10 `i `d ]
+[e :U 1397 ]
+"99
+[; ;main.c: 99:         double angle = (mean-40);
+[v _angle `d ~T0 @X0 1 a ]
+[e = _angle - _mean -> -> 40 `i `d ]
+"102
+[; ;main.c: 102:         carcontrol_steering(angle);
+[e ( _carcontrol_steering (1 -> _angle `c ]
+"104
+[; ;main.c: 104:         do { LATCbits.LATC7 = 1; } while(0);
+[e :U 1400 ]
+{
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1399 ]
+"105
+[; ;main.c: 105:         printf("test distance:    %.2f\n", mean);
+[e ( _printf , (. :s 1C _mean ]
+"106
+[; ;main.c: 106:         do { LATCbits.LATC7 = 0; } while(0);
+[e :U 1403 ]
+{
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 1402 ]
+"113
+[; ;main.c: 113:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"98
-[; ;main.c: 98: }
+"114
+[; ;main.c: 114: }
 [e :UE 1389 ]
 }
+[p f _printf 8462336 ]
+[a 1C 116 101 115 116 32 100 105 115 116 97 110 99 101 58 32 32 32 32 37 46 50 102 10 0 ]

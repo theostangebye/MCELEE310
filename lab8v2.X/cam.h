@@ -11,6 +11,14 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    
+    
+struct cam_t{
+    bool read_ready;
+    uint16_t cam_pixels[128];
+    ctl_state_t status;
+};
+
 
 // High level states of camera
 enum cam_state_t {cam_state_unset, cam_state_single, cam_state_continous, cam_state_stopped};

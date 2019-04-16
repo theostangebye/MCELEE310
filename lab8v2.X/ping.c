@@ -86,7 +86,7 @@ void ping_CCP1_triggered(uint16_t timeOfFlight) {
     status.readReady = true;
     PIE6bits.CCP1IE = 0;    // disable CCP1 Interrupt
     DEBUG_Scope_SetLow();
-    status.measurment = 0.017 * timeOfFlight;
+    status.measurment = 0.009 * timeOfFlight;
     status.readReady = true;
     status.pingStarted = false;
 }
@@ -115,7 +115,7 @@ void ping_send() {
         RC2_SetHigh();          // latch val
         RC2_SetDigitalOutput(); // set pin as GPIO output
         TMR1_SetInterruptHandler(ping_TMR1Overflow_isr); // enable interrupt
-        TMR1_WriteTimer(0xFFFC);// load for 2us timer
+        TMR1_WriteTimer(0xFFFF);// load for 2us timer
         TMR1_StartTimer();      // Start timer
         status.pingStarted = true;
     }
