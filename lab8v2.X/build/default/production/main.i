@@ -16326,9 +16326,5 @@ void main(void)
         do { LATCbits.LATC7 = 0; } while(0);
 
 
-
-
-
-
     }
 }
