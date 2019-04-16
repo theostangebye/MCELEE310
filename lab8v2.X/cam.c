@@ -8,69 +8,88 @@ Green = SI
 White = AO
 Brown = Clk
 
-Exposure time of 2ms is referenced in data sheet, thus we will use TMR 6 with maximum prescaler and a 1:2 post scaler - giving us a maximum exposure of 4ms (based on fosc/4).
+/** TIMING:
+ * Set SI HIGH and then set clk HIGH, at this point, the cam will shift out a bit
+ * Enable an interrupt to fire 4ms/128 /2 (for high time) seconds later.
+ * 
+ * This interrupt will first pull SI low pull clk low and will start an ADC value.  
+ * It should also enable the ADC interrupt
+ * 
+ * Then this interrupt will read the ADC value and then set the CLK HIGH.  
+ * This interrupt should also schedule the last interrupt (just above) to occur 
+ * 4ms/128 /2 seconds later again.  It will also increment a counter (used for
+ * array placement) and will then exit.
+ * 
+ * finally, once the counter reaches 127 (at which point we're at the end, we'll
+ * finsih the ack by swapping arrays, etc.
  */
 
 // low level state of camera.
-enum cam_line_state_t {ack_start, ack_started, read_clkIsHigh, read_clkIsLow, ack_end, ack_done};
+enum cam_line_state_t {CAM_START, CAM_IN_PROGRESS, CAM_DONE, CAM_UNSET};
 
-volatile cam_t mycam;
+struct cam_t{
+    bool readFromFirst;
+    uint16_t cam_pixels_1[128];
+    uint16_t cam_pixels_2[128];
+    cam_line_state_t status;
+    int index;
+};
 
-volatile cam_line_state_t myline;
+volatile cam_t myCam;
 
 /**
- * This function will be used by the isr to be called every 2ms/128 secconds. 
- * It will read in the A0 line and uldate the clock line.
+ * Stateful ISR for pulling clock low and starting ADC measurement.
  */
-/**
- * This function will be called every so often during the continous update
- * camera mode.  It will pulse SI and then load the TMR6 to interrupt a short 
- * time in the future in which case it will start enabling the AO_bit_ISR 
- * which will continously clock in lots of data from the camera.
- */
-void AO_bit_ISR() {
-    // if state is ack_start -> then we pulse SI High and move to ack_started
-    // if state is ack_started -> pull SI low and move to read_clk_IsHigh, set clk high.
-    // if state is read_clkIsHigh -> set clk high, increment counter. (as long as is < 128)
-    // if state is read_clkIsLow -> set clk_High, then sample AO
-    // if state is ack_end - pulse SI.
+void timer_ISR() {
+    // disable timer ISR.
+    // if state = CAM_IN_PROGRESS
+    // Set CLK LOW
+    // Start ADC
 }
 
+/**
+ * Will be used for setting clk high and reading from ADC
+ */
+void adc_ready_ISR() {
+    // read from ADC
+    // place val in array
+    // increment index
+    // if index < 127 -> increment index & setup timer ISR.
+    // else set state to CAM_DONE.
+}
 
 /**
  * Should Initializes Camera Hardware
  */
 void cam_init() {
-    // set clock and SI as outputs and latch them low
-    // Enable ISR -> A0_bit_ISR() this ISR will trigger every 2ms/128 seconds
-    // and will sample ADC if a ack is in progress.
-}
-
-/**
- * performs one single acquisition on the camera.
- */
-void cam_start_single_shot() {
-    // Set cam state to single mode (enum in H file.)
-    // and then start ISR -> AO_bit_ISR.
+    // set SI low
+    // set cam_clk low
+    // index = 0;
+    // state = CAM_UNSET.
 }
 
 /**
  * Will start the camera in such a way as to perform continuous acquisitions
  * through interrupts.
  */
-void cam_start_continuous(){
-    // set state to cam_state_continous
-    // enable ISR. This isr will automaotically reload itself so that acks are 
-    // performed continuously.
+void cam_start() {
+    // If state == CAM_UNSET -> then we can start, otherwise dont.
+        // state = cam_START
+        // set up timer interrupt
+        // setup ADC interrupt
+        // index = 0;
+        // swap arrays
+        // SI -> HIGH
+        // CLK -> HIGH
+        // state = CAM_IN_PROGRESS.
 }
 
 /**
  * If a continuous acquisition is going, this will stop it after allowing 
  * the system to complete its current acquisition.
  */
-void cam_stop(){
-    // set mode to cam_state_stopped
-    // this should let the program finish its current ack and then stop.
+void cam_stop() {
+
 }
 
 /**
@@ -78,9 +97,12 @@ void cam_stop(){
  * @return returns a pointer to the 128 element, 16b valued vector
  * which is the latest camera observation
  * If the camera is not running, or a read is not ready - it will return 
- * 0
+ * an array with a 0 as the first element.
  */
-uint16_t* cam_get(){
-    // if read_ready is true - the return a pointer to the 128 element array
-    // else return 0 as the pointer.
+uint8_t* cam_get() {
+    if (readFromFirst) {
+        return &myCam.cam_pixels_1;
+    } else {
+        return &myCam.cam_pixels_2;
+    }
 }
