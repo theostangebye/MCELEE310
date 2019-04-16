@@ -42,6 +42,8 @@
       <itemPath>car_ctrl.h</itemPath>
       <itemPath>ping.h</itemPath>
       <itemPath>ping.c</itemPath>
+      <itemPath>cam.h</itemPath>
+      <itemPath>cam.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

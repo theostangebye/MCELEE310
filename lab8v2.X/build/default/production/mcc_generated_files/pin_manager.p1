@@ -91,11 +91,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 7670: extern volatile IOCCPbits_t IOCCPbits __attribute__((address(0xF17)));
 [v _IOCCPbits `VS401 ~T0 @X0 0 e@3863 ]
 [v F9289 `(v ~T0 @X0 0 tf ]
-"270 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 270: void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
+"330 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 330: void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCCF2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F9289 ]
-"318
-[; ;mcc_generated_files/pin_manager.h: 318: void IOCCF2_DefaultInterruptHandler(void);
+"378
+[; ;mcc_generated_files/pin_manager.h: 378: void IOCCF2_DefaultInterruptHandler(void);
 [v _IOCCF2_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "3265 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 3265:     struct {
@@ -114,8 +114,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6449
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 6449: extern volatile unsigned char RC6PPS __attribute__((address(0xEF8)));
 [v _RC6PPS `Vuc ~T0 @X0 0 e@3832 ]
-"247 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 247: void IOCCF2_ISR(void);
+"307 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 307: void IOCCF2_ISR(void);
 [v _IOCCF2_ISR `(v ~T0 @X0 0 ef ]
 [v F9301 `(v ~T0 @X0 0 tf ]
 [v F9303 `(v ~T0 @X0 0 tf ]
@@ -1395,8 +1395,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0xF0;
 [e = _TRISA -> -> 240 `i `uc ]
 "70
-[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xF9;
+[e = _TRISB -> -> 249 `i `uc ]
 "71
 [; ;mcc_generated_files/pin_manager.c: 71:     TRISC = 0x3D;
 [e = _TRISC -> -> 61 `i `uc ]
@@ -1404,8 +1404,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 76:     ANSELC = 0x3B;
 [e = _ANSELC -> -> 59 `i `uc ]
 "77
-[; ;mcc_generated_files/pin_manager.c: 77:     ANSELB = 0xFF;
-[e = _ANSELB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 77:     ANSELB = 0xF7;
+[e = _ANSELB -> -> 247 `i `uc ]
 "78
 [; ;mcc_generated_files/pin_manager.c: 78:     ANSELA = 0xFA;
 [e = _ANSELA -> -> 250 `i `uc ]
