@@ -44,6 +44,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "car_ctrl.h"
 #include "ping.h"
+#include "cam.h"
 
 /*
                          Main application
@@ -70,41 +71,20 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     carcontrol_init();
-    ping_init();
-    __delay_ms(1000);
+    ping_init();  
+    cam_init();
     
-    carcontrol_steering(0);    
-    
-    __delay_us(10);
-    
-    carcontrol_steering(0);    
+    carcontrol_throttle(0);
             
     double dis, last_dis = 0;
     
+
     while (1)
     {   
-        ping_send();
-        
-        last_dis = dis;
 
-        do {
-           dis = ping_get(); 
-        } while (dis == 0);
-
-        double mean = (last_dis + dis)/2;
-        
-        
-        if (mean > 70) mean = 70;
-        if (mean < 10) mean = 10;
-        double angle = (mean-40);
-        
-        
-        carcontrol_steering(angle);
-        
-        IO_RC7_SetHigh();
-        printf("test distance:    %.2f\n", mean);
-        IO_RC7_SetLow();
-        
+        cam_start();
+        __delay_ms(500);
+        carcontrol_throttle(0);
 
     }
 }

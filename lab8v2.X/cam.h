@@ -1,3 +1,5 @@
+#include "mcc_generated_files/mcc.h"
+
 /* 
  * File:   cam.h
  * Author: theostangebye
@@ -36,7 +38,7 @@ void cam_stop();
  * If the camera is not running, or a read is not ready - it will return 
  * an array with a 0 as the first element.
  */
-uint8_t* cam_get();
+void cam_get(uint8_t* copyHere);
     
 #ifdef	__cplusplus
 }

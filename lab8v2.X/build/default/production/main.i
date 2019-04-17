@@ -15756,6 +15756,107 @@ typedef uint32_t uint_fast32_t;
 void INTERRUPT_Initialize (void);
 # 54 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/adcc.h" 1
+# 72 "./mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+# 86 "./mcc_generated_files/adcc.h"
+typedef enum
+{
+    CAM_AO = 0xB,
+    channel_VSS = 0x3C,
+    channel_Temp = 0x3D,
+    channel_DAC1 = 0x3E,
+    channel_FVR_buf1 = 0x3F
+} adcc_channel_t;
+# 127 "./mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 156 "./mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 186 "./mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 218 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 249 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 274 "./mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 301 "./mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 326 "./mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 352 "./mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint8_t);
+# 378 "./mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint8_t);
+# 403 "./mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 431 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 455 "./mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 480 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetAccumulatorValue(void);
+# 508 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 533 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 561 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 587 "./mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 613 "./mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 639 "./mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 666 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 693 "./mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 717 "./mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 741 "./mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 769 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 797 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 824 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 841 "./mcc_generated_files/adcc.h"
+void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+# 857 "./mcc_generated_files/adcc.h"
+void ADCC_ISR(void);
+# 876 "./mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr3.h" 1
+# 100 "./mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 129 "./mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 161 "./mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 196 "./mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 310 "./mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 367 "./mcc_generated_files/tmr3.h"
+void TMR3_ISR(void);
+# 385 "./mcc_generated_files/tmr3.h"
+ void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 403 "./mcc_generated_files/tmr3.h"
+extern void (*TMR3_InterruptHandler)(void);
+# 421 "./mcc_generated_files/tmr3.h"
+void TMR3_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -15781,7 +15882,7 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "./mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 79 "./mcc_generated_files/tmr2.h"
@@ -15999,7 +16100,7 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 846 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 58 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/ccp1.h" 1
 # 80 "./mcc_generated_files/ccp1.h"
@@ -16021,7 +16122,7 @@ void CCP1_Initialize(void);
 void CCP1_CaptureISR(void);
 # 180 "./mcc_generated_files/ccp1.h"
  void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
-# 57 "./mcc_generated_files/mcc.h" 2
+# 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart1.h" 1
 # 57 "./mcc_generated_files/eusart1.h"
@@ -16215,12 +16316,12 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 516 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 58 "./mcc_generated_files/mcc.h" 2
-# 73 "./mcc_generated_files/mcc.h"
+# 60 "./mcc_generated_files/mcc.h" 2
+# 75 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 86 "./mcc_generated_files/mcc.h"
+# 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 99 "./mcc_generated_files/mcc.h"
+# 101 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
@@ -16264,6 +16365,25 @@ void carcontrol_throttle(uint8_t throttle);
     float ping_get();
 # 46 "main.c" 2
 
+# 1 "./cam.h" 1
+# 20 "./cam.h"
+void cam_init();
+
+
+
+
+
+void cam_start();
+
+
+
+
+
+void cam_stop();
+# 41 "./cam.h"
+void cam_get(uint8_t* copyHere);
+# 47 "main.c" 2
+
 
 
 
@@ -16291,40 +16411,19 @@ void main(void)
 
     carcontrol_init();
     ping_init();
-    _delay((unsigned long)((1000)*(64000000/4000.0)));
+    cam_init();
 
-    carcontrol_steering(0);
-
-    _delay((unsigned long)((10)*(64000000/4000000.0)));
-
-    carcontrol_steering(0);
+    carcontrol_throttle(0);
 
     double dis, last_dis = 0;
 
+
     while (1)
     {
-        ping_send();
 
-        last_dis = dis;
-
-        do {
-           dis = ping_get();
-        } while (dis == 0);
-
-        double mean = (last_dis + dis)/2;
-
-
-        if (mean > 70) mean = 70;
-        if (mean < 10) mean = 10;
-        double angle = (mean-40);
-
-
-        carcontrol_steering(angle);
-
-        do { LATCbits.LATC7 = 1; } while(0);
-        printf("test distance:    %.2f\n", mean);
-        do { LATCbits.LATC7 = 0; } while(0);
-
+        cam_start();
+        _delay((unsigned long)((500)*(64000000/4000.0)));
+        carcontrol_throttle(0);
 
     }
 }

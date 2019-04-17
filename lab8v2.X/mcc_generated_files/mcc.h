@@ -52,6 +52,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
+#include "adcc.h"
+#include "tmr3.h"
 #include "tmr1.h"
 #include "tmr2.h"
 #include "ccp1.h"
