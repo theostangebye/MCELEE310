@@ -44,7 +44,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "car_ctrl.h"
 #include "ping.h"
-#include "cam.h"
+//#include "cam.h"
 
 /*
                          Main application
@@ -75,21 +75,15 @@ void main(void)
 //    cam_init();
 
     
-    int i = 0;
+    carcontrol_throttle(0);
+    __delay_ms(500);
+    carcontrol_steering(0);
+    __delay_ms(500);
+    
+    
     while (1)
     {   
-        if (i % 2 == 0) {
-            carcontrol_throttle(50);
-        } else {
-            carcontrol_throttle(0);
-        }
-//        cam_start();
-        __delay_ms(500);
-//        carcontrol_throttle(0);
-        carcontrol_steering(0);
         
-        
-
     }
 }
 /**

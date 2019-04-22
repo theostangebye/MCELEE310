@@ -16365,24 +16365,6 @@ void carcontrol_throttle(uint8_t throttle);
     float ping_get();
 # 46 "main.c" 2
 
-# 1 "./cam.h" 1
-# 20 "./cam.h"
-void cam_init();
-
-
-
-
-
-void cam_start();
-
-
-
-
-
-void cam_stop();
-# 41 "./cam.h"
-void cam_get(uint8_t* copyHere);
-# 47 "main.c" 2
 
 
 
@@ -16414,20 +16396,16 @@ void main(void)
 
 
 
-    int i = 0;
+    carcontrol_throttle(0);
+    _delay((unsigned long)((500)*(64000000/4000.0)));
+    carcontrol_steering(0);
+
+    _delay((unsigned long)((500)*(64000000/4000.0)));
     while (1)
     {
-        if (i % 2 == 0) {
-            carcontrol_throttle(50);
-        } else {
-            carcontrol_throttle(0);
-        }
-
         _delay((unsigned long)((500)*(64000000/4000.0)));
-
-        carcontrol_steering(0);
-
-
-
+        carcontrol_throttle(0);
+        _delay((unsigned long)((500)*(64000000/4000.0)));
+        carcontrol_throttle(30);
     }
 }

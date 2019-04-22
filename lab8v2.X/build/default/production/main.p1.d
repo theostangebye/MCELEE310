@@ -11,5 +11,4 @@ mcc_generated_files/tmr2.h  \
 mcc_generated_files/ccp1.h  \
 mcc_generated_files/eusart1.h  \
 car_ctrl.h  \
-ping.h  \
-cam.h 
+ping.h 

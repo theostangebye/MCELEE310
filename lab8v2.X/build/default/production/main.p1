@@ -1327,48 +1327,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 73:     carcontrol_init();
 [e ( _carcontrol_init ..  ]
 "78
-[; ;main.c: 78:     int i = 0;
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-"79
-[; ;main.c: 79:     while (1)
-[e :U 1391 ]
-"80
-[; ;main.c: 80:     {
-{
-"81
-[; ;main.c: 81:         if (i % 2 == 0) {
-[e $ ! == % _i -> 2 `i -> 0 `i 1393  ]
-{
-"82
-[; ;main.c: 82:             carcontrol_throttle(50);
-[e ( _carcontrol_throttle (1 -> -> 50 `i `uc ]
-"83
-[; ;main.c: 83:         } else {
-}
-[e $U 1394  ]
-[e :U 1393 ]
-{
-"84
-[; ;main.c: 84:             carcontrol_throttle(0);
+[; ;main.c: 78:     carcontrol_throttle(0);
 [e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:     _delay((unsigned long)((500)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"80
+[; ;main.c: 80:     carcontrol_steering(0);
+[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
+"82
+[; ;main.c: 82:     _delay((unsigned long)((500)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"83
+[; ;main.c: 83:     while (1)
+[e :U 1391 ]
+"84
+[; ;main.c: 84:     {
+{
 "85
-[; ;main.c: 85:         }
-}
-[e :U 1394 ]
+[; ;main.c: 85:         _delay((unsigned long)((500)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"86
+[; ;main.c: 86:         carcontrol_throttle(0);
+[e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
 "87
 [; ;main.c: 87:         _delay((unsigned long)((500)*(64000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"88
+[; ;main.c: 88:         carcontrol_throttle(30);
+[e ( _carcontrol_throttle (1 -> -> 30 `i `uc ]
 "89
-[; ;main.c: 89:         carcontrol_steering(0);
-[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
-"93
-[; ;main.c: 93:     }
+[; ;main.c: 89:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"94
-[; ;main.c: 94: }
+"90
+[; ;main.c: 90: }
 [e :UE 1389 ]
 }
