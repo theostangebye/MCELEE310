@@ -14,7 +14,7 @@
 volatile struct carctl_t carctl;
 
 // Servo Restraints
-int8_t  servo_trim = 17;
+int8_t  servo_trim = -17;
 int8_t servo_min  = -30;
 int8_t servo_max  =  28;
 

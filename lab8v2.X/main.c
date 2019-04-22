@@ -71,20 +71,24 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     carcontrol_init();
-    ping_init();  
-    cam_init();
-    
-    carcontrol_throttle(0);
-            
-    double dis, last_dis = 0;
-    
+//    ping_init();  
+//    cam_init();
 
+    
+    int i = 0;
     while (1)
     {   
-
-        cam_start();
+        if (i % 2 == 0) {
+            carcontrol_throttle(50);
+        } else {
+            carcontrol_throttle(0);
+        }
+//        cam_start();
         __delay_ms(500);
-        carcontrol_throttle(0);
+//        carcontrol_throttle(0);
+        carcontrol_steering(0);
+        
+        
 
     }
 }

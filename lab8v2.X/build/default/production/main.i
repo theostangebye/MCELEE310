@@ -16410,20 +16410,24 @@ void main(void)
 
 
     carcontrol_init();
-    ping_init();
-    cam_init();
-
-    carcontrol_throttle(0);
-
-    double dis, last_dis = 0;
 
 
+
+
+    int i = 0;
     while (1)
     {
+        if (i % 2 == 0) {
+            carcontrol_throttle(50);
+        } else {
+            carcontrol_throttle(0);
+        }
 
-        cam_start();
         _delay((unsigned long)((500)*(64000000/4000.0)));
-        carcontrol_throttle(0);
+
+        carcontrol_steering(0);
+
+
 
     }
 }
