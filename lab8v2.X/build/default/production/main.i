@@ -15650,17 +15650,17 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 294 "./mcc_generated_files/pin_manager.h"
+# 282 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 306 "./mcc_generated_files/pin_manager.h"
+# 294 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 319 "./mcc_generated_files/pin_manager.h"
+# 307 "./mcc_generated_files/pin_manager.h"
 void IOCCF2_ISR(void);
-# 342 "./mcc_generated_files/pin_manager.h"
+# 330 "./mcc_generated_files/pin_manager.h"
 void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 366 "./mcc_generated_files/pin_manager.h"
+# 354 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCCF2_InterruptHandler)(void);
-# 390 "./mcc_generated_files/pin_manager.h"
+# 378 "./mcc_generated_files/pin_manager.h"
 void IOCCF2_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -15883,6 +15883,28 @@ extern void (*TMR1_InterruptHandler)(void);
 void TMR1_DefaultInterruptHandler(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/ccp1.h" 1
+# 80 "./mcc_generated_files/ccp1.h"
+typedef union CCPR1Reg_tag
+{
+   struct
+   {
+      uint8_t ccpr1l;
+      uint8_t ccpr1h;
+   };
+   struct
+   {
+      uint16_t ccpr1_16Bit;
+   };
+} CCP1_PERIOD_REG_T ;
+# 123 "./mcc_generated_files/ccp1.h"
+void CCP1_Initialize(void);
+# 139 "./mcc_generated_files/ccp1.h"
+void CCP1_CaptureISR(void);
+# 180 "./mcc_generated_files/ccp1.h"
+ void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
+# 58 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 79 "./mcc_generated_files/tmr2.h"
 typedef enum
@@ -16099,28 +16121,6 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 846 "./mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/ccp1.h" 1
-# 80 "./mcc_generated_files/ccp1.h"
-typedef union CCPR1Reg_tag
-{
-   struct
-   {
-      uint8_t ccpr1l;
-      uint8_t ccpr1h;
-   };
-   struct
-   {
-      uint16_t ccpr1_16Bit;
-   };
-} CCP1_PERIOD_REG_T ;
-# 123 "./mcc_generated_files/ccp1.h"
-void CCP1_Initialize(void);
-# 139 "./mcc_generated_files/ccp1.h"
-void CCP1_CaptureISR(void);
-# 180 "./mcc_generated_files/ccp1.h"
- void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
 # 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart1.h" 1
@@ -16380,7 +16380,7 @@ void cam_start();
 
 void cam_stop();
 # 40 "./cam.h"
-uint8_t* cam_get();
+void cam_get();
 # 47 "main.c" 2
 
 
@@ -16409,22 +16409,17 @@ void main(void)
 
 
     carcontrol_init();
-    ping_init();
+
     cam_init();
-    _delay((unsigned long)((1000)*(64000000/4000.0)));
 
     carcontrol_throttle(0);
-
-    _delay((unsigned long)((10)*(64000000/4000000.0)));
-
     carcontrol_steering(0);
-
-    double dis, last_dis = 0;
 
     while (1)
     {
         cam_start();
-        _delay((unsigned long)((500)*(64000000/4000.0)));
-# 112 "main.c"
+        _delay((unsigned long)((5)*(64000000/4000.0)));
+
+
     }
 }

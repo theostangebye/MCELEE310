@@ -15645,17 +15645,17 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "/Applications/microchip/xc8/v2.05/pic/include/xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 294 "mcc_generated_files/pin_manager.h"
+# 282 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 306 "mcc_generated_files/pin_manager.h"
+# 294 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 319 "mcc_generated_files/pin_manager.h"
+# 307 "mcc_generated_files/pin_manager.h"
 void IOCCF2_ISR(void);
-# 342 "mcc_generated_files/pin_manager.h"
+# 330 "mcc_generated_files/pin_manager.h"
 void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 366 "mcc_generated_files/pin_manager.h"
+# 354 "mcc_generated_files/pin_manager.h"
 extern void (*IOCCF2_InterruptHandler)(void);
-# 390 "mcc_generated_files/pin_manager.h"
+# 378 "mcc_generated_files/pin_manager.h"
 void IOCCF2_DefaultInterruptHandler(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
@@ -15685,8 +15685,8 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELC = 0x3A;
-    ANSELB = 0xF7;
+    ANSELC = 0x3B;
+    ANSELB = 0xF1;
     ANSELA = 0xFA;
 
 
@@ -15733,7 +15733,6 @@ void PIN_MANAGER_Initialize(void)
 
     ADACTPPS = 0x0B;
     CCP1PPS = 0x12;
-    T3CKIPPS = 0x10;
     RC6PPS = 0x09;
 }
 

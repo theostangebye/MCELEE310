@@ -7,8 +7,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "101 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 101: void PMD_Initialize(void);
 [v _PMD_Initialize `(v ~T0 @X0 0 ef ]
-"294 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 294: void PIN_MANAGER_Initialize (void);
+"282 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 282: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "88 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 88: void OSCILLATOR_Initialize(void);
@@ -16,12 +16,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "126 mcc_generated_files/adcc.h
 [; ;mcc_generated_files/adcc.h: 126: void ADCC_Initialize(void);
 [v _ADCC_Initialize `(v ~T0 @X0 0 ef ]
-"100 mcc_generated_files/tmr3.h
-[; ;mcc_generated_files/tmr3.h: 100: void TMR3_Initialize(void);
-[v _TMR3_Initialize `(v ~T0 @X0 0 ef ]
 "123 mcc_generated_files/ccp1.h
 [; ;mcc_generated_files/ccp1.h: 123: void CCP1_Initialize(void);
 [v _CCP1_Initialize `(v ~T0 @X0 0 ef ]
+"100 mcc_generated_files/tmr3.h
+[; ;mcc_generated_files/tmr3.h: 100: void TMR3_Initialize(void);
+[v _TMR3_Initialize `(v ~T0 @X0 0 ef ]
 "329 mcc_generated_files/tmr2.h
 [; ;mcc_generated_files/tmr2.h: 329: void TMR2_Initialize(void);
 [v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
@@ -1345,11 +1345,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 56:     ADCC_Initialize();
 [e ( _ADCC_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57:     TMR3_Initialize();
-[e ( _TMR3_Initialize ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58:     CCP1_Initialize();
+[; ;mcc_generated_files/mcc.c: 57:     CCP1_Initialize();
 [e ( _CCP1_Initialize ..  ]
+"58
+[; ;mcc_generated_files/mcc.c: 58:     TMR3_Initialize();
+[e ( _TMR3_Initialize ..  ]
 "59
 [; ;mcc_generated_files/mcc.c: 59:     TMR2_Initialize();
 [e ( _TMR2_Initialize ..  ]

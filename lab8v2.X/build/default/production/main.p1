@@ -35,16 +35,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./car_ctrl.h
 [; ;./car_ctrl.h: 28: void carcontrol_init();
 [v _carcontrol_init `(v ~T0 @X0 0 e? ]
-"18 ./ping.h
-[; ;./ping.h: 18:     void ping_init();
-[v _ping_init `(v ~T0 @X0 0 e? ]
 "19 ./cam.h
 [; ;./cam.h: 19: void cam_init();
 [v _cam_init `(v ~T0 @X0 0 e? ]
-[v F9277 `(v ~T0 @X0 1 tf1`ul ]
-"183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
-[v __delay `JF9277 ~T0 @X0 0 e ]
-[p i __delay ]
 "34 ./car_ctrl.h
 [; ;./car_ctrl.h: 34: void carcontrol_throttle(uint8_t throttle);
 [v _carcontrol_throttle `(v ~T0 @X0 0 ef1`uc ]
@@ -54,6 +47,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25 ./cam.h
 [; ;./cam.h: 25: void cam_start();
 [v _cam_start `(v ~T0 @X0 0 e? ]
+[v F9277 `(v ~T0 @X0 1 tf1`ul ]
+"183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
+[v __delay `JF9277 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1335,48 +1332,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "73
 [; ;main.c: 73:     carcontrol_init();
 [e ( _carcontrol_init ..  ]
-"74
-[; ;main.c: 74:     ping_init();
-[e ( _ping_init ..  ]
 "75
 [; ;main.c: 75:     cam_init();
 [e ( _cam_init ..  ]
-"76
-[; ;main.c: 76:     _delay((unsigned long)((1000)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"78
-[; ;main.c: 78:     carcontrol_throttle(0);
+"77
+[; ;main.c: 77:     carcontrol_throttle(0);
 [e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80:     _delay((unsigned long)((10)*(64000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-"82
-[; ;main.c: 82:     carcontrol_steering(0);
+"78
+[; ;main.c: 78:     carcontrol_steering(0);
 [e ( _carcontrol_steering (1 -> -> 0 `i `c ]
-"84
-[; ;main.c: 84:     double dis, last_dis = 0;
-[v _dis `d ~T0 @X0 1 a ]
-[v _last_dis `d ~T0 @X0 1 a ]
-[e = _last_dis -> -> 0 `i `d ]
-"86
-[; ;main.c: 86:     while (1)
+"80
+[; ;main.c: 80:     while (1)
 [e :U 1391 ]
-"87
-[; ;main.c: 87:     {
+"81
+[; ;main.c: 81:     {
 {
-"88
-[; ;main.c: 88:         cam_start();
+"82
+[; ;main.c: 82:         cam_start();
 [e ( _cam_start ..  ]
-"89
-[; ;main.c: 89:         _delay((unsigned long)((500)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"112
-[; ;main.c: 112:     }
+"83
+[; ;main.c: 83:         _delay((unsigned long)((5)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"86
+[; ;main.c: 86:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"113
-[; ;main.c: 113: }
+"87
+[; ;main.c: 87: }
 [e :UE 1389 ]
 }

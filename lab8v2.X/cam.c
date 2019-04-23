@@ -25,6 +25,8 @@ Brown = Clk
  * finsih the ack by swapping arrays, etc.
  */
 
+int timing_val = 0xff10;
+
 // low level state of camera.
 enum cam_line_state_t {CAM_START, CAM_IN_PROGRESS, CAM_DONE, CAM_UNSET};
 
@@ -38,22 +40,27 @@ struct cam_t{
 
 volatile struct cam_t myCam;
 
+void adc_ready_ISR();
+
 /**
  * Stateful ISR for pulling clock low and starting ADC measurement.
  */
 void timer_ISR() {
     TMR3_SetInterruptHandler(TMR3_DefaultInterruptHandler);// disable timer ISR.
+    DEBUG_DIG_Toggle();
+
     if (myCam.status == CAM_START) {
         myCam.status = CAM_IN_PROGRESS;     // state = CAM_IN_PROGRESS.
         CAM_SI_SetLow();
         CAM_CLK_SetLow();
-        ADCON0bits.ADON = 1;                // ADC ON
-        TMR3_WriteTimer(0xff10);            // Load for 15us interrupt
+        TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
+        TMR3_SetInterruptHandler(timer_ISR); // Reinable ISR
         TMR3_StartTimer();
     } else if (myCam.status == CAM_IN_PROGRESS) {
-        CAM_CLK_SetLow();               // Set CLK LOW
+        CAM_CLK_SetHigh();               // Set CLK LOW
         ADCON0bits.GO = 1;                  // Start Conversion.
-//        ADCC_StartConversion(CAM_AO);   // Start ADC
+        ADCC_SetADIInterruptHandler(adc_ready_ISR); // setup ADC interrupt
+        
     }
 }
 
@@ -75,12 +82,15 @@ void adc_ready_ISR() {
         // if index < 127 -> increment index & setup timer ISR.
         // else set state to CAM_DONE.
         myCam.status = CAM_DONE;
-        ADCON0bits.ADON = 0;    // ADC ON
+        CAM_CLK_SetLow();                  // CLK -> HIGH
+        CAM_SI_SetLow();                  // CLK -> HIGH
+
+
     } else {
-        TMR3_WriteTimer(0xff10);            // Load for 15us interrupt
+        TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
         TMR3_SetInterruptHandler(timer_ISR);
         TMR3_StartTimer();
-        CAM_CLK_SetHigh(); 
+        CAM_CLK_SetLow(); 
     }
 }
 
@@ -94,10 +104,8 @@ void cam_init() {
     CAM_CLK_SetDigitalOutput();
     ADCC_SetADIInterruptHandler(adc_ready_ISR);
     
-
     myCam.index = 0;            // index = 0;
     myCam.status = CAM_DONE;    // state = CAM_DONE.
-//    ADCC_Initialize();          // ADC INIT
     
     ///////////////// Following from Page 547 of datasheet \\\\\\\\\\\\\\\\\\\\\
     
@@ -114,15 +122,16 @@ void cam_start() {
     // If state == CAM_DONE -> then we can start, otherwise dont.
     if (myCam.status == CAM_DONE){
         myCam.status = CAM_START;           // state = cam_START
-        TMR3_SetInterruptHandler(timer_ISR);// set up timer interrupt
-        TMR3_WriteTimer(0xff10);            // Load for 15us interrupt
-        TMR3_StartTimer();
-        ADCC_SetADIInterruptHandler(adc_ready_ISR); // setup ADC interrupt
-        ADCON0bits.GO = 1;                  // Start Conversion.
+
         myCam.index = 0;                    // index = 0;
         myCam.readFromFirst = !myCam.readFromFirst; // swap arrays
         CAM_SI_SetHigh();                   // SI -> HIGH
+        __delay_us(3);
         CAM_CLK_SetHigh();                  // CLK -> HIGH
+        TMR3_SetInterruptHandler(timer_ISR);// set up timer interrupt
+        TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
+        TMR3_StartTimer();
+        ADCON0bits.ADON = 1;                // ADC ON
     }
 }
 
@@ -141,10 +150,10 @@ void cam_stop() {
  * If the camera is not running, or a read is not ready - it will return 
  * an array with a 0 as the first element.
  */
-uint8_t* cam_get() {
+void cam_get() {
     if (myCam.readFromFirst) {
-        return &myCam.cam_pixels_1;
+//        return &myCam.cam_pixels_1;
     } else {
-        return &myCam.cam_pixels_2;
+//        return &myCam.cam_pixels_2;
     }
 }
