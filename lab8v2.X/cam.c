@@ -7,7 +7,7 @@ Red = VDD = 5v
 Green = SI
 White = AO
 Brown = Clk
- * /
+ */
 
 /** TIMING:
  * Set SI HIGH and then set clk HIGH, at this point, the cam will shift out a bit
@@ -101,7 +101,7 @@ void cam_stop() {
  * an array with a 0 as the first element.
  */
 uint8_t* cam_get() {
-    if (readFromFirst) {
+    if (myCam.readFromFirst) {
         return &myCam.cam_pixels_1;
     } else {
         return &myCam.cam_pixels_2;
