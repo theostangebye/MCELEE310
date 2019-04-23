@@ -5,6 +5,8 @@
  * Created on April 16, 2019, 1:21 PM
  */
 
+#include "mcc_generated_files/mcc.h"
+
 #ifndef CAM_H
 #define	CAM_H
 
