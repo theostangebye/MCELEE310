@@ -205,6 +205,18 @@
 #define CAM_AO_SetAnalogMode()      do { ANSELBbits.ANSELB3 = 1; } while(0)
 #define CAM_AO_SetDigitalMode()     do { ANSELBbits.ANSELB3 = 0; } while(0)
 
+// get/set RC0 procedures
+#define RC0_SetHigh()            do { LATCbits.LATC0 = 1; } while(0)
+#define RC0_SetLow()             do { LATCbits.LATC0 = 0; } while(0)
+#define RC0_Toggle()             do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
+#define RC0_GetValue()              PORTCbits.RC0
+#define RC0_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
+#define RC0_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
+#define RC0_SetPullup()             do { WPUCbits.WPUC0 = 1; } while(0)
+#define RC0_ResetPullup()           do { WPUCbits.WPUC0 = 0; } while(0)
+#define RC0_SetAnalogMode()         do { ANSELCbits.ANSELC0 = 1; } while(0)
+#define RC0_SetDigitalMode()        do { ANSELCbits.ANSELC0 = 0; } while(0)
+
 // get/set DEBUG_DIG aliases
 #define DEBUG_DIG_TRIS                 TRISCbits.TRISC1
 #define DEBUG_DIG_LAT                  LATCbits.LATC1

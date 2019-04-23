@@ -1,17 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F9809 `(v ~T0 @X0 0 tf ]
-[v F9811 `(v ~T0 @X0 0 tf ]
+[v F9826 `(v ~T0 @X0 0 tf ]
+[v F9828 `(v ~T0 @X0 0 tf ]
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[c E9846 0 1 2 3 .. ]
-[n E9846 ctl_state_t state_unset state_high state_vary state_low  ]
+[c E9863 0 1 2 3 .. ]
+[n E9863 ctl_state_t state_unset state_high state_vary state_low  ]
 "18
 [; ;./car_ctrl.h: 18: struct carctl_t {
-[s S1388 `a 1 `E9846 1 `us 1 `uc 1 `uc 1 ]
+[s S1388 `a 1 `E9863 1 `us 1 `uc 1 `uc 1 ]
 [n S1388 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
-"74 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
+"75 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "25396 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25396:     struct {
@@ -38,19 +38,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 ./ping.h
 [; ;./ping.h: 18:     void ping_init();
 [v _ping_init `(v ~T0 @X0 0 e? ]
+"19 ./cam.h
+[; ;./cam.h: 19: void cam_init();
+[v _cam_init `(v ~T0 @X0 0 e? ]
 [v F9277 `(v ~T0 @X0 1 tf1`ul ]
 "183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
 [v __delay `JF9277 ~T0 @X0 0 e ]
 [p i __delay ]
-"32 ./car_ctrl.h
+"34 ./car_ctrl.h
+[; ;./car_ctrl.h: 34: void carcontrol_throttle(uint8_t throttle);
+[v _carcontrol_throttle `(v ~T0 @X0 0 ef1`uc ]
+"32
 [; ;./car_ctrl.h: 32: void carcontrol_steering(int8_t steering);
 [v _carcontrol_steering `(v ~T0 @X0 0 ef1`c ]
-"23 ./ping.h
-[; ;./ping.h: 23:     void ping_send();
-[v _ping_send `(v ~T0 @X0 0 e? ]
-"30
-[; ;./ping.h: 30:     float ping_get();
-[v _ping_get `(f ~T0 @X0 0 e? ]
+"25 ./cam.h
+[; ;./cam.h: 25: void cam_start();
+[v _cam_start `(v ~T0 @X0 0 e? ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1304,106 +1307,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "96 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F9809 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F9826 ~T0 @X0 1 e ]
 "97
 [; ;./mcc_generated_files/eusart1.h: 97: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F9811 ~T0 @X0 1 e ]
+[v _EUSART1_RxDefaultInterruptHandler `*F9828 ~T0 @X0 1 e ]
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
 [v _carctl `VS1388 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51 main.c
-[; ;main.c: 51: void main(void)
+"52 main.c
+[; ;main.c: 52: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"52
-[; ;main.c: 52: {
+"53
+[; ;main.c: 53: {
 {
 [e :U _main ]
 [f ]
-"54
-[; ;main.c: 54:     SYSTEM_Initialize();
+"55
+[; ;main.c: 55:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"61
-[; ;main.c: 61:     (INTCONbits.GIE = 1);
+"62
+[; ;main.c: 62:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 2 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     (INTCONbits.PEIE = 1);
+"68
+[; ;main.c: 68:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     carcontrol_init();
-[e ( _carcontrol_init ..  ]
 "73
-[; ;main.c: 73:     ping_init();
-[e ( _ping_init ..  ]
+[; ;main.c: 73:     carcontrol_init();
+[e ( _carcontrol_init ..  ]
 "74
-[; ;main.c: 74:     _delay((unsigned long)((1000)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 74:     ping_init();
+[e ( _ping_init ..  ]
+"75
+[; ;main.c: 75:     cam_init();
+[e ( _cam_init ..  ]
 "76
-[; ;main.c: 76:     carcontrol_steering(0);
-[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
+[; ;main.c: 76:     _delay((unsigned long)((1000)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "78
-[; ;main.c: 78:     _delay((unsigned long)((10)*(64000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 78:     carcontrol_throttle(0);
+[e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
 "80
-[; ;main.c: 80:     carcontrol_steering(0);
-[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
+[; ;main.c: 80:     _delay((unsigned long)((10)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
 "82
-[; ;main.c: 82:     double dis, last_dis = 0;
+[; ;main.c: 82:     carcontrol_steering(0);
+[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
+"84
+[; ;main.c: 84:     double dis, last_dis = 0;
 [v _dis `d ~T0 @X0 1 a ]
 [v _last_dis `d ~T0 @X0 1 a ]
 [e = _last_dis -> -> 0 `i `d ]
-"84
-[; ;main.c: 84:     while (1)
-[e :U 1391 ]
-"85
-[; ;main.c: 85:     {
-{
 "86
-[; ;main.c: 86:         ping_send();
-[e ( _ping_send ..  ]
-"88
-[; ;main.c: 88:         last_dis = dis;
-[e = _last_dis _dis ]
-"90
-[; ;main.c: 90:         do {
-[e :U 1395 ]
+[; ;main.c: 86:     while (1)
+[e :U 1391 ]
+"87
+[; ;main.c: 87:     {
 {
-"91
-[; ;main.c: 91:            dis = ping_get();
-[e = _dis -> ( _ping_get ..  `d ]
-"92
-[; ;main.c: 92:         } while (dis == 0);
-}
-[e $ == _dis -> -> 0 `i `d 1395  ]
-[e :U 1394 ]
-"94
-[; ;main.c: 94:         double mean = (last_dis + dis)/2;
-[v _mean `d ~T0 @X0 1 a ]
-[e = _mean / + _last_dis _dis -> -> 2 `i `d ]
-"97
-[; ;main.c: 97:         if (mean > 70) mean = 70;
-[e $ ! > _mean -> -> 70 `i `d 1396  ]
-[e = _mean -> -> 70 `i `d ]
-[e :U 1396 ]
-"98
-[; ;main.c: 98:         if (mean < 10) mean = 10;
-[e $ ! < _mean -> -> 10 `i `d 1397  ]
-[e = _mean -> -> 10 `i `d ]
-[e :U 1397 ]
-"99
-[; ;main.c: 99:         double angle = (mean-40);
-[v _angle `d ~T0 @X0 1 a ]
-[e = _angle - _mean -> -> 40 `i `d ]
-"102
-[; ;main.c: 102:         carcontrol_steering(angle);
-[e ( _carcontrol_steering (1 -> _angle `c ]
-"108
-[; ;main.c: 108:     }
+"88
+[; ;main.c: 88:         cam_start();
+[e ( _cam_start ..  ]
+"89
+[; ;main.c: 89:         _delay((unsigned long)((500)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"112
+[; ;main.c: 112:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"109
-[; ;main.c: 109: }
+"113
+[; ;main.c: 113: }
 [e :UE 1389 ]
 }

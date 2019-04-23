@@ -15650,17 +15650,17 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 282 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 294 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 306 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 307 "./mcc_generated_files/pin_manager.h"
+# 319 "./mcc_generated_files/pin_manager.h"
 void IOCCF2_ISR(void);
-# 330 "./mcc_generated_files/pin_manager.h"
+# 342 "./mcc_generated_files/pin_manager.h"
 void IOCCF2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 354 "./mcc_generated_files/pin_manager.h"
+# 366 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCCF2_InterruptHandler)(void);
-# 378 "./mcc_generated_files/pin_manager.h"
+# 390 "./mcc_generated_files/pin_manager.h"
 void IOCCF2_DefaultInterruptHandler(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -15829,6 +15829,33 @@ void ADCC_ISR(void);
 void ADCC_DefaultInterruptHandler(void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr3.h" 1
+# 100 "./mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 129 "./mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 161 "./mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 196 "./mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 310 "./mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 367 "./mcc_generated_files/tmr3.h"
+void TMR3_ISR(void);
+# 385 "./mcc_generated_files/tmr3.h"
+ void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 403 "./mcc_generated_files/tmr3.h"
+extern void (*TMR3_InterruptHandler)(void);
+# 421 "./mcc_generated_files/tmr3.h"
+void TMR3_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -15854,28 +15881,6 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "./mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/ccp1.h" 1
-# 80 "./mcc_generated_files/ccp1.h"
-typedef union CCPR1Reg_tag
-{
-   struct
-   {
-      uint8_t ccpr1l;
-      uint8_t ccpr1h;
-   };
-   struct
-   {
-      uint16_t ccpr1_16Bit;
-   };
-} CCP1_PERIOD_REG_T ;
-# 123 "./mcc_generated_files/ccp1.h"
-void CCP1_Initialize(void);
-# 139 "./mcc_generated_files/ccp1.h"
-void CCP1_CaptureISR(void);
-# 180 "./mcc_generated_files/ccp1.h"
- void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
 # 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr2.h" 1
@@ -16096,6 +16101,28 @@ extern void (*TMR2_InterruptHandler)(void);
 void TMR2_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/ccp1.h" 1
+# 80 "./mcc_generated_files/ccp1.h"
+typedef union CCPR1Reg_tag
+{
+   struct
+   {
+      uint8_t ccpr1l;
+      uint8_t ccpr1h;
+   };
+   struct
+   {
+      uint16_t ccpr1_16Bit;
+   };
+} CCP1_PERIOD_REG_T ;
+# 123 "./mcc_generated_files/ccp1.h"
+void CCP1_Initialize(void);
+# 139 "./mcc_generated_files/ccp1.h"
+void CCP1_CaptureISR(void);
+# 180 "./mcc_generated_files/ccp1.h"
+ void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
+# 59 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/eusart1.h" 1
 # 57 "./mcc_generated_files/eusart1.h"
 # 1 "/Applications/microchip/xc8/v2.05/pic/include/c99/stdio.h" 1 3
@@ -16288,12 +16315,12 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 516 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 59 "./mcc_generated_files/mcc.h" 2
-# 74 "./mcc_generated_files/mcc.h"
+# 60 "./mcc_generated_files/mcc.h" 2
+# 75 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 87 "./mcc_generated_files/mcc.h"
+# 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 100 "./mcc_generated_files/mcc.h"
+# 101 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
@@ -16337,6 +16364,25 @@ void carcontrol_throttle(uint8_t throttle);
     float ping_get();
 # 46 "main.c" 2
 
+# 1 "./cam.h" 1
+# 19 "./cam.h"
+void cam_init();
+
+
+
+
+
+void cam_start();
+
+
+
+
+
+void cam_stop();
+# 40 "./cam.h"
+uint8_t* cam_get();
+# 47 "main.c" 2
+
 
 
 
@@ -16364,9 +16410,10 @@ void main(void)
 
     carcontrol_init();
     ping_init();
+    cam_init();
     _delay((unsigned long)((1000)*(64000000/4000.0)));
 
-    carcontrol_steering(0);
+    carcontrol_throttle(0);
 
     _delay((unsigned long)((10)*(64000000/4000000.0)));
 
@@ -16376,27 +16423,8 @@ void main(void)
 
     while (1)
     {
-        ping_send();
-
-        last_dis = dis;
-
-        do {
-           dis = ping_get();
-        } while (dis == 0);
-
-        double mean = (last_dis + dis)/2;
-
-
-        if (mean > 70) mean = 70;
-        if (mean < 10) mean = 10;
-        double angle = (mean-40);
-
-
-        carcontrol_steering(angle);
-
-
-
-
-
+        cam_start();
+        _delay((unsigned long)((500)*(64000000/4000.0)));
+# 112 "main.c"
     }
 }
