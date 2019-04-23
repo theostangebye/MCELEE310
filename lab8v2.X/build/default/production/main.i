@@ -16325,6 +16325,5 @@ void main(void)
         printf("test distance:    %.2f\n", mean);
         do { LATCbits.LATC7 = 0; } while(0);
 
-
     }
 }

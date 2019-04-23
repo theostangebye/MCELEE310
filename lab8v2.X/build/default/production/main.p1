@@ -1459,14 +1459,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1402 ]
-"109
-[; ;main.c: 109:     }
+"108
+[; ;main.c: 108:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"110
-[; ;main.c: 110: }
+"109
+[; ;main.c: 109: }
 [e :UE 1389 ]
 }
 [p f _printf 8462336 ]

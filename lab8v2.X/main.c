@@ -105,7 +105,6 @@ void main(void)
         printf("test distance:    %.2f\n", mean);
         IO_RC7_SetLow();
         
-
     }
 }
 /**
