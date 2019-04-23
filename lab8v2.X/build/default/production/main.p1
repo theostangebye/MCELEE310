@@ -1,13 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F9826 `(v ~T0 @X0 0 tf ]
-[v F9828 `(v ~T0 @X0 0 tf ]
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[c E9863 0 1 2 3 .. ]
-[n E9863 ctl_state_t state_unset state_high state_vary state_low  ]
+[c E9846 0 1 2 3 .. ]
+[n E9846 ctl_state_t state_unset state_high state_vary state_low  ]
 "18
 [; ;./car_ctrl.h: 18: struct carctl_t {
-[s S1388 `a 1 `E9863 1 `us 1 `uc 1 `uc 1 ]
+[s S1388 `a 1 `E9846 1 `us 1 `uc 1 `uc 1 ]
 [n S1388 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
 "75 ./mcc_generated_files/mcc.h
@@ -1302,12 +1300,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25839
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25839: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"96 ./mcc_generated_files/eusart1.h
-[; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F9826 ~T0 @X0 1 e ]
-"97
-[; ;./mcc_generated_files/eusart1.h: 97: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F9828 ~T0 @X0 1 e ]
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
 [v _carctl `VS1388 ~T0 @X0 1 e ]
@@ -1323,43 +1315,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;main.c: 55:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"62
-[; ;main.c: 62:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 2 -> -> 1 `i `uc ]
 "68
-[; ;main.c: 68:     (INTCONbits.PEIE = 1);
+[; ;main.c: 68:     (INTCONbits.GIEL = 1);
+[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+"69
+[; ;main.c: 69:     (INTCONbits.GIEH = 1);
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+"70
+[; ;main.c: 70:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:     carcontrol_init();
-[e ( _carcontrol_init ..  ]
 "75
-[; ;main.c: 75:     cam_init();
-[e ( _cam_init ..  ]
+[; ;main.c: 75:     carcontrol_init();
+[e ( _carcontrol_init ..  ]
 "77
-[; ;main.c: 77:     carcontrol_throttle(0);
+[; ;main.c: 77:     cam_init();
+[e ( _cam_init ..  ]
+"79
+[; ;main.c: 79:     carcontrol_throttle(0);
 [e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     carcontrol_steering(0);
-[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
 "80
-[; ;main.c: 80:     while (1)
-[e :U 1391 ]
-"81
-[; ;main.c: 81:     {
-{
+[; ;main.c: 80:     carcontrol_steering(0);
+[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
 "82
-[; ;main.c: 82:         cam_start();
-[e ( _cam_start ..  ]
+[; ;main.c: 82:     while (1)
+[e :U 1391 ]
 "83
-[; ;main.c: 83:         _delay((unsigned long)((5)*(64000000/4000.0)));
+[; ;main.c: 83:     {
+{
+"84
+[; ;main.c: 84:         cam_start();
+[e ( _cam_start ..  ]
+"85
+[; ;main.c: 85:         _delay((unsigned long)((5)*(64000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"86
-[; ;main.c: 86:     }
+"88
+[; ;main.c: 88:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"87
-[; ;main.c: 87: }
+"89
+[; ;main.c: 89: }
 [e :UE 1389 ]
 }

@@ -1,11 +1,11 @@
 /**
-  Generated Interrupt Manager Source File
+  Generated Interrupt Manager Header File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    interrupt_manager.c
+    interrupt_manager.h
 
   @Summary:
     This is the Interrupt Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
@@ -17,7 +17,7 @@
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
         Device            :  PIC18F25Q10
-        Driver Version    :  2.03
+        Driver Version    :  2.12
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00 or later
         MPLAB 	          :  MPLAB X 5.10
@@ -51,48 +51,68 @@
 
 void  INTERRUPT_Initialize (void)
 {
-    // Disable Interrupt Priority Vectors (16CXXX Compatibility Mode)
-    INTCONbits.IPEN = 0;
+    // Enable Interrupt Priority Vectors
+    INTCONbits.IPEN = 1;
+
+    // Assign peripheral interrupt priority vectors
+
+    // TMRI - high priority
+    IPR4bits.TMR2IP = 1;
+
+
+    // TMRI - low priority
+    IPR4bits.TMR1IP = 0;    
+
+    // TMRI - low priority
+    IPR4bits.TMR3IP = 0;    
+
+    // ADI - low priority
+    IPR1bits.ADIP = 0;    
+
+    // CCPI - low priority
+    IPR6bits.CCP1IP = 0;    
+
+    // IOCI - low priority
+    IPR0bits.IOCIP = 0;    
+
 }
 
-void __interrupt() INTERRUPT_InterruptManager (void)
+void __interrupt() INTERRUPT_InterruptManagerHigh (void)
+{
+   // interrupt handler
+    if(PIE4bits.TMR2IE == 1 && PIR4bits.TMR2IF == 1)
+    {
+        TMR2_ISR();
+    }
+}
+
+void __interrupt(low_priority) INTERRUPT_InterruptManagerLow (void)
 {
     // interrupt handler
-    if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
+    if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
+    {
+        TMR1_ISR();
+    }
+    else if(PIE4bits.TMR3IE == 1 && PIR4bits.TMR3IF == 1)
+    {
+        TMR3_ISR();
+    }
+    else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+    {
+        ADCC_ISR();
+    }
+    else if(PIE6bits.CCP1IE == 1 && PIR6bits.CCP1IF == 1)
+    {
+        CCP1_CaptureISR();
+    }
+    else if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
     {
         PIN_MANAGER_IOC();
     }
-    else if(INTCONbits.PEIE == 1)
+    else
     {
-        if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
-        {
-            EUSART1_TxDefaultInterruptHandler();
-        } 
-        else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
-        {
-            EUSART1_RxDefaultInterruptHandler();
-        } 
-        else if(PIE4bits.TMR3IE == 1 && PIR4bits.TMR3IF == 1)
-        {
-            TMR3_ISR();
-        } 
-        else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
-        {
-            ADCC_ISR();
-        } 
-        else if(PIE4bits.TMR2IE == 1 && PIR4bits.TMR2IF == 1)
-        {
-            TMR2_ISR();
-        } 
-        else if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
-        {
-            TMR1_ISR();
-        } 
-        else if(PIE6bits.CCP1IE == 1 && PIR6bits.CCP1IF == 1)
-        {
-            CCP1_CaptureISR();
-        } 
-    }      
+        //Unhandled Interrupt
+    }
 }
 /**
  End of File

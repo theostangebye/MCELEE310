@@ -15752,7 +15752,7 @@ typedef uint32_t uint_fast32_t;
 # 53 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
+# 132 "mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 # 54 "mcc_generated_files/mcc.h" 2
 
@@ -15882,28 +15882,6 @@ extern void (*TMR1_InterruptHandler)(void);
 # 421 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
 # 57 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/ccp1.h" 1
-# 80 "mcc_generated_files/ccp1.h"
-typedef union CCPR1Reg_tag
-{
-   struct
-   {
-      uint8_t ccpr1l;
-      uint8_t ccpr1h;
-   };
-   struct
-   {
-      uint16_t ccpr1_16Bit;
-   };
-} CCP1_PERIOD_REG_T ;
-# 123 "mcc_generated_files/ccp1.h"
-void CCP1_Initialize(void);
-# 139 "mcc_generated_files/ccp1.h"
-void CCP1_CaptureISR(void);
-# 180 "mcc_generated_files/ccp1.h"
- void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
-# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr2.h" 1
 # 79 "mcc_generated_files/tmr2.h"
@@ -16121,6 +16099,28 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 846 "mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
+# 58 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/ccp1.h" 1
+# 80 "mcc_generated_files/ccp1.h"
+typedef union CCPR1Reg_tag
+{
+   struct
+   {
+      uint8_t ccpr1l;
+      uint8_t ccpr1h;
+   };
+   struct
+   {
+      uint16_t ccpr1_16Bit;
+   };
+} CCP1_PERIOD_REG_T ;
+# 123 "mcc_generated_files/ccp1.h"
+void CCP1_Initialize(void);
+# 139 "mcc_generated_files/ccp1.h"
+void CCP1_CaptureISR(void);
+# 180 "mcc_generated_files/ccp1.h"
+ void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
 # 59 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
@@ -16272,49 +16272,26 @@ typedef union {
     };
     uint8_t status;
 }eusart1_status_t;
-
-
-
-
-extern volatile uint8_t eusart1TxBufferRemaining;
-extern volatile uint8_t eusart1RxCount;
-
-
-
-
-
-void (*EUSART1_TxDefaultInterruptHandler)(void);
-void (*EUSART1_RxDefaultInterruptHandler)(void);
-# 119 "mcc_generated_files/eusart1.h"
+# 112 "mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
-# 172 "mcc_generated_files/eusart1.h"
-uint8_t EUSART1_is_tx_ready(void);
-# 224 "mcc_generated_files/eusart1.h"
-uint8_t EUSART1_is_rx_ready(void);
-# 271 "mcc_generated_files/eusart1.h"
+# 160 "mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_tx_ready(void);
+# 208 "mcc_generated_files/eusart1.h"
+_Bool EUSART1_is_rx_ready(void);
+# 255 "mcc_generated_files/eusart1.h"
 _Bool EUSART1_is_tx_done(void);
-# 319 "mcc_generated_files/eusart1.h"
+# 303 "mcc_generated_files/eusart1.h"
 eusart1_status_t EUSART1_get_last_status(void);
-# 339 "mcc_generated_files/eusart1.h"
+# 323 "mcc_generated_files/eusart1.h"
 uint8_t EUSART1_Read(void);
-# 359 "mcc_generated_files/eusart1.h"
+# 343 "mcc_generated_files/eusart1.h"
 void EUSART1_Write(uint8_t txData);
-# 380 "mcc_generated_files/eusart1.h"
-void EUSART1_Transmit_ISR(void);
-# 401 "mcc_generated_files/eusart1.h"
-void EUSART1_Receive_ISR(void);
-# 422 "mcc_generated_files/eusart1.h"
-void EUSART1_RxDataHandler(void);
-# 440 "mcc_generated_files/eusart1.h"
+# 363 "mcc_generated_files/eusart1.h"
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 458 "mcc_generated_files/eusart1.h"
+# 381 "mcc_generated_files/eusart1.h"
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 476 "mcc_generated_files/eusart1.h"
+# 399 "mcc_generated_files/eusart1.h"
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 496 "mcc_generated_files/eusart1.h"
-void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 516 "mcc_generated_files/eusart1.h"
-void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 60 "mcc_generated_files/mcc.h" 2
 # 75 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -16333,8 +16310,8 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     ADCC_Initialize();
-    CCP1_Initialize();
     TMR3_Initialize();
+    CCP1_Initialize();
     TMR2_Initialize();
     TMR1_Initialize();
     EUSART1_Initialize();
