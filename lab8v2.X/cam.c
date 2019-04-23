@@ -7,6 +7,7 @@ Red = VDD = 5v
 Green = SI
 White = AO
 Brown = Clk
+ * /
 
 /** TIMING:
  * Set SI HIGH and then set clk HIGH, at this point, the cam will shift out a bit
@@ -31,11 +32,11 @@ struct cam_t{
     bool readFromFirst;
     uint16_t cam_pixels_1[128];
     uint16_t cam_pixels_2[128];
-    cam_line_state_t status;
+    enum cam_line_state_t status;
     int index;
 };
 
-volatile cam_t myCam;
+volatile struct cam_t myCam;
 
 /**
  * Stateful ISR for pulling clock low and starting ADC measurement.

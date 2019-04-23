@@ -11,6 +11,11 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$/tmp/xctkSducW.o
+idloc IDLOC 0 200000 200000 100 1
+init CODE 0 B4 B4 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 C 1
 $dist/default/production/lab8v2.X.production.o
 cinit CODE 0 1230 1230 44 1
 text0 CODE 0 9A2 9A2 1B4 1
@@ -84,11 +89,6 @@ bssBANK0 BANK0 1 AA AA C 1
 intcode CODE 0 8 8 AC 1
 dataCOMRAM COMRAM 1 5C 5C 3 1
 bssCOMRAM COMRAM 1 32 32 22 1
-$/tmp/xcBDJKYYe.o
-idloc IDLOC 0 200000 200000 100 1
-init CODE 0 B4 B4 4 1
-reset_vec CODE 0 0 0 4 1
-config CONFIG 0 300000 300000 C 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -895,40 +895,40 @@ A8E text0 CODE >97:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X
 ACA text0 CODE >98:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 B04 text0 CODE >99:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 B38 text0 CODE >102:/Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
-1230 cinit CODE >9750:/tmp/xcfklA34j
-1230 cinit CODE >9752:/tmp/xcfklA34j
-1230 cinit CODE >9755:/tmp/xcfklA34j
-1230 cinit CODE >9824:/tmp/xcfklA34j
-1232 cinit CODE >9825:/tmp/xcfklA34j
-1234 cinit CODE >9826:/tmp/xcfklA34j
-1236 cinit CODE >9827:/tmp/xcfklA34j
-1238 cinit CODE >9828:/tmp/xcfklA34j
-123A cinit CODE >9829:/tmp/xcfklA34j
-123C cinit CODE >9830:/tmp/xcfklA34j
-123E cinit CODE >9831:/tmp/xcfklA34j
-1242 cinit CODE >9832:/tmp/xcfklA34j
-1244 cinit CODE >9833:/tmp/xcfklA34j
-1248 cinit CODE >9834:/tmp/xcfklA34j
-124A cinit CODE >9835:/tmp/xcfklA34j
-124E cinit CODE >9839:/tmp/xcfklA34j
-1252 cinit CODE >9840:/tmp/xcfklA34j
-1254 cinit CODE >9841:/tmp/xcfklA34j
-1254 cinit CODE >9842:/tmp/xcfklA34j
-1256 cinit CODE >9843:/tmp/xcfklA34j
-1258 cinit CODE >9844:/tmp/xcfklA34j
-125A cinit CODE >9847:/tmp/xcfklA34j
-125E cinit CODE >9848:/tmp/xcfklA34j
-1260 cinit CODE >9849:/tmp/xcfklA34j
-1260 cinit CODE >9850:/tmp/xcfklA34j
-1262 cinit CODE >9851:/tmp/xcfklA34j
-1264 cinit CODE >9852:/tmp/xcfklA34j
-1266 cinit CODE >9858:/tmp/xcfklA34j
-1266 cinit CODE >9860:/tmp/xcfklA34j
-1268 cinit CODE >9861:/tmp/xcfklA34j
-126A cinit CODE >9863:/tmp/xcfklA34j
-126C cinit CODE >9864:/tmp/xcfklA34j
-126E cinit CODE >9865:/tmp/xcfklA34j
-1270 cinit CODE >9866:/tmp/xcfklA34j
+1230 cinit CODE >9750:/tmp/xc6VsNqz4
+1230 cinit CODE >9752:/tmp/xc6VsNqz4
+1230 cinit CODE >9755:/tmp/xc6VsNqz4
+1230 cinit CODE >9824:/tmp/xc6VsNqz4
+1232 cinit CODE >9825:/tmp/xc6VsNqz4
+1234 cinit CODE >9826:/tmp/xc6VsNqz4
+1236 cinit CODE >9827:/tmp/xc6VsNqz4
+1238 cinit CODE >9828:/tmp/xc6VsNqz4
+123A cinit CODE >9829:/tmp/xc6VsNqz4
+123C cinit CODE >9830:/tmp/xc6VsNqz4
+123E cinit CODE >9831:/tmp/xc6VsNqz4
+1242 cinit CODE >9832:/tmp/xc6VsNqz4
+1244 cinit CODE >9833:/tmp/xc6VsNqz4
+1248 cinit CODE >9834:/tmp/xc6VsNqz4
+124A cinit CODE >9835:/tmp/xc6VsNqz4
+124E cinit CODE >9839:/tmp/xc6VsNqz4
+1252 cinit CODE >9840:/tmp/xc6VsNqz4
+1254 cinit CODE >9841:/tmp/xc6VsNqz4
+1254 cinit CODE >9842:/tmp/xc6VsNqz4
+1256 cinit CODE >9843:/tmp/xc6VsNqz4
+1258 cinit CODE >9844:/tmp/xc6VsNqz4
+125A cinit CODE >9847:/tmp/xc6VsNqz4
+125E cinit CODE >9848:/tmp/xc6VsNqz4
+1260 cinit CODE >9849:/tmp/xc6VsNqz4
+1260 cinit CODE >9850:/tmp/xc6VsNqz4
+1262 cinit CODE >9851:/tmp/xc6VsNqz4
+1264 cinit CODE >9852:/tmp/xc6VsNqz4
+1266 cinit CODE >9858:/tmp/xc6VsNqz4
+1266 cinit CODE >9860:/tmp/xc6VsNqz4
+1268 cinit CODE >9861:/tmp/xc6VsNqz4
+126A cinit CODE >9863:/tmp/xc6VsNqz4
+126C cinit CODE >9864:/tmp/xc6VsNqz4
+126E cinit CODE >9865:/tmp/xc6VsNqz4
+1270 cinit CODE >9866:/tmp/xc6VsNqz4
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -948,7 +948,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_ping_get 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 EUSART1_SetErrorHandler@interruptHandler 60 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/lab8v2.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcBDJKYYe.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xctkSducW.o
 _EUSART1_Initialize 1030 0 CODE 0 text24 dist/default/production/lab8v2.X.production.o
 __end_of_CCP1_Initialize 143A 0 CODE 0 text30 dist/default/production/lab8v2.X.production.o
 __size_of_IOCCF2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
@@ -978,10 +978,10 @@ _WPUA F0B 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUB F13 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUC F1B 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _WPUE F28 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcBDJKYYe.o
+___sp 0 0 STACK 2 stack /tmp/xctkSducW.o
 _main 9A2 0 CODE 0 text0 dist/default/production/lab8v2.X.production.o
 btemp 5F 0 COMRAM 1 temp dist/default/production/lab8v2.X.production.o
-start B4 0 CODE 0 init /tmp/xcBDJKYYe.o
+start B4 0 CODE 0 init /tmp/xctkSducW.o
 __end_of_carcontrol_steering 13AE 0 CODE 0 text8 dist/default/production/lab8v2.X.production.o
 ___flmul@aexp 20 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 ___flmul@bexp 21 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
@@ -1013,11 +1013,11 @@ __size_of_ADCC_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production/lab8v
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production/lab8v2.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/lab8v2.X.production.o
-__accesstop 60 0 ABS 0 - /tmp/xcBDJKYYe.o
-intlevel0 0 0 CODE 0 text /tmp/xcBDJKYYe.o
-intlevel1 0 0 CODE 0 text /tmp/xcBDJKYYe.o
-intlevel2 0 0 CODE 0 text /tmp/xcBDJKYYe.o
-intlevel3 0 0 CODE 0 text /tmp/xcBDJKYYe.o
+__accesstop 60 0 ABS 0 - /tmp/xctkSducW.o
+intlevel0 0 0 CODE 0 text /tmp/xctkSducW.o
+intlevel1 0 0 CODE 0 text /tmp/xctkSducW.o
+intlevel2 0 0 CODE 0 text /tmp/xctkSducW.o
+intlevel3 0 0 CODE 0 text /tmp/xctkSducW.o
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/lab8v2.X.production.o
 _ping_get 134E 0 CODE 0 text5 dist/default/production/lab8v2.X.production.o
@@ -1065,8 +1065,8 @@ _ANSELA F0C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ANSELB F14 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _ANSELC F1C 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __size_of_carcontrol_throttle 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcBDJKYYe.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcBDJKYYe.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xctkSducW.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xctkSducW.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/lab8v2.X.production.o
 __CFG_BORV$VBOR_190 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 _CCPR1H FAA 0 ABS 0 - dist/default/production/lab8v2.X.production.o
@@ -1193,7 +1193,7 @@ __size_of_EUSART1_Transmit_ISR 0 0 ABS 0 - dist/default/production/lab8v2.X.prod
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/lab8v2.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production/lab8v2.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcBDJKYYe.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xctkSducW.o
 _BAUD1CON F9E 0 ABS 0 - dist/default/production/lab8v2.X.production.o
 ___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 ___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
@@ -1473,8 +1473,8 @@ __Lfardata 0 0 FARRAM 0 fardata dist/default/production/lab8v2.X.production.o
 ___fldiv@new_exp 81 0 BANK0 1 cstackBANK0 dist/default/production/lab8v2.X.production.o
 i2IOCCF2_SetInterruptHandler@InterruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __end_of_EUSART1_SetFramingErrorHandler 1646 0 CODE 0 text28 dist/default/production/lab8v2.X.production.o
-stackhi 7FF 0 ABS 0 - /tmp/xcBDJKYYe.o
-stacklo B6 0 ABS 0 - /tmp/xcBDJKYYe.o
+stackhi 7FF 0 ABS 0 - /tmp/xctkSducW.o
+stacklo B6 0 ABS 0 - /tmp/xctkSducW.o
 __end_of_EUSART1_SetOverrunErrorHandler 163C 0 CODE 0 text27 dist/default/production/lab8v2.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production/lab8v2.X.production.o
 _OSCCON1 ED3 0 ABS 0 - dist/default/production/lab8v2.X.production.o
@@ -1604,7 +1604,7 @@ __Ltext59 0 0 ABS 0 text59 dist/default/production/lab8v2.X.production.o
 __Ltext60 0 0 ABS 0 text60 dist/default/production/lab8v2.X.production.o
 __Ltext61 0 0 ABS 0 text61 dist/default/production/lab8v2.X.production.o
 __Ltext62 0 0 ABS 0 text62 dist/default/production/lab8v2.X.production.o
-__ramtop 800 0 RAM 0 ramtop /tmp/xcBDJKYYe.o
+__ramtop 800 0 RAM 0 ramtop /tmp/xctkSducW.o
 __Lpowerup B4 0 CODE 0 powerup dist/default/production/lab8v2.X.production.o
 ?___xxtofl 1 0 COMRAM 1 cstackCOMRAM dist/default/production/lab8v2.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/lab8v2.X.production.o
