@@ -15756,6 +15756,79 @@ typedef uint32_t uint_fast32_t;
 void INTERRUPT_Initialize (void);
 # 54 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/adcc.h" 1
+# 72 "mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+# 86 "mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_VSS = 0x3C,
+    channel_Temp = 0x3D,
+    channel_DAC1 = 0x3E,
+    channel_FVR_buf1 = 0x3F
+} adcc_channel_t;
+# 126 "mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 155 "mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 185 "mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 217 "mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 248 "mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 273 "mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 300 "mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 325 "mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 351 "mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint8_t);
+# 377 "mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint8_t);
+# 402 "mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 430 "mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 454 "mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 479 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetAccumulatorValue(void);
+# 507 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 532 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 560 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 586 "mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 612 "mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 638 "mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 665 "mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 692 "mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 716 "mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 740 "mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 768 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 796 "mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 823 "mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 840 "mcc_generated_files/adcc.h"
+void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+# 856 "mcc_generated_files/adcc.h"
+void ADCC_ISR(void);
+# 875 "mcc_generated_files/adcc.h"
+void ADCC_DefaultInterruptHandler(void);
+# 55 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/tmr1.h" 1
 # 100 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -15781,7 +15854,29 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mcc.h" 2
+# 56 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/ccp1.h" 1
+# 80 "mcc_generated_files/ccp1.h"
+typedef union CCPR1Reg_tag
+{
+   struct
+   {
+      uint8_t ccpr1l;
+      uint8_t ccpr1h;
+   };
+   struct
+   {
+      uint16_t ccpr1_16Bit;
+   };
+} CCP1_PERIOD_REG_T ;
+# 123 "mcc_generated_files/ccp1.h"
+void CCP1_Initialize(void);
+# 139 "mcc_generated_files/ccp1.h"
+void CCP1_CaptureISR(void);
+# 180 "mcc_generated_files/ccp1.h"
+ void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
+# 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr2.h" 1
 # 79 "mcc_generated_files/tmr2.h"
@@ -15999,29 +16094,7 @@ void TMR2_ISR(void);
 extern void (*TMR2_InterruptHandler)(void);
 # 846 "mcc_generated_files/tmr2.h"
 void TMR2_DefaultInterruptHandler(void);
-# 56 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/ccp1.h" 1
-# 80 "mcc_generated_files/ccp1.h"
-typedef union CCPR1Reg_tag
-{
-   struct
-   {
-      uint8_t ccpr1l;
-      uint8_t ccpr1h;
-   };
-   struct
-   {
-      uint16_t ccpr1_16Bit;
-   };
-} CCP1_PERIOD_REG_T ;
-# 123 "mcc_generated_files/ccp1.h"
-void CCP1_Initialize(void);
-# 139 "mcc_generated_files/ccp1.h"
-void CCP1_CaptureISR(void);
-# 180 "mcc_generated_files/ccp1.h"
- void CCP1_SetCallBack(void (*customCallBack)(uint16_t));
-# 57 "mcc_generated_files/mcc.h" 2
+# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
 # 57 "mcc_generated_files/eusart1.h"
@@ -16215,12 +16288,12 @@ void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 516 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 58 "mcc_generated_files/mcc.h" 2
-# 73 "mcc_generated_files/mcc.h"
+# 59 "mcc_generated_files/mcc.h" 2
+# 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 86 "mcc_generated_files/mcc.h"
+# 87 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 99 "mcc_generated_files/mcc.h"
+# 100 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -16232,6 +16305,7 @@ void SYSTEM_Initialize(void)
     PMD_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    ADCC_Initialize();
     CCP1_Initialize();
     TMR2_Initialize();
     TMR1_Initialize();

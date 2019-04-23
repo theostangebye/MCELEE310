@@ -52,9 +52,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
+#include "adcc.h"
 #include "tmr1.h"
-#include "tmr2.h"
 #include "ccp1.h"
+#include "tmr2.h"
 #include "eusart1.h"
 
 

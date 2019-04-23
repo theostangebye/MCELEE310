@@ -101,9 +101,9 @@ void main(void)
         
         carcontrol_steering(angle);
         
-        IO_RC7_SetHigh();
-        printf("test distance:    %.2f\n", mean);
-        IO_RC7_SetLow();
+//        IO_RC7_SetHigh();
+////        printf("test distance:    %.2f\n", mean);
+//        IO_RC7_SetLow();
         
     }
 }

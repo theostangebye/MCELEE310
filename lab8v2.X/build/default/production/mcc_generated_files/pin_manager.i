@@ -15731,6 +15731,7 @@ void PIN_MANAGER_Initialize(void)
     PIE0bits.IOCIE = 1;
 
 
+    ADACTPPS = 0x0B;
     CCP1PPS = 0x12;
     RC6PPS = 0x09;
 }

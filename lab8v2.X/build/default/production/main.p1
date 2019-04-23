@@ -1,17 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F9761 `(v ~T0 @X0 0 tf ]
-[v F9763 `(v ~T0 @X0 0 tf ]
+[v F9809 `(v ~T0 @X0 0 tf ]
+[v F9811 `(v ~T0 @X0 0 tf ]
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[c E9798 0 1 2 3 .. ]
-[n E9798 ctl_state_t state_unset state_high state_vary state_low  ]
+[c E9846 0 1 2 3 .. ]
+[n E9846 ctl_state_t state_unset state_high state_vary state_low  ]
 "18
 [; ;./car_ctrl.h: 18: struct carctl_t {
-[s S1388 `a 1 `E9798 1 `us 1 `uc 1 `uc 1 ]
+[s S1388 `a 1 `E9846 1 `us 1 `uc 1 `uc 1 ]
 [n S1388 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
-"73 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
+"74 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "25396 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 25396:     struct {
@@ -51,51 +51,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [; ;./ping.h: 30:     float ping_get();
 [v _ping_get `(f ~T0 @X0 0 e? ]
-"14786 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14786:     struct {
-[s S738 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S738 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"14796
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14796:     struct {
-[s S739 :1 `uc 1 ]
-[n S739 . LC0 ]
-"14799
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14799:     struct {
-[s S740 :1 `uc 1 :1 `uc 1 ]
-[n S740 . . LC1 ]
-"14803
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14803:     struct {
-[s S741 :2 `uc 1 :1 `uc 1 ]
-[n S741 . . LC2 ]
-"14807
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14807:     struct {
-[s S742 :3 `uc 1 :1 `uc 1 ]
-[n S742 . . LC3 ]
-"14811
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14811:     struct {
-[s S743 :4 `uc 1 :1 `uc 1 ]
-[n S743 . . LC4 ]
-"14815
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14815:     struct {
-[s S744 :5 `uc 1 :1 `uc 1 ]
-[n S744 . . LC5 ]
-"14819
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14819:     struct {
-[s S745 :6 `uc 1 :1 `uc 1 ]
-[n S745 . . LC6 ]
-"14823
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14823:     struct {
-[s S746 :7 `uc 1 :1 `uc 1 ]
-[n S746 . . LC7 ]
-"14785
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14785: typedef union {
-[u S737 `S738 1 `S739 1 `S740 1 `S741 1 `S742 1 `S743 1 `S744 1 `S745 1 `S746 1 ]
-[n S737 . . . . . . . . . . ]
-"14828
-[; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 14828: extern volatile LATCbits_t LATCbits __attribute__((address(0xF84)));
-[v _LATCbits `VS737 ~T0 @X0 0 e@3972 ]
-"113 /Applications/microchip/xc8/v2.05/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1349,10 +1304,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "96 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 96: void (*EUSART1_TxDefaultInterruptHandler)(void);
-[v _EUSART1_TxDefaultInterruptHandler `*F9761 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F9809 ~T0 @X0 1 e ]
 "97
 [; ;./mcc_generated_files/eusart1.h: 97: void (*EUSART1_RxDefaultInterruptHandler)(void);
-[v _EUSART1_RxDefaultInterruptHandler `*F9763 ~T0 @X0 1 e ]
+[v _EUSART1_RxDefaultInterruptHandler `*F9811 ~T0 @X0 1 e ]
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
 [v _carctl `VS1388 ~T0 @X0 1 e ]
@@ -1442,23 +1397,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "102
 [; ;main.c: 102:         carcontrol_steering(angle);
 [e ( _carcontrol_steering (1 -> _angle `c ]
-"104
-[; ;main.c: 104:         do { LATCbits.LATC7 = 1; } while(0);
-[e :U 1400 ]
-{
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 1399 ]
-"105
-[; ;main.c: 105:         printf("test distance:    %.2f\n", mean);
-[e ( _printf , (. :s 1C _mean ]
-"106
-[; ;main.c: 106:         do { LATCbits.LATC7 = 0; } while(0);
-[e :U 1403 ]
-{
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-}
-[e :U 1402 ]
 "108
 [; ;main.c: 108:     }
 }
@@ -1469,5 +1407,3 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 109: }
 [e :UE 1389 ]
 }
-[p f _printf 8462336 ]
-[a 1C 116 101 115 116 32 100 105 115 116 97 110 99 101 58 32 32 32 32 37 46 50 102 10 0 ]
