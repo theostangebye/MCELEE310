@@ -54,7 +54,7 @@ void timer_ISR() {
         CAM_SI_SetLow();
         CAM_CLK_SetLow();
         TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
-        TMR3_SetInterruptHandler(timer_ISR); // Reinable ISR
+        TMR3_SetInterruptHandler(timer_ISR); // Re-enable ISR
         TMR3_StartTimer();
     } else if (myCam.status == CAM_IN_PROGRESS) {
         CAM_CLK_SetHigh();               // Set CLK LOW
@@ -82,8 +82,8 @@ void adc_ready_ISR() {
         // if index < 127 -> increment index & setup timer ISR.
         // else set state to CAM_DONE.
         myCam.status = CAM_DONE;
-        CAM_CLK_SetLow();                  // CLK -> HIGH
-        CAM_SI_SetLow();                  // CLK -> HIGH
+        CAM_CLK_SetLow();                   // CLK -> HIGH
+        CAM_SI_SetLow();                    // CLK -> HIGH
 
 
     } else {
@@ -109,7 +109,7 @@ void cam_init() {
     
     ///////////////// Following from Page 547 of datasheet \\\\\\\\\\\\\\\\\\\\\
     
-    ADCON0bits.ADFM = 1;    // right justify ADCON0bits.CS = 1; 
+    ADCON0bits.ADFM = 0;    // Left Justify ADCON0bits.CS = 1; 
     ADCON0bits.ADCS = 1;    // FRC Clock
     ADCON0bits.ADON = 1;    // ADC ON
 }
@@ -150,10 +150,14 @@ void cam_stop() {
  * If the camera is not running, or a read is not ready - it will return 
  * an array with a 0 as the first element.
  */
-void cam_get() {
+void cam_get(uint16_t* pixels) {
     if (myCam.readFromFirst) {
-//        return &myCam.cam_pixels_1;
+        for (int i = 0; i < 128; i++){
+            pixels[i] = myCam.cam_pixels_1[i];
+        }
     } else {
-//        return &myCam.cam_pixels_2;
+        for (int i = 0; i < 128; i++){
+            pixels[i] = myCam.cam_pixels_2[i];
+        }
     }
 }

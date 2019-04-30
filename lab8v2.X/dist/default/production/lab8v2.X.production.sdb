@@ -70,12 +70,28 @@ state_vary 2
 state_low 3
 ]
 "41 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/cam.c
-[e E9851 cam_line_state_t `uc
+[e E9852 cam_line_state_t `uc
 CAM_START 0
 CAM_IN_PROGRESS 1
 CAM_DONE 2
 CAM_UNSET 3
 ]
+"1 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"9 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"72 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/float.c
@@ -88,6 +104,12 @@ CAM_UNSET 3
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/printf.c
+[v _printf printf `(i  1 e 2 0 ]
 "10 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -96,6 +118,8 @@ CAM_UNSET 3
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"12 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
 "15 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/Umul64.c
@@ -110,6 +134,8 @@ CAM_UNSET 3
 [v _cam_init cam_init `(v  1 e 1 0 ]
 "121
 [v _cam_start cam_start `(v  1 e 1 0 ]
+"153
+[v _cam_get cam_get `(v  1 e 1 0 ]
 "27 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
 [v _carcontrol_init carcontrol_init `(v  1 e 1 0 ]
 "41
@@ -143,6 +169,8 @@ CAM_UNSET 3
 [v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
 "131
 [v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"145
+[v _putch putch `(v  1 e 1 0 ]
 "152
 [v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
 "154
@@ -606,7 +634,7 @@ CAM_UNSET 3
 [v _ADFLTRH ADFLTRH `VEuc  1 e 1 @3950 ]
 "14514
 [v _LATA LATA `VEuc  1 e 1 @3970 ]
-[s S1994 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S2009 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -616,34 +644,34 @@ CAM_UNSET 3
 `uc 1 LATA7 1 0 :1:7 
 ]
 "14562
-[s S2003 . 1 `uc 1 LA0 1 0 :1:0 
+[s S2018 . 1 `uc 1 LA0 1 0 :1:0 
 ]
-[s S2005 . 1 `uc 1 . 1 0 :1:0 
+[s S2020 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 ]
-[s S2008 . 1 `uc 1 . 1 0 :2:0 
+[s S2023 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LA2 1 0 :1:2 
 ]
-[s S2011 . 1 `uc 1 . 1 0 :3:0 
+[s S2026 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LA3 1 0 :1:3 
 ]
-[s S2014 . 1 `uc 1 . 1 0 :4:0 
+[s S2029 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LA4 1 0 :1:4 
 ]
-[s S2017 . 1 `uc 1 . 1 0 :5:0 
+[s S2032 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LA5 1 0 :1:5 
 ]
-[s S2020 . 1 `uc 1 . 1 0 :6:0 
+[s S2035 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LA6 1 0 :1:6 
 ]
-[s S2023 . 1 `uc 1 . 1 0 :7:0 
+[s S2038 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S2026 . 1 `S1994 1 . 1 0 `S2003 1 . 1 0 `S2005 1 . 1 0 `S2008 1 . 1 0 `S2011 1 . 1 0 `S2014 1 . 1 0 `S2017 1 . 1 0 `S2020 1 . 1 0 `S2023 1 . 1 0 ]
-[v _LATAbits LATAbits `VES2026  1 e 1 @3970 ]
+[u S2041 . 1 `S2009 1 . 1 0 `S2018 1 . 1 0 `S2020 1 . 1 0 `S2023 1 . 1 0 `S2026 1 . 1 0 `S2029 1 . 1 0 `S2032 1 . 1 0 `S2035 1 . 1 0 `S2038 1 . 1 0 ]
+[v _LATAbits LATAbits `VES2041  1 e 1 @3970 ]
 "14647
 [v _LATB LATB `VEuc  1 e 1 @3971 ]
-[s S2382 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S2397 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -653,34 +681,34 @@ CAM_UNSET 3
 `uc 1 LATB7 1 0 :1:7 
 ]
 "14695
-[s S2391 . 1 `uc 1 LB0 1 0 :1:0 
+[s S2406 . 1 `uc 1 LB0 1 0 :1:0 
 ]
-[s S2393 . 1 `uc 1 . 1 0 :1:0 
+[s S2408 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 ]
-[s S2396 . 1 `uc 1 . 1 0 :2:0 
+[s S2411 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LB2 1 0 :1:2 
 ]
-[s S2399 . 1 `uc 1 . 1 0 :3:0 
+[s S2414 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LB3 1 0 :1:3 
 ]
-[s S2402 . 1 `uc 1 . 1 0 :4:0 
+[s S2417 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LB4 1 0 :1:4 
 ]
-[s S2405 . 1 `uc 1 . 1 0 :5:0 
+[s S2420 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LB5 1 0 :1:5 
 ]
-[s S2408 . 1 `uc 1 . 1 0 :6:0 
+[s S2423 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LB6 1 0 :1:6 
 ]
-[s S2411 . 1 `uc 1 . 1 0 :7:0 
+[s S2426 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S2414 . 1 `S2382 1 . 1 0 `S2391 1 . 1 0 `S2393 1 . 1 0 `S2396 1 . 1 0 `S2399 1 . 1 0 `S2402 1 . 1 0 `S2405 1 . 1 0 `S2408 1 . 1 0 `S2411 1 . 1 0 ]
-[v _LATBbits LATBbits `VES2414  1 e 1 @3971 ]
+[u S2429 . 1 `S2397 1 . 1 0 `S2406 1 . 1 0 `S2408 1 . 1 0 `S2411 1 . 1 0 `S2414 1 . 1 0 `S2417 1 . 1 0 `S2420 1 . 1 0 `S2423 1 . 1 0 `S2426 1 . 1 0 ]
+[v _LATBbits LATBbits `VES2429  1 e 1 @3971 ]
 "14780
 [v _LATC LATC `VEuc  1 e 1 @3972 ]
-[s S2133 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S2148 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -690,36 +718,36 @@ CAM_UNSET 3
 `uc 1 LATC7 1 0 :1:7 
 ]
 "14828
-[s S2142 . 1 `uc 1 LC0 1 0 :1:0 
+[s S2157 . 1 `uc 1 LC0 1 0 :1:0 
 ]
-[s S2144 . 1 `uc 1 . 1 0 :1:0 
+[s S2159 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 ]
-[s S2147 . 1 `uc 1 . 1 0 :2:0 
+[s S2162 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LC2 1 0 :1:2 
 ]
-[s S2150 . 1 `uc 1 . 1 0 :3:0 
+[s S2165 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LC3 1 0 :1:3 
 ]
-[s S2153 . 1 `uc 1 . 1 0 :4:0 
+[s S2168 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LC4 1 0 :1:4 
 ]
-[s S2156 . 1 `uc 1 . 1 0 :5:0 
+[s S2171 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LC5 1 0 :1:5 
 ]
-[s S2159 . 1 `uc 1 . 1 0 :6:0 
+[s S2174 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LC6 1 0 :1:6 
 ]
-[s S2162 . 1 `uc 1 . 1 0 :7:0 
+[s S2177 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S2165 . 1 `S2133 1 . 1 0 `S2142 1 . 1 0 `S2144 1 . 1 0 `S2147 1 . 1 0 `S2150 1 . 1 0 `S2153 1 . 1 0 `S2156 1 . 1 0 `S2159 1 . 1 0 `S2162 1 . 1 0 ]
-[v _LATCbits LATCbits `VES2165  1 e 1 @3972 ]
+[u S2180 . 1 `S2148 1 . 1 0 `S2157 1 . 1 0 `S2159 1 . 1 0 `S2162 1 . 1 0 `S2165 1 . 1 0 `S2168 1 . 1 0 `S2171 1 . 1 0 `S2174 1 . 1 0 `S2177 1 . 1 0 ]
+[v _LATCbits LATCbits `VES2180  1 e 1 @3972 ]
 "14913
 [v _TRISA TRISA `VEuc  1 e 1 @3975 ]
 "15035
 [v _TRISB TRISB `VEuc  1 e 1 @3976 ]
-[s S2503 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S2518 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -729,11 +757,11 @@ CAM_UNSET 3
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "15057
-[u S2512 . 1 `S2503 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES2512  1 e 1 @3976 ]
+[u S2527 . 1 `S2518 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES2527  1 e 1 @3976 ]
 "15157
 [v _TRISC TRISC `VEuc  1 e 1 @3977 ]
-[s S2208 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S2223 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -743,8 +771,8 @@ CAM_UNSET 3
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "15179
-[u S2217 . 1 `S2208 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES2217  1 e 1 @3977 ]
+[u S2232 . 1 `S2223 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES2232  1 e 1 @3977 ]
 "16599
 [v _RC1REG RC1REG `VEuc  1 e 1 @3992 ]
 "16653
@@ -1066,11 +1094,19 @@ CAM_UNSET 3
 ]
 [u S550 . 1 `S534 1 . 1 0 `S542 1 . 1 0 `S546 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES550  1 e 1 @4082 ]
+"55 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
 "28 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/cam.c
 [v _timing_val timing_val `i  1 e 2 0 ]
-[s S2330 cam_t 516 `a 1 readFromFirst 1 0 `[128]us 1 cam_pixels_1 256 1 `[128]us 1 cam_pixels_2 256 257 `E9851 1 status 1 513 `i 1 index 2 514 ]
+[s S2345 cam_t 516 `a 1 readFromFirst 1 0 `[128]us 1 cam_pixels_1 256 1 `[128]us 1 cam_pixels_2 256 257 `E9852 1 status 1 513 `i 1 index 2 514 ]
 "41
-[v _myCam myCam `VES2330  1 e 516 0 ]
+[v _myCam myCam `VES2345  1 e 516 0 ]
 [s S1900 carctl_t 6 `a 1 initialized 1 0 `E9846 1 state 1 1 `us 1 stateDuration 2 2 `uc 1 throttleHighTime 1 4 `uc 1 servoHighTime 1 5 ]
 "14 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
 [v _carctl carctl `VES1900  1 e 6 0 ]
@@ -1106,13 +1142,158 @@ CAM_UNSET 3
 [v _timer3ReloadVal timer3ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR3_InterruptHandler TMR3_InterruptHandler `*.37(v  1 e 2 0 ]
-[s S2089 ping_stat_t 8 `a 1 readReady 1 0 `d 1 measurment 4 1 `a 1 pingStarted 1 5 `us 1 tof 2 6 ]
+[s S2104 ping_stat_t 8 `a 1 readReady 1 0 `d 1 measurment 4 1 `a 1 pingStarted 1 5 `us 1 tof 2 6 ]
 "20 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/ping.c
-[v _status status `VES2089  1 e 8 0 ]
+[v _status status `VES2104  1 e 8 0 ]
 "52 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"93
+[v main@i i `i  1 a 2 101 ]
+"82
+[v main@cam_pixels cam_pixels `[128]us  1 a 256 0 ]
+"84
+[v main@num num `i  1 a 2 99 ]
+"105
+} 0
+"5 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.39v  1 a 2 95 ]
+"5
+[v printf@fmt fmt `*.25Cuc  1 p 2 89 ]
+"13
+} 0
+"1368 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 87 ]
+[s S2579 _IO_FILE 0 ]
+"1368
+[v vfprintf@fp fp `*.2S2579  1 p 2 81 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 83 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 85 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+"674
+[v vfpfcnvrt@ll ll `o  1 a 8 73 ]
+[s S2579 _IO_FILE 0 ]
+"670
+[v vfpfcnvrt@fp fp `*.2S2579  1 p 2 65 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 67 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 69 ]
+"1365
+} 0
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+"277
+[v dtoa@n n `o  1 a 8 55 ]
+"276
+[v dtoa@i i `i  1 a 2 63 ]
+[v dtoa@s s `i  1 a 2 53 ]
+[v dtoa@w w `i  1 a 2 51 ]
+[v dtoa@p p `i  1 a 2 49 ]
+[s S2579 _IO_FILE 0 ]
+"274
+[v dtoa@fp fp `*.2S2579  1 p 2 29 ]
+[v dtoa@d d `o  1 p 8 31 ]
+"315
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+"74
+[v pad@w w `i  1 a 2 27 ]
+[v pad@i i `i  1 a 2 25 ]
+[s S2579 _IO_FILE 0 ]
+"72
+[v pad@fp fp `*.2S2579  1 p 2 18 ]
+[v pad@buf buf `*.39uc  1 p 2 20 ]
+[v pad@p p `i  1 p 2 22 ]
+"95
+} 0
+"12 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.39Cuc  1 a 2 2 ]
+"12
+[v strlen@s s `*.39Cuc  1 p 2 0 ]
+"26
+} 0
+"8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 16 ]
+"10
+[v fputs@c c `uc  1 a 1 15 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 11 ]
+[s S3087 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S3087  1 p 2 13 ]
+"19
+} 0
+"8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 2 ]
+[s S3087 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S3087  1 p 2 4 ]
+"21
+} 0
+"145 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/eusart1.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"147
+[v putch@txData txData `uc  1 a 1 1 ]
+"148
+} 0
+"131
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
+"138
+} 0
+"1 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 18 ]
+"4
+} 0
+"9 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+{
+"12
+[v ___aomod@sign sign `uc  1 a 1 17 ]
+[v ___aomod@counter counter `uc  1 a 1 16 ]
+"9
+[v ___aomod@dividend dividend `o  1 p 8 0 ]
+[v ___aomod@divisor divisor `o  1 p 8 8 ]
+"36
+} 0
+"9 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 18 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 17 ]
+[v ___aodiv@counter counter `uc  1 a 1 16 ]
+"9
+[v ___aodiv@dividend dividend `o  1 p 8 0 ]
+[v ___aodiv@divisor divisor `o  1 p 8 8 ]
+"43
 } 0
 "27 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/car_ctrl.c
 [v _carcontrol_init carcontrol_init `(v  1 e 1 0 ]
@@ -1157,6 +1338,28 @@ CAM_UNSET 3
 [v _cam_init cam_init `(v  1 e 1 0 ]
 {
 "115
+} 0
+"153
+[v _cam_get cam_get `(v  1 e 1 0 ]
+{
+"159
+[v cam_get@i_2578 i `i  1 a 2 4 ]
+"155
+[v cam_get@i i `i  1 a 2 2 ]
+"153
+[v cam_get@pixels pixels `*.39us  1 p 2 0 ]
+"163
+} 0
+"7 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
 } 0
 "50 /Users/theostangebye/MPLABXProjects/Embedded Systems/lab8v2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -1390,17 +1593,17 @@ CAM_UNSET 3
 "8 /Applications/microchip/xc8/v2.05/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2863 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2950 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2868 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2871 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2863 1 fAsBytes 4 0 `S2868 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2871  1 a 4 38 ]
+[s S2955 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2958 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2950 1 fAsBytes 4 0 `S2955 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2958  1 a 4 38 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 32 ]
-[s S2939 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S3026 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2942 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2939 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2942  1 a 2 42 ]
+[u S3029 . 2 `s 1 i 2 0 `us 1 n 2 0 `S3026 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3029  1 a 2 42 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 37 ]
 "11

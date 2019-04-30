@@ -49,6 +49,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
 [v __delay `JF9277 ~T0 @X0 0 e ]
 [p i __delay ]
+"40 ./cam.h
+[; ;./cam.h: 40: void cam_get(uint16_t* pixels);
+[v _cam_get `(v ~T0 @X0 0 ef1`*us ]
+"113 /Applications/microchip/xc8/v2.05/pic/include/c99/stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1337,24 +1342,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 80:     carcontrol_steering(0);
 [e ( _carcontrol_steering (1 -> -> 0 `i `c ]
 "82
-[; ;main.c: 82:     while (1)
-[e :U 1391 ]
-"83
-[; ;main.c: 83:     {
-{
+[; ;main.c: 82:     uint16_t cam_pixels[128];
+[v _cam_pixels `us ~T0 @X0 -> 128 `i a ]
 "84
-[; ;main.c: 84:         cam_start();
-[e ( _cam_start ..  ]
-"85
-[; ;main.c: 85:         _delay((unsigned long)((5)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 84:     int num = 0;
+[v _num `i ~T0 @X0 1 a ]
+[e = _num -> 0 `i ]
+"86
+[; ;main.c: 86:     while (1)
+[e :U 1391 ]
+"87
+[; ;main.c: 87:     {
+{
 "88
-[; ;main.c: 88:     }
+[; ;main.c: 88:         cam_start();
+[e ( _cam_start ..  ]
+"89
+[; ;main.c: 89:         _delay((unsigned long)((20)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"90
+[; ;main.c: 90:         cam_get(cam_pixels);
+[e ( _cam_get (1 &U _cam_pixels ]
+"92
+[; ;main.c: 92:         if (num % 10 ==0) {
+[e $ ! == % _num -> 10 `i -> 0 `i 1393  ]
+{
+"93
+[; ;main.c: 93:             for (int i = 0; i < 128; i=i+2) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 128 `i 1394  ]
+[e $U 1395  ]
+[e :U 1394 ]
+{
+"97
+[; ;main.c: 97:                 printf("%d\n",cam_pixels[i]);
+[e ( _printf , (. :s 1C -> *U + &U _cam_pixels * -> -> _i `ui `ux -> -> # *U &U _cam_pixels `ui `ux `ui ]
+"98
+[; ;main.c: 98:             }
+}
+[e = _i + _i -> 2 `i ]
+[e $ < _i -> 128 `i 1394  ]
+[e :U 1395 ]
+}
+"99
+[; ;main.c: 99:             printf("\n********** NEW SCAN **********\n");
+[e ( _printf :s 2C ]
+"100
+[; ;main.c: 100:             _delay((unsigned long)((10)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"101
+[; ;main.c: 101:         }
+}
+[e :U 1393 ]
+"102
+[; ;main.c: 102:         num++;
+[e ++ _num -> 1 `i ]
+"104
+[; ;main.c: 104:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"89
-[; ;main.c: 89: }
+"105
+[; ;main.c: 105: }
 [e :UE 1389 ]
 }
+[p f _printf 8388736 ]
+[a 1C 37 100 10 0 ]
+[a 2C 10 42 42 42 42 42 42 42 42 42 42 32 78 69 87 32 83 67 65 78 32 42 42 42 42 42 42 42 42 42 42 10 0 ]

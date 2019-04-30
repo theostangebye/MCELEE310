@@ -37,7 +37,7 @@ void cam_stop();
  * If the camera is not running, or a read is not ready - it will return 
  * an array with a 0 as the first element.
  */
-void cam_get();
+void cam_get(uint16_t* pixels);
     
 #ifdef	__cplusplus
 }

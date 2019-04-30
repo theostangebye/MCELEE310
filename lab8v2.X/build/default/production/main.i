@@ -16357,7 +16357,7 @@ void cam_start();
 
 void cam_stop();
 # 40 "./cam.h"
-void cam_get();
+void cam_get(uint16_t* pixels);
 # 47 "main.c" 2
 
 
@@ -16383,11 +16383,27 @@ void main(void)
     carcontrol_throttle(0);
     carcontrol_steering(0);
 
+    uint16_t cam_pixels[128];
+
+    int num = 0;
+
     while (1)
     {
         cam_start();
-        _delay((unsigned long)((5)*(64000000/4000.0)));
+        _delay((unsigned long)((20)*(64000000/4000.0)));
+        cam_get(cam_pixels);
 
+        if (num % 10 ==0) {
+            for (int i = 0; i < 128; i=i+2) {
+
+
+
+                printf("%d\n",cam_pixels[i]);
+            }
+            printf("\n********** NEW SCAN **********\n");
+            _delay((unsigned long)((10)*(64000000/4000.0)));
+        }
+        num++;
 
     }
 }

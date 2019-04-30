@@ -79,12 +79,25 @@ void main(void)
     carcontrol_throttle(0);    
     carcontrol_steering(0);    
     
+    uint16_t cam_pixels[128];
+    
+    int num = 0;
+    
     while (1)
     {   
-        cam_start();    
-        __delay_ms(5);
+        cam_start();
+        __delay_ms(20);
+        cam_get(cam_pixels);
         
-        
+        if (num % 10 ==0) {
+            for (int i = 0; i < 128; i=i+2) {
+                printf("%d\n",cam_pixels[i]);
+            }
+            printf("\n********** NEW SCAN **********\n");
+            __delay_ms(10);
+        }
+        num++;
+
     }
 }
 /**
