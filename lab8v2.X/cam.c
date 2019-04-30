@@ -32,8 +32,8 @@ enum cam_line_state_t {CAM_START, CAM_IN_PROGRESS, CAM_DONE, CAM_UNSET};
 
 struct cam_t{
     bool readFromFirst;
-    uint16_t cam_pixels_1[128];
-    uint16_t cam_pixels_2[128];
+    uint8_t cam_pixels_1[128];
+    uint8_t cam_pixels_2[128];
     enum cam_line_state_t status;
     int index;
 };
@@ -58,9 +58,8 @@ void timer_ISR() {
         TMR3_StartTimer();
     } else if (myCam.status == CAM_IN_PROGRESS) {
         CAM_CLK_SetHigh();               // Set CLK LOW
-        ADCON0bits.GO = 1;                  // Start Conversion.
-        ADCC_SetADIInterruptHandler(adc_ready_ISR); // setup ADC interrupt
-        
+        PIE1bits.ADIE = 1;              // enable adc interrupt
+        ADCON0bits.GO = 1;                  // Start Conversion.         
     }
 }
 
@@ -68,6 +67,7 @@ void timer_ISR() {
  * Will be used for setting clk high and reading from ADC
  */
 void adc_ready_ISR() {
+    PIE1bits.ADIE = 0;              // disable adc interrupt    
     DEBUG_DIG_Toggle();
     if (myCam.readFromFirst) {
         // read from ADC place val in array
@@ -87,10 +87,10 @@ void adc_ready_ISR() {
 
 
     } else {
-        TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
-        TMR3_SetInterruptHandler(timer_ISR);
-        TMR3_StartTimer();
         CAM_CLK_SetLow(); 
+        TMR3_SetInterruptHandler(timer_ISR);
+        TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
+        TMR3_StartTimer();
     }
 }
 
@@ -102,16 +102,20 @@ void cam_init() {
     CAM_CLK_SetLow();           // set cam_clk low
     CAM_SI_SetDigitalOutput();
     CAM_CLK_SetDigitalOutput();
-    ADCC_SetADIInterruptHandler(adc_ready_ISR);
+    ADCC_SetInterruptHandler(adc_ready_ISR); // setup ADC interrupt
+    ADCC_SelectChannel(CAM_A0,2);
+    
+    
+    
     
     myCam.index = 0;            // index = 0;
     myCam.status = CAM_DONE;    // state = CAM_DONE.
     
     ///////////////// Following from Page 547 of datasheet \\\\\\\\\\\\\\\\\\\\\
     
-    ADCON0bits.ADFM = 0;    // Left Justify ADCON0bits.CS = 1; 
-    ADCON0bits.ADCS = 1;    // FRC Clock
-    ADCON0bits.ADON = 1;    // ADC ON
+//    ADCON0bits.ADFM = 0;    // Left Justify ADCON0bits.CS = 1; 
+//    ADCON0bits.ADCS = 1;    // FRC Clock
+//    ADCON0bits.ADON = 1;    // ADC ON
 }
 
 /**
@@ -132,6 +136,7 @@ void cam_start() {
         TMR3_WriteTimer(timing_val);            // Load for 15us interrupt
         TMR3_StartTimer();
         ADCON0bits.ADON = 1;                // ADC ON
+        PIE1bits.ADIE = 0;              // disable adc interrupt
     }
 }
 

@@ -8,44 +8,43 @@
     adcc.h
 
   @Summary
-    This is the generated header file for the ADCC driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs 
+    This is the generated header file for the ADCC driver using Foundation Services Library
 
   @Description
     This header file provides APIs for driver for ADCC.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
+        Product Revision  :  Foundation Services Library - 0.1.31
         Device            :  PIC18F25Q10
-        Driver Version    :  2.1.4
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.00
-        MPLAB             :  MPLAB X 5.10
+        Compiler          :  XC8 1.35
+        MPLAB             :  MPLAB X 3.40
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
+    software and any derivatives exclusively with Microchip products.
+
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
+    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
+
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+
+    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
+    TERMS.
 */
 
-#ifndef ADCC_H
-#define ADCC_H
+#ifndef _ADCC_H
+#define _ADCC_H
 
 /**
   Section: Included Files
@@ -71,7 +70,7 @@
 
 typedef uint16_t adc_result_t;
 
-/** ADCC Channel Definition
+/** ADC Channel Definition
 
  @Summary
    Defines the channels available for conversion.
@@ -85,6 +84,7 @@ typedef uint16_t adc_result_t;
 
 typedef enum
 {
+    CAM_A0 =  0xB,
     channel_VSS =  0x3C,
     channel_Temp =  0x3D,
     channel_DAC1 =  0x3E,
@@ -92,15 +92,16 @@ typedef enum
 } adcc_channel_t;
 
 /**
-  Section: ADCC Module APIs
+  Section: ADC Module APIs
 */
 
 /**
   @Summary
-    Initializes the ADCC.
+    Initializes the ADCC
 
   @Description
-    This routine initializes the ADCC and must be called before any other ADCC routine.
+    This routine initializes the Initializes the ADCC.
+    This routine must be called before any other ADCC routine is called.
     This routine should only be called once during system initialization.
 
   @Preconditions
@@ -117,20 +118,55 @@ typedef enum
 
   @Example
     <code>
-    adc_result_t convertedValue;    
+    uint16_t convertedValue;
+    uint8_t acqDelay = 10;
 
     ADCC_Initialize();
-    convertedValue = ADCC_GetSingleConversion(channel_ANA0);
+    convertedValue = ADCC_GetSingleConversion(AN1_Channel, acqDelay);
     </code>
 */
 void ADCC_Initialize(void);
 
+
+uint16_t ADCC_GetConversion(adcc_channel_t channel);
+
 /**
   @Summary
-    Starts A/D conversion on selected analog channel.
+    Allows selection of a channel for conversion
 
   @Description
-    This routine is used to trigger A/D conversion on selected analog channel.
+    This routine is used to select desired channel for conversion.
+    available
+
+  @Preconditions
+    ADCC_Initialize() function should have been called before calling this function.
+
+  @Returns
+    None
+
+  @Param
+    Pass in required channel number
+    "For available channel refer to enum under adcc.h file"
+
+  @Example
+    <code>
+    uint16_t convertedValue;
+    uint8_t acqDelay = 10;
+
+    ADCC_Initialize();
+    ADCC_SelectChannel(AN1_Channel,acqDelay);
+    ADCC_StartConversion();
+    convertedValue = ADCC_GetConversionResult();
+    </code>
+*/
+void ADCC_SelectChannel(adcc_channel_t channel, uint8_t acquisitionDelay);
+
+/**
+  @Summary
+    Starts conversion
+
+  @Description
+    This routine is used to start conversion of desired channel.
     
   @Preconditions
     ADCC_Initialize() function should have been called before calling this function.
@@ -139,34 +175,35 @@ void ADCC_Initialize(void);
     None
 
   @Param
-    channel: Analog channel number on which A/D conversion has to be applied.
-             For available analog channels refer adcc_channel_t enum from adcc.h file
+    None
 
   @Example
     <code>
-    adc_result_t convertedValue; 
+    uint16_t convertedValue;    
+    uint8_t acqDelay = 10;
 
-    ADCC_Initialize();   
-    ADCC_StartConversion(channel_ANA0);
-    while(!ADCC_IsConversionDone());
+    ADCC_Initialize();
+    ADCC_SelectChannel(AN1_Channel,acqDelay);
+    ADCC_StartConversion();
     convertedValue = ADCC_GetConversionResult();
     </code>
 */
-void ADCC_StartConversion(adcc_channel_t channel);
+void ADCC_StartConversion();
 
 /**
   @Summary
-    Determine if A/D conversion is completed.
+    Returns true when the conversion is completed otherwise false.
 
   @Description
-    This routine is used to determine if A/D conversion is completed.
+    This routine is used to determine if conversion is completed.
+    When conversion is complete routine returns true. It returns false otherwise.
 
   @Preconditions
     ADCC_Initialize() and ADCC_StartConversion(adcc_channel_t channel)
-    functions should have been called before calling this function.
+    function should have been called before calling this function.
 
   @Returns
-    true  - If conversion is completed
+    true  - If conversion is complete
     false - If conversion is not completed
 
   @Param
@@ -174,10 +211,12 @@ void ADCC_StartConversion(adcc_channel_t channel);
 
   @Example
     <code>
-    adc_result_t convertedValue;    
+    uint16_t convertedValue;
+    uint8_t acqDelay = 10;
 
-    ADCC_Initialize();    
-    ADCC_StartConversion(channel_ANA0);
+    ADCC_Initialize();
+    ADCC_SelectChannel(AN1_Channel,acqDelay);
+    ADCC_StartConversion();
     while(!ADCC_IsConversionDone());
     convertedValue = ADCC_GetConversionResult();
     </code>
@@ -186,30 +225,31 @@ bool ADCC_IsConversionDone();
 
 /**
   @Summary
-    Returns result of latest A/D conversion.
+    Returns the ADCC conversion value.
 
   @Description
-    This routine is used to retrieve the result of latest A/D conversion.
-    This routine returns the conversion value only after the conversion is complete.
-    
+    This routine is used to get the analog to digital converted value. This
+    routine gets converted values from the channel specified.
 
   @Preconditions
-    ADCC_Initialize(), ADCC_StartConversion() functions should have been called
-    before calling this function.
-    Completion status should be checked using ADCC_IsConversionDone() routine.
+    This routine returns the conversion value only after the conversion is complete.
+    Completion status can be checked using
+    ADCC_IsConversionDone() routine.
 
   @Returns
-    Returns the result of A/D conversion.
+    Returns the converted value.
 
   @Param
     None
 
   @Example
     <code>
-    adc_result_t convertedValue;
+    uint16_t convertedValue;
+    uint8_t acqDelay = 10;
 
-    ADCC_Initialize();    
-    ADCC_StartConversion(channel_ANA0);
+    ADCC_Initialize();
+    ADCC_SelectChannel(AN1_Channel,acqDelay);
+    ADCC_StartConversion();
     while(!ADCC_IsConversionDone());
     convertedValue = ADCC_GetConversionResult();
     </code>
@@ -218,41 +258,42 @@ adc_result_t ADCC_GetConversionResult(void);
 
 /**
   @Summary
-    Returns the result of A/D conversion for requested analog channel.
+    Returns the ADCC conversion value
+    also allows selection of a channel for conversion.
 
   @Description
-    This routine is used to retrieve the result of A/D conversion for requested 
-    analog channel.
+    This routine is used to select desired channel for conversion
+    and to get the analog to digital converted value after a single conversion.
 
   @Preconditions
-    ADCC_Initialize() and ADCC_DisableContinuousConversion() functions should have 
-    been called before calling this function.
+    ADCC_Initialize() and ADCC_DisableContinuousConversion() functions should have been called before calling this function.
 
   @Returns
-    Returns the result of A/D conversion.
+    Returns the converted value.
 
   @Param
-    channel: Analog channel number for which A/D conversion has to be applied
-             For available analog channels refer adcc_channel_t enum from adcc.h file
+    Pass in required channel number.
+    "For available channel refer to enum under adcc.h file"
 
   @Example
     <code>
-    adcc_channel_t convertedValue;
+    uint16_t convertedValue;
+    uint8_t acqDelay = 10;
 
     ADCC_Initialize();
     ADCC_DisableContinuousConversion();
-    
-    convertedValue = ADCC_GetSingleConversion(channel_ANA0);
+	
+    convertedValue = ADCC_GetSingleConversion(AN1_Channel,acqDelay);
     </code>
 */
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel, uint8_t acquisitionDelay);
 
 /**
   @Summary
-    Stops the ongoing continuous A/D conversion.
+    Stops the ADCC conversion by resetting the ADGO bit.
 
   @Description
-    This routine is used to stop ongoing continuous A/D conversion.
+    None
 
   @Preconditions
     ADCC_Initialize() and ADCC_StartConversion() functions should have been called before calling this function.
@@ -266,23 +307,21 @@ adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
   @Example
     <code>
     ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    ADCC_StopConversion();
+	ADCC_StartConversion();
+	ADCC_StopConversion();
     </code>
 */
 void ADCC_StopConversion(void);
 
 /**
   @Summary
-    Stops the ADCC from re-triggering A/D conversion cycle 
-    upon completion of each conversion.
+    Stops the ADCC from automatic retriggering in continuous sampling mode
 
   @Description
-    In continuous mode, stops the ADCC from re-triggering A/D conversion cycle 
-    upon completion of each conversion.
+    None
 
   @Preconditions
-    ADCC_Initialize() and ADCC_EnableContinuousConversion() function should have been called before calling this function.
+    ADCC_Initialize() and ADCC_EnableContinuousConversion() functions should have been called before calling this function.
 
   @Returns
     None
@@ -292,9 +331,8 @@ void ADCC_StopConversion(void);
 
   @Example
     <code>
-    ADCC_Initialize();
-    ADCC_EnableContinuousConversion();
-    ADCC_SetStopOnInterrupt();
+        ADCC_Initialize();
+	ADCC_EnableContinuousConversion();	
     </code>
 */
 void ADCC_SetStopOnInterrupt(void);
@@ -304,11 +342,10 @@ void ADCC_SetStopOnInterrupt(void);
     Discharges the input sample capacitor by setting the channel to AVss.
 
   @Description
-    This routine is used to discharge input sample capacitor by selecting analog
-    ground (AVss) channel.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
     None
@@ -318,126 +355,114 @@ void ADCC_SetStopOnInterrupt(void);
 
   @Example
     <code>
-    ADCC_Initialize();
-    ADCC_DischargeSampleCapacitor();
     </code>
 */
 void ADCC_DischargeSampleCapacitor(void); 
 
 /**
   @Summary
-    Loads the Acquisition Time Control register.
+    Loads the ADACQ register by the 8 bit value sent as argument.
 
   @Description
-    This routine is used to load 13-bit ADCC Acquisition Time Control register by
-    a value provided by user.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
     None
 
   @Param
-    13-bit value to be set in the acquisition register.
+    8 bit value to be set in the acquisition register.
 
   @Example
     <code>
-    uint16_t acquisitionValue = 98;
-    ADCC_Initialize();
-    ADCC_LoadAcquisitionRegister(acquisitionValue);
+        uint8_t acquisitionValue = 98;
+	ADCC_LoadAcquisitionRegister(acquisitionValue);
     </code>
 */
 void ADCC_LoadAcquisitionRegister(uint8_t);
-
 /**
   @Summary
-    Loads the Precharge Time Control register.
+    Loads the ADPRE register by the 8 bit value sent as argument.
 
   @Description
-    This routine is used to load 13-bit ADCC Precharge Time Control register by
-    a value provided by user.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
     None
 
   @Param
-    13-bit value to be set in the precharge register.
+    8 bit value to be set in the precharge register.
 
   @Example
     <code>
-    uint16_t prechargeTime = 98;
-    ADCC_Initialize();
-    ADCC_SetPrechargeTime(prechargeTime);
+	uint8_t prechargeTime = 98;
+	ADCC_SetPrechargeTime(prechargeTime);
     </code>
 */
 void ADCC_SetPrechargeTime(uint8_t);
 
 /**
   @Summary
-    Loads the Repeat Setting register.
+    Loads the ADRPT register by the 8 bit value sent as argument.
 
   @Description
-    This routine loads ADCC Repeat Setting register with 8-bit value provided by user.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
     None
 
   @Param
-    8-bit value to be set in the Repeat Setting register.
+    8 bit value to be set in the Repeat register.
 
   @Example
     <code>
-    uint8_t repeat = 98;
-    ADCC_Initialize();
-    ADCC_SetRepeatCount(repeat);
+	uint8_t repeat = 98;
+	ADCC_SetRepeatCount(repeat);
     </code>
 */
 void ADCC_SetRepeatCount(uint8_t);
 
 /**
   @Summary
-    Returns the current value of Repeat Count register.
+    Returns the ADCNT register contents.
 
   @Description
-    This routine retrieves the current value of ADCC Repeat Count register.
+    None
 
   @Preconditions
-    ADCC_Initialize(), ADCC_StartConversion() should have been called before calling
-    this function.
+    None.
 
   @Returns
-    Value of ADCC Repeat Count register
+    Contents of ADCNT register
 
   @Param
     None.
 
   @Example
     <code>
-    adc_result_t convertedValue;
-    uint8_t count;
-    ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    count = ADCC_GetCurrentCountofConversions();
+	uint8_t count = ADCC_GetCurrentCountofConversions();
+	
     </code>
 */
 uint8_t ADCC_GetCurrentCountofConversions(void);
 
 /**
   @Summary
-    Clears the A/D Accumulator.
+    Clears the ADACLR bit.
 
   @Description
-    This routine is used to clear A/D Accumulator
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
     None
@@ -447,234 +472,213 @@ uint8_t ADCC_GetCurrentCountofConversions(void);
 
   @Example
     <code>
-    ADCC_Initialize();
-    ADCC_ClearAccumulator();
+	ADCC_ClearAccumulator();
+	
     </code>
 */
 void ADCC_ClearAccumulator(void);
 
 /**
   @Summary
-   Returns the value of ADCC Accumulator.
+   Returns the 16 bit value obtained from ADACCU, ADACCH and ADACCL registers.
 
   @Description
-    This routine is is to retrieve the 17-bit value of ADCC accumulator.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
-    17-bit value obtained from ADCC Accumulator register.
+    16 bit value obtained from ADACCU, ADACCH and ADACCL registers.
 
   @Param
     None.
 
   @Example
     <code>
-    uint16_t accumulatorValue;
-    ADCC_Initialize();
-    accumulatorValue = ADCC_GetAccumulatorValue();
+	uint16_t accumulatorValue = ADCC_GetAccumulatorValue();
     </code>
 */
 uint16_t ADCC_GetAccumulatorValue(void);
 
 /**
   @Summary
-   Determines if ADCC accumulator has overflowed.
+   Returns the contents of ADAOV setting.
 
   @Description
-    This routine is used to determine whether ADCC accumulator has overflowed.
+    None
 
-  @Preconditions  
-    ADCC_Initialize(), ADCC_StartConversion() should have been called before calling
-    this function.
+  @Preconditions
+    None.
 
   @Returns
-    1: ADCC accumulator or ERR calculation have overflowed
-    0: ADCC accumulator and ERR calculation have not overflowed
+    Value of ADAOV bit.
 
   @Param
     None.
 
   @Example
     <code>
-    bool accumulatorOverflow;    
-    ADCC_Initialize();
-    ADCC_StartConversion();
-    accumulatorOverflow = ADCC_HasAccumulatorOverflowed();
+	bool accumulatorOverflow = ADCC_HasAccumulatorOverflowed();
+	
     </code>
 */
 bool ADCC_HasAccumulatorOverflowed(void);
 
 /**
   @Summary
-   Returns the value of ADCC Filter register.
+   Returns the contents of ADFLTRH and ADFLTRL registers.
 
   @Description
-    This routine is used to retrieve value of ADCC Filter register.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None.
 
   @Returns
-    16-bit value obtained from ADFLTRH and ADFLTRL registers.
+    16 bit value obtained from ADFLTRH and ADFLTRL registers.
 
   @Param
     None.
 
   @Example
     <code>
-    uint16_t filterValue;
-    ADCC_Initialize();
-    filterValue = ADCC_GetFilterValue();
+	uint16_t filterValue = ADCC_GetFilterValue();
+	
     </code>
 */
 uint16_t ADCC_GetFilterValue(void);
 
 /**
   @Summary
-   Returns the value of ADCC Previous Result register.
+   Returns the contents of ADPREVH and ADPREVL registers.
 
   @Description
-    This routine is used to retrieve value of ADCC Previous register.
+    None
 
   @Preconditions
-    ADCC_Initialize() and ADCC_StartConversion() should have been called before
-    calling this function.
+    None.
 
   @Returns
-    16-bit value obtained from ADPREVH and ADPREVL registers.
+    16 bit value obtained from ADPREVH and ADPREVL registers.
 
   @Param
     None.
 
   @Example
     <code>
-    uint16_t prevResult, convertedValue;
-    ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    convertedValue = ADCC_GetConversionResult();
-    prevResult = ADCC_GetPreviousResult();
+	uint16_t prevResult = ADCC_GetPreviousResult();
+	
     </code>
 */
 uint16_t ADCC_GetPreviousResult(void);
 
 /**
   @Summary
-   Sets the ADCC Threshold Set-point.
+   Sets the ADSTPTH and ADSTPTL registers.
 
   @Description
-    This routine is used to set value of ADCC Threshold Set-point.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None
 
   @Returns
     None
 
   @Param
-    16-bit value for set point.
+    16 bit value for set point.
 
   @Example
     <code>
-    uint16_t setPoint = 90;
-    ADCC_Initialize();
-    ADCC_DefineSetPoint(setPoint);
-    ADCC_StartConversion(channel_ANA0);
+	uint16_t setPoint = 90;
+	ADCC_DefineSetPoint(setPoint);
     </code>
 */
 void ADCC_DefineSetPoint(uint16_t);
 
 /**
   @Summary
-   Sets the value of ADCC Upper Threshold.
+   Sets the ADUTHH and ADUTHL register.
 
   @Description
-    This routine is used to set value of ADCC Upper Threshold register.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None
 
   @Returns
     None
 
   @Param
-    16-bit value for upper threshold.
+    16 bit value for upper threshold.
 
   @Example
     <code>
-        uint16_t upperThreshold = 90;
-        ADCC_Initialize();
-        ADCC_SetUpperThreshold(upperThreshold);
-        ADCC_StartConversion(channel_ANA0);
+	uint16_t upperThreshold = 90;
+	ADCC_SetUpperThreshold(upperThreshold);
+	
     </code>
 */
 void ADCC_SetUpperThreshold(uint16_t);
 
 /**
   @Summary
-   Sets the value of ADCC Lower Threshold.
+   Sets the ADLTHH and ADLTHL register.
 
   @Description
-    This routine is used to set value of ADCC Lower Threshold register.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None
 
   @Returns
     None
 
   @Param
-    16- bit value for lower threshold.
+    16 bit value for lower threshold..
 
   @Example
     <code>
-    uint16_t lowerThreshold = 90;
-    ADCC_Initialize();
-    ADCC_SetLowerThreshold(lowerThreshold);
-    ADCC_StartConversion(channel_ANA0);    
+	uint16_t lowerThreshold = 90;
+	ADCC_SetLowerThreshold(lowerThreshold);
+	
     </code>
 */
 void ADCC_SetLowerThreshold(uint16_t);
 
 /**
   @Summary
-   Returns the value of ADCC Set-point Error.
+   Returns the 16 bit value obtained from ADERRH and ADERRL registers.
 
   @Description
-    This routine retrieves the value of ADCC Set-point Error register.
+    None
 
   @Preconditions
-    ADCC_Initialize(), ADCC_StartConversion() should have been called before calling
-    this function.
+    None
 
   @Returns
-    16-bit value obtained from ADERRH and ADERRL registers.
+    16 bit value obtained from ADERRH and ADERRL registers.
 
   @Param
     None.
 
   @Example
     <code>
-    uint16_t error;
-    ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    error = ADCC_GetErrorCalculation(void);
+	uint16_t error = ADCC_GetErrorCalculation(void);
     </code>
 */
 uint16_t ADCC_GetErrorCalculation(void);
 
 /**
   @Summary
-   Enables Double-Sampling.
+   Sets the ADDSEN bit.
 
   @Description
-    This routine is used to enable double-sampling bit.
-    Two conversions are performed on each trigger. Data from the first conversion 
-    appears in PREV.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None
 
   @Returns
     None
@@ -684,22 +688,19 @@ uint16_t ADCC_GetErrorCalculation(void);
 
   @Example
     <code>
-    ADCC_Initialize();
-    ADCC_EnableDoubleSampling();    
-    ADCC_StartConversion(channel_ANA0);
     </code>
 */
 void ADCC_EnableDoubleSampling(void);
 
 /**
   @Summary
-   Enables continuous A/D conversion.
+   Sets the ADCONT bit.
 
   @Description
-    This routine is used to enable continuous A/D conversion.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None
 
   @Returns
     None
@@ -709,21 +710,19 @@ void ADCC_EnableDoubleSampling(void);
 
   @Example
     <code>
-    ADCC_Initialize();
-    ADCC_EnableContinuousConversion();
     </code>
 */
 void ADCC_EnableContinuousConversion(void);
 
 /**
   @Summary
-   Disables continuous A/D conversion.
+   Resets the ADCONT bit.
 
   @Description
-    This routine is used to disable continuous A/D conversion.
+    None
 
   @Preconditions
-    ADCC_Initialize() should have been called before calling this function.
+    None
 
   @Returns
     None
@@ -733,111 +732,76 @@ void ADCC_EnableContinuousConversion(void);
 
   @Example
     <code>
-    ADCC_Initialize();
-    ADCC_DisableContinuousConversion();
     </code>
 */
 void ADCC_DisableContinuousConversion(void);
 
 /**
   @Summary
-   Determines if ADCC ERR crosses upper threshold.
+   Returns the value of ADUTHR bit.
 
   @Description
-    This routine is used to determine if ADCC ERR has crossed the upper threshold.
+    None
 
   @Preconditions
-    ADCC_Initialize() and ADCC_StartConversion() should have been called 
-    before calling this function.
+    None
 
   @Returns
-    1: if ERR > UTH
-    0: if ERR <= UTH
+    Returns the value of ADUTHR bit.
 
   @Param
     None.
 
   @Example
     <code>
-    bool uThr;
-    ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    uThr = ADCC_HasErrorCrossedUpperThreshold();
     </code>
 */
 bool ADCC_HasErrorCrossedUpperThreshold(void);
 
 /**
   @Summary
-   Determines if ADCC ERR is less than lower threshold.
+   Returns the value of ADLTHR bit.
 
   @Description
-    This routine is used to determine if ADCC ERR is less than the lower threshold.
+    None
 
   @Preconditions
-    ADCC_Initialize() and ADCC_StartConversion() should have been called 
-    before calling this function.
+    None
 
   @Returns
-    1: if ERR < LTH
-    0: if ERR >= LTH
+    Returns the value of ADLTHR bit.
 
   @Param
     None.
 
   @Example
     <code>
-    bool lThr;
-    ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    lThr = ADCC_HasErrorCrossedLowerThreshold();
     </code>
 */
 bool ADCC_HasErrorCrossedLowerThreshold(void);
 
 /**
   @Summary
-   Returns Status of ADCC
+   Returns value of ADSTAT setting.
 
   @Description
-    This routine is used to retrieve contents of ADCC status register.
+    None
 
   @Preconditions
-    ADCC_Initialize() and ADCC_StartConversion() should have been called 
-    before calling this function.
+    None
 
   @Returns
-    Returns the contents of ADCC STATUS register
+    Returns value of ADSTAT setting.
 
   @Param
     None.
 
   @Example
     <code>
-    uint8_t adccStatus;
-    ADCC_Initialize();
-    ADCC_StartConversion(channel_ANA0);
-    adccStatus = ADCC_GetConversionStageStatus();
     </code>
 */
 uint8_t ADCC_GetConversionStageStatus(void);
 
-
-
-/**
-  @Summary
-    Implements ISR
-
-  @Description
-    This routine is used to set the callback for the ADI Interrupt.
-
-  @Returns
-    None
-
-  @Param
-    Callback Function to be called
-*/
-void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
 
 /**
   @Summary
@@ -856,30 +820,15 @@ void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void));
 void ADCC_ISR(void);
 
 
-/**
-  @Summary
-    Default ADCC Interrupt Handler
+void ADCC_SetInterruptHandler(void (*InterruptHandler)(void));
 
-  @Description
-    This is the default Interrupt Handler function
-
-  @Preconditions
-    Initialize  the ADCC module with interrupt before calling this isr.
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void ADCC_DefaultInterruptHandler(void);
 #ifdef __cplusplus  // Provide C++ Compatibility
 
     }
 
 #endif
 
-#endif    //ADCC_H
+#endif	//_ADCC_H
 /**
  End of File
 */

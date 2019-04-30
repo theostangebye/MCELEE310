@@ -66,14 +66,14 @@ void  INTERRUPT_Initialize (void)
     // TMRI - low priority
     IPR4bits.TMR3IP = 0;    
 
-    // ADI - low priority
-    IPR1bits.ADIP = 0;    
-
     // CCPI - low priority
     IPR6bits.CCP1IP = 0;    
 
     // IOCI - low priority
     IPR0bits.IOCIP = 0;    
+
+    // ADI - low priority
+    IPR1bits.ADIP = 0;    
 
 }
 
@@ -97,10 +97,6 @@ void __interrupt(low_priority) INTERRUPT_InterruptManagerLow (void)
     {
         TMR3_ISR();
     }
-    else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
-    {
-        ADCC_ISR();
-    }
     else if(PIE6bits.CCP1IE == 1 && PIR6bits.CCP1IF == 1)
     {
         CCP1_CaptureISR();
@@ -108,6 +104,10 @@ void __interrupt(low_priority) INTERRUPT_InterruptManagerLow (void)
     else if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
     {
         PIN_MANAGER_IOC();
+    }
+    else if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+    {
+        ADCC_ISR();
     }
     else
     {

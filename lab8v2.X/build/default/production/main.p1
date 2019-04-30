@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "26 ./car_ctrl.h
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
-[c E9846 0 1 2 3 .. ]
-[n E9846 ctl_state_t state_unset state_high state_vary state_low  ]
+[c E9851 0 1 2 3 .. ]
+[n E9851 ctl_state_t state_unset state_high state_vary state_low  ]
 "18
 [; ;./car_ctrl.h: 18: struct carctl_t {
-[s S1388 `a 1 `E9846 1 `us 1 `uc 1 `uc 1 ]
+[s S1388 `a 1 `E9851 1 `us 1 `uc 1 `uc 1 ]
 [n S1388 carctl_t initialized state stateDuration throttleHighTime servoHighTime ]
 [p mainexit ]
 "75 ./mcc_generated_files/mcc.h
@@ -1332,81 +1332,83 @@ Version 4.0 HI-TECH Software Intermediate Code
 "75
 [; ;main.c: 75:     carcontrol_init();
 [e ( _carcontrol_init ..  ]
-"77
-[; ;main.c: 77:     cam_init();
+"76
+[; ;main.c: 76:     cam_init();
 [e ( _cam_init ..  ]
-"79
-[; ;main.c: 79:     carcontrol_throttle(0);
+"78
+[; ;main.c: 78:     carcontrol_throttle(0);
 [e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80:     carcontrol_steering(0);
+"79
+[; ;main.c: 79:     carcontrol_steering(0);
 [e ( _carcontrol_steering (1 -> -> 0 `i `c ]
-"82
-[; ;main.c: 82:     uint16_t cam_pixels[128];
+"81
+[; ;main.c: 81:     uint16_t cam_pixels[128];
 [v _cam_pixels `us ~T0 @X0 -> 128 `i a ]
-"84
-[; ;main.c: 84:     int num = 0;
+"83
+[; ;main.c: 83:     int num = 0;
 [v _num `i ~T0 @X0 1 a ]
 [e = _num -> 0 `i ]
-"86
-[; ;main.c: 86:     while (1)
+"85
+[; ;main.c: 85:     while (1)
 [e :U 1391 ]
+"86
+[; ;main.c: 86:     {
+{
 "87
-[; ;main.c: 87:     {
+[; ;main.c: 87:         for (int i = 0; i < 8; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 1393  ]
+[e $U 1394  ]
+[e :U 1393 ]
 {
 "88
-[; ;main.c: 88:         cam_start();
+[; ;main.c: 88:             cam_start();
 [e ( _cam_start ..  ]
 "89
-[; ;main.c: 89:         _delay((unsigned long)((20)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;main.c: 89:             _delay((unsigned long)((50)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "90
-[; ;main.c: 90:         cam_get(cam_pixels);
+[; ;main.c: 90:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 1393  ]
+[e :U 1394 ]
+}
+"91
+[; ;main.c: 91:         cam_get(cam_pixels);
 [e ( _cam_get (1 &U _cam_pixels ]
-"92
-[; ;main.c: 92:         if (num % 10 ==0) {
-[e $ ! == % _num -> 10 `i -> 0 `i 1393  ]
-{
 "93
 [; ;main.c: 93:             for (int i = 0; i < 128; i=i+2) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 128 `i 1394  ]
-[e $U 1395  ]
-[e :U 1394 ]
+[e $ < _i -> 128 `i 1396  ]
+[e $U 1397  ]
+[e :U 1396 ]
 {
-"97
-[; ;main.c: 97:                 printf("%d\n",cam_pixels[i]);
+"94
+[; ;main.c: 94:                 printf("%d\n",cam_pixels[i]);
 [e ( _printf , (. :s 1C -> *U + &U _cam_pixels * -> -> _i `ui `ux -> -> # *U &U _cam_pixels `ui `ux `ui ]
-"98
-[; ;main.c: 98:             }
+"95
+[; ;main.c: 95:             }
 }
 [e = _i + _i -> 2 `i ]
-[e $ < _i -> 128 `i 1394  ]
-[e :U 1395 ]
+[e $ < _i -> 128 `i 1396  ]
+[e :U 1397 ]
 }
-"99
-[; ;main.c: 99:             printf("\n********** NEW SCAN **********\n");
+"96
+[; ;main.c: 96:             printf("\n********** NEW SCAN **********\n");
 [e ( _printf :s 2C ]
-"100
-[; ;main.c: 100:             _delay((unsigned long)((10)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"101
-[; ;main.c: 101:         }
-}
-[e :U 1393 ]
-"102
-[; ;main.c: 102:         num++;
-[e ++ _num -> 1 `i ]
-"104
-[; ;main.c: 104:     }
+"99
+[; ;main.c: 99:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"105
-[; ;main.c: 105: }
+"100
+[; ;main.c: 100: }
 [e :UE 1389 ]
 }
 [p f _printf 8388736 ]

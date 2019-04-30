@@ -8,40 +8,39 @@
     adcc.c
 
   @Summary
-    This is the generated driver implementation file for the ADCC driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the generated driver implementation file for the ADCC driver using Foundation Services Library
 
   @Description
     This source file provides implementations for driver APIs for ADCC.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
+        Product Revision  :  Foundation Services Library - 0.1.31
         Device            :  PIC18F25Q10
-        Driver Version    :  2.1.4
+        Driver Version    :  2.01
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.00
-        MPLAB             :  MPLAB X 5.10
+        Compiler          :  XC8 1.35
+        MPLAB             :  MPLAB X 3.40
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
+    software and any derivatives exclusively with Microchip products.
+
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
+    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
+
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+
+    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
+    TERMS.
 */
 
 /**
@@ -52,17 +51,40 @@
 #include "adcc.h"
 
 /**
-  Section: ADCC Module Variables
-*/
-void (*ADCC_ADI_InterruptHandler)(void);
-
-/**
   Section: ADCC Module APIs
 */
 
+void (*ADCC_InterruptHandler)(void);
+
 void ADCC_Initialize(void)
 {
+    ADCC_InterruptHandler = NULL;
+    
     // set the ADCC to the options selected in the User Interface
+    // ADDSEN disabled; ADGPOL digital_low; ADIPEN disabled; ADPPOL VSS; 
+    ADCON1 = 0x00;
+    // ADCRS 0; ADMD Basic_mode; ADACLR disabled; ADPSIS ADRES; 
+    ADCON2 = 0x00;
+    // ADCALC First derivative of Single measurement; ADTMD disabled; ADSOI ADGO not cleared; 
+    ADCON3 = 0x00;
+    // ADACT disabled; 
+    ADACT = 0x00;
+    // ADAOV ACC or ADERR not Overflowed; 
+    ADSTAT = 0x00;
+    // ADCS FOSC/2; 
+    ADCLK = 0x00;
+    // ADNREF VSS; ADPREF VDD; 
+    ADREF = 0x00;
+    // ADCAP Additional uC disabled; 
+    ADCAP = 0x00;
+    // ADPRE 0; 
+    ADPRE = 0x00;
+    // ADACQ 0; 
+    ADACQ = 0x00;
+    // ADPCH ANA0; 
+    ADPCH = 0x00;
+    // ADRPT 0; 
+    ADRPT = 0x00;
     // ADLTHL 0; 
     ADLTHL = 0x00;
     // ADLTHH 0; 
@@ -75,48 +97,34 @@ void ADCC_Initialize(void)
     ADSTPTL = 0x00;
     // ADSTPTH 0; 
     ADSTPTH = 0x00;
-    // ADRPT 0; 
-    ADRPT = 0x00;
-    // ADPCH ANA0; 
-    ADPCH = 0x00;
-    // ADCAP Additional uC disabled; 
-    ADCAP = 0x00;
-    // ADDSEN disabled; ADGPOL digital_low; ADIPEN disabled; ADPPOL VSS; 
-    ADCON1 = 0x00;
-    // ADCRS 0; ADMD Basic_mode; ADACLR disabled; ADPSIS ADRES; 
-    ADCON2 = 0x00;
-    // ADCALC First derivative of Single measurement; ADTMD disabled; ADSOI ADGO not cleared; 
-    ADCON3 = 0x00;
-    // ADAOV ACC or ADERR not Overflowed; 
-    ADSTAT = 0x00;
-    // ADNREF VSS; ADPREF VDD; 
-    ADREF = 0x00;
-    // ADACT disabled; 
-    ADACT = 0x00;
-    // ADCS FOSC/2; 
-    ADCLK = 0x00;
-    // ADGO stop; ADFM right; ADON enabled; ADCONT disabled; ADCS FRC; 
-    ADCON0 = 0x94;
-    // ADACQ 0; 
-    ADACQ = 0x00;
+    
+    // ADGO stop; ADFM left; ADON enabled; ADCONT disabled; ADCS FRC; 
+    ADCON0 = 0x90;
     
     // Clear the ADC interrupt flag
     PIR1bits.ADIF = 0;
     // Enabling ADCC interrupt.
     PIE1bits.ADIE = 1;
 
-    ADCC_SetADIInterruptHandler(ADCC_DefaultInterruptHandler);
-
 }
 
-void ADCC_StartConversion(adcc_channel_t channel)
+uint16_t ADCC_GetConversion(adcc_channel_t channel){
+    return ADCC_GetSingleConversion(channel, 0);
+}
+
+void ADCC_SelectChannel(adcc_channel_t channel, uint8_t acquisitionDelay)
 {
     // select the A/D channel
-    ADPCH = channel;      
+    ADPCH = channel;  
+    //Set the Acquisition Delay
+    ADACQ = acquisitionDelay;
   
     // Turn on the ADC module
     ADCON0bits.ADON = 1;
+}
 
+void ADCC_StartConversion()
+{
     // Start the conversion
     ADCON0bits.ADGO = 1;
 }
@@ -124,19 +132,21 @@ void ADCC_StartConversion(adcc_channel_t channel)
 bool ADCC_IsConversionDone()
 {
     // Start the conversion
-    return ((unsigned char)(!ADCON0bits.ADGO));
+    return (!ADCON0bits.ADGO);
 }
 
 adc_result_t ADCC_GetConversionResult(void)
 {
     // Return the result
-    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+    return (adc_result_t)(((adc_result_t)ADRESH << 8) + ADRESL);
 }
-
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel, uint8_t acquisitionDelay)
 {
     // select the A/D channel
     ADPCH = channel;  
+
+    //Set the Acquisition Delay
+    ADACQ = acquisitionDelay;
 
     // Turn on the ADC module
     ADCON0bits.ADON = 1;
@@ -147,15 +157,13 @@ adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
     // Start the conversion
     ADCON0bits.ADGO = 1;
 
-
     // Wait for the conversion to finish
     while (ADCON0bits.ADGO)
     {
     }
-    
-    
+
     // Conversion finished, return the result
-    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+    return (adc_result_t)(((adc_result_t)ADRESH << 8) + ADRESL);
 }
 
 void ADCC_StopConversion(void)
@@ -173,7 +181,7 @@ void ADCC_SetStopOnInterrupt(void)
 void ADCC_DischargeSampleCapacitor(void)
 {
     //Set the ADC channel to AVss.
-    ADPCH = 0x3c;   
+    ADPCH = 0x3C;   
 }
 
 void ADCC_LoadAcquisitionRegister(uint8_t acquisitionValue)
@@ -209,7 +217,7 @@ void ADCC_ClearAccumulator(void)
 uint16_t ADCC_GetAccumulatorValue(void)
 {
     //Return the contents of ADACCH and ADACCL registers
-    return ((uint16_t)((ADACCH << 8) + ADACCL));
+    return ((ADACCH << 8) + ADACCL);
 }
 
 bool ADCC_HasAccumulatorOverflowed(void)
@@ -221,13 +229,13 @@ bool ADCC_HasAccumulatorOverflowed(void)
 uint16_t ADCC_GetFilterValue(void)
 {
     //Return the contents of ADFLTRH and ADFLTRL registers
-    return ((uint16_t)((ADFLTRH << 8) + ADFLTRL));
+    return ((ADFLTRH << 8) + ADFLTRL);
 }
 
 uint16_t ADCC_GetPreviousResult(void)
 {
     //Return the contents of ADPREVH and ADPREVL registers
-    return ((uint16_t)((ADPREVH << 8) + ADPREVL));
+    return ((ADPREVH << 8) + ADPREVL);
 }
 
 void ADCC_DefineSetPoint(uint16_t setPoint)
@@ -254,7 +262,7 @@ void ADCC_SetLowerThreshold(uint16_t lowerThreshold)
 uint16_t ADCC_GetErrorCalculation(void)
 {
 	//Return the contents of ADERRH and ADERRL registers
-	return ((uint16_t)((ADERRH << 8) + ADERRL));
+	return ((ADERRH << 8) + ADERRL);
 }
 
 void ADCC_EnableDoubleSampling(void)
@@ -293,22 +301,20 @@ uint8_t ADCC_GetConversionStageStatus(void)
     return ADSTATbits.ADSTAT;
 }
 
+void ADCC_SetInterruptHandler(void (*InterruptHandler)(void))
+{
+    ADCC_InterruptHandler = InterruptHandler;
+}
+ 
 void ADCC_ISR(void)
 {
     // Clear the ADCC interrupt flag
     PIR1bits.ADIF = 0;
-
-    if (ADCC_ADI_InterruptHandler)
-            ADCC_ADI_InterruptHandler();
-}
-
-void ADCC_SetADIInterruptHandler(void (* InterruptHandler)(void)){
-    ADCC_ADI_InterruptHandler = InterruptHandler;
-}
-
-void ADCC_DefaultInterruptHandler(void){
-    // add your ADCC interrupt custom code
-    // or set custom function using ADCC_SetADIInterruptHandler() or ADCC_SetADTIInterruptHandler()
+   
+    if(ADCC_InterruptHandler)
+    {
+        ADCC_InterruptHandler();
+    }
 }
 /**
  End of File

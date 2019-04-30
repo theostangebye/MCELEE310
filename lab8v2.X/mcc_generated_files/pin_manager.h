@@ -185,25 +185,25 @@
 #define CAM_SI_SetAnalogMode()      do { ANSELBbits.ANSELB2 = 1; } while(0)
 #define CAM_SI_SetDigitalMode()     do { ANSELBbits.ANSELB2 = 0; } while(0)
 
-// get/set CAM_AO aliases
-#define CAM_AO_TRIS                 TRISBbits.TRISB3
-#define CAM_AO_LAT                  LATBbits.LATB3
-#define CAM_AO_PORT                 PORTBbits.RB3
-#define CAM_AO_WPU                  WPUBbits.WPUB3
-#define CAM_AO_OD                   ODCONBbits.ODCB3
-#define CAM_AO_ANS                  ANSELBbits.ANSELB3
-#define CAM_AO_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
-#define CAM_AO_SetLow()             do { LATBbits.LATB3 = 0; } while(0)
-#define CAM_AO_Toggle()             do { LATBbits.LATB3 = ~LATBbits.LATB3; } while(0)
-#define CAM_AO_GetValue()           PORTBbits.RB3
-#define CAM_AO_SetDigitalInput()    do { TRISBbits.TRISB3 = 1; } while(0)
-#define CAM_AO_SetDigitalOutput()   do { TRISBbits.TRISB3 = 0; } while(0)
-#define CAM_AO_SetPullup()          do { WPUBbits.WPUB3 = 1; } while(0)
-#define CAM_AO_ResetPullup()        do { WPUBbits.WPUB3 = 0; } while(0)
-#define CAM_AO_SetPushPull()        do { ODCONBbits.ODCB3 = 0; } while(0)
-#define CAM_AO_SetOpenDrain()       do { ODCONBbits.ODCB3 = 1; } while(0)
-#define CAM_AO_SetAnalogMode()      do { ANSELBbits.ANSELB3 = 1; } while(0)
-#define CAM_AO_SetDigitalMode()     do { ANSELBbits.ANSELB3 = 0; } while(0)
+// get/set CAM_A0 aliases
+#define CAM_A0_TRIS                 TRISBbits.TRISB3
+#define CAM_A0_LAT                  LATBbits.LATB3
+#define CAM_A0_PORT                 PORTBbits.RB3
+#define CAM_A0_WPU                  WPUBbits.WPUB3
+#define CAM_A0_OD                   ODCONBbits.ODCB3
+#define CAM_A0_ANS                  ANSELBbits.ANSELB3
+#define CAM_A0_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
+#define CAM_A0_SetLow()             do { LATBbits.LATB3 = 0; } while(0)
+#define CAM_A0_Toggle()             do { LATBbits.LATB3 = ~LATBbits.LATB3; } while(0)
+#define CAM_A0_GetValue()           PORTBbits.RB3
+#define CAM_A0_SetDigitalInput()    do { TRISBbits.TRISB3 = 1; } while(0)
+#define CAM_A0_SetDigitalOutput()   do { TRISBbits.TRISB3 = 0; } while(0)
+#define CAM_A0_SetPullup()          do { WPUBbits.WPUB3 = 1; } while(0)
+#define CAM_A0_ResetPullup()        do { WPUBbits.WPUB3 = 0; } while(0)
+#define CAM_A0_SetPushPull()        do { ODCONBbits.ODCB3 = 0; } while(0)
+#define CAM_A0_SetOpenDrain()       do { ODCONBbits.ODCB3 = 1; } while(0)
+#define CAM_A0_SetAnalogMode()      do { ANSELBbits.ANSELB3 = 1; } while(0)
+#define CAM_A0_SetDigitalMode()     do { ANSELBbits.ANSELB3 = 0; } while(0)
 
 // get/set DEBUG_DIG aliases
 #define DEBUG_DIG_TRIS                 TRISCbits.TRISC1

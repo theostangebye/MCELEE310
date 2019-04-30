@@ -73,7 +73,6 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
     
     carcontrol_init();
-//    ping_init();
     cam_init();
     
     carcontrol_throttle(0);    
@@ -85,18 +84,17 @@ void main(void)
     
     while (1)
     {   
-        cam_start();
-        __delay_ms(20);
+        for (int i = 0; i < 8; i++) {
+            cam_start();
+            __delay_ms(50);
+        }
         cam_get(cam_pixels);
-        
-        if (num % 10 ==0) {
+                
             for (int i = 0; i < 128; i=i+2) {
                 printf("%d\n",cam_pixels[i]);
             }
             printf("\n********** NEW SCAN **********\n");
-            __delay_ms(10);
-        }
-        num++;
+
 
     }
 }
