@@ -1349,57 +1349,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _num `i ~T0 @X0 1 a ]
 [e = _num -> 0 `i ]
 "85
-[; ;main.c: 85:     while (1)
-[e :U 1391 ]
-"86
-[; ;main.c: 86:     {
-{
-"87
-[; ;main.c: 87:         for (int i = 0; i < 8; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 1393  ]
-[e $U 1394  ]
-[e :U 1393 ]
-{
-"88
-[; ;main.c: 88:             cam_start();
+[; ;main.c: 85:     cam_start();
 [e ( _cam_start ..  ]
+"86
+[; ;main.c: 86:     _delay((unsigned long)((100)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"88
+[; ;main.c: 88:     while (1)
+[e :U 1391 ]
 "89
-[; ;main.c: 89:             _delay((unsigned long)((50)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"90
-[; ;main.c: 90:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 1393  ]
-[e :U 1394 ]
-}
+[; ;main.c: 89:     {
+{
 "91
 [; ;main.c: 91:         cam_get(cam_pixels);
 [e ( _cam_get (1 &U _cam_pixels ]
 "93
-[; ;main.c: 93:             for (int i = 0; i < 128; i=i+2) {
+[; ;main.c: 93:         for (int i = 0; i < 128; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 128 `i 1396  ]
-[e $U 1397  ]
-[e :U 1396 ]
+[e $ < _i -> 128 `i 1393  ]
+[e $U 1394  ]
+[e :U 1393 ]
 {
 "94
-[; ;main.c: 94:                 printf("%d\n",cam_pixels[i]);
+[; ;main.c: 94:             printf("%d, ",cam_pixels[i]);
 [e ( _printf , (. :s 1C -> *U + &U _cam_pixels * -> -> _i `ui `ux -> -> # *U &U _cam_pixels `ui `ux `ui ]
 "95
-[; ;main.c: 95:             }
+[; ;main.c: 95:         }
 }
-[e = _i + _i -> 2 `i ]
-[e $ < _i -> 128 `i 1396  ]
-[e :U 1397 ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 128 `i 1393  ]
+[e :U 1394 ]
 }
 "96
-[; ;main.c: 96:             printf("\n********** NEW SCAN **********\n");
+[; ;main.c: 96:         printf("\n********** NEW SCAN **********\n");
 [e ( _printf :s 2C ]
 "99
 [; ;main.c: 99:     }
@@ -1412,5 +1396,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1389 ]
 }
 [p f _printf 8388736 ]
-[a 1C 37 100 10 0 ]
+[a 1C 37 100 44 32 0 ]
 [a 2C 10 42 42 42 42 42 42 42 42 42 42 32 78 69 87 32 83 67 65 78 32 42 42 42 42 42 42 42 42 42 42 10 0 ]

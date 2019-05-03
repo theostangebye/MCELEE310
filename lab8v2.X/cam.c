@@ -25,7 +25,8 @@ Brown = Clk
  * finsih the ack by swapping arrays, etc.
  */
 
-int timing_val = 0xff10;
+int timing_val = 0xFF10;
+int delay_between_ack = 0x0000;
 
 // low level state of camera.
 enum cam_line_state_t {CAM_START, CAM_IN_PROGRESS, CAM_DONE, CAM_UNSET};
@@ -84,7 +85,9 @@ void adc_ready_ISR() {
         myCam.status = CAM_DONE;
         CAM_CLK_SetLow();                       // CLK -> HIGH
         CAM_SI_SetLow();                        // CLK -> HIGH
-
+        TMR3_SetInterruptHandler(cam_start);
+        TMR3_WriteTimer(delay_between_ack);            // Load for 15us interrupt
+        TMR3_StartTimer();
 
     } else {
         CAM_CLK_SetLow(); 
@@ -144,7 +147,7 @@ void cam_stop() {
  * If the camera is not running, or a read is not ready - it will return 
  * an array with a 0 as the first element.
  */
-void cam_get(uint16_t* pixels) {
+void cam_get(uint18_t* pixels) {
     if (myCam.readFromFirst) {
         for (int i = 0; i < 128; i++){
             pixels[i] = myCam.cam_pixels_1[i];

@@ -16391,18 +16391,18 @@ void main(void)
 
     int num = 0;
 
+    cam_start();
+    _delay((unsigned long)((100)*(64000000/4000.0)));
+
     while (1)
     {
-        for (int i = 0; i < 8; i++) {
-            cam_start();
-            _delay((unsigned long)((50)*(64000000/4000.0)));
-        }
+
         cam_get(cam_pixels);
 
-            for (int i = 0; i < 128; i=i+2) {
-                printf("%d\n",cam_pixels[i]);
-            }
-            printf("\n********** NEW SCAN **********\n");
+        for (int i = 0; i < 128; i++) {
+            printf("%d, ",cam_pixels[i]);
+        }
+        printf("\n********** NEW SCAN **********\n");
 
 
     }
