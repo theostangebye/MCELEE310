@@ -48,6 +48,8 @@
       <itemPath>ping.c</itemPath>
       <itemPath>cam.h</itemPath>
       <itemPath>cam.c</itemPath>
+      <itemPath>cam_pid.h</itemPath>
+      <itemPath>cam_pid.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -36,6 +36,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./cam.h
 [; ;./cam.h: 19: void cam_init();
 [v _cam_init `(v ~T0 @X0 0 e? ]
+"22 ./cam_pid.h
+[; ;./cam_pid.h: 22:     void pid_init(uint8_t setpoint, float pgain, float dgain);
+[v _pid_init `(v ~T0 @X0 0 ef3`uc`f`f ]
+"18 ./ping.h
+[; ;./ping.h: 18:     void ping_init();
+[v _ping_init `(v ~T0 @X0 0 e? ]
 "34 ./car_ctrl.h
 [; ;./car_ctrl.h: 34: void carcontrol_throttle(uint8_t throttle);
 [v _carcontrol_throttle `(v ~T0 @X0 0 ef1`uc ]
@@ -49,11 +55,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183 /Applications/microchip/xc8/v2.05/pic/include/pic18.h
 [v __delay `JF9277 ~T0 @X0 0 e ]
 [p i __delay ]
+"23 ./ping.h
+[; ;./ping.h: 23:     void ping_send();
+[v _ping_send `(v ~T0 @X0 0 e? ]
 "40 ./cam.h
-[; ;./cam.h: 40: void cam_get(uint16_t* pixels);
-[v _cam_get `(v ~T0 @X0 0 ef1`*us ]
-"113 /Applications/microchip/xc8/v2.05/pic/include/c99/stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[; ;./cam.h: 40: void cam_get(uint8_t* pixels);
+[v _cam_get `(v ~T0 @X0 0 ef1`*uc ]
+"34 ./cam_pid.h
+[; ;./cam_pid.h: 34:     int8_t pid_getResponse(uint8_t* pixels);
+[v _pid_getResponse `(c ~T0 @X0 0 ef1`*uc ]
+"30 ./ping.h
+[; ;./ping.h: 30:     float ping_get();
+[v _ping_get `(f ~T0 @X0 0 e? ]
 "54 /Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h
 [; ;/Applications/microchip/xc8/v2.05/pic/include/pic18f25q10.h: 54: __asm("PPSLOCK equ 0E9Bh");
 [; <" PPSLOCK equ 0E9Bh ;# ">
@@ -1309,92 +1322,106 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./car_ctrl.h: 26: volatile struct carctl_t carctl;
 [v _carctl `VS1388 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52 main.c
-[; ;main.c: 52: void main(void)
+"53 main.c
+[; ;main.c: 53: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"53
-[; ;main.c: 53: {
+"54
+[; ;main.c: 54: {
 {
 [e :U _main ]
 [f ]
-"55
-[; ;main.c: 55:     SYSTEM_Initialize();
+"56
+[; ;main.c: 56:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"68
-[; ;main.c: 68:     (INTCONbits.GIEL = 1);
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
 "69
-[; ;main.c: 69:     (INTCONbits.GIEH = 1);
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;main.c: 69:     (INTCONbits.GIEL = 1);
+[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
 "70
-[; ;main.c: 70:     (INTCONbits.PEIE = 1);
+[; ;main.c: 70:     (INTCONbits.GIEH = 1);
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+"71
+[; ;main.c: 71:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
-"75
-[; ;main.c: 75:     carcontrol_init();
-[e ( _carcontrol_init ..  ]
 "76
-[; ;main.c: 76:     cam_init();
+[; ;main.c: 76:     carcontrol_init();
+[e ( _carcontrol_init ..  ]
+"77
+[; ;main.c: 77:     cam_init();
 [e ( _cam_init ..  ]
 "78
-[; ;main.c: 78:     carcontrol_throttle(0);
-[e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
+[; ;main.c: 78:     pid_init(100,5,0);
+[e ( _pid_init (3 , , -> -> 100 `i `uc -> -> 5 `i `f -> -> 0 `i `f ]
 "79
-[; ;main.c: 79:     carcontrol_steering(0);
-[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
+[; ;main.c: 79:     ping_init();
+[e ( _ping_init ..  ]
 "81
-[; ;main.c: 81:     uint16_t cam_pixels[128];
-[v _cam_pixels `us ~T0 @X0 -> 128 `i a ]
-"83
-[; ;main.c: 83:     int num = 0;
-[v _num `i ~T0 @X0 1 a ]
-[e = _num -> 0 `i ]
-"85
-[; ;main.c: 85:     cam_start();
-[e ( _cam_start ..  ]
+[; ;main.c: 81:     carcontrol_throttle(0);
+[e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
+"82
+[; ;main.c: 82:     carcontrol_steering(0);
+[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
+"84
+[; ;main.c: 84:     uint8_t cam_pixels[128];
+[v _cam_pixels `uc ~T0 @X0 -> 128 `i a ]
 "86
-[; ;main.c: 86:     _delay((unsigned long)((100)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"88
-[; ;main.c: 88:     while (1)
-[e :U 1391 ]
+[; ;main.c: 86:     cam_start();
+[e ( _cam_start ..  ]
+"87
+[; ;main.c: 87:     _delay((unsigned long)((500)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "89
-[; ;main.c: 89:     {
+[; ;main.c: 89:     while (1)
+[e :U 1391 ]
+"90
+[; ;main.c: 90:     {
 {
 "91
-[; ;main.c: 91:         cam_get(cam_pixels);
+[; ;main.c: 91:         ping_send();
+[e ( _ping_send ..  ]
+"92
+[; ;main.c: 92:         cam_get(cam_pixels);
 [e ( _cam_get (1 &U _cam_pixels ]
 "93
-[; ;main.c: 93:         for (int i = 0; i < 128; i++) {
+[; ;main.c: 93:         int8_t response = pid_getResponse(cam_pixels);
+[v _response `c ~T0 @X0 1 a ]
+[e = _response ( _pid_getResponse (1 &U _cam_pixels ]
+"94
+[; ;main.c: 94:         carcontrol_steering(response);
+[e ( _carcontrol_steering (1 _response ]
+"96
+[; ;main.c: 96:         _delay((unsigned long)((20)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+"97
+[; ;main.c: 97:         float dis = ping_get();
+[v _dis `f ~T0 @X0 1 a ]
+[e = _dis ( _ping_get ..  ]
+"98
+[; ;main.c: 98:         if (dis < 20) {
+[e $ ! < _dis -> -> 20 `i `f 1393  ]
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 128 `i 1393  ]
+"99
+[; ;main.c: 99:             carcontrol_throttle(0);
+[e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:         } else {
+}
 [e $U 1394  ]
 [e :U 1393 ]
 {
-"94
-[; ;main.c: 94:             printf("%d, ",cam_pixels[i]);
-[e ( _printf , (. :s 1C -> *U + &U _cam_pixels * -> -> _i `ui `ux -> -> # *U &U _cam_pixels `ui `ux `ui ]
-"95
-[; ;main.c: 95:         }
+"101
+[; ;main.c: 101:             carcontrol_throttle(11);
+[e ( _carcontrol_throttle (1 -> -> 11 `i `uc ]
+"102
+[; ;main.c: 102:         }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 128 `i 1393  ]
 [e :U 1394 ]
-}
-"96
-[; ;main.c: 96:         printf("\n********** NEW SCAN **********\n");
-[e ( _printf :s 2C ]
-"99
-[; ;main.c: 99:     }
+"105
+[; ;main.c: 105:     }
 }
 [e :U 1390 ]
 [e $U 1391  ]
 [e :U 1392 ]
-"100
-[; ;main.c: 100: }
+"106
+[; ;main.c: 106: }
 [e :UE 1389 ]
 }
-[p f _printf 8388736 ]
-[a 1C 37 100 44 32 0 ]
-[a 2C 10 42 42 42 42 42 42 42 42 42 42 32 78 69 87 32 83 67 65 78 32 42 42 42 42 42 42 42 42 42 42 10 0 ]

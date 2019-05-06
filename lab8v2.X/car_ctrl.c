@@ -15,8 +15,8 @@ volatile struct carctl_t carctl;
 
 // Servo Restraints
 int8_t  servo_trim = 17;
-int8_t servo_min  = -30;
-int8_t servo_max  =  28;
+int8_t servo_min  = -25;
+int8_t servo_max  = 10;
 
 
 /**
@@ -102,11 +102,11 @@ void carcontrol_steering(int8_t steering) {
      */
     
     
+    steering = steering + servo_trim;
+    
     // coerce values before translation.
     if (steering < servo_min) steering = servo_min;
     if (steering > servo_max) steering = servo_max;
-    
-    steering = steering + servo_trim;
 
     carctl.servoHighTime = steering + 50;
 }

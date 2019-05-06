@@ -12,4 +12,5 @@ mcc_generated_files/ccp1.h  \
 mcc_generated_files/eusart1.h  \
 car_ctrl.h  \
 ping.h  \
-cam.h 
+cam.h  \
+cam_pid.h 

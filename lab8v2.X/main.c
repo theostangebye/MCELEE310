@@ -45,6 +45,7 @@
 #include "car_ctrl.h"
 #include "ping.h"
 #include "cam.h"
+#include "cam_pid.h"
 
 /*
                          Main application
@@ -74,32 +75,30 @@ void main(void)
     
     carcontrol_init();
     cam_init();
+    pid_init(100,5,0);
+    ping_init();
     
     carcontrol_throttle(0);    
     carcontrol_steering(0);    
     
     uint8_t cam_pixels[128];
-    
-    int num = 0;
-    
+        
     cam_start();
-    __delay_ms(100);
-    
+    __delay_ms(500);
+
     while (1)
     {   
-
+        ping_send();
         cam_get(cam_pixels);
-        int loc;
-        int i = 0;
-        bool found = false;
-        while (!found) {
-            
-            i++;
-        }
-        for (int i = 0; i < 128; i++) {
-            if (cam_pixels[i] > 100) {
-                loc = i;
-            }
+        int8_t response = pid_getResponse(cam_pixels);
+        carcontrol_steering(response);    
+//        carcontrol_steering(25);  
+        __delay_ms(20);
+        float dis = ping_get();
+        if (dis < 20) {
+            carcontrol_throttle(0);    
+        } else {
+            carcontrol_throttle(11);    
         }
 
 

@@ -4,6 +4,7 @@
  *
  * Created on May 3, 2019, 1:02 PM
  */
+#include "mcc_generated_files/mcc.h"
 
 #ifndef CAM_PID_H
 #define	CAM_PID_H
@@ -12,7 +13,13 @@
 extern "C" {
 #endif
 
-    pid_init(uint8_t setpoint);
+    /**
+     * 
+     * @param setpoint
+     * @param pgain
+     * @param dgain
+     */
+    void pid_init(uint8_t setpoint, float pgain, float dgain);
     
     /**
      * Generates a PID response based on finding the transition point from 
@@ -24,7 +31,7 @@ extern "C" {
      * @param pixels
      * @return 
      */
-    int_8t pid_getResponse(uint8_t* pixels);
+    int8_t pid_getResponse(uint8_t* pixels);
 
 
 #ifdef	__cplusplus

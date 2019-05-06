@@ -16362,8 +16362,15 @@ void cam_start();
 
 void cam_stop();
 # 40 "./cam.h"
-void cam_get(uint16_t* pixels);
+void cam_get(uint8_t* pixels);
 # 47 "main.c" 2
+
+# 1 "./cam_pid.h" 1
+# 22 "./cam_pid.h"
+    void pid_init(uint8_t setpoint, float pgain, float dgain);
+# 34 "./cam_pid.h"
+    int8_t pid_getResponse(uint8_t* pixels);
+# 48 "main.c" 2
 
 
 
@@ -16373,7 +16380,7 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 68 "main.c"
+# 69 "main.c"
     (INTCONbits.GIEL = 1);
     (INTCONbits.GIEH = 1);
     (INTCONbits.PEIE = 1);
@@ -16383,26 +16390,31 @@ void main(void)
 
     carcontrol_init();
     cam_init();
+    pid_init(100,5,0);
+    ping_init();
 
     carcontrol_throttle(0);
     carcontrol_steering(0);
 
-    uint16_t cam_pixels[128];
-
-    int num = 0;
+    uint8_t cam_pixels[128];
 
     cam_start();
-    _delay((unsigned long)((100)*(64000000/4000.0)));
+    _delay((unsigned long)((500)*(64000000/4000.0)));
 
     while (1)
     {
-
+        ping_send();
         cam_get(cam_pixels);
+        int8_t response = pid_getResponse(cam_pixels);
+        carcontrol_steering(response);
 
-        for (int i = 0; i < 128; i++) {
-            printf("%d, ",cam_pixels[i]);
+        _delay((unsigned long)((20)*(64000000/4000.0)));
+        float dis = ping_get();
+        if (dis < 20) {
+            carcontrol_throttle(0);
+        } else {
+            carcontrol_throttle(11);
         }
-        printf("\n********** NEW SCAN **********\n");
 
 
     }

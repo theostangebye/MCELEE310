@@ -147,7 +147,7 @@ void cam_stop() {
  * If the camera is not running, or a read is not ready - it will return 
  * an array with a 0 as the first element.
  */
-void cam_get(uint18_t* pixels) {
+void cam_get(uint8_t* pixels) {
     if (myCam.readFromFirst) {
         for (int i = 0; i < 128; i++){
             pixels[i] = myCam.cam_pixels_1[i];
