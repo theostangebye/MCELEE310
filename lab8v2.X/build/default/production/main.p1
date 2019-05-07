@@ -1349,8 +1349,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 77:     cam_init();
 [e ( _cam_init ..  ]
 "78
-[; ;main.c: 78:     pid_init(100,5,0);
-[e ( _pid_init (3 , , -> -> 100 `i `uc -> -> 5 `i `f -> -> 0 `i `f ]
+[; ;main.c: 78:     pid_init(105,4,.1);
+[e ( _pid_init (3 , , -> -> 105 `i `uc -> -> 4 `i `f -> .0.1 `f ]
 "79
 [; ;main.c: 79:     ping_init();
 [e ( _ping_init ..  ]
@@ -1388,20 +1388,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "94
 [; ;main.c: 94:         carcontrol_steering(response);
 [e ( _carcontrol_steering (1 _response ]
-"96
-[; ;main.c: 96:         _delay((unsigned long)((20)*(64000000/4000.0)));
+"95
+[; ;main.c: 95:         _delay((unsigned long)((20)*(64000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"97
-[; ;main.c: 97:         float dis = ping_get();
+"96
+[; ;main.c: 96:         float dis = ping_get();
 [v _dis `f ~T0 @X0 1 a ]
 [e = _dis ( _ping_get ..  ]
-"98
-[; ;main.c: 98:         if (dis < 20) {
+"97
+[; ;main.c: 97:         if (dis < 20) {
 [e $ ! < _dis -> -> 20 `i `f 1393  ]
 {
-"99
-[; ;main.c: 99:             carcontrol_throttle(0);
+"98
+[; ;main.c: 98:             carcontrol_throttle(0);
 [e ( _carcontrol_throttle (1 -> -> 0 `i `uc ]
+"99
+[; ;main.c: 99:             carcontrol_steering(0);
+[e ( _carcontrol_steering (1 -> -> 0 `i `c ]
 "100
 [; ;main.c: 100:         } else {
 }

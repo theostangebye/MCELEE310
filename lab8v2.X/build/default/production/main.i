@@ -16390,7 +16390,7 @@ void main(void)
 
     carcontrol_init();
     cam_init();
-    pid_init(100,5,0);
+    pid_init(105,4,.1);
     ping_init();
 
     carcontrol_throttle(0);
@@ -16407,11 +16407,11 @@ void main(void)
         cam_get(cam_pixels);
         int8_t response = pid_getResponse(cam_pixels);
         carcontrol_steering(response);
-
         _delay((unsigned long)((20)*(64000000/4000.0)));
         float dis = ping_get();
         if (dis < 20) {
             carcontrol_throttle(0);
+            carcontrol_steering(0);
         } else {
             carcontrol_throttle(11);
         }
